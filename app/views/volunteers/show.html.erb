@@ -1,0 +1,48 @@
+<p>
+  <b>Name:</b>
+  <%=h @volunteer.name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @volunteer.last_name %>
+</p>
+
+<p>
+  <b>Second last name:</b>
+  <%=h @volunteer.second_last_name %>
+</p>
+
+<p>
+  <b>Profession:</b>
+  <%=h @volunteer.profession %>
+</p>
+
+<p>
+  <b>Phone number:</b>
+  <%=h @volunteer.phone_number %>
+</p>
+
+<p>
+  <b>Movil:</b>
+  <%=h @volunteer.movil %>
+</p>
+
+<p>
+  <b>Date of birth:</b>
+  <%=h @volunteer.date_of_birth %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%=h @volunteer.gender %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%=h @volunteer.position %>
+</p>
+
+
+<%= link_to 'Edit', edit_volunteer_path(@volunteer) %> |
+<%= link_to 'Back', volunteers_path %>
