@@ -7,6 +7,7 @@ class Volunteer < ActiveRecord::Base
   validates_presence_of :phone_number
   validates_presence_of :movil
   validates_presence_of :position
+  validates_presence_of :profession
   validates_presence_of :date_of_birth
   validates_presence_of :genre    
   validates_numericality_of :phone_number, :greater_than => 0, :if => "self.phone_number.present?"
