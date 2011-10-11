@@ -15,6 +15,19 @@ ActiveRecord::Schema.define(:version => 20111010123805) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+
+  create_table "volunteers", :force => true do |t|
+    t.string   "name"
+    t.string   "last_name"
+    t.string   "second_last_name"
+    t.string   "profession"
+    t.integer  "phone_number"
+    t.integer  "movil"
+    t.date     "date_of_birth"
+    t.string   "genre"
+    t.string   "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

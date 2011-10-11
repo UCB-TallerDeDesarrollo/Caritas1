@@ -1,0 +1,47 @@
+<p>
+  <b>Nombre:</b>
+  <%=h @volunteer.name %>
+</p>
+
+<p>
+  <b>Apellido Paterno:</b>
+  <%=h @volunteer.last_name %>
+</p>
+
+<p>
+  <b>Apellido Materno:</b>
+  <%=h @volunteer.second_last_name %>
+</p>
+
+<p>
+  <b>Profesion:</b>
+  <%=h @volunteer.profession %>
+</p>
+
+<p>
+  <b>Telefono:</b>
+  <%=h @volunteer.phone_number %>
+</p>
+
+<p>
+  <b>Celular:</b>
+  <%=h @volunteer.movil %>
+</p>
+
+<p>
+  <b>Fecha de Nacimiento:</b>
+  <%=h @volunteer.date_of_birth %>
+</p>
+
+<p>
+  <b>Genero:</b>
+  <%=h @volunteer.genre %>
+</p>
+
+<p>
+  <b>Cargo:</b>
+  <%=h @volunteer.position %>
+</p>
+    
+<%= link_to 'Actualizar', edit_volunteer_path(@volunteer) %> |
+<%= link_to 'Atras', volunteers_path %>
