@@ -9,16 +9,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111010164825) do
+ActiveRecord::Schema.define(:version => 20111010222254) do
+
+  create_table "people", :force => true do |t|
+    t.string   "name"
+    t.binary   "sexo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "volunteers", :force => true do |t|
     t.string   "name"
     t.string   "last_name"
     t.string   "second_last_name"
     t.string   "profession"
-    t.string   "phone_number"
-    t.string   "movil"
-    t.datetime "date_of_birth"
+    t.integer  "phone_number"
+    t.integer  "movil"
+    t.date     "date_of_birth"
+    t.string   "genre"
     t.string   "position"
     t.datetime "created_at"
     t.datetime "updated_at"
