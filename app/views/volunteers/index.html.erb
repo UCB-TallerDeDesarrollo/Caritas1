@@ -1,14 +1,19 @@
-  <h1>Lista de Voluntarios</h1>
+  <h1>Voluntarios</h1>
 
 <% form_tag volunteers_path, :method => 'get' do %>
   <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-
-<%= link_to 'Crear Voluntario', new_volunteer_path %>
-<% end %>
-
+    Parametro: <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Buscar", :name => nil %>
 </p>
+<table>
+  <tr>
+    <td>
+      <DIV align="right">   
+<%= button_to 'Crear Voluntario', new_volunteer_path %>
+<% end %>
+</div>
+<tr>
+    <td>
 
 <table border="3">
 
@@ -23,7 +28,7 @@
     <th>Genero</th>
     <th>Cargo</th>
     <th>Email</th>
-    <th colspan="3"> Operaciones</th>
+    <th colspan="3"> Acciones</th>
   </tr>
 
 <% @volunteers.each do |volunteer| %>
@@ -44,5 +49,7 @@
   </tr>
 <% end %>
 </table>
-
+      </td>
+  </tr>
+</table>
 <br />

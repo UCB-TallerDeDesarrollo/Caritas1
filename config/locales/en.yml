@@ -298,8 +298,8 @@ en:
 
     models:
       volunteer:
-        one: "Voluntario"
-        other: "Voluntarios"
+        one: "Voluntario/a"
+        other: "Voluntarios/as"
      
     attributes:
       volunteer:

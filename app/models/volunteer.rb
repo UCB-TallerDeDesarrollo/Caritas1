@@ -25,7 +25,7 @@ end
   validates_length_of :position, :within => 0..20
   validates_inclusion_of :movil, :in => 10000000..99999999, :message => "fuera de rango"
   validates_inclusion_of :phone_number, :in => 1000000..9999999, :message => "fuera de rango"
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{0,50})\Z/i
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{,50})\Z/
   validates_format_of :name, :with => /^([a-zA-Z\ ]{3,50})$/i
   validates_format_of :last_name, :with => /^([a-zA-Z\ \-]{3,50})$/i
   validates_format_of :second_last_name, :with => /^([a-zA-Z\ \-]{3,50})$/i

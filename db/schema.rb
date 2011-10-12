@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(:version => 20111012004505) do
     t.datetime "updated_at"
   end
 
+  create_table "people", :force => true do |t|
+    t.string   "name"
+    t.binary   "sexo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "volunteers", :force => true do |t|
     t.string   "name"
     t.string   "last_name"
