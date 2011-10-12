@@ -1,0 +1,31 @@
+<h1>New vicariou</h1>
+
+<% form_for(@vicariou) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nameVicariou %><br />
+    <%= f.text_field :nameVicariou %>
+  </p>
+  <p>
+    <%= f.label :ubication %><br />
+    <%= f.text_field :ubication %>
+  </p>
+  <p>
+    <%= f.label :transport %><br />
+    <%= f.text_field :transport %>
+  </p>
+  <p>
+    <%= f.label :telephone %><br />
+    <%= f.text_field :telephone %>
+  </p>
+  <p>
+    <%= f.label :vicarName %><br />
+    <%= f.text_field :vicarName %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', vicarious_path %>

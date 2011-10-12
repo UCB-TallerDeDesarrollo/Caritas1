@@ -1,0 +1,28 @@
+<h1>Listing vicarious</h1>
+
+<table>
+  <tr>
+    <th>Namevicariou</th>
+    <th>Ubication</th>
+    <th>Transport</th>
+    <th>Telephone</th>
+    <th>Vicarname</th>
+  </tr>
+
+<% @vicarious.each do |vicariou| %>
+  <tr>
+    <td><%=h vicariou.nameVicariou %></td>
+    <td><%=h vicariou.ubication %></td>
+    <td><%=h vicariou.transport %></td>
+    <td><%=h vicariou.telephone %></td>
+    <td><%=h vicariou.vicarName %></td>
+    <td><%= link_to 'Show', vicariou %></td>
+    <td><%= link_to 'Edit', edit_vicariou_path(vicariou) %></td>
+    <td><%= link_to 'Destroy', vicariou, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New vicariou', new_vicariou_path %>
