@@ -1,15 +1,20 @@
-<h1>New group</h1>
+<h1>Nuevo Grupo</h1>
 
 <% form_for(@group) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+    <table>
+      <tr>
+        <td><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr align="right">
+        <td colspan="2">
+          <%= f.submit 'Registrar' %>
+          <button type="reset">Limpiar</button>
+          <%= link_to 'Cacelar', groups_path %>
+        </td>
+      </tr>
+    </table>
 <% end %>
 
-<%= link_to 'Back', groups_path %>

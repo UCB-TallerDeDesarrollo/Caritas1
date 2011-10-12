@@ -1,16 +1,23 @@
-<h1>Editing group</h1>
+<h1>Editar Grupo</h1>
 
 <% form_for(@group) do |f| %>
   <%= f.error_messages %>
 
+    <table>
+      <tr>
+        <td><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr align="right">
+        <td colspan="2">
+          <%= f.submit 'Guardar' %>
+          <%= link_to 'Ver', :action => :show %>
+          <%= link_to 'Cacelar', groups_path %>
+        </td>
+      </tr>
+    </table>
+
   <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
+
   </p>
 <% end %>
-
-<%= link_to 'Show', @group %> |
-<%= link_to 'Back', groups_path %>
