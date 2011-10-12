@@ -2,6 +2,7 @@ class Volunteer < ActiveRecord::Base
   #put constants here
 
   #put relations and references here
+  belongs_to :group
 
   #put active record callbacks here
 
@@ -21,7 +22,7 @@ class Volunteer < ActiveRecord::Base
   validates_length_of :position, :within => 0..20
   validates_inclusion_of :movil, :in => 10000000..99999999, :message => "Fuera de rango"
   validates_inclusion_of :phone_number, :in => 1000000..9999999, :message => "Fuera de rango"
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{,50})\Z/
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{3,50})\Z/
   validates_format_of :name, :with => /^([a-zA-Z\ ]{3,50})$/i
   validates_format_of :last_name, :with => /^([a-zA-Z\ \-]{3,50})$/i
   validates_format_of :second_last_name, :with => /^([a-zA-Z\ \-]{3,50})$/i
@@ -36,5 +37,12 @@ class Volunteer < ActiveRecord::Base
   end
 
   #put object methods here
+  def close()
+    if params(:must_close)
+      render :template => "close", :layout => false
+    else
+      return_to_main
+    end
+  end
 
 end

@@ -5,12 +5,13 @@
     Parametro: <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Buscar", :name => nil %>
 </p>
+      <% end %>
 <table>
   <tr>
     <td>
       <DIV align="right">   
 <%= button_to 'Crear Voluntario', new_volunteer_path %>
-<% end %>
+
 </div>
 <tr>
     <td>

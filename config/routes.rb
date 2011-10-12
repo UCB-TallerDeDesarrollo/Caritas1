@@ -1,11 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :vicarious
-
   map.resources :pastors
-
-  map.resources :groups
+  map.resources :groups, :collection => {:browse => :get}, :member => {:select => :post}
   map.resources :campaings
-  map.resources :volunteers
+  map.resources :volunteers, :collection => {:browse => :get}, :member => {:select => :post}
 
   # The priority is based upon order of creation: first created -> highest priority.
 

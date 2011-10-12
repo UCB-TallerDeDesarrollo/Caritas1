@@ -8,6 +8,10 @@
         <td><%= f.label :name %></td>
         <td><%= f.text_field :name %></td>
       </tr>
+      <tr>
+        <td><%= f.label :group_leader %></td>
+        <td><%= link_to_record_select 'Seleccione al Responsable', 'volunteers', :onselect => "alert('You picked ' + label + ', id#' + id);" %></td>
+      </tr>
       <tr align="right">
         <td colspan="2">
           <%= f.submit 'Registrar' %>
