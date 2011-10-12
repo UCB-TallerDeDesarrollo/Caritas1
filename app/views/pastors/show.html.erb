@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @pastor.name %>
+</p>
+
+<p>
+  <b>Primary last name:</b>
+  <%=h @pastor.primary_last_name %>
+</p>
+
+<p>
+  <b>Second last name:</b>
+  <%=h @pastor.second_last_name %>
+</p>
+
+<p>
+  <b>Phone number:</b>
+  <%=h @pastor.phone_number %>
+</p>
+
+<p>
+  <b>Cellphone number:</b>
+  <%=h @pastor.cellphone_number %>
+</p>
+
+
+<%= link_to 'Edit', edit_pastor_path(@pastor) %> |
+<%= link_to 'Back', pastors_path %>
