@@ -2,12 +2,13 @@ class VolunteersController < ApplicationController
   # GET /volunteers
   # GET /volunteers.xml
   def index
-    @volunteers = Volunteer.all
+    @volunteers = Volunteer.search(params[:search])
+    #@volunteers = Volunteer.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @volunteers }
-    end
+    #respond_to do |format|
+    #  format.html # index.html.erb
+    #  format.xml  { render :xml => @volunteers }
+    #end
   end
 
   # GET /volunteers/1

@@ -2,42 +2,75 @@
 
 <% form_for(@volunteer) do |f| %>
   <%= f.error_messages %>
+  <table>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </p>
-  <p>
-    <%= f.label :second_last_name %><br />
-    <%= f.text_field :second_last_name %>
-  </p>
-  <p>
-    <%= f.label :profession %><br />
-    <%= f.text_field :profession %>
-  </p>
-  <p>
-    <%= f.label :phone_number %><br />
-    <%= f.text_field :phone_number %>
-  </p>
-  <p>
-    <%= f.label :movil %><br />
-    <%= f.text_field :movil %>
-  </p>
-  <p>
-    <%= f.label :date_of_birth %><br />
-    <%= f.date_select :date_of_birth %>
-  </p>
-  <p>
-    <%= f.label :genre %><br />
-    <%= f.text_field :genre %>
-  </p>
-  <p>
-    <%= f.label :position %><br />
-    <%= f.text_field :position %>
+    <tr>
+      <td>
+        <%= f.label :name %></td><td>
+        <%= f.text_field :name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label :last_name %></td><td>
+        <%= f.text_field :last_name %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <%= f.label :second_last_name %></td><td>
+        <%= f.text_field :second_last_name %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <%= f.label :profession %></td><td>
+        <%= f.text_field :profession %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <%= f.label :phone_number %></td><td>
+        <%= f.text_field :phone_number %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <%= f.label :movil %></td><td>
+        <%= f.text_field :movil %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <%= f.label :date_of_birth %></td><td>
+        <%= f.date_select :date_of_birth %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label :genre %></td><td>
+        <%= f.text_field :genre %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <%= f.label :position %></td><td>
+        <%= f.text_field :position %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label :email %></td><td>
+        <%= f.text_field :email %>
+      </td>
+    </tr>
+  </table>
   </p>
   <p>
     <%= f.submit 'Crear' %>

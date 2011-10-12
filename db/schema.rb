@@ -9,7 +9,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111011011312) do
+ActiveRecord::Schema.define(:version => 20111012004505) do
+
+  create_table "campaings", :force => true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.text     "description"
+    t.date     "date_ini"
+    t.date     "date_end"
+    t.string   "responsible"
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "people", :force => true do |t|
+    t.string   "name"
+    t.binary   "sexo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "groups", :force => true do |t|
     t.string   "name"
@@ -27,6 +46,8 @@ ActiveRecord::Schema.define(:version => 20111011011312) do
     t.date     "date_of_birth"
     t.string   "genre"
     t.string   "position"
+    t.string   "email"
+    t.boolean  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

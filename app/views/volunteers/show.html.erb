@@ -1,47 +1,76 @@
-<p>
-  <b>Nombre:</b>
-  <%=h @volunteer.name %>
-</p>
+<table>
 
-<p>
-  <b>Apellido Paterno:</b>
-  <%=h @volunteer.last_name %>
-</p>
+  <tr>
+    <td>
+      <b>Nombre:</b> </td><td>
+      <%=h @volunteer.name %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Apellido Paterno:</b> </td><td>
+      <%=h @volunteer.last_name %>
+    </td>
+  </tr>
+  <tr>
+    <td>
 
-<p>
-  <b>Apellido Materno:</b>
-  <%=h @volunteer.second_last_name %>
-</p>
+      <b>Apellido Materno:</b></td><td>
+      <%=h @volunteer.second_last_name %>
 
-<p>
-  <b>Profesion:</b>
-  <%=h @volunteer.profession %>
-</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Profesion:</b></td><td>
+      <%=h @volunteer.profession %>
 
-<p>
-  <b>Telefono:</b>
-  <%=h @volunteer.phone_number %>
-</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Telefono:</b></td><td>
+      <%=h @volunteer.phone_number %>
+    </td>
+  </tr>
+  <tr>
+    <td>
 
-<p>
-  <b>Celular:</b>
-  <%=h @volunteer.movil %>
-</p>
+      <b>Celular:</b></td><td>
+      <%=h @volunteer.movil %>
+    </td>
+  </tr>
+  <tr>
+    <td>
 
-<p>
-  <b>Fecha de Nacimiento:</b>
-  <%=h @volunteer.date_of_birth %>
-</p>
+      <b>Fecha de Nacimiento:</b></td><td>
+      <%=h @volunteer.date_of_birth %>
+    </td>
+  </tr>
+  <tr>
+    <td>
 
-<p>
-  <b>Genero:</b>
-  <%=h @volunteer.genre %>
-</p>
+      <b>Genero:</b></td><td>
+      <%=h @volunteer.genre %>
+    </td>
+  </tr>
+  <tr>
+    <td>
 
-<p>
-  <b>Cargo:</b>
-  <%=h @volunteer.position %>
-</p>
-    
+      <b>Cargo:</b></td><td>
+      <%=h @volunteer.position %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+
+      <b>Email:</b></td><td>
+      <%=h @volunteer.email %>
+    </td>
+  </tr>
+  <tr>
+    <td> 
+</table>
+
 <%= link_to 'Actualizar', edit_volunteer_path(@volunteer) %> |
 <%= link_to 'Atras', volunteers_path %>

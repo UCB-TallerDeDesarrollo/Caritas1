@@ -1,0 +1,41 @@
+<h1>Actualizar Campa&ncaron;a</h1>
+
+<% form_for(@campaing) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <b> *<%= f.label :Nombre   %></b>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <b>*<%= f.label :Lugar   %></b>
+    <%= f.text_field :location %>
+  </p>
+  <p>
+   <b> <%= f.label :Descripcion %></b><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+   <b><%= f.label :Fecha_de_inicio   %></b>
+    <%= f.date_select :date_ini %>
+  </p>
+  <p>
+    <b> <%= f.label :Fecha_de_finalizacion   %></b>
+    <%= f.date_select :date_end %>
+  </p>
+  <p>
+   <b> *<%= f.label :Responsable   %></b>
+    <%= f.text_field :responsible %>
+  </p>
+  <p>
+    <b> *<%= f.label :Estado    %></b>
+    <%= f.text_field :state %>
+  </p>
+  <p>
+    <%= f.submit 'Actualizar' %>
+  </p>
+<% end %>
+<%= link_to 'Agregar colectas' %>  | <%= link_to 'Distribuir colectas'%>  | <%= link_to 'Agreagr fotos' %> | <%= link_to 'Agregar gastos' %><br/>
+<hr align="LEFT" size="1" width="800" color="Red" noshade/> 
+<%= link_to 'Ver', @campaing %> |
+<%= link_to 'Atras', campaings_path %> 

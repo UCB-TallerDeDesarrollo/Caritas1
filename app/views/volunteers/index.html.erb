@@ -1,6 +1,22 @@
-<h1>Lista de Voluntarios</h1>
+  <h1>Voluntarios</h1>
 
+<% form_tag volunteers_path, :method => 'get' do %>
+  <p>
+    Parametro: <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Buscar", :name => nil %>
+</p>
 <table>
+  <tr>
+    <td>
+      <DIV align="right">   
+<%= button_to 'Crear Voluntario', new_volunteer_path %>
+<% end %>
+</div>
+<tr>
+    <td>
+
+<table border="3">
+
   <tr>
     <th>Nombre</th>
     <th>Apellido Paterno</th>
@@ -11,6 +27,8 @@
     <th>Fecha de Nacimiento</th>
     <th>Genero</th>
     <th>Cargo</th>
+    <th>Email</th>
+    <th colspan="3"> Acciones</th>
   </tr>
 
 <% @volunteers.each do |volunteer| %>
@@ -24,13 +42,14 @@
     <td><%=h volunteer.date_of_birth %></td>
     <td><%=h volunteer.genre %></td>
     <td><%=h volunteer.position %></td>
+    <td><%=h volunteer.email %></td>
     <td><%= link_to 'Ver', volunteer %></td>
     <td><%= link_to 'Actualizar', edit_volunteer_path(volunteer) %></td>
     <td><%= link_to 'Borrar', volunteer, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-
+      </td>
+  </tr>
+</table>
 <br />
-
-<%= link_to 'Crear Voluntario', new_volunteer_path %>

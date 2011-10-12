@@ -10,6 +10,8 @@ class CreateVolunteers < ActiveRecord::Migration
       t.date :date_of_birth
       t.string :genre
       t.string :position
+      t.string :email
+      t.boolean :state
 
       t.timestamps
     end
