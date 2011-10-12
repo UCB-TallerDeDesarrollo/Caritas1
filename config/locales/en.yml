@@ -297,10 +297,13 @@ en:
         format: "%{attribute} %{message}"
 
     models:
+      vicariou:
+        one: "Vicaria"
+        other: "Vicarias"
       volunteer:
         one: "Voluntario/a"
         other: "Voluntarios/as"
-     
+
     attributes:
       volunteer:
         name: "Nombre"
@@ -314,7 +317,12 @@ en:
         female: "Femenino"
         male: "Masculino"
         position: "Cargo"
-     
+      vicariou:
+        nameVicariou: "Nombre Vicaria"
+        ubication: "Ubicacion"
+        transport: "Transporte"
+        telephone: "Telefono"
+        vicarName: "Nombre Vicario"
     description:
       
       hospital_expense:
