@@ -1,0 +1,32 @@
+<h1>Listing campaings</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Description</th>
+    <th>Date ini</th>
+    <th>Date end</th>
+    <th>Responsible</th>
+    <th>State</th>
+  </tr>
+
+<% @campaings.each do |campaing| %>
+  <tr>
+    <td><%=h campaing.name %></td>
+    <td><%=h campaing.location %></td>
+    <td><%=h campaing.description %></td>
+    <td><%=h campaing.date_ini %></td>
+    <td><%=h campaing.date_end %></td>
+    <td><%=h campaing.responsible %></td>
+    <td><%=h campaing.state %></td>
+    <td><%= link_to 'Show', campaing %></td>
+    <td><%= link_to 'Edit', edit_campaing_path(campaing) %></td>
+    <td><%= link_to 'Destroy', campaing, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New campaing', new_campaing_path %>

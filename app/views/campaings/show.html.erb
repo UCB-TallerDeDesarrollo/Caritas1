@@ -1,0 +1,38 @@
+<p>
+  <b>Nombre:</b>
+  <%=h @campaing.name %>
+</p>
+
+<p>
+  <b>Lugar:</b>
+  <%=h @campaing.location %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%=h @campaing.description %>
+</p>
+
+<p>
+  <b>Fecha de inicio:</b>
+  <%=h @campaing.date_ini %>
+</p>
+
+<p>
+  <b>Fecha de finalizacion:</b>
+  <%=h @campaing.date_end %>
+</p>
+
+<p>
+  <b>Responsable:</b>
+  <%=h @campaing.responsible %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%=h @campaing.state %>
+</p>
+
+
+<%= link_to 'Actualizar', edit_campaing_path(@campaing) %> |
+<%= link_to 'Atras', campaings_path %>
