@@ -1,6 +1,17 @@
-<h1>Lista de Voluntarios</h1>
+  <h1>Lista de Voluntarios</h1>
 
-<table>
+<% form_tag volunteers_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+
+<%= link_to 'Crear Voluntario', new_volunteer_path %>
+<% end %>
+
+</p>
+
+<table border="3">
+
   <tr>
     <th>Nombre</th>
     <th>Apellido Paterno</th>
@@ -11,26 +22,25 @@
     <th>Fecha de Nacimiento</th>
     <th>Genero</th>
     <th>Cargo</th>
+    <th colspan="3"> Operaciones</th>
   </tr>
 
 <% @volunteers.each do |volunteer| %>
   <tr>
-    <td><%=h volunteer.name %></td>
-    <td><%=h volunteer.last_name %></td>
-    <td><%=h volunteer.second_last_name %></td>
-    <td><%=h volunteer.profession %></td>
-    <td><%=h volunteer.phone_number %></td>
-    <td><%=h volunteer.movil %></td>
-    <td><%=h volunteer.date_of_birth %></td>
-    <td><%=h volunteer.genre %></td>
-    <td><%=h volunteer.position %></td>
-    <td><%= link_to 'Ver', volunteer %></td>
-    <td><%= link_to 'Actualizar', edit_volunteer_path(volunteer) %></td>
+    <td> <center><%=h volunteer.name %> </center></td>
+    <td> <center><%=h volunteer.last_name %> </center></td>
+    <td> <center><%=h volunteer.second_last_name %> </center></td>
+    <td> <center><%=h volunteer.profession %> </center></td>
+    <td> <center><%=h volunteer.phone_number %> </center></td>
+    <td> <center><%=h volunteer.movil %> </center></td>
+    <td> <center><%=h volunteer.date_of_birth %> </center></td>
+    <td> <center><%=h volunteer.genre %> </center></td>
+    <td> <center><%=h volunteer.position %> </center></td>
+    <td> <center><%= link_to 'Ver', volunteer %> </center></td>
+    <td> <center><%= link_to 'Actualizar', edit_volunteer_path(volunteer) %></td>
     <td><%= link_to 'Borrar', volunteer, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'Crear Voluntario', new_volunteer_path %>
