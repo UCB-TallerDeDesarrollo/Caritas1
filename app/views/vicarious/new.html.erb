@@ -3,29 +3,16 @@
 <% form_for(@vicariou) do |f| %>
   <%= f.error_messages %>
 
+<table>
+<tr><td><b>*<%= f.label :nameVicariou %></b></td><td><%= f.text_field :nameVicariou %></td></tr>
+<tr><td><b>*<%= f.label :ubication %></b></td><td><%= f.text_field :ubication %></td></tr>
+<tr><td><b>*<%= f.label :transport %></b></td><td><%= f.text_field :transport %></td></tr>
+<tr><td><b>*<%= f.label :telephone %></b></td><td><%= f.text_field :telephone %></td></tr>
+<tr><td><b>*<%= f.label :vicarName %></b></td><td><%= f.text_field :vicarName %></td></tr>
+</table>
   <p>
-    <%= f.label :nameVicariou %><br />
-    <%= f.text_field :nameVicariou %>
-  </p>
-  <p>
-    <%= f.label :ubication %><br />
-    <%= f.text_field :ubication %>
-  </p>
-  <p>
-    <%= f.label :transport %><br />
-    <%= f.text_field :transport %>
-  </p>
-  <p>
-    <%= f.label :telephone %><br />
-    <%= f.text_field :telephone %>
-  </p>
-  <p>
-    <%= f.label :vicarName %><br />
-    <%= f.text_field :vicarName %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Crear' %>
   </p>
 <% end %>
 
-<%= link_to 'Back', vicarious_path %>
+<%= link_to 'Atras', vicarious_path %>

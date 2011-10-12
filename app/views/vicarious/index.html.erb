@@ -16,13 +16,13 @@
     <td><%=h vicariou.transport %></td>
     <td><%=h vicariou.telephone %></td>
     <td><%=h vicariou.vicarName %></td>
-    <td><%= link_to 'Show', vicariou %></td>
-    <td><%= link_to 'Edit', edit_vicariou_path(vicariou) %></td>
-    <td><%= link_to 'Destroy', vicariou, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Ver', vicariou %></td>
+    <td><%= link_to 'Actualizar', edit_vicariou_path(vicariou) %></td>
+    <td><%= link_to 'Borrar', vicariou, :confirm => 'Esta Seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New vicariou', new_vicariou_path %>
+<%= link_to 'Crear Vicaria', new_vicariou_path %>
