@@ -45,4 +45,8 @@ class Volunteer < ActiveRecord::Base
     end
   end
 
+  def to_label
+    "#{name} #{last_name} #{second_last_name}"
+  end
+
 end
