@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20111011011312) do
     t.date     "date_of_birth"
     t.string   "genre"
     t.string   "position"
+    t.string   "email"
+    t.boolean  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

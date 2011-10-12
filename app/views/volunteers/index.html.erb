@@ -11,6 +11,7 @@
     <th>Fecha de Nacimiento</th>
     <th>Genero</th>
     <th>Cargo</th>
+    <th>Email</th>
   </tr>
 
 <% @volunteers.each do |volunteer| %>
@@ -24,6 +25,7 @@
     <td><%=h volunteer.date_of_birth %></td>
     <td><%=h volunteer.genre %></td>
     <td><%=h volunteer.position %></td>
+    <td><%=h volunteer.email %></td>
     <td><%= link_to 'Ver', volunteer %></td>
     <td><%= link_to 'Actualizar', edit_volunteer_path(volunteer) %></td>
     <td><%= link_to 'Borrar', volunteer, :confirm => 'Are you sure?', :method => :delete %></td>

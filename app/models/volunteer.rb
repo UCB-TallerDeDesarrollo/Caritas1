@@ -14,9 +14,11 @@ class Volunteer < ActiveRecord::Base
   validates_numericality_of :movil, :greater_than => 0, :if => "self.movil.present?"  
   validates_length_of :profession, :within => 0..50
   validates_length_of :position, :within => 0..20
-  validates_length_of :name, :within => 0..50
-  validates_length_of :last_name, :within => 0..50
-  validates_length_of :second_last_name, :within => 0..50
-  validates_length_of :movil, :within => 8..8  
-  validates_length_of :phone_number, :within => 7..7
+  validates_inclusion_of :movil, :in => 10000000..99999999, :message => "fuera de rango"
+  validates_inclusion_of :phone_number, :in => 1000000..9999999, :message => "fuera de rango"
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{0,50})\Z/i
+  validates_format_of :name, :with => /^([a-zA-Z\ ]{3,50})$/i
+  validates_format_of :last_name, :with => /^([a-zA-Z\ \-]{3,50})$/i
+  validates_format_of :second_last_name, :with => /^([a-zA-Z\ \-]{3,50})$/i
+  
 end

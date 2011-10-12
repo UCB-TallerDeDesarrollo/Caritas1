@@ -42,6 +42,11 @@
   <b>Cargo:</b>
   <%=h @volunteer.position %>
 </p>
+
+<p>
+  <b>Email:</b>
+  <%=h @volunteer.email %>
+</p>
     
 <%= link_to 'Actualizar', edit_volunteer_path(@volunteer) %> |
 <%= link_to 'Atras', volunteers_path %>
