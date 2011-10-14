@@ -3,7 +3,7 @@ class Group < ActiveRecord::Base
   #put constants here
 
   #put relations and references here
-  has_one :volunteer, :as => :group_leader
+  belongs_to :volunteer   #relacion para group_leader
   has_many :volunteers
 
   #put active record callbacks here

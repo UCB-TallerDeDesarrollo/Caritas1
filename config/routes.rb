@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :vicarious
   map.resources :pastors
-  map.resources :groups, :collection => {:browse => :get}, :member => {:select => :post}
+  map.resources :groups
   map.resources :campaings
   map.resources :volunteers, :collection => {:browse => :get}, :member => {:select => :post}
 

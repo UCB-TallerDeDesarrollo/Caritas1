@@ -21,7 +21,7 @@
       <% @groups.each do |group| %>
       <tr>
         <td><%=h group.name %></td>
-        <td></td> <!--Aca entra el nombre del reponsable de grupo-->
+        <td><%=h group.volunteer %></td>
         <td><%= link_to 'Ver', group %></td>
         <td><%= link_to 'Editar', edit_group_path(group) %></td>
         <td><%= link_to 'Eliminar', group, :confirm => 'Esta seguro?', :method => :delete %></td>
