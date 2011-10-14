@@ -48,10 +48,13 @@ class VolunteersController < ApplicationController
 
     respond_to do |format|
       if @volunteer.save
-        format.html { redirect_to(@volunteer, :notice => 'Volunteer was successfully created.') }
+        format.html { redirect_to(@volunteer, :notice => 'El voluntario fue creado exitosamente.') }
         format.xml  { render :xml => @volunteer, :status => :created, :location => @volunteer }
+        
+        t = Volunteer.find(@volunteer.id)
+        t.update_attributes(:state => "A")
       else
-        format.html { render :action => "new" }
+        format.html { render :action => "Nuevo" }
         format.xml  { render :xml => @volunteer.errors, :status => :unprocessable_entity }
       end
     end
