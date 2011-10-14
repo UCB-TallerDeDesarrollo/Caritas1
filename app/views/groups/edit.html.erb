@@ -4,10 +4,19 @@
   <%= f.error_messages %>
 
     <table>
+
       <tr>
-        <td><%= f.label :name %></td>
+        <td>* Nombre</td>
         <td><%= f.text_field :name %></td>
       </tr>
+
+      <tr>
+        <td>Responsable</td>
+        <td>
+          <%= record_select_field 'group[volunteer_id]', @group.volunteer || Volunteer.new %>
+        </td>
+      </tr>
+
       <tr align="right">
         <td colspan="2">
           <%= f.submit 'Guardar' %>
@@ -15,6 +24,7 @@
           <%= link_to 'Cacelar', groups_path %>
         </td>
       </tr>
+
     </table>
 
   <p>

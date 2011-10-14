@@ -3,6 +3,7 @@ body { background-color: #fff; color: #333; }
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:   13px;
+  font-weight: bolder;
   line-height: 18px;
 }
 h1{
@@ -24,7 +25,9 @@ a:hover { color: #fff; background-color:#000; }
   background-color: red;
   display: table;
 }
-
+#head-table{
+    color: #8b0000;
+}
 #errorExplanation {
   width: 400px;
   border: 2px solid red;

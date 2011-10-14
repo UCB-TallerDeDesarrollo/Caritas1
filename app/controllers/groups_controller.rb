@@ -2,10 +2,11 @@ class GroupsController < ApplicationController
   record_select :per_page => 5,
     :search_on => ['name'],
     :full_text_search => true
+
   # GET /groups
   # GET /groups.xml
   def index
-    @groups = Group.all
+    @groups = Group.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -47,7 +48,7 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to(@group, :notice => 'Group was successfully created.') }
+        format.html { redirect_to(@group, :notice => 'El grupo se creo correctamente.') }
         format.xml  { render :xml => @group, :status => :created, :location => @group }
       else
         format.html { render :action => "new" }
@@ -63,7 +64,7 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.update_attributes(params[:group])
-        format.html { redirect_to(@group, :notice => 'Group was successfully updated.') }
+        format.html { redirect_to(@group, :notice => 'El grupo se modifico correctamente.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

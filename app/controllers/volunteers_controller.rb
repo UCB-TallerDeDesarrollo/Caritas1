@@ -2,16 +2,16 @@ class VolunteersController < ApplicationController
   record_select :per_page => 5,
     :search_on => ['name', 'last_name', 'second_last_name'],
     :full_text_search => true
+
   # GET /volunteers
   # GET /volunteers.xml
   def index
     @volunteers = Volunteer.search(params[:search])
-    #@volunteers = Volunteer.all
 
-    #respond_to do |format|
-    #  format.html # index.html.erb
-    #  format.xml  { render :xml => @volunteers }
-    #end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @volunteers }
+    end
   end
 
   # GET /volunteers/1
