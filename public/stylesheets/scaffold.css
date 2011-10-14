@@ -5,6 +5,9 @@ body, p, ol, ul, td {
   font-size:   13px;
   line-height: 18px;
 }
+h1{
+    color: #cc0000;
+}
 
 pre {
   background-color: #eee;
