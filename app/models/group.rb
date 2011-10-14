@@ -12,6 +12,13 @@ class Group < ActiveRecord::Base
   validates_presence_of :name
 
   #put class methods here
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
 
   #put object methods here
   def close()

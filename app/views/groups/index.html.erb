@@ -3,13 +3,19 @@
 <table>
   <tr>
     <td>
+      <% form_tag groups_path, :method => 'get' do %>
+      Nombre: <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Buscar", :name => nil %>
+      <% end %>
+    </td>
+    <td>
         <div align="right">
           <%=button_to 'Crear Grupo', new_group_path %>
         </div>
     </td>
   </tr>
   <tr>
-    <td>
+    <td colspan="2" width="100%">
 
     <table border="3">
       <tr>
