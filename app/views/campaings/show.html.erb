@@ -1,38 +1,113 @@
-<p>
+<TABLE BORDER=1 WIDTH=300>
+
+<TR>
+<TD WIDTH=100>
+  <p>
   <b>Nombre:</b>
+ </p>
+</TD>
+
+<TD WIDTH=100>
+  <p>
   <%=h @campaing.name %>
 </p>
+</TD>
+</TR>
 
-<p>
+<TR>
+<TD WIDTH=100>
+  <p>
   <b>Lugar:</b>
+</p>
+</TD>
+
+<TD WIDTH=100>
+  <p>
+ 
   <%=h @campaing.location %>
 </p>
+</TD>
+</TR>
 
-<p>
+<TR>
+<TD WIDTH=100>
+  <p>
   <b>Descripcion:</b>
-  <%=h @campaing.description %>
-</p>
 
-<p>
+</p>
+</TD>
+
+<TD WIDTH=100>
+  <p>
+    <%=h @campaing.description %>
+</p>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH=100>
+  <p>
   <b>Fecha de inicio:</b>
+  
+</p>
+</TD>
+
+<TD WIDTH=100>
+  <p>
+
   <%=h @campaing.date_ini %>
 </p>
+</TD>
+</TR>
 
+
+<TR>
+<TD WIDTH=100>
+  
 <p>
   <b>Fecha de finalizacion:</b>
+</p>
+</TD>
+
+<TD WIDTH=100>
+  
+<p>
   <%=h @campaing.date_end %>
 </p>
-
-<p>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=100>
+  <p>
   <b>Responsable:</b>
+  
+</p>
+</TD>
+
+<TD WIDTH=100>
+  <p>
   <%=h @campaing.responsible %>
 </p>
+</TD>
+</TR>
 
+
+<TR>
+<TD WIDTH=100>
+  
 <p>
   <b>Estado:</b>
+</p>
+</TD>
+
+<TD WIDTH=100>
+  
+<p>
   <%=h @campaing.state %>
 </p>
+</TD>
+</TR>
 
-
+</TABLE>
 <%= link_to 'Actualizar', edit_campaing_path(@campaing) %> |
 <%= link_to 'Atras', campaings_path %>

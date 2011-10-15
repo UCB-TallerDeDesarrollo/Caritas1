@@ -1,4 +1,4 @@
-<h1>Actualizar Voluntario</h1>
+<h1>Editar Voluntario</h1>
 
 <% form_for(@volunteer) do |f| %>
   <%= f.error_messages %>
@@ -8,7 +8,7 @@
     <tr>
       <td>
 
-        <%= f.label :name %><br /></td><td>
+        * <%= f.label :name %><br /></td><td>
         <%= f.text_field :name %>
       </td>
     </tr>
@@ -16,7 +16,7 @@
       <td>
 
 
-        <%= f.label :last_name %><br /></td><td>
+        * <%= f.label :last_name %><br /></td><td>
         <%= f.text_field :last_name %>
       </td>
     </tr>
@@ -24,7 +24,7 @@
       <td>
 
 
-        <%= f.label :second_last_name %><br /></td><td>
+        * <%= f.label :second_last_name %><br /></td><td>
         <%= f.text_field :second_last_name %>
 
       </td>
@@ -32,7 +32,7 @@
     <tr>
       <td>
 
-        <%= f.label :profession %><br /></td><td>
+        * <%= f.label :profession %><br /></td><td>
         <%= f.text_field :profession %>
       </td>
     </tr>
@@ -40,7 +40,7 @@
       <td>
 
 
-        <%= f.label :phone_number %><br /></td><td>
+        * <%= f.label :phone_number %><br /></td><td>
         <%= f.text_field :phone_number %>
       </td>
     </tr>
@@ -48,7 +48,7 @@
       <td>
 
 
-        <%= f.label :movil %><br /></td><td>
+        * <%= f.label :movil %><br /></td><td>
         <%= f.text_field :movil %>
       </td>
     </tr>
@@ -56,7 +56,7 @@
       <td>
 
 
-        <%= f.label :date_of_birth %><br /></td><td>
+        * <%= f.label :date_of_birth %><br /></td><td>
         <%= f.date_select :date_of_birth %>
 
       </td>
@@ -64,7 +64,7 @@
     <tr>
       <td>
 
-        <%= f.label :genre %><br /></td><td>
+        * <%= f.label :genre %><br /></td><td>
         hombre<%= f.radio_button(:genre, "hombre") %>
         mujer<%= f.radio_button(:genre, "mujer") %> 
       </td>
@@ -73,7 +73,7 @@
       <td>
 
 
-        <%= f.label :position %><br /></td><td>
+        * <%= f.label :position %><br /></td><td>
         <%= f.text_field :position %>
 
       </td>
@@ -81,9 +81,13 @@
     <tr>
       <td>
 
-        <%= f.label :email %><br /></td><td>
+        * <%= f.label :email %><br /></td><td>
         <%= f.text_field :email %>
       </td>
+    </tr>
+    
+    <tr>
+      <td>*  Estos campos son obligatorios</td>
     </tr>
     <tr>
       <td>
@@ -91,9 +95,9 @@
 
 
   <p>
-    <%= f.submit 'Actualizar' %>
+    <%= f.submit 'Editar' %>
   </p>
 <% end %>
 
 <%= link_to 'Ver', @volunteer %> |
-<%= link_to 'Atras', volunteers_path %>
+<%= link_to 'Cancelar', volunteers_path %>
