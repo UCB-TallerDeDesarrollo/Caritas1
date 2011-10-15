@@ -3,34 +3,121 @@
 <% form_for(@campaing) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <b> *<%= f.label :Nombre   %></b>
-    <%= f.text_field :name %>
+ <TABLE  WIDTH=300>
+
+<TR>
+<TD WIDTH=100>
+   <p>
+    *<b> <%= f.label :Nombre   %></b>
+   
   </p>
-  <p>
-    <b>*<%= f.label :Lugar   %></b>
+</TD>
+
+<TD WIDTH=100>
+   <p>
+      <%= f.text_field :name %>
+  </p>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH=100>
+   <p>
+    *<b><%= f.label :Lugar   %></b>
+   
+  </p>
+</TD>
+
+<TD WIDTH=100>
+   <p>
     <%= f.text_field :location %>
   </p>
-  <p>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH=100>
+   <p>
    <b> <%= f.label :Descripcion %></b><br />
-    <%= f.text_area :description %>
+  
   </p>
-  <p>
-   <b><%= f.label :Fecha_de_inicio   %></b>
-    <%= f.date_select :date_ini %>
+</TD>
+
+<TD WIDTH=100>
+   <p>
+
+    <%= f.text_area :description  %>
   </p>
-  <p>
-    <b> <%= f.label :Fecha_de_finalizacion   %></b>
-    <%= f.date_select :date_end %>
+</TD>
+</TR>
+
+
+<TR>
+<TD WIDTH=100>
+   <p>
+    <b><%= f.label :Fecha_de_inicio   %></b>    
+     
   </p>
-  <p>
+</TD>
+
+<TD WIDTH=100>
+   <p>
+   
+    <%= f.date_select :date_ini %>  
+       
+  </p>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH=100>
+ <p>
+   <b> <%= f.label :Fecha_de_finalizacion   %></b>
+ 
+  </p>
+</TD>
+
+<TD WIDTH=100>
+ <p>
+   <%= f.date_select :date_end %>
+  </p>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH=100>
+ <p>
    <b> *<%= f.label :Responsable   %></b>
+  
+  </p>
+</TD>
+
+<TD WIDTH=100>
+ <p>
     <%= f.text_field :responsible %>
   </p>
-  <p>
-    <b> *<%= f.label :Estado    %></b>
+</TD>
+</TR>
+
+
+<TR>
+<TD WIDTH=100>
+ <p>
+   <b> *<%= f.label :Estado    %></b>
+
+  </p>
+</TD>
+
+<TD WIDTH=100>
+ <p>
+
     <%= f.text_field :state %>
   </p>
+</TD>
+</TR>
+
+
+</TABLE> 
   <p>
     <%= f.submit 'Actualizar' %>
   </p>
