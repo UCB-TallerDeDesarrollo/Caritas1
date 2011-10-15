@@ -10,8 +10,8 @@
 <body>
 
 <p style="color: green"><%= notice %></p>
-
-<%= yield %>
-
+ <% content_for(@layouts) do |c| %>
+    <%= yield %>
+ <% end %>
 </body>
 </html>
