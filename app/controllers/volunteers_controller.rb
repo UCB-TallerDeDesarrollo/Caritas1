@@ -54,7 +54,7 @@ class VolunteersController < ApplicationController
         t = Volunteer.find(@volunteer.id)
         t.update_attributes(:state => "A")
       else
-        format.html { render :action => "Nuevo" }
+        format.html { render :action => "new" }
         format.xml  { render :xml => @volunteer.errors, :status => :unprocessable_entity }
       end
     end

@@ -1,14 +1,14 @@
-<h1>Listing campaings</h1>
+<h1>Campania</h1>
 
-<table>
+<table BORDER="1">
   <tr>
-    <th>Name</th>
-    <th>Location</th>
-    <th>Description</th>
-    <th>Date ini</th>
-    <th>Date end</th>
-    <th>Responsible</th>
-    <th>State</th>
+    <th>Nombre</th>
+    <th>Lugar</th>
+    <th>Descripcion</th>
+    <th>Fecha de inicio</th>
+    <th>Fecha de finalizacion</th>
+    <th>Responsable</th>
+    <th>Estado</th>
   </tr>
 
 <% @campaings.each do |campaing| %>
@@ -22,7 +22,7 @@
     <td><%=h campaing.state %></td>
     <td><%= link_to 'Ver', campaing %></td>
     <td><%= link_to 'Actualizar', edit_campaing_path(campaing) %></td>
-    <td><%= link_to 'Borrar', campaing, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Borrar', campaing, :confirm => 'Esta seguro que desea borrar esta campania?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

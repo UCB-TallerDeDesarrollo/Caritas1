@@ -1,4 +1,4 @@
-<h1>Nuevo Voluntario</h1>
+<h1>Crear Voluntario</h1>
 
 <% form_for(@volunteer) do |f| %>
   <%= f.error_messages %>
@@ -6,54 +6,54 @@
 
     <tr>
       <td>
-        <%= f.label :name %></td><td>
+        * <%= f.label :name %></td><td>
         <%= f.text_field :name %>
       </td>
     </tr>
     <tr>
       <td>
-        <%= f.label :last_name %></td><td>
+        * <%= f.label :last_name %></td><td>
         <%= f.text_field :last_name %>
       </td>
     </tr>
 
     <tr>
       <td>
-        <%= f.label :second_last_name %></td><td>
+        * <%= f.label :second_last_name %></td><td>
         <%= f.text_field :second_last_name %>
       </td>
     </tr>
 
     <tr>
       <td>
-        <%= f.label :profession %></td><td>
+        * <%= f.label :profession %></td><td>
         <%= f.text_field :profession %>
       </td>
     </tr>
 
     <tr>
       <td>
-        <%= f.label :phone_number %></td><td>
+        * <%= f.label :phone_number %></td><td>
         <%= f.text_field :phone_number %>
       </td>
     </tr>
 
     <tr>
       <td>
-        <%= f.label :movil %></td><td>
+        * <%= f.label :movil %></td><td>
         <%= f.text_field :movil %>
       </td>
     </tr>
 
     <tr>
       <td>
-        <%= f.label :date_of_birth %></td><td>
+        * <%= f.label :date_of_birth %></td><td>
         <%= f.date_select :date_of_birth %>
       </td>
     </tr>
     <tr>
       <td>
-        <%= f.label :genre %></td><td>
+        * <%= f.label :genre %></td><td>
         hombre<%= f.radio_button(:genre, "hombre") %>
         mujer<%= f.radio_button(:genre, "mujer") %>        
       </td>
@@ -61,21 +61,23 @@
 
     <tr>
       <td>
-        <%= f.label :position %></td><td>
+        * <%= f.label :position %></td><td>
         <%= f.text_field :position %>
       </td>
     </tr>
     <tr>
       <td>
-        <%= f.label :email %></td><td>
+        * <%= f.label :email %></td><td>
         <%= f.text_field :email %>        
       </td>
     </tr>
+    <tr>
+      <td>*  Estos campos son obligatorios</td>
+    </tr>
   </table>
   </p>
-  <p>
-    <%= f.submit 'Crear' %>
+  <p>   
+    <%= f.submit 'Crear' %>  <%= link_to 'Cancelar', volunteers_path %>
   </p>
 <% end %>
 
-<%= link_to 'Atras', volunteers_path %>
