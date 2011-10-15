@@ -3,6 +3,7 @@
 <% form_tag volunteers_path, :method => 'get' do %>
   <p>
     Parametro: <%= text_field_tag :search, params[:search] %>
+    <%= check_box_tag :state, params[:state] %>
     <%= submit_tag "Buscar", :name => nil %>
 </p>
       <% end %>
@@ -45,7 +46,7 @@
     <td><%=h volunteer.position %></td>
     <td><%=h volunteer.email %></td>
     <td><%= link_to 'Ver', volunteer %></td>
-    <td><%= link_to 'Actualizar', edit_volunteer_path(volunteer) %></td>
+    <td><%= link_to 'Editar', edit_volunteer_path(volunteer) %></td>
     <td><%= link_to 'Borrar', volunteer, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
