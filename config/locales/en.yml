@@ -303,6 +303,9 @@ en:
       volunteer:
         one: "Voluntario/a"
         other: "Voluntarios/as"
+      social_work:
+        one: "Obra Social"
+        other: "Obras Sociales"
 
     attributes:
       volunteer:
@@ -323,6 +326,14 @@ en:
         transport: "Transporte"
         telephone: "Telefono"
         vicarName: "Nombre Vicario"
+      social_work:
+        name: "Nombre"
+        responsible: "Responsable"
+        location: "Ubicacion"
+        phone: "Telefono"
+        movil: "Celular"
+        transport: "Transporte"
+        
     description:
       
       hospital_expense:

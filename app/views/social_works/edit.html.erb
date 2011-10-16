@@ -1,44 +1,45 @@
-<h1>Editing social_work</h1>
+<h1>Editar Obra Social</h1>
 
 <% form_for(@social_work) do |f| %>
   <%= f.error_messages %>
-
+<table>
+  <tr>
+    <td>* Nombre</td>
+    <td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+    <td>* Responsable</td>
+    <td><%= f.text_field :responsible %></td>
+  </tr>
+  <tr>
+    <td>* Ubicacion</td>
+    <td><%= f.text_field :location %></td>
+  </tr>
+  <tr>
+    <td>Telefono</td>
+    <td><%= f.text_field :phone %></td>
+  </tr>
+  <tr>
+    <td>Celular</td>
+    <td><%= f.text_field :movil %></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><%= f.text_field :email %></td>
+  </tr>
+  <tr>
+    <td>Transporte</td>
+    <td><%= f.text_field :transport %></td>
+  </tr>
+  <tr>
+    <td>Descripcion</td>
+    <td><%= f.text_area :description %></td>
+  </tr>
+</table>
   <p>
-    <%= f.label :Nombre %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :responsable %><br />
-    <%= f.text_field :responsible %>
-  </p>
-  <p>
-    <%= f.label :Ubicacion %><br />
-    <%= f.text_field :location %>
-  </p>
-  <p>
-    <%= f.label :Telefono %><br />
-    <%= f.text_field :phone %>
-  </p>
-  <p>
-    <%= f.label :Celular %><br />
-    <%= f.text_field :movil %>
-  </p>
-  <p>
-    <%= f.label :Email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :Transporte %><br />
-    <%= f.text_field :transport %>
-  </p>
-  <p>
-    <%= f.label :Descripcion %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Editar' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @social_work %> |
-<%= link_to 'Back', social_works_path %>
+<%= link_to 'Ver', @social_work %> |
+<%= link_to 'Cancelar', social_works_path %>

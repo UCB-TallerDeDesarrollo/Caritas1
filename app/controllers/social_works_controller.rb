@@ -44,7 +44,7 @@ class SocialWorksController < ApplicationController
 
     respond_to do |format|
       if @social_work.save
-        format.html { redirect_to(@social_work, :notice => 'SocialWork was successfully created.') }
+        format.html { redirect_to(@social_work, :notice => 'Obra Social Fue Creada Exitosamente') }
         format.xml  { render :xml => @social_work, :status => :created, :location => @social_work }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class SocialWorksController < ApplicationController
 
     respond_to do |format|
       if @social_work.update_attributes(params[:social_work])
-        format.html { redirect_to(@social_work, :notice => 'SocialWork was successfully updated.') }
+        format.html { redirect_to(@social_work, :notice => 'Obra Social Fue Editada Exitosamente') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

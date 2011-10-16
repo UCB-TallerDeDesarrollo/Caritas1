@@ -1,43 +1,37 @@
-<p>
-  <b>Nombre:</b>
-  <%=h @social_work.name %>
-</p>
-
-<p>
-  <b>Responsable:</b>
-  <%=h @social_work.responsible %>
-</p>
-
-<p>
-  <b>Ubicacion:</b>
-  <%=h @social_work.location %>
-</p>
-
-<p>
-  <b>Telefono:</b>
-  <%=h @social_work.phone %>
-</p>
-
-<p>
-  <b>Celular:</b>
-  <%=h @social_work.movil %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%=h @social_work.email %>
-</p>
-
-<p>
-  <b>Transporte:</b>
-  <%=h @social_work.transport %>
-</p>
-
-<p>
-  <b>Descripcion:</b>
-  <%=h @social_work.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_social_work_path(@social_work) %> |
-<%= link_to 'Back', social_works_path %>
+<h1>Ver Obra Social</h1>
+<table>
+  <tr>
+    <td><b>Nombre:</b></td>
+    <td><%=h @social_work.name %></td>
+  </tr>
+  <tr>
+    <td><b>Responsable:</b></td>
+    <td><%=h @social_work.responsible %></td>
+  </tr>
+  <tr>
+    <td><b>Ubicacion:</b></td>
+    <td><%=h @social_work.location %></td>
+  </tr>
+  <tr>
+    <td><b>Telefono:</b></td>
+    <td><%=h @social_work.phone %></td>
+  </tr>
+  <tr>
+    <td><b>Celular:</b></td>
+    <td><%=h @social_work.movil %></td>
+  </tr>
+  <tr>
+    <td><b>Email:</b></td>
+    <td><%=h @social_work.email %></td>
+  </tr>
+  <tr>
+    <td><b>Transporte:</b></td>
+    <td><%=h @social_work.transport %></td>
+  </tr>
+  <tr>
+    <td><b>Descripcion:</b></td>
+    <td><%=h @social_work.description %></td>
+  </tr>
+</table>
+<%= link_to 'Editar', edit_social_work_path(@social_work) %> |
+<%= link_to 'Volver', social_works_path %>
