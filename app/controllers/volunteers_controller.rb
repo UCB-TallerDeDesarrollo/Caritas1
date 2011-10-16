@@ -6,7 +6,7 @@ class VolunteersController < ApplicationController
   # GET /volunteers
   # GET /volunteers.xml
   def index
-    @volunteers = Volunteer.search(params[:search],params[:state])
+    @volunteers = Volunteer.search(params[:search])
     #@volunteers = Volunteer.all
 
     respond_to do |format|

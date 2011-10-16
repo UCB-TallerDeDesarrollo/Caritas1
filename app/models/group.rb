@@ -9,7 +9,7 @@ class Group < ActiveRecord::Base
   #put active record callbacks here
 
   #put validates here
-  validates_presence_of :name
+  validates_presence_of :name, :message => 'El nombre no puede estar vacio'
 
   #put class methods here
   def self.search(search)
