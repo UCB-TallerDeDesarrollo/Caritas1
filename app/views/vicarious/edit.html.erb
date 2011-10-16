@@ -2,16 +2,22 @@
 
 <% form_for(@vicariou) do |f| %>
   <%= f.error_messages %>
+<table>
+<tr><td><%= f.label :name_vicariou %></td><td><%= f.text_field :name_vicariou %></td></tr>
+<tr><td><%= f.label :ubication %></td><td><%= f.text_field :ubication %></td></tr>
+<tr><td><%= f.label :transport %></td><td><%= f.text_field :transport %></td></tr>
+<tr><td><%= f.label :telephone %></td><td><%= f.text_field :telephone %></td></tr>
+<tr><td><%= f.label :vicar_name %></td><td><%= f.text_field :vicar_name %></td></tr>
+  <tr>
+      <td>*  Estos campos son obligatorios</td>
+    </tr>
+</table>
 
-  <table>
-<tr><td><b>*<%= f.label :nameVicariou %></b></td><td><%= f.text_field :nameVicariou %></td></tr>
-<tr><td><b>*<%= f.label :ubication %></b></td><td><%= f.text_field :ubication %></td></tr>
-<tr><td><b>*<%= f.label :transport %></b></td><td><%= f.text_field :transport %></td></tr>
-<tr><td><b>*<%= f.label :telephone %></b></td><td><%= f.text_field :telephone %></td></tr>
-<tr><td><b>*<%= f.label :vicarName %></b></td><td><%= f.text_field :vicarName %></td></tr>
-<tr align="right"><td colspan="2"><%= f.submit 'Actualizar' %><%= link_to 'Ver', @vicariou %> |
-<%= link_to 'Atras', vicarious_path %></td><tr>
-  </table>
-
+  
+  <p>
+    <%= f.submit 'Editar' %>
+  </p>
 <% end %>
 
+<%= link_to 'Ver', @vicariou %> |
+<%= link_to 'Cancelar', vicarious_path %>

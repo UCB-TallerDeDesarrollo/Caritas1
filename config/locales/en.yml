@@ -321,11 +321,11 @@ en:
         male: "Masculino"
         position: "Cargo"
       vicariou:
-        nameVicariou: "Nombre Vicaria"
+        name_vicariou: "Nombre Vicaria"
         ubication: "Ubicacion"
         transport: "Transporte"
         telephone: "Telefono"
-        vicarName: "Nombre Vicario"
+        vicar_name: "Nombre Vicario"
       social_work:
         name: "Nombre"
         responsible: "Responsable"
