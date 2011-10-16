@@ -44,7 +44,7 @@ class VicariousController < ApplicationController
 
     respond_to do |format|
       if @vicariou.save
-        format.html { redirect_to(@vicariou, :notice => 'Vicariou was successfully created.') }
+        format.html { redirect_to(@vicariou, :notice => 'La Vicaria se creo correctamente.') }
         format.xml  { render :xml => @vicariou, :status => :created, :location => @vicariou }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class VicariousController < ApplicationController
 
     respond_to do |format|
       if @vicariou.update_attributes(params[:vicariou])
-        format.html { redirect_to(@vicariou, :notice => 'Vicariou was successfully updated.') }
+        format.html { redirect_to(@vicariou, :notice => 'La Vicaria se actualizo correctamente.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
