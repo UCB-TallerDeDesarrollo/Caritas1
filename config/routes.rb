@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :notices
+
   map.resources :vicarious
 
   map.resources :social_works

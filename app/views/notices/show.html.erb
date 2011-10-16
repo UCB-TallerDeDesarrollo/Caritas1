@@ -1,0 +1,28 @@
+<p>
+  <b>Title:</b>
+  <%=h @notice.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @notice.description %>
+</p>
+
+<p>
+  <b>Notice type:</b>
+  <%=h @notice.notice_type %>
+</p>
+
+<p>
+  <b>Is published:</b>
+  <%=h @notice.is_published %>
+</p>
+
+<p>
+  <b>Last date:</b>
+  <%=h @notice.last_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_notice_path(@notice) %> |
+<%= link_to 'Back', notices_path %>

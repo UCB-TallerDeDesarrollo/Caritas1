@@ -1,0 +1,32 @@
+<h1>Editing notice</h1>
+
+<% form_for(@notice) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :notice_type %><br />
+    <%= f.text_field :notice_type %>
+  </p>
+  <p>
+    <%= f.label :is_published %><br />
+    <%= f.text_field :is_published %>
+  </p>
+  <p>
+    <%= f.label :last_date %><br />
+    <%= f.date_select :last_date %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @notice %> |
+<%= link_to 'Back', notices_path %>

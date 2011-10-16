@@ -1,0 +1,28 @@
+<h1>Listing notices</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Notice type</th>
+    <th>Is published</th>
+    <th>Last date</th>
+  </tr>
+
+<% @notices.each do |notice| %>
+  <tr>
+    <td><%=h notice.title %></td>
+    <td><%=h notice.description %></td>
+    <td><%=h notice.notice_type %></td>
+    <td><%=h notice.is_published %></td>
+    <td><%=h notice.last_date %></td>
+    <td><%= link_to 'Show', notice %></td>
+    <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
+    <td><%= link_to 'Destroy', notice, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New notice', new_notice_path %>
