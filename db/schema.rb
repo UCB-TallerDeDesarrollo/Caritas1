@@ -40,6 +40,19 @@ ActiveRecord::Schema.define(:version => 20111013141818) do
     t.datetime "updated_at"
   end
 
+  create_table "social_works", :force => true do |t|
+    t.string   "name"
+    t.string   "responsible"
+    t.string   "location"
+    t.integer  "phone"
+    t.integer  "movil"
+    t.string   "email"
+    t.string   "transport"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "vicarious", :force => true do |t|
     t.string   "nameVicariou"
     t.string   "ubication"
