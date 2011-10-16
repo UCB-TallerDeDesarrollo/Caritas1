@@ -4,72 +4,54 @@
   <%= f.error_messages %>
   <table>
 
-    <tr>
-      <td>
-        * <%= f.label :name %></td><td>
-        <%= f.text_field :name %>
-      </td>
+    <tr>     
+      <td>* Nombre</td>
+      <td><%= f.text_field :name %></td>
     </tr>
     <tr>
-      <td>
-        * <%= f.label :last_name %></td><td>
-        <%= f.text_field :last_name %>
-      </td>
+      <td>* Apellido Paterno</td>
+      <td><%= f.text_field :last_name %></td>
     </tr>
 
     <tr>
-      <td>
-        * <%= f.label :second_last_name %></td><td>
-        <%= f.text_field :second_last_name %>
-      </td>
+      <td>* Apellido Materno</td>
+      <td><%= f.text_field :second_last_name %></td>
     </tr>
 
     <tr>
-      <td>
-        &nbsp&nbsp&nbsp<%= f.label :profession %></td><td>
-        <%= f.text_field :profession %>
-      </td>
+      <td>&nbsp&nbsp&nbspProfesion</td>
+      <td><%= f.text_field :profession %></td>
     </tr>
 
     <tr>
-      <td>
-        &nbsp&nbsp&nbsp<%= f.label :phone_number %></td><td>
-        <%= f.text_field :phone_number %>
-      </td>
+      <td>&nbsp&nbsp&nbspTelefono</td>
+      <td><%= f.text_field :phone_number %></td>
     </tr>
 
     <tr>
-      <td>
-        &nbsp&nbsp&nbsp<%= f.label :movil %></td><td>
-        <%= f.text_field :movil %>
-      </td>
+      <td>&nbsp&nbsp&nbspCelular</td>
+      <td><%= f.text_field :movil %></td>
     </tr>
 
     <tr>
-      <td>
-        * <%= f.label :date_of_birth %></td><td>
-        <%= f.date_select :date_of_birth,  :start_year => 1935 %>              
-      </td>
+      <td>&nbsp&nbsp&nbspFecha de Nacimiento</td>
+      <td><%= f.date_select :date_of_birth,  :start_year => 1935%></td>            
     </tr>
     <tr>
-      <td>
-        * <%= f.label :genre %></td><td>
-        masculino<%= f.radio_button(:genre, "masculino",:checked=>true) %>
-        femenino<%= f.radio_button(:genre, "femenino") %>        
-      </td>
+      <td>* Genero</td>          
+      <td>masculino
+      <%= f.radio_button(:genre, "masculino") %>         
+      femenino
+      <%= f.radio_button(:genre, "femenino") %></td>          
     </tr>
 
     <tr>
-      <td>
-        * <%= f.label :position %></td><td>
-        <%= f.text_field :position %>
-      </td>
+      <td>* Cargo</td>
+      <td><%= f.text_field :position %></td>
     </tr>
     <tr>
-      <td>
-        &nbsp&nbsp&nbsp<%= f.label :email %></td><td>
-        <%= f.text_field :email %>        
-      </td>
+      <td>&nbsp&nbsp&nbspEmail</td>
+      <td><%= f.text_field :email %></td>
     </tr>
     <tr>
       <td>*  Estos campos son obligatorios</td>
