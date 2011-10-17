@@ -306,6 +306,9 @@ en:
       social_work:
         one: "Obra Social"
         other: "Obras Sociales"
+      pastor:
+        one: "Párroco"
+        other: "Párrocos"
 
     attributes:
       volunteer:
@@ -333,6 +336,12 @@ en:
         phone: "Telefono"
         movil: "Celular"
         transport: "Transporte"
+      pastor:
+        name: "Nombre"
+        primary_last_name: "Apellido paterno"
+        second_last_name: "Apellido materno"
+        phone_number: "Telefono"
+        cellphone_number: "Celular"
         
     description:
       
