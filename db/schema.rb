@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20111016174851) do
     t.string   "title"
     t.text     "description"
     t.string   "notice_type"
+    t.boolean  "is_published"
     t.date     "last_date"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -45,6 +46,13 @@ ActiveRecord::Schema.define(:version => 20111016174851) do
     t.string   "second_last_name"
     t.integer  "phone_number"
     t.integer  "cellphone_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "people", :force => true do |t|
+    t.string   "name"
+    t.binary   "sexo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -80,11 +88,11 @@ ActiveRecord::Schema.define(:version => 20111016174851) do
   end
 
   create_table "vicarious", :force => true do |t|
-    t.string   "name_vicariou"
+    t.string   "nameVicariou"
     t.string   "ubication"
     t.string   "transport"
     t.string   "telephone"
-    t.string   "vicar_name"
+    t.string   "vicarName"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

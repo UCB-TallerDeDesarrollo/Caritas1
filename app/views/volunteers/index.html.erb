@@ -9,11 +9,11 @@
       <% end %>
 <table>
   <tr>
-    <td>
-      <DIV align="right">   
+    <td align="Right">
 <%= button_to 'Crear Voluntario', new_volunteer_path %>
 
-</div>
+    </td>
+    </tr>
 <tr>
     <td>
 
@@ -24,18 +24,16 @@
     <th>Apellido Paterno</th>
     <th>Apellido Materno</th>
     <th>Cargo</th>
-    <th colspan="3"> Acciones</th>
+    <th>Acciones</th>
   </tr>
 
 <% @volunteers.each do |volunteer| %>
   <tr>
-    <td><%=h volunteer.name %></td>
+    <td><%=link_to (h volunteer.name), volunteer %></td>
     <td><%=h volunteer.last_name %></td>
     <td><%=h volunteer.second_last_name %></td>
     <td><%=h volunteer.position %></td>
-    <td><%= link_to 'Ver', volunteer %></td>
     <td><%= link_to 'Editar', edit_volunteer_path(volunteer) %></td>
-    <td><%= link_to 'Borrar', volunteer, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
