@@ -38,11 +38,11 @@
       <td><%= f.date_select :date_of_birth,  :start_year => 1935%></td>            
     </tr>
     <tr>
-      <td>* Genero</td>          
+      <td>&nbsp&nbsp&nbspGenero</td>          
       <td>masculino
       <%= f.radio_button(:genre, "masculino") %>         
       femenino
-      <%= f.radio_button(:genre, "femenino") %></td>          
+      <%= f.radio_button(:genre, "femenino",:checked=>true) %></td>          
     </tr>
 
     <tr>
