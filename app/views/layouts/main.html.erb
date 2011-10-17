@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.caritassbba.org" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<title>Caritas</title>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= javascript_include_tag :defaults %>
+
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="author" content="Taller de desarrollo" />
+<meta name="description" content="Caritas" />
+<meta name="keywords" content="keywords, here" />
+<meta name="robots" content="index, follow, noarchive" />
+<meta name="googlebot" content="noarchive" />
+
+<link rel="stylesheet" href="images/Caritas.css" type="text/css" />
+
+</head>
+
+<body>
+<!-- wrap starts here -->
+<div id="wrap">
+
+	<!--header -->
+	<div id="header">
+
+		<h1 id="logo-text"><a href="index.html" title="">Pastoral Social Caritas CBBA</a></h1>
+	  <!--header ends-->
+</div>
+
+	<!-- navigation starts-->
+	<div  id="nav">
+		<ul>
+			<li id="current"><a href="index.html">Inicio</a></li>
+
+			<li><a href="index.html">Vicaria</a></li>
+			<li><a href="index.html">Parroquia</a></li>
+			<li><a href="index.html">Grupos</a></li>
+			<li><%= link_to "Voluntarios", :controller => "volunteers", :action => "index"  %></li>
+            <li><a href="index.html">Campañas</a></li>
+            <li><%= link_to "Noticias", :controller => "notices", :action => "index"  %></li>
+		</ul>
+	<!-- navigation ends-->
+  </div>
+
+	<!-- content-wrap starts -->
+	<div>
+          <center>
+            <%= yield  %>
+          </center>
+	<!-- content-wrap ends-->
+	</div>
+
+	<!-- footer starts -->
+	<div id="footer-wrap"><div id="footer-content">
+
+		<div id="footer-columns">
+			<div class="col3">
+				<h3>Donaciones</h3>
+				<ul>
+					<li>Apoya a nuestro trabajo!!!</li>
+					<li>Cuenta Banco Nacional de Bolivia:
+                                          <br>350-0285167</br>></li>
+
+				</ul>
+			</div>
+
+			<div class="col3-center">
+				<h3>horario de atencion</h3>
+				<ul>
+					<li>Lunes - Viernes</li>
+                                        <li>09:00 - 16:30 <br>Horario Continuo</br></li>
+				</ul>
+			</div>
+		<!-- footer-columns ends -->
+		</div>
+
+		<div id="footer-bottom">
+			<p>
+			&copy; 2011<strong> Taller de desarrollo - UCB II-11</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+   		    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+			<a href="index.html">Inicio</a>&nbsp;|&nbsp;
+   		    <a href="index.html">Contactanos</a>&nbsp;|&nbsp;
+	   	    <a href="index.html">Documentos</a>
+   		    </p>
+		</div>
+
+<!-- footer ends-->
+</div></div>
+
+<!-- wrap ends here -->
+</div>
+
+</body>
+</html>
+
