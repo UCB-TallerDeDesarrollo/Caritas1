@@ -1,13 +1,14 @@
 <h1>Grupos</h1>
 
-<table>
-  <tr align="right">
-    <td>
-      <% form_tag groups_path, :method => 'get' do %>
+<p>
+<% form_tag groups_path, :method => 'get' do %>
       Nombre: <%= text_field_tag :search, params[:search] %>
       <%= submit_tag "Buscar", :name => nil %>
       <% end %>
-    </td>
+</p>
+
+<table>
+  <tr align="right">
     <td>
       <%=button_to 'Crear Grupo', new_group_path %>
     </td>

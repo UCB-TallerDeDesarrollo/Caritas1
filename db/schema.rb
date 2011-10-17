@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111013141818) do
+ActiveRecord::Schema.define(:version => 20111016174851) do
 
   create_table "campaings", :force => true do |t|
     t.string   "name"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(:version => 20111013141818) do
     t.integer  "volunteer_id"
   end
 
+  create_table "notices", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "notice_type"
+    t.date     "last_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pastors", :force => true do |t|
     t.string   "name"
     t.string   "primary_last_name"
@@ -40,12 +49,42 @@ ActiveRecord::Schema.define(:version => 20111013141818) do
     t.datetime "updated_at"
   end
 
+  create_table "social_works", :force => true do |t|
+    t.string   "name"
+    t.string   "responsible"
+    t.string   "location"
+    t.integer  "phone"
+    t.integer  "movil"
+    t.string   "email"
+    t.string   "transport"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_sessions", :force => true do |t|
+    t.string   "username"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "vicarious", :force => true do |t|
-    t.string   "nameVicariou"
+    t.string   "name_vicariou"
     t.string   "ubication"
     t.string   "transport"
     t.string   "telephone"
-    t.string   "vicarName"
+    t.string   "vicar_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

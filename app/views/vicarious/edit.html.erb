@@ -2,18 +2,23 @@
 
 <% form_for(@vicariou) do |f| %>
   <%= f.error_messages %>
-
-  <table>
-<tr><td><b>*<%= f.label :nameVicariou %></b></td><td><%= f.text_field :nameVicariou %></td></tr>
-<tr><td><b>*<%= f.label :ubication %></b></td><td><%= f.text_field :ubication %></td></tr>
-<tr><td><b>*<%= f.label :transport %></b></td><td><%= f.text_field :transport %></td></tr>
-<tr><td><b>*<%= f.label :telephone %></b></td><td><%= f.text_field :telephone %></td></tr>
-<tr><td><b>*<%= f.label :vicarName %></b></td><td><%= f.text_field :vicarName %></td></tr>
+<table>
+<tr><td>*Nombre Vicaria</td><td><%= f.text_field :name_vicariou %></td></tr>
+<tr><td>*Ubicacion</td><td><%= f.text_field :ubication %></td></tr>
+<tr><td>*Transporte</td><td><%= f.text_field :transport %></td></tr>
+<tr><td>*Telefono</td><td><%= f.text_field :telephone %></td></tr>
+<tr><td>*Nombre del Vicario</td><td><%= f.text_field :vicar_name %></td></tr>
+  <tr>
+      <td>*  Estos campos son obligatorios</td>
+    </tr>
+    
+    <tr align="right">
+      <td colspan="2">
+       <%= link_to 'Ver', @vicariou %>  <%= f.submit 'Guardar' %><%= link_to 'Cancelar', vicarious_path %>
+      </td>
+    </tr>
 </table>
-  <p>
-    <%= f.submit 'Actualizar' %>
-  </p>
+
 <% end %>
 
-<%= link_to 'Ver', @vicariou %> |
-<%= link_to 'Atras', vicarious_path %>
+

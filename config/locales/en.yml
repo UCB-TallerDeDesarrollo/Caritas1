@@ -303,6 +303,12 @@ en:
       volunteer:
         one: "Voluntario/a"
         other: "Voluntarios/as"
+      social_work:
+        one: "Obra Social"
+        other: "Obras Sociales"
+      pastor:
+        one: "Párroco"
+        other: "Párrocos"
 
     attributes:
       volunteer:
@@ -318,11 +324,25 @@ en:
         male: "Masculino"
         position: "Cargo"
       vicariou:
-        nameVicariou: "Nombre Vicaria"
+        name_vicariou: "Nombre Vicaria"
         ubication: "Ubicacion"
         transport: "Transporte"
         telephone: "Telefono"
-        vicarName: "Nombre Vicario"
+        vicar_name: "Nombre Vicario"
+      social_work:
+        name: "Nombre"
+        responsible: "Responsable"
+        location: "Ubicacion"
+        phone: "Telefono"
+        movil: "Celular"
+        transport: "Transporte"
+      pastor:
+        name: "Nombre"
+        primary_last_name: "Apellido paterno"
+        second_last_name: "Apellido materno"
+        phone_number: "Telefono"
+        cellphone_number: "Celular"
+        
     description:
       
       hospital_expense:

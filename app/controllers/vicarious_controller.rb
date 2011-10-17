@@ -2,8 +2,8 @@ class VicariousController < ApplicationController
   # GET /vicarious
   # GET /vicarious.xml
   def index
-    @vicarious = Vicariou.all
-
+    #@vicarious = Vicariou.all
+    @vicarious = Vicariou.search(params[:search])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @vicarious }
