@@ -26,33 +26,24 @@
       <!--header -->
       <div id="header">
 
-        <h1 id="logo-text"><a href="#" title="">Pastoral Social Caritas CBBA</a></h1>
+       <%= render :partial => 'header'%>
         <!-- login -->
-        <div id="user_nav">  
-          <% if current_user %>  
-            <%= link_to "Edit profile", edit_user_path(:current) %> | 
-            <%= link_to "Logout", logout_path %>  
-          <% else %>  
+        <div id="user_nav">
+          <% if current_user %>
+            <%= link_to "Edit profile", edit_user_path(:current) %> |
+            <%= link_to "Logout", logout_path %>
+          <% else %>
             <%= link_to "Register", new_user_path %> |
-            <%= link_to "Log in", login_path %>  
-          <% end %>  
-        </div> 
+            <%= link_to "Log in", login_path %>
+          <% end %>
+        </div>
         <!-- login ends -->
         <!--header ends-->
       </div>
 
       <!-- navigation starts-->
       <div  id="nav">
-        <ul>
-          <li id="current"><a href="#">Inicio</a></li>
-
-          <li><a href="index.html.erb">Vicaria</a></li>
-          <li><a href="index.html">Parroquia</a></li>
-          <li><a href="index.html">Grupos</a></li>
-          <li><a href="index.html">Voluntario</a></li>
-          <li><a href="index.html">Campañas</a></li>
-          <li><a href="index.html">Noticias</a></li>
-        </ul>
+                <%= render :partial => 'horizontalMenu'%>
         <!-- navigation ends-->
       </div>
 
@@ -101,23 +92,14 @@
               <h3>horario de atencion</h3>
               <ul>
                 <li>Lunes - Viernes</li>
-                <li>09:00 - 16:30 <br>Horario Continuo</br></li>
+                <li>09:00 - 16:30<br> Horario Continuo<br></li>
               </ul>
             </div>
             <!-- footer-columns ends -->
           </div>
 
           <div id="footer-bottom">
-            <p>
-              &copy; 2011<strong> Taller de desarrollo - UCB II-11</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-              <a href="index.html">Inicio</a>&nbsp;|&nbsp;
-              <a href="index.html">Contactanos</a>&nbsp;|&nbsp;
-              <a href="index.html">Documentos</a>
-            </p>
+           <%= render :partial =>'footer' %>
           </div>
 
           <!-- footer ends-->
