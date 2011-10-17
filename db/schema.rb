@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(:version => 20111016174851) do
     t.string   "title"
     t.text     "description"
     t.string   "notice_type"
-    t.boolean  "is_published"
     t.date     "last_date"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -81,11 +80,11 @@ ActiveRecord::Schema.define(:version => 20111016174851) do
   end
 
   create_table "vicarious", :force => true do |t|
-    t.string   "nameVicariou"
+    t.string   "name_vicariou"
     t.string   "ubication"
     t.string   "transport"
     t.string   "telephone"
-    t.string   "vicarName"
+    t.string   "vicar_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -11,13 +11,14 @@
   <tr>
       <td>*  Estos campos son obligatorios</td>
     </tr>
+    
+    <tr align="right">
+      <td colspan="2">
+       <%= link_to 'Ver', @vicariou %>  <%= f.submit 'Guardar' %><%= link_to 'Cancelar', vicarious_path %>
+      </td>
+    </tr>
 </table>
 
-  
-  <p>
-    <%= f.submit 'Editar' %>
-  </p>
 <% end %>
 
-<%= link_to 'Ver', @vicariou %> |
-<%= link_to 'Cancelar', vicarious_path %>
+
