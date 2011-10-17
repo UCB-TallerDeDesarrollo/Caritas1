@@ -93,7 +93,7 @@ blockquote {
 	font-family: Georgia, 'Times New Roman', Times, serif;		
 	color: #80614D;	
 	border: 1px solid #DFF4B5; 
-	background: #F0FFD2 url(quote.gif) no-repeat 7px 10px;
+	background: #F0FFD2 url(/images/quote.gif) no-repeat 7px 10px;
 }
 
 /* start - table */
@@ -172,7 +172,7 @@ input.button {
 #wrap {
 	position: relative;
 	width: 920px;
-	background: #edf8c7 url(wrap.gif) repeat-y center top;
+	background: #edf8c7 url(/images/wrap.gif) repeat-y center top;
 	margin: 35px auto;
 	text-align: left;	
 }
@@ -182,13 +182,13 @@ input.button {
 	float: left;	
 	width: 920px;	
 	padding: 25px 0; 	
-	background: #CCFFFF url(content.gif) repeat-y;
+	background: #CCFFFF url(/images/content.gif) repeat-y;
 }
 #header {
 	position: relative;
 	width: 920px;
 	height: 205px;
-	background: #CC0000 url(header.jpg) no-repeat;
+	background: #CC0000 url(/images/header.jpg) no-repeat;
 	color: #fff;	
 	padding: 0;	
 	margin: 0;
@@ -226,7 +226,7 @@ input.button {
 	padding: 0; margin: 0;
 	border: none;
 	width: 223px; height: 33px;
-	background: #82c7f4 url(header-search.gif) no-repeat;	
+	background: #82c7f4 url(/images/header-search.gif) no-repeat;
 	z-index: 999999;
 }
 #header form#quick-search p {
@@ -256,7 +256,7 @@ input.button {
 	padding: 0;	margin: 0;
 	width: 920px;
 	height: 50px;
-	background: #CC0000 url(nav.gif) no-repeat;
+	background: #CC0000 url(/images/nav.gif) no-repeat;
 }
 #nav ul {
 	float: left;
@@ -285,7 +285,7 @@ input.button {
 	color: #edf8c7;	
 }
 #nav ul li#current a {	
-	background: #990000 url(pointer.gif) no-repeat center bottom;
+	background: #990000 url(/images/pointer.gif) no-repeat center bottom;
 	color: #FFCCFF;
 }
 #notice {
@@ -326,7 +326,7 @@ input.button {
 	text-decoration: none;		
 }
 #main ul li {
-	list-style-image: url(bullet.gif);
+	list-style-image: url(/images/bullet.gif);
 }
 
 #sidebar {
@@ -406,11 +406,11 @@ input.button {
 	width: 920px;
 	text-align: left;
 	padding: 0;	margin: 0;
-	background: url(footer-bottom.gif) no-repeat left bottom;		
+	background: url(/images/footer-bottom.gif) no-repeat left bottom;
 }
 #footer-content {
 	width: 920px;
-	background: url(footer-top-sep.gif) no-repeat;	
+	background: url(/images/footer-top-sep.gif) no-repeat;
 	padding: 30px 0 35px 0;
 }
 
