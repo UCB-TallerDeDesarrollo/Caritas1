@@ -4,7 +4,7 @@ class CreateNotices < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.string :notice_type
-      t.bool :is_published
+      t.boolean :is_published
       t.date :last_date
 
       t.timestamps

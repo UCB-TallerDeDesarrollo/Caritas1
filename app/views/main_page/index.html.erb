@@ -38,9 +38,9 @@
 			<li><a href="index.html">Vicaria</a></li>
 			<li><a href="index.html">Parroquia</a></li>
 			<li><a href="index.html">Grupos</a></li>
-			<li><a href="index.html">Voluntario</a></li>
+			<li><%= link_to "Voluntarios", :controller => "volunteers", :action => "index"  %></li>
             <li><a href="index.html">Campañas</a></li>
-            <li><a href="index.html">Noticias</a></li>
+            <li><%= link_to "Noticias", :controller => "notices", :action => "index"  %></li>
 		</ul>
 	<!-- navigation ends-->
   </div>
