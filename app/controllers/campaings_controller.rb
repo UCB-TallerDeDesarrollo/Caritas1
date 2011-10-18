@@ -1,8 +1,9 @@
 class CampaingsController < ApplicationController
   # GET /campaings
-  # GET /campaings.xml
+  # GET /campaings.xml 
+  
   def index
-    @campaings = Campaing.all
+    @campaings = Campaing.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb

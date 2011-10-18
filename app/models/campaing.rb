@@ -16,6 +16,13 @@ class Campaing < ActiveRecord::Base
   validates_format_of :name, :with => /^([a-zA-Z\ \-]{3,100})$/i
 
   #put class methods here
-
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+  
   #put object methods here
 end

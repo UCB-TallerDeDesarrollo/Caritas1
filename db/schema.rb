@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20111018020550) do
     t.string   "title"
     t.text     "description"
     t.string   "notice_type"
+    t.boolean  "is_published"
     t.date     "last_date"
     t.datetime "created_at"
     t.datetime "updated_at"
