@@ -1,7 +1,7 @@
 * { margin: 0; padding: 0; outline: 0 }
 
 body {
-	background: #f3ebe0 url(bg.gif) repeat-x;
+	background: #f3ebe0 url(/images/bg.gif) repeat-x;
 	font: 12px/170% 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	color: #666666; 
 	text-align: center;	

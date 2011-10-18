@@ -13,12 +13,12 @@
     <div  id="nav">
 	      <ul>
             <li id="current"><a href="#">Inicio</a></li>
-            <li><a href="index.html.erb">Vicaria</a></li>
-            <li><a href="index.html.erb">Parroquia</a></li>
-            <li><a href="index.html.erb">Grupos</a></li>
-            <li><a href="index.html.erb">Voluntario</a></li>
-            <li><a href="index.html.erb">Campañas</a></li>
-            <li><a href="index.html.erb">Noticias</a></li>
+            <li><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
+            <li><%= link_to 'Parroquia',:controller => "parishes", :action => "index"%> </li>
+            <li><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
+            <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
+            <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
+            <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
           </ul>
     </div>
 </body>
