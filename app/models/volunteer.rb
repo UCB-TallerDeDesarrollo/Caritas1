@@ -2,8 +2,8 @@ class Volunteer < ActiveRecord::Base
   #put constants here
 
   #put relations and references here
-  has_one :group #relacion para group_leader
-  belongs_to :group
+  #has_one :group #relacion para group_leader
+  #belongs_to :group
 
   #put active record callbacks here
 

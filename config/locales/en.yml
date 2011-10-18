@@ -297,6 +297,9 @@ en:
         format: "%{attribute} %{message}"
 
     models:
+      group:
+        one: "Grupo"
+        other: "Grupos"
       vicariou:
         one: "Vicaria"
         other: "Vicarias"
@@ -311,6 +314,8 @@ en:
         other: "Párrocos"
 
     attributes:
+      group:
+        name: "Nombre"
       volunteer:
         name: "Nombre"
         last_name: "Apellido paterno"
