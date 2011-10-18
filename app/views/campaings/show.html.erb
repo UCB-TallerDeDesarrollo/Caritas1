@@ -91,10 +91,12 @@
 </p>
 </TD>
 </TR>
-<TR>
-  <TD>
- <%= link_to 'Actualizar', edit_campaing_path(@campaing) %>|<%= link_to 'Atras', campaings_path %>
-  </TD>
-</TR>
+
+  <tr align="right">
+    <td colspan="2">
+      <%= link_to 'Editar', edit_volunteer_path(@campaing) %> |
+      <%= link_to 'Volver', campaings_path %>
+    </td>
+  </tr>
 </TABLE>
 
