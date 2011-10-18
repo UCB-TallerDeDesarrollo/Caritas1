@@ -144,8 +144,7 @@ input, textarea, select {
 	font: normal 11px Verdana, sans-serif;
 }
 textarea {
-	width: 400px;
-	height: 100px;
+	width: 200px;
 	display: block;
 }
 input.button {
@@ -155,9 +154,6 @@ input.button {
 	padding: 2px 3px;
 	color: #fff;
 	background: #990000;
-
-	border-width: 1px;
-  	border-style: solid;
   	border-color: #C4DE8F #8DB836 #8DB836 #C4DE8F;
 }
 
