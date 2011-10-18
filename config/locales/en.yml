@@ -306,10 +306,13 @@ en:
       social_work:
         one: "Obra Social"
         other: "Obras Sociales"
+      campaing:
+        one: "Campaña"
+        other: "Campañas"
       pastor:
         one: "Párroco"
         other: "Párrocos"
-
+       
     attributes:
       volunteer:
         name: "Nombre"
@@ -336,6 +339,14 @@ en:
         phone: "Telefono"
         movil: "Celular"
         transport: "Transporte"
+      campaing:
+        name: "Nombre"
+        location: "Lugar"
+        description: "Descripción"
+        date_ini: "Fecha de inicio"
+        date_end: "Fecha de finalización"
+        responsible: "Responsable"
+    
       pastor:
         name: "Nombre"
         primary_last_name: "Apellido paterno"
