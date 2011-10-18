@@ -1,32 +1,43 @@
 <h1>Editing notice</h1>
 
 <% form_for(@notice) do |f| %>
-  <%= f.error_messages %>
+<%= f.error_messages %>
+  <table>
+    <tr>  
+      <td>* <%= :title %></td>
+      <td><%= f.text_field :title %></td>
+    </tr>
+    
+    <tr>
+      <td><%= :description  %> </td>
+      <td><%= f.text_area :description, :size => "100x10"%></td>
+    </tr>
 
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :notice_type %><br />
-    <%= f.text_field :notice_type %>
-  </p>
-  <p>
-    <%= f.label :is_published %><br />
-    <%= f.text_field :is_published %>
-  </p>
-  <p>
-    <%= f.label :last_date %><br />
-    <%= f.date_select :last_date %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+    <tr>
+      <td>* <%= :notice_type %> </td>
+      <td><%= f.select  :notice_type, Notice::NOTICES_TYPES %></td>
+    </tr>
+
+    <tr>
+      <td><%= :is_published %></td>
+      <td><%= f.check_box :is_published %></td>
+    </tr>
+
+    <tr>
+      <td><%= :last_date %> </td>
+      <td><%= f.date_select :last_date %></td>
+    </tr>
+    
+    <tr align="right">
+      <td colspan="2">
+        <%= f.submit 'Guardar' %>
+        <%= link_to 'Ver', :action => :show %>
+        <%= link_to 'Cancelar', notices_path %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>*  Estos campos son obligatorios</td>
+    </tr>
+  </table>
 <% end %>
-
-<%= link_to 'Show', @notice %> |
-<%= link_to 'Back', notices_path %>

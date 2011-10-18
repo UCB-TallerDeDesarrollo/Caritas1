@@ -4,36 +4,40 @@
 <%= f.error_messages %>
   <table>
     <tr>  
-      <td>* <%= f.label :title %></td>
+      <td>* <%= :title %></td>
       <td><%= f.text_field :title %></td>
     </tr>
     
     <tr>
-      <td><%= f.label :description  %> </td>
-      <td><%= f.text_area :description, :cols => 60, :rows => 10 %></td>
+      <td><%= :description  %> </td>
+      <td><%= f.text_area :description, :size => "100x10"%></td>
     </tr>
 
     <tr>
-      <td>* <%= f.label :notice_type %> </td>
-      <td><%= f.text_field :notice_type %></td>
+      <td>* <%= :notice_type %> </td>
+      <td><%= f.select  :notice_type, Notice::NOTICES_TYPES %></td>
     </tr>
 
     <tr>
-      <td><%= f.label :is_published %></td>
+      <td><%= :is_published %></td>
       <td><%= f.check_box :is_published %></td>
     </tr>
 
     <tr>
-      <td><%= f.label :last_date %> </td>
+      <td><%= :last_date %> </td>
       <td><%= f.date_select :last_date %></td>
+    </tr>
+    
+    <tr align="right">
+      <td colspan="2">
+        <%= f.submit 'Crear' %>
+        <button type="reset">Limpiar</button>
+        <%= link_to 'Cancelar', notices_path %>
+      </td>
     </tr>
 
     <tr>
       <td>*  Estos campos son obligatorios</td>
     </tr>
   </table>
-  </p>
-  <p>   
-    <%= f.submit 'Crear' %>  <%= link_to 'Cancelar', notices_path %>
-  </p>
 <% end %>

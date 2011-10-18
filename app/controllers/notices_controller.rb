@@ -1,7 +1,6 @@
 class NoticesController < ApplicationController
   # GET /notices
   # GET /notices.xml
-  layout "main"
   def index
     @notices = Notice.all
 
