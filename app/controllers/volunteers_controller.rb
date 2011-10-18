@@ -68,7 +68,7 @@ class VolunteersController < ApplicationController
 
     respond_to do |format|
       if @volunteer.update_attributes(params[:volunteer])
-        format.html { redirect_to(@volunteer, :notice => 'Volunteer was successfully updated.') }
+        format.html { redirect_to(@volunteer, :notice => 'El voluntario fue editado exitosamente.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

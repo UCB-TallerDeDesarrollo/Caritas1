@@ -34,7 +34,7 @@
       <td><%= f.date_select :date_of_birth ,  :start_year => 1935%></td>
     </tr>
     <tr>
-        <td>* Genero</td>      
+        <td>&nbsp&nbsp&nbspGenero</td>      
         <td>masculino
           <%= f.radio_button(:genre, "masculino") %>         
           femenino
@@ -52,15 +52,14 @@
     <tr>
       <td>*  Estos campos son obligatorios</td>
     </tr>
-    <tr>
-      <td>
+    
+   <tr align="right">
+      <td colspan="2">
+        <%= f.submit 'Guardar' %>
+        <%= link_to 'Ver', :action => :show %>
+        <%= link_to 'Cancelar', volunteers_path %>
+      </td>
+    </tr>
   </table>
 
-
-  <p>
-    <%= f.submit 'Editar' %>
-  </p>
 <% end %>
-
-<%= link_to 'Ver', @volunteer %> |
-<%= link_to 'Cancelar', volunteers_path %>
