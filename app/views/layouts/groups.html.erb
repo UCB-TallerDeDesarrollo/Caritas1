@@ -6,15 +6,34 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Grupos <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'scaffold' %>
+   <%= stylesheet_link_tag 'Caritas' %>
   <%= javascript_include_tag :defaults %>
-  <%= record_select_includes %>
+  <%= record_select_includes %>zz
 </head>
 <body>
 
-<center>zz
-  <p style="color: green"><%= notice %></p>
-  <%= yield %>
-</center>
+<div id="wrap">
+  <%= render :partial => 'main_page/header' %>
+   <div  id="nav">
+	      <ul>
+            <li><a href="main_page/index.html.erb">Inicio</a></li>
+            <li><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
+            <li><%= link_to 'Parroquia'%> </li>
+            <li id="current"><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
+            <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
+            <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
+            <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
+          </ul>
+    </div>
+
+    <div id='content-layout'>
+      <center>
+        <%= yield %>
+      </center>
+      </div>
+         <%= render:partial => 'main_page/footer' %>
+  </div>
 
 </body>
 </html>
+
