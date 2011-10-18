@@ -10,7 +10,7 @@
 <table>
   <tr align="right">
     <td>
-      <%=button_to 'Crear Grupo', new_group_path %>
+      <%=button_to 'Crear Grupo', new_group_url %>
     </td>
   </tr>
   <tr>
@@ -28,8 +28,8 @@
           <tr>
             <td><%= link_to group.name, group %></td>
             <!--<td><%#=h group.volunteer %></td>
-            <td><%#= link_to 'Voluntarios' %></td>-->
-            <td><%= link_to 'Editar', edit_group_path(group) %></td>
+            <td><%#= link_to 'Voluntarios', volunteers_url %></td>-->
+            <td><%= link_to 'Editar', edit_group_url(group) %></td>
             <td><%= link_to 'Eliminar', group, :confirm => 'Esta seguro?', :method => :delete %></td>
           </tr>
         <% end %>
