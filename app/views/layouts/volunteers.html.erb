@@ -8,7 +8,7 @@
 
   <%= javascript_include_tag :defaults %>
   <%= record_select_includes %>
-   <link rel="stylesheet" href="stylesheets/Caritas.css" type="text/css" />
+  <%= stylesheet_link_tag 'Caritas' %>
 </head>
 <body>
 
@@ -26,11 +26,12 @@
             <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
           </ul>
     </div>
-  <div id='content-wrap'>
+
     <div id='content-layout'>
-       <%= yield %>
+      <center>
+        <%= yield %>
+      </center>
       </div>
-  </div>
          <%= render:partial => 'main_page/footer' %>
   </div>
 
