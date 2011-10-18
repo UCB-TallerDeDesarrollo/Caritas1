@@ -6,12 +6,30 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Campaings: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'Caritas' %>
 </head>
 <body>
+<div id="wrap">
+  <%= render :partial => 'main_page/header' %>
+   <div  id="nav">
+	      <ul>
+            <li><a href="main_page/index.html.erb">Inicio</a></li>
+            <li><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
+            <li><%= link_to 'Parroquia'%> </li>
+            <li><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
+            <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
+            <li id='current'><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
+            <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
+          </ul>
+    </div>
 
-<p style="color: green"><%= notice %></p>
-<center>
-    <%= yield %>
-</center>
+    <div id='content-layout'>
+      <center>
+        <%= yield %>
+      </center>
+      </div>
+         <%= render:partial => 'main_page/footer' %>
+  </div>
+
 </body>
 </html>
