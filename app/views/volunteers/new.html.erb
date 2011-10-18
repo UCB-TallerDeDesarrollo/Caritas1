@@ -56,10 +56,17 @@
     <tr>
       <td>*  Estos campos son obligatorios</td>
     </tr>
+    
+    
+    <tr align="right">
+      <td colspan="2">
+        <%= f.submit 'Registrar' %>
+        <button type="reset">Limpiar</button>
+        <%= link_to 'Cancelar', volunteers_path %>
+      </td>
+    </tr>
   </table>
-  </p>
-  <p>   
-    <%= f.submit 'Crear' %>  <%= link_to 'Cancelar', volunteers_path %>
-  </p>
+  
+
 <% end %>
 
