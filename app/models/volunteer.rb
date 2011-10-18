@@ -14,8 +14,7 @@ class Volunteer < ActiveRecord::Base
   validates_presence_of :position  
   validates_presence_of :date_of_birth
   validates_presence_of :genre
-  #validates_numericality_of :phone_number, :allow_blank => true  , :message => "El Celular no es un numero o es incorrecto"
-  #validates_numericality_of :movil,:allow_blank => true  ,:message => "El Celular no es un numero o es incorrecto"         
+  validates_uniqueness_of :name, :scope => [:last_name, :second_last_name]
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{0,50})\Z/i, :allow_blank => true  
   validates_format_of :name, :with => /^([a-zA-Z\ ]{3,50})$/i
   validates_format_of :last_name, :with => /^([a-zA-Z\ \-]{3,50})$/i
