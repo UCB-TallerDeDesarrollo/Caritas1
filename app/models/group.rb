@@ -3,13 +3,13 @@ class Group < ActiveRecord::Base
   #put constants here
 
   #put relations and references here
-  belongs_to :volunteer   #relacion para group_leader
-  has_many :volunteers
+  #belongs_to :volunteer   # relacion para group_leader
+  #has_many :volunteers
 
   #put active record callbacks here
 
   #put validates here
-  validates_presence_of :name, :message => 'El nombre no puede estar vacio'
+  validates_presence_of :name, :message => ' no puede estar vacio'
 
   #put class methods here
   def self.search(search)

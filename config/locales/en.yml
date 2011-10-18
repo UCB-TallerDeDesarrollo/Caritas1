@@ -297,6 +297,9 @@ en:
         format: "%{attribute} %{message}"
 
     models:
+      group:
+        one: "Grupo"
+        other: "Grupos"
       vicariou:
         one: "Vicaria"
         other: "Vicarias"
@@ -306,11 +309,16 @@ en:
       social_work:
         one: "Obra Social"
         other: "Obras Sociales"
+      campaing:
+        one: "Campaña"
+        other: "Campañas"
       pastor:
         one: "Párroco"
         other: "Párrocos"
-
+       
     attributes:
+      group:
+        name: "Nombre"
       volunteer:
         name: "Nombre"
         last_name: "Apellido paterno"
@@ -336,6 +344,14 @@ en:
         phone: "Telefono"
         movil: "Celular"
         transport: "Transporte"
+      campaing:
+        name: "Nombre"
+        location: "Lugar"
+        description: "Descripción"
+        date_ini: "Fecha de inicio"
+        date_end: "Fecha de finalización"
+        responsible: "Responsable"
+    
       pastor:
         name: "Nombre"
         primary_last_name: "Apellido paterno"
