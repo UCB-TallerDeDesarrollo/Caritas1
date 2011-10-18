@@ -6,110 +6,62 @@
   <TABLE   ALIGN="CENTER">
 
     <TR>
-      <TD >
-        <p>
-          *<b> <%= f.label :Nombre   %></b>
-
-        </p>
-      </TD>
+          <td>* Nombre</td>
 
       <TD >
-        <p>
           <%= f.text_field :name %>
-        </p>
       </TD>
     </TR>
 
     <TR>
+          <td>* Lugar</td>   
       <TD >
-        <p>
-          *<b><%= f.label :Lugar   %></b>   
-        </p>
-      </TD>
-
-      <TD >
-        <p>
           <%= f.text_field :location %>
-        </p>
       </TD>
     </TR>
 
     <TR>
-      <TD >
-        <p>
-          <b> <%= f.label :Descripcion %></b><br />
-
-        </p>
-      </TD>
+     <td>&nbsp&nbsp&nbspDescripción</td>
 
       <TD >
-        <p>
-
           <%= f.text_area :description , :rows=>6, :cols=>22  %>
-        </p>
       </TD>
     </TR>
 
 
     <TR>
-      <TD >
-        <p>
-          <b><%= f.label :Fecha_de_inicio   %></b>    
+   <td>&nbsp&nbsp&nbspFecha de Inicio</td>
 
-        </p>
-      </TD>
-
-      <TD >
-        <p>
+      <TD >       
 
           <%= f.date_select :date_ini %>  
 
-        </p>
       </TD>
     </TR>
 
     <TR>
-      <TD >
-        <p>
-          <b> <%= f.label :Fecha_de_finalizacion   %></b>
-
-        </p>
-      </TD>
+     <td>&nbsp&nbsp&nbspFecha de Finalización</td>
 
       <TD >
-        <p>
           <%= f.date_select :date_end %>
-        </p>
       </TD>
     </TR>
 
     <TR>
-      <TD >
-        <p>
-          <b> *<%= f.label :Responsable   %></b>
-
-        </p>
-      </TD>
+       <td>* Responsable</td>
 
       <TD >
-        <p>
           <%= f.text_field :responsible %>
-        </p>
       </TD>
-    </TR>
-
-      <TR>
-        <TD>
-          <p>
-            <%= f.submit 'Registrar' %>
-            <button type="reset">Limpiar</button>
-            <%= link_to 'Atras', campaings_path %>  
-          </p>
-        </TD>
+    </TR>    
         
-        
-      
-  </TR>
+         <tr align="right">
+      <td colspan="2">
+        <%= f.submit 'Registrar' %>
+        <button type="reset">Limpiar</button>
+        <%= link_to 'Volver', campaings_path %>
+      </td>
+    </tr>             
 
   </TABLE>   
  
