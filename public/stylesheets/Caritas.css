@@ -144,8 +144,8 @@ input, textarea, select {
 	font: normal 11px Verdana, sans-serif;
 }
 textarea {
-	width: 400px;
-	height: 100px;
+	width: 200px;
+	height: 16px;
 	display: block;
 }
 input.button {
