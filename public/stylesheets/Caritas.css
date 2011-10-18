@@ -6,7 +6,6 @@ body {
 	color: #666666; 
 	text-align: center;	
 }
-
 /* links */
 a, a:visited {
 	color: #306495;
@@ -49,7 +48,7 @@ dl { padding: 10px; margin: 0; }
 
 dt {
   font-weight: bold;
-  color: #79A62E;
+  color: #000000;
 }
 dd {
   padding-left: 25px; 
@@ -107,10 +106,10 @@ th {
 	padding-right: 12px;
 	color: #fff;
 	text-align: left;
-	background: #CCFFFF;
+	background: #cc0000;
 	border-width: 1px;
   	border-style: solid;
-  	border-color: #C4DE8F #93C138 #93C138 #C4DE8F;	
+  	border-color: #666666;
 }
 tr {
 	height: 34px;
@@ -119,15 +118,15 @@ tr {
 td {
 	padding-left: 11px;
 	padding-right: 11px;
-	border: 1px solid #E7F0CC;	
+	border: 1px solid #E7F0CC;
 }	
 /* end - table */
 
 /* form elements */
 form {
-	margin: 15px 10px; 
+	margin: 15px 10px;
 	padding: 5px 10px 20px 10px;
-	border: 1px solid #D8E99E; 
+	border: 1px solid #D8E99E;
 	background: #CCFFFF;
 }
 label {
@@ -138,19 +137,19 @@ label {
 }
 input, textarea, select {
 	padding: 4px;
-	color: #666666;		
+	color: #666666;
 	background: #fff;
-	
+
   	border-width: 1px;
   	border-style: solid;
   	border-color: #d4d4d4 #ebebeb #ebebeb #d4d4d4; 
-	
+
 	font: normal 11px Verdana, sans-serif;
 }
 textarea {
 	width: 400px;	
 	height: 100px;
-	display: block;	
+	display: block;
 }
 input.button { 
 	font: bold 12px Arial, Sans-serif; 
@@ -183,6 +182,12 @@ input.button {
 	width: 920px;	
 	padding: 25px 0; 	
 	background: #CCFFFF url(/images/content.gif) repeat-y;
+}
+#content-layout{
+    float: left;
+	width: 80%;
+	padding: 0; margin: 0 0 0 45px;
+	display: inline;
 }
 #header {
 	position: relative;
@@ -303,7 +308,6 @@ input.button {
 	font-weight: normal;
 	color: #666666;	
 }
-
 
 /* Main Column */
 #main {

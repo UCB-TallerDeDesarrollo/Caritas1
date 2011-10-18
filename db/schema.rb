@@ -50,13 +50,6 @@ ActiveRecord::Schema.define(:version => 20111016174851) do
     t.datetime "updated_at"
   end
 
-  create_table "people", :force => true do |t|
-    t.string   "name"
-    t.binary   "sexo"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "social_works", :force => true do |t|
     t.string   "name"
     t.string   "responsible"

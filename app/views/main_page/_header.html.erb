@@ -10,7 +10,21 @@
 </head>
 
 <body>
-
-		<h1 id="logo-text"><a href="index.html.erb" title="">Pastoral Social Caritas CBBA</a></h1>
+<!--header -->
+    <div id='header'>
+	    <h1 id="logo-text"><a href="index.html.erb" title="">Pastoral Social Caritas CBBA</a></h1>
+      <!-- login -->
+        <div id="user_nav">
+          <% if current_user %>
+            <%= link_to "Edit profile", edit_user_path(:current) %> |
+            <%= link_to "Logout", logout_path %>
+          <% else %>
+            <%= link_to "Register", new_user_path %> |
+            <%= link_to "Log in", login_path %>
+          <% end %>
+        </div>
+        <!-- login ends -->
+    </div>
+<!--header ends-->
 </body>
 </html>

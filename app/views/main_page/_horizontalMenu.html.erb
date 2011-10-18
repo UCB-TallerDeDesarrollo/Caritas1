@@ -1,20 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.caritassbba.org" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="author" content="Taller de desarrollo" />
-<link rel="stylesheet" href="images/Caritas.css" type="text/css" />
 
-</head>
 
-<body>
     <div  id="nav">
 	      <ul>
             <li id="current"><a href="#">Inicio</a></li>
             <li><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
-            <li><%= link_to 'Parroquia',:controller => "parishes", :action => "index"%> </li>
+            <li><%= link_to 'Parroquia'%> </li>
             <li><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
             <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
             <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
@@ -22,5 +12,4 @@
             <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
           </ul>
     </div>
-</body>
-</html>
+

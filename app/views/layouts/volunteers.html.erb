@@ -5,16 +5,34 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Voluntarios <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+
   <%= javascript_include_tag :defaults %>
   <%= record_select_includes %>
+   <link rel="stylesheet" href="stylesheets/Caritas.css" type="text/css" />
 </head>
 <body>
 
 <p style="color: green"><%= notice %></p>
-   <center>
+<div id="wrap">
+  <%= render :partial => 'main_page/header' %>
+   <div  id="nav">
+	      <ul>
+            <li><a href="main_page/index.html.erb">Inicio</a></li>
+            <li><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
+            <li><%= link_to 'Parroquia'%> </li>
+            <li><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
+            <li id="current"><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
+            <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
+            <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
+          </ul>
+    </div>
+  <div id='content-wrap'>
+    <div id='content-layout'>
+       <%= yield %>
+      </div>
+  </div>
+         <%= render:partial => 'main_page/footer' %>
+  </div>
 
-<%= yield %>
-           </center>
 </body>
 </html>
