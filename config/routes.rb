@@ -1,6 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :parishes
-
   map.resources :notices
 
   map.resources :vicarious
