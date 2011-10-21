@@ -1,28 +1,37 @@
-<p>
-  <b>Parish name:</b>
-  <%=h @parish.parish_name %>
-</p>
+<h1>Ver Parroquia</h1>
+  <table>
+    <tr>
+      <td>
+        <b>Nombre Parroquia:</b>
+      </td>
+      <td><%=h @parish.parish_name %></td>
+    </tr>
+    <tr>
+      <td>
+        <b>Ubicacion:</b>
+      </td>
+      <td><%=h @parish.ubication %></td>
+    </tr>
+    <tr>
+      <td>
+        <b>Transporte:</b>
+      </td>
+      <td><%=h @parish.transport %></td>
+    </tr>
+    <tr>
+      <td>
+        <b>Telefono:</b>
+      </td>
+      <td><%=h @parish.telephone %></td>
+    </tr>
+    <tr>
+      <td>
+        <b>Nombre del Parroco:</b>
+      </td>
+      <td><%=h @parish.pastor_name %></td>
+    </tr>
+  </table>
 
-<p>
-  <b>Ubication:</b>
-  <%=h @parish.ubication %>
-</p>
 
-<p>
-  <b>Transport:</b>
-  <%=h @parish.transport %>
-</p>
-
-<p>
-  <b>Telephone:</b>
-  <%=h @parish.telephone %>
-</p>
-
-<p>
-  <b>Pastor name:</b>
-  <%=h @parish.pastor_name %>
-</p>
-
-
-<%= link_to 'Edit', edit_parish_path(@parish) %> |
-<%= link_to 'Back', parishes_path %>
+<%= link_to 'Editar', edit_parish_path(@parish) %> |
+<%= link_to 'Volver', parishes_path %>

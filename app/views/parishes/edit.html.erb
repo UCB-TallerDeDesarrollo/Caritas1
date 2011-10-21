@@ -1,32 +1,39 @@
-<h1>Editing parish</h1>
+<h1>Editar Parroquia</h1>
 
 <% form_for(@parish) do |f| %>
   <%= f.error_messages %>
+    <table>
+      <tr>
+        <td>*Nombre Parroquia</td>
+        <td><%= f.text_field :parish_name %></td>
+      </tr>
+      <tr>
+        <td>*Ubicacion</td>
+        <td><%= f.text_field :ubication %></td>
+      </tr>
+      <tr>
+        <td>*Transporte</td>
+        <td><%= f.text_field :transport %></td>
+      </tr>
+      <tr>
+        <td>*Telefono</td>
+        <td><%= f.text_field :telephone %></td>
+      </tr>
+      <tr>
+        <td>*Nombre del Parroco</td>
+        <td><%= f.text_field :pastor_name %></td>
+      </tr>
+      <tr>
+        <td>*  Estos campos son obligatorios</td>
+      </tr>
 
-  <p>
-    <%= f.label :parish_name %><br />
-    <%= f.text_field :parish_name %>
-  </p>
-  <p>
-    <%= f.label :ubication %><br />
-    <%= f.text_field :ubication %>
-  </p>
-  <p>
-    <%= f.label :transport %><br />
-    <%= f.text_field :transport %>
-  </p>
-  <p>
-    <%= f.label :telephone %><br />
-    <%= f.text_field :telephone %>
-  </p>
-  <p>
-    <%= f.label :pastor_name %><br />
-    <%= f.text_field :pastor_name %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+      <tr align="right">
+        <td colspan="2">
+          <%= link_to 'Ver', @parish %>  <%= f.submit 'Guardar' %><%= link_to 'Cancelar', parishes_path %>
+        </td>
+      </tr>
+    </table>
+
 <% end %>
 
-<%= link_to 'Show', @parish %> |
-<%= link_to 'Back', parishes_path %>
+
