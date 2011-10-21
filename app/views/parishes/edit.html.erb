@@ -1,0 +1,41 @@
+<h1>Editar Parroquia</h1>
+
+<% form_for(@parish) do |p| %>
+  <%= p.error_messages %>
+    <table>
+      <tr>
+        <td>*Nombre Parroquia</td>
+        <td><%= p.text_field :parish_name %></td>
+      </tr>
+      <tr>
+        <td>*Ubicacion</td>
+        <td><%= p.text_field :ubication %></td>
+      </tr>
+      <tr>
+        <td>*Transporte</td>
+        <td><%= p.text_field :transport %></td>
+      </tr>
+      <tr>
+        <td>*Telefono</td>
+        <td><%= p.text_field :telephone %></td>
+      </tr>
+      <tr>
+        <td>*Nombre del Parroco</td>
+        <td><%= p.text_field :pastor_name %></td>
+      </tr>
+      <tr>
+        <td>*  Estos campos son obligatorios</td>
+      </tr>
+
+      <tr align="right">
+        <td colspan="2">
+          <%= link_to 'Ver', @parish %> 
+          <%= p.submit 'Guardar' %>
+          <%= link_to 'Cancelar', parishes_path %>
+        </td>
+      </tr>
+    </table>
+
+<% end %>
+
+
