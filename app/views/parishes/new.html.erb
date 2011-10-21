@@ -1,0 +1,31 @@
+<h1>New parish</h1>
+
+<% form_for(@parish) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :parish_name %><br />
+    <%= f.text_field :parish_name %>
+  </p>
+  <p>
+    <%= f.label :ubication %><br />
+    <%= f.text_field :ubication %>
+  </p>
+  <p>
+    <%= f.label :transport %><br />
+    <%= f.text_field :transport %>
+  </p>
+  <p>
+    <%= f.label :telephone %><br />
+    <%= f.text_field :telephone %>
+  </p>
+  <p>
+    <%= f.label :pastor_name %><br />
+    <%= f.text_field :pastor_name %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', parishes_path %>

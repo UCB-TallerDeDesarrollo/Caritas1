@@ -1,0 +1,28 @@
+<p>
+  <b>Parish name:</b>
+  <%=h @parish.parish_name %>
+</p>
+
+<p>
+  <b>Ubication:</b>
+  <%=h @parish.ubication %>
+</p>
+
+<p>
+  <b>Transport:</b>
+  <%=h @parish.transport %>
+</p>
+
+<p>
+  <b>Telephone:</b>
+  <%=h @parish.telephone %>
+</p>
+
+<p>
+  <b>Pastor name:</b>
+  <%=h @parish.pastor_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_parish_path(@parish) %> |
+<%= link_to 'Back', parishes_path %>
