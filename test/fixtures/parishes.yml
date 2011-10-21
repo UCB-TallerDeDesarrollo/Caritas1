@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  parish_name: MyString
+  ubication: MyString
+  transport: MyString
+  telephone: 1
+  pastor_name: MyString
+
+two:
+  parish_name: MyString
+  ubication: MyString
+  transport: MyString
+  telephone: 1
+  pastor_name: MyString
