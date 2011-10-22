@@ -1,0 +1,10 @@
+<h1> Nueva Ficha Social </h1>
+<% form_for @social_card do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => "#{@social_card.current_step}_step", :locals =>{:f => f}%>
+<p><%= f.submit "Continuar" %>&nbsp;
+    <%= f.submit "Atras", :name => "back_button" unless @social_card.first_step? %></p>
+<% end %>
+
+
+<p><%= link_to "Lista De Fichas Sociales", social_cards_path %></p>
