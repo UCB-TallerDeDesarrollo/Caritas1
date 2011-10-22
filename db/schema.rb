@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111022143941) do
+ActiveRecord::Schema.define(:version => 20111022181352) do
 
   create_table "campaings", :force => true do |t|
     t.string   "name"
@@ -27,6 +27,18 @@ ActiveRecord::Schema.define(:version => 20111022143941) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "volunteer_id"
+  end
+
+  create_table "helps", :force => true do |t|
+    t.text     "what_is_persons_problem"
+    t.string   "type_of_help"
+    t.string   "was_derive_to_some_institution"
+    t.date     "date_of_help"
+    t.text     "detail"
+    t.text     "observation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "social_card_id"
   end
 
   create_table "notices", :force => true do |t|
@@ -55,6 +67,37 @@ ActiveRecord::Schema.define(:version => 20111022143941) do
     t.string   "second_last_name"
     t.integer  "phone_number"
     t.integer  "cellphone_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "social_cards", :force => true do |t|
+    t.date     "date"
+    t.string   "parish_church"
+    t.string   "name"
+    t.string   "marital_status"
+    t.string   "gender"
+    t.date     "birthday"
+    t.string   "birthday_location"
+    t.integer  "identity_card"
+    t.integer  "phone"
+    t.integer  "movil"
+    t.string   "address"
+    t.string   "location_reference"
+    t.string   "grade_school"
+    t.string   "occupation"
+    t.string   "family_members"
+    t.string   "parish_belongs"
+    t.text     "family_history"
+    t.string   "derivative_by"
+    t.string   "reference_person"
+    t.string   "address_reference"
+    t.integer  "phone_reference"
+    t.integer  "movil_reference"
+    t.integer  "age_reference"
+    t.string   "occupation_reference"
+    t.string   "type_of_case"
+    t.text     "did_you_get_another_help"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

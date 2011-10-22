@@ -11,6 +11,7 @@
                 <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
                 <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
                 <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+                <li><%= link_to 'Ficha Social',:controller => "social_cards", :action => "index"%></li>
             </ul>
         <% when "vicarious"; %>
             <ul>
@@ -23,6 +24,7 @@
                 <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
                 <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
                 <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+                <li><%= link_to 'Ficha Social',:controller => "social_cards", :action => "index"%></li>
             </ul>
 
         <% when "parishes"; %>
@@ -36,6 +38,7 @@
                 <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
                 <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
                 <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+                <li><%= link_to 'Ficha Social',:controller => "social_cards", :action => "index"%></li>
             </ul>
 
         <% when "grous"; %>
@@ -49,6 +52,7 @@
                 <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
                 <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
                 <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+                <li><%= link_to 'Ficha Social',:controller => "social_cards", :action => "index"%></li>
             </ul>
 
         <% when "volunteers"; %>
@@ -62,6 +66,7 @@
                 <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
                 <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
                 <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+                <li><%= link_to 'Ficha Social',:controller => "social_cards", :action => "index"%></li>
             </ul>
 
         <% when "pastors"; %>
@@ -75,6 +80,7 @@
                 <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
                 <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
                 <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+                <li><%= link_to 'Ficha Social',:controller => "social_cards", :action => "index"%></li>
             </ul>
 
         <% when "campaings"; %>
@@ -88,6 +94,7 @@
                 <li id="current"><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
                 <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
                 <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+                <li><%= link_to 'Ficha Social',:controller => "social_cards", :action => "index"%></li>
             </ul>
 
         <% when "notices"; %>
@@ -101,6 +108,7 @@
                 <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
                 <li id="current"><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
                 <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+                <li><%= link_to 'Ficha Social',:controller => "social_cards", :action => "index"%></li>
             </ul>
 
         <% when "social_works"; %>
@@ -114,6 +122,21 @@
                 <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
                 <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
                 <li id="current"><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+                <li><%= link_to 'Ficha Social',:controller => "social_cards", :action => "index"%></li>
+            </ul>
+      <% when "social_cards"; %>
+            <ul>
+                <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%></li>
+                <li ><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
+                <li><%= link_to 'Parroquia',:controller => "parishes", :action => "index"%> </li>
+                <li><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
+                <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
+                <li><%= link_to 'Parroco',:controller => "pastors", :action => "index"%></li>
+                <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
+                <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
+                <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+                <li id="current"><%= link_to 'Ficha Social',:controller => "social_cards", :action => "index"%></li>
+                
             </ul>
       <% end %>
     </div>
