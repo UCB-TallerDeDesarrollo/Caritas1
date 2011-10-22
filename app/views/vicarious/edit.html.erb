@@ -7,8 +7,18 @@
 <tr><td>*Ubicacion</td><td><%= f.text_field :ubication %></td></tr>
 <tr><td>*Transporte</td><td><%= f.text_field :transport %></td></tr>
 <tr><td>*Telefono</td><td><%= f.text_field :telephone %></td></tr>
-<tr><td>*Nombre del Vicario</td><td><%= f.text_field :vicar_name %></td></tr>
-  <tr>
+<tr><td>*Nombre del Vicario</td><td>
+    <select name="vicariou[pastor_id]">
+    <% @pastor.each do |pastor| %>
+    <option value="<%=pastor.id%>">
+               <%=pastor.name+" "+pastor.primary_last_name+" "+pastor.second_last_name%>
+    </option>
+<%end%>
+</select>
+    
+    
+  </td></tr>
+<tr>
       <td>*  Estos campos son obligatorios</td>
     </tr>
     

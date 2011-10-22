@@ -25,7 +25,7 @@ class VicariousController < ApplicationController
   # GET /vicarious/new.xml
   def new
     @vicariou = Vicariou.new
-
+    @pastor = Pastor.find(:all)
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @vicariou }
@@ -35,13 +35,13 @@ class VicariousController < ApplicationController
   # GET /vicarious/1/edit
   def edit
     @vicariou = Vicariou.find(params[:id])
+    @pastor = Pastor.find(:all)
   end
 
   # POST /vicarious
   # POST /vicarious.xml
   def create
     @vicariou = Vicariou.new(params[:vicariou])
-
     respond_to do |format|
       if @vicariou.save
         format.html { redirect_to(@vicariou, :notice => 'Vicariou was successfully created.') }
