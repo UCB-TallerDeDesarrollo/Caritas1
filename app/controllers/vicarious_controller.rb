@@ -14,7 +14,7 @@ class VicariousController < ApplicationController
   # GET /vicarious/1.xml
   def show
     @vicariou = Vicariou.find(params[:id])
-
+    @pastor = Pastor.find(@vicariou.pastor_id)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @vicariou }
