@@ -1,5 +1,8 @@
 class Pastor < ActiveRecord::Base
   
+  belongs_to :vicariou
+  belongs_to :parish
+  
   validates_presence_of :name
   validates_presence_of :primary_last_name
   validates_presence_of :second_last_name
