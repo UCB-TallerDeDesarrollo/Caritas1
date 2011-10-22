@@ -1,5 +1,6 @@
 class Vicariou < ActiveRecord::Base
   has_one :pastor
+  belongs_to :parish
   
   validates_presence_of :name_vicariou
   validates_presence_of :ubication

@@ -14,7 +14,8 @@ class ParishesController < ApplicationController
   # GET /parishes/1.xml
   def show
     @parish = Parish.find(params[:id])
-
+    @pastor = Pastor.find(@parish.pastor_id)
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @parish }
@@ -25,7 +26,8 @@ class ParishesController < ApplicationController
   # GET /parishes/new.xml
   def new
     @parish = Parish.new
-
+    @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious)"])
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @parish }
@@ -35,13 +37,14 @@ class ParishesController < ApplicationController
   # GET /parishes/1/edit
   def edit
     @parish = Parish.find(params[:id])
+    @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious)"])
   end
 
   # POST /parishes
   # POST /parishes.xml
   def create
     @parish = Parish.new(params[:parish])
-
+    @pastor = Pastor.find(:all)
     respond_to do |format|
       if @parish.save
         format.html { redirect_to(@parish, :notice => 'Parish was successfully created.') }

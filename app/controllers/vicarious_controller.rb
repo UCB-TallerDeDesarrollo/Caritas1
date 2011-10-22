@@ -25,7 +25,7 @@ class VicariousController < ApplicationController
   # GET /vicarious/new.xml
   def new
     @vicariou = Vicariou.new
-    @pastor = Pastor.find(:all)
+    @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious)"])
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @vicariou }
