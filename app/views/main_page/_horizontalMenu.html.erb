@@ -1,16 +1,119 @@
-
-
     <div  id="nav">
-	      <ul>
-            <li id="current"><a href="main_page">Inicio</a></li>
-            <li><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
-            <li><%= link_to 'Parroquia',:controller => "parishes", :action => "index"%> </li>
-            <li><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
-            <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
-            <li><%= link_to 'Parroco',:controller => "pastors", :action => "index"%></li>
-            <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
-            <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
-            <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
-          </ul>
-    </div>
+      <% a = controller_name %>
+      <% case a ; when "main_page" %>
+            <ul>
+                <li id="current"><%= link_to 'Inicio',:controller => "main_page", :action => "index"%></li>
+                <li><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
+                <li><%= link_to 'Parroquia',:controller => "parishes", :action => "index"%> </li>
+                <li><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
+                <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
+                <li><%= link_to 'Parroco',:controller => "pastors", :action => "index"%></li>
+                <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
+                <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
+                <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+            </ul>
+        <% when "vicarious"; %>
+            <ul>
+                <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%></li>
+                <li id="current"><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
+                <li><%= link_to 'Parroquia',:controller => "parishes", :action => "index"%> </li>
+                <li><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
+                <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
+                <li><%= link_to 'Parroco',:controller => "pastors", :action => "index"%></li>
+                <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
+                <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
+                <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+            </ul>
 
+        <% when "parishes"; %>
+            <ul>
+                <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%></li>
+                <li><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
+                <li id="current"><%= link_to 'Parroquia',:controller => "parishes", :action => "index"%> </li>
+                <li><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
+                <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
+                <li><%= link_to 'Parroco',:controller => "pastors", :action => "index"%></li>
+                <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
+                <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
+                <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+            </ul>
+
+        <% when "grous"; %>
+            <ul>
+                <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%></li>
+                <li><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
+                <li><%= link_to 'Parroquia',:controller => "parishes", :action => "index"%> </li>
+                <li id="current"><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
+                <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
+                <li><%= link_to 'Parroco',:controller => "pastors", :action => "index"%></li>
+                <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
+                <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
+                <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+            </ul>
+
+        <% when "volunteers"; %>
+            <ul>
+                <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%></li>
+                <li><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
+                <li><%= link_to 'Parroquia',:controller => "parishes", :action => "index"%> </li>
+                <li><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
+                <li id="current"><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
+                <li><%= link_to 'Parroco',:controller => "pastors", :action => "index"%></li>
+                <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
+                <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
+                <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+            </ul>
+
+        <% when "pastors"; %>
+            <ul>
+                <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%></li>
+                <li><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
+                <li><%= link_to 'Parroquia',:controller => "parishes", :action => "index"%> </li>
+                <li><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
+                <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
+                <li id="current"><%= link_to 'Parroco',:controller => "pastors", :action => "index"%></li>
+                <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
+                <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
+                <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+            </ul>
+
+        <% when "campaings"; %>
+            <ul>
+                <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%></li>
+                <li><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
+                <li><%= link_to 'Parroquia',:controller => "parishes", :action => "index"%> </li>
+                <li><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
+                <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
+                <li><%= link_to 'Parroco',:controller => "pastors", :action => "index"%></li>
+                <li id="current"><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
+                <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
+                <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+            </ul>
+
+        <% when "notices"; %>
+            <ul>
+                <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%></li>
+                <li><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
+                <li><%= link_to 'Parroquia',:controller => "parishes", :action => "index"%> </li>
+                <li><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
+                <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
+                <li><%= link_to 'Parroco',:controller => "pastors", :action => "index"%></li>
+                <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
+                <li id="current"><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
+                <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+            </ul>
+
+        <% when "social_works"; %>
+            <ul>
+                <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%></li>
+                <li><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
+                <li><%= link_to 'Parroquia',:controller => "parishes", :action => "index"%> </li>
+                <li><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
+                <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
+                <li><%= link_to 'Parroco',:controller => "pastors", :action => "index"%></li>
+                <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
+                <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
+                <li id="current"><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
+            </ul>
+      <% end %>
+    </div>
