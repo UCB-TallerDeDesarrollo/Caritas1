@@ -1,8 +1,0 @@
-<h2>Informacion De Ayuda</h2>
-<table></table>
-<% f.fields_for :helps do |builder|%>
-  <p>
-    <%= builder.label :what_is_persons_problem, "Cual Es El Problema De La Persona?"%>
-    <%= builder.text_area :what_is_persons_problem, :rows=>3%>
-  </p>
-<%end%>

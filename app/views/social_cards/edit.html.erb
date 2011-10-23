@@ -105,21 +105,20 @@
     <td width="21%">Caso </td>
     <td width="79%"> <%= f.radio_button(:type_of_case, "Nuevo") %>
     Nuevo
-      <%= f.radio_button(:type_of_case, "Conocido") %> Conocido</td></td>
+      <%= f.radio_button(:type_of_case, "Conocido") %> Conocido</td>
   </tr>
   <tr>
     <td><p>Ha Recibido Ayuda En Otras Instituciones O Parroquias?<br />
-    De Que tipo?</p></td>
-    <td><%= f.text_area :did_you_get_another_help, :rows =>3 %></td>
+    </p></td>
+    <td><%= f.text_field :did_you_get_another_help%></td>
+  </tr>
+  <tr>
+    <td>De Que tipo?
+    </td>
+     <td><%= f.text_field :what_kind%></td>
   </tr>
 </table>
-  Ayudas
-  <% f.fields_for :helps do |builder|%>
-  <p>
-    <%= builder.label :what_is_persons_problem, "Cual Es El Problema De La Persona?"%>
-    <%= builder.text_area :what_is_persons_problem, :rows=>3%>
-  </p>
-  <%end%>
+ 
   <p>
     <%= f.submit 'Editar' %>
   </p>

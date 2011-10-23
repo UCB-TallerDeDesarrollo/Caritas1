@@ -33,8 +33,13 @@
   </tr>
   <tr>
     <td><p>Ha Recibido Ayuda En Otras Instituciones O Parroquias?<br />
-    De Que tipo?</p></td>
-    <td><%= f.text_area :did_you_get_another_help, :rows =>3 %></td>
+    </p></td>
+    <td><%= f.text_field :did_you_get_another_help%></td>
+  </tr>
+  <tr>
+    <td>De Que tipo?
+    </td>
+     <td><%= f.text_field :what_kind%></td>
   </tr>
 </table>
   * Estos Campos Son Requeridos
