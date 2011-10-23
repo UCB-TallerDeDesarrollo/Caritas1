@@ -412,6 +412,11 @@ en:
         is_published: "Publicándose"
         last_date: "Última Fecha"
        
+    description:
+      
+      hospital_expense:
+        price: Bs
+      
   active_scaffold:
     add: 'Añadir'
     add_existing: 'Añadir existente'

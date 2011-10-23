@@ -2,34 +2,43 @@
 <%= f.error_messages %>
   <table>
     <tr>  
-      <td>* <%= :title %></td>
-      <td><%= f.text_field :title, :disabled => true %></td>
+      <td>* <%= "Título" %></td>
+      <td><%=h @notice.title%></td>
+    </tr>
+    
+    <tr>  
+      <td><%= "Imagen" %></td>
+      <% if @notice.notice_photo %>
+      <td><%=  image_tag url_for_file_column("notice", "notice_photo"), :size=>"300x200" %></td>
+      <% else %>
+      <td><%=  image_tag "NoticeDefault.png", :size=>"300x200" %></td>
+      <% end   %>
     </tr>
     
     <tr>
-      <td><%= :description  %> </td>
-      <td><%= f.text_area :description, :size => "100x10", :disabled => true %></td>
+      <td><%= "Descripción"  %> </td>
+      <td><%=h @notice.description%></td>
     </tr>
 
     <tr>
-      <td>* <%= :notice_type %> </td>
-      <td><%= f.select  :notice_type, Notice::NOTICES_TYPES , :disabled => true %></td>
+      <td>* <%= "Tipo Noticia" %> </td>
+      <td><%=h @notice.notice_type %></td>
     </tr>
 
     <tr>
-      <td><%= :is_published %></td>
-      <td><%= f.check_box :is_published, :disabled => true %></td>
+      <td><%= "Publicándose" %></td>
+      <td><%=f.check_box @notice.is_published, :disabled => true %></td>
     </tr>
 
     <tr>
-      <td><%= :last_date %> </td>
-      <td><%= f.date_select :last_date, :disabled => true %></td>
+      <td><%= "Última fecha" %> </td>
+      <td><%=h @notice.last_date%></td>
     </tr>
     
     <tr align="right">
       <td colspan="2">
         <%= link_to 'Editar', edit_notice_path(@notice) %> |
-        <%= link_to 'Atras', notices_path %>
+        <%= link_to 'Volver', notices_path %>
       </td>
     </tr>
   </table>
