@@ -100,16 +100,17 @@
     <td width="21%">Caso </td>
     <td width="79%"><%= h @social_card.type_of_case %></td>
   </tr>
-   <tr>
-    <td><p>Ha Recibido Ayuda En Otras Instituciones O Parroquias?<br />
-    </p></td>
-    <td><%= h @social_card.did_you_get_another_help%></td>
-  </tr>
+
   <tr>
-    <td>De Que tipo?
-    </td>
-     <td><%= h @social_card.what_kind%></td>
+    <td><p>Ha Recibido Ayuda En Otras Instituciones O Parroquias?<br />
+    De Que tipo?</p></td>
+    <td><%=  h @social_card.did_you_get_another_help %></td>
   </tr>
 </table>
-  
+  Ayudas
+  <ul>
+  <% for help in @social_card.helps %>
+    <li> <%=h help.what_is_persons_problem %></li>
+<%end %>
+
   </ul>
