@@ -30,7 +30,8 @@ class VolunteersController < ApplicationController
   # GET /volunteers/new.xml
   def new
     @volunteer = Volunteer.new
-
+    @group = Group.find(:all)
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @volunteer }

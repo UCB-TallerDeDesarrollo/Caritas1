@@ -4,7 +4,7 @@ class Group < ActiveRecord::Base
 
   #put relations and references here
   #belongs_to :volunteer   # relacion para group_leader
-  #has_many :volunteers
+  has_many :volunteers
 
   #put active record callbacks here
 
@@ -27,5 +27,9 @@ class Group < ActiveRecord::Base
     else
       return_to_main
     end
+  end
+  
+  def to_s
+    "#{name}"
   end
 end
