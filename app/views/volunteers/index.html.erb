@@ -1,43 +1,43 @@
-  <h1>Voluntarios</h1>
+<h1>Voluntarios</h1>
 
 <% form_tag volunteers_path, :method => 'get' do %>
   <p>
     Parametro: <%= text_field_tag :search, params[:search] %>
-    <%#  <%= check_box_tag :state, params[:state] %>
+  <%#  <%= check_box_tag :state, params[:state] %>
     <%= submit_tag "Buscar", :name => nil %>
-</p>
-      <% end %>
+  </p>
+<% end %>
 <table>
   <tr>
     <td align="Right">
-<%= button_to 'Crear Voluntario', new_volunteer_path %>
+      <%= button_to 'Crear Voluntario', new_volunteer_path %>
 
     </td>
-    </tr>
-<tr>
+  </tr>
+  <tr>
     <td>
 
-<table border="3">
+      <table border="3">
 
-  <tr id ='head-table'>
-    <th>Nombre</th>
-    <th>Apellido Paterno</th>
-    <th>Apellido Materno</th>
-    <th>Cargo</th>
-    <th>Acciones</th>
-  </tr>
+        <tr id ='head-table'>
+          <th>Nombre</th>
+          <th>Apellido Paterno</th>
+          <th>Apellido Materno</th>
+          <th>Cargo</th>
+          <th>Acciones</th>
+        </tr>
 
-<% @volunteers.each do |volunteer| %>
-  <tr>
-    <td><%=link_to (h volunteer.name), volunteer %></td>
-    <td><%=h volunteer.last_name %></td>
-    <td><%=h volunteer.second_last_name %></td>
-    <td><%=h volunteer.position %></td>
-    <td><%= link_to 'Editar', edit_volunteer_path(volunteer) %></td>
-  </tr>
-<% end %>
-</table>
-      </td>
+        <% @volunteers.each do |volunteer| %>
+          <tr>
+            <td><%=link_to (h volunteer.name), volunteer %></td>
+            <td><%=h volunteer.last_name %></td>
+            <td><%=h volunteer.second_last_name %></td>
+            <td><%=h volunteer.position %></td>
+            <td><%= link_to 'Editar', edit_volunteer_path(volunteer) %></td>
+          </tr>
+        <% end %>
+      </table>
+    </td>
   </tr>
 </table>
 <br />
