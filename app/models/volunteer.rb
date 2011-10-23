@@ -3,7 +3,7 @@ class Volunteer < ActiveRecord::Base
 
   #put relations and references here
   #has_one :group #relacion para group_leader
-  #belongs_to :group
+  belongs_to :group
 
   #put active record callbacks here
 
