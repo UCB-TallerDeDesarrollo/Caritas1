@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :helps
+
+  map.resources :social_cards
+
   map.resources :parishes
 
   map.resources :notices

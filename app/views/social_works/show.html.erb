@@ -1,8 +1,16 @@
 <h1>Ver Obra Social</h1>
 <table>
   <tr>
-    <td><b>Nombre:</b></td>
-    <td><%=h @social_work.name %></td>
+    <td><b>Parroquia:</b></td>
+    <td><%=h @social_work.parish %></td>
+  </tr>
+  <tr>
+    <td><b>Nombre Obra Social:</b></td>
+    <td><%=h @social_work.social_work_name %></td>
+  </tr>
+  <tr>
+    <td><b>Tipo Obra Social:</b></td>
+    <td><%=h @social_work.social_work %></td>
   </tr>
   <tr>
     <td><b>Responsable:</b></td>
@@ -31,6 +39,10 @@
   <tr>
     <td><b>Descripcion:</b></td>
     <td><%=h @social_work.description %></td>
+  </tr>
+  <tr>
+    <td><b>Responsable del llenado:</b></td>
+    <td><%=h @social_work.responsible_filling %></td>
   </tr>
 </table>
 <%= link_to 'Editar', edit_social_work_path(@social_work) %> |

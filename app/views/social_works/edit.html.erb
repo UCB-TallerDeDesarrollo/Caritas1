@@ -4,9 +4,17 @@
   <%= f.error_messages %>
 <table>
   <tr>
-    <td>* Nombre</td>
-    <td><%= f.text_field :name %></td>
+    <td>* Parroquia</td>
+    <td><%= f.text_field :parish %></td>
   </tr>
+  <tr>
+    <td>* Nombre Obra Social</td>
+    <td><%= f.text_field :social_work_name %></td>
+  </tr>
+  <tr>
+      <td>* Obra Social De </td>          
+        <td><%= f.text_field :social_work %></td>  
+    </tr>
   <tr>
     <td>* Responsable</td>
     <td><%= f.text_field :responsible %></td>
@@ -34,6 +42,10 @@
   <tr>
     <td>Descripcion</td>
     <td><%= f.text_area :description, :cols => 60, :rows => 10 %></td>
+  </tr>
+  <tr>
+    <td>* Responsable del llenado</td>
+    <td><%= f.text_field :responsible_filling %></td>
   </tr>
 </table>
   <p>

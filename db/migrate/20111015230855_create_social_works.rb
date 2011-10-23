@@ -1,7 +1,9 @@
 class CreateSocialWorks < ActiveRecord::Migration
   def self.up
     create_table :social_works do |t|
-      t.string :name
+      t.string :parish
+      t.string :social_work_name
+      t.string :social_work
       t.string :responsible
       t.string :location
       t.integer :phone
@@ -9,6 +11,7 @@ class CreateSocialWorks < ActiveRecord::Migration
       t.string :email
       t.string :transport
       t.text :description
+      t.string :responsible_filling
 
       t.timestamps
     end
