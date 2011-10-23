@@ -295,7 +295,7 @@ en:
 
       full_messages:
         format: "%{attribute} %{message}"
-
+        
     models:
       group:
         one: "Grupo"
@@ -318,6 +318,12 @@ en:
       social_card:
         one: "Ficha Social"
         other: "Fichas Sociales"
+      user:
+        one: "Usuario"
+        other: "Usuarios"
+      user_session:
+        one: "Usuario"
+        other: "Usuarios"
        
     attributes:
       group:
@@ -389,6 +395,11 @@ en:
         type_of_case: "Tipo"
         did_you_get_another_help: "Ha recibio otra Ayuda"
         what_kind: "De que Tipo"
+      user:
+        username: "Nombre de usuario"
+        password: "Contraseña"
+      user_session:
+        username: "Nombre de usuario"
         
     description:
       
