@@ -41,6 +41,7 @@ class VolunteersController < ApplicationController
   # GET /volunteers/1/edit
   def edit
     @volunteer = Volunteer.find(params[:id])
+    @group = Group.find(:all)
   end
 
   # POST /volunteers
