@@ -208,7 +208,7 @@ input.button {
 	/* change the values of top and left to adjust the position of the logo*/
 	top: 32px;
 	left: 46px;
-	width: 739px;
+/*	width: 739px;*/
 	height: 102px;
 }
 #header p#slogan {

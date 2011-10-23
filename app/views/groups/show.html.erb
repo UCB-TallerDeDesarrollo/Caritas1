@@ -8,6 +8,12 @@
   </tr>
 
   <tr>
+   <tr>
+    <td>Voluntarios</td>
+    <td><%=h Volunteer.find(:all,:conditions => ['group_id = ? ', "#{@group.id}"]) %></td>
+  </tr>
+
+  <tr>
     <td>Responsable</td>
     <td><%=h @group.volunteer %></td>
   </tr>

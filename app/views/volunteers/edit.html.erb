@@ -49,7 +49,17 @@
       <td><%= f.text_field :email %></td>
     </tr>
     
-
+      <tr><td>&nbsp&nbsp&nbspGrupo</td><td>
+          <select name="volunteer[group_id]">
+            <% @group.each do |group| %>
+              <option value="<%=group.id%>" <%='selected' if group.id == @volunteer.group_id %>>
+                <%=group.name%>
+              </option>
+            <%end%>
+          </select>
+  
+        </td></tr>
+  
     
    <tr align="right">
       <td colspan="2">

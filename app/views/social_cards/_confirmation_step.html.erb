@@ -100,6 +100,7 @@
     <td width="21%">Caso </td>
     <td width="79%"><%= h @social_card.type_of_case %></td>
   </tr>
+
   <tr>
     <td><p>Ha Recibido Ayuda En Otras Instituciones O Parroquias?<br />
     De Que tipo?</p></td>
@@ -111,4 +112,5 @@
   <% for help in @social_card.helps %>
     <li> <%=h help.what_is_persons_problem %></li>
 <%end %>
+
   </ul>

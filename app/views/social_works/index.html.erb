@@ -1,34 +1,43 @@
-<h1>Listing social_works</h1>
+<h1>Obra Social</h1>
+
+<p>
+  <% form_tag social_works_path, :method => 'get' do %>
+    Parametro: <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Buscar", :name => nil %>
+  <% end %>
+</p>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Responsible</th>
-    <th>Location</th>
-    <th>Phone</th>
-    <th>Movil</th>
-    <th>Email</th>
-    <th>Transport</th>
-    <th>Description</th>
+    <td align="RIGHT">
+      <%= button_to 'Crear Obra Social', new_social_work_path %>
+    </td>
   </tr>
-
-<% @social_works.each do |social_work| %>
   <tr>
-    <td><%=h social_work.social_work_name %></td>
-    <td><%=h social_work.responsible %></td>
-    <td><%=h social_work.location %></td>
-    <td><%=h social_work.phone %></td>
-    <td><%=h social_work.movil %></td>
-    <td><%=h social_work.email %></td>
-    <td><%=h social_work.transport %></td>
-    <td><%=h social_work.description %></td>
-    <td><%= link_to 'Show', social_work %></td>
-    <td><%= link_to 'Edit', edit_social_work_path(social_work) %></td>
-    <td><%= link_to 'Destroy', social_work, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>
+      <table border ="3">
+        <tr id="head-table">
+          <th>Nombre</th>
+          <th>Responsable</th>
+          <th>Ubicacion</th>
+          <th>Tetefono</th>
+          <th>Celular</th>
+          <th colspan="2">Acciones</th>
+        </tr>
+        <% @social_works.each do |social_work| %>
+          <tr>
+            <td><%=link_to (h social_work.social_work_name), social_work %></td>
+            <td><%=h social_work.responsible %></td>
+            <td><%=h social_work.location %></td>
+            <td><%=h social_work.phone %></td>
+            <td><%=h social_work.movil %></td>
+            <td><%= link_to 'Editar', edit_social_work_path(social_work) %></td>
+            <td><%= link_to 'Destroy', social_work, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
   </tr>
-<% end %>
 </table>
-
+</td>
+</tr>
+</table>
 <br />
-
-<%= link_to 'New social_work', new_social_work_path %>

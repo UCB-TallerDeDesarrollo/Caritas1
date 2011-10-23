@@ -70,6 +70,14 @@
       <%=h @volunteer.email %>
     </td>
   </tr>
+  
+    <tr>
+    <td>
+
+      <b>Grupo:</b></td><td>
+      <%=h Group.find(@volunteer.group_id).name %>
+    </td>
+  </tr>
 
   
   <tr align="right">

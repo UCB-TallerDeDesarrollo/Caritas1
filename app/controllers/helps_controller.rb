@@ -24,11 +24,11 @@ class HelpsController < ApplicationController
   # GET /helps/new
   # GET /helps/new.xml
   def new
+    #@help = Help.new(params[:social_card_id])
     @help = Help.new
-
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @help }
+      #format.xml  { render :xml => @help }
     end
   end
 
