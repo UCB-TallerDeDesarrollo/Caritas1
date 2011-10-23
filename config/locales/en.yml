@@ -315,6 +315,9 @@ en:
       pastor:
         one: "Párroco"
         other: "Párrocos"
+      social_card:
+        one: "Ficha Social"
+        other: "Fichas Sociales"
        
     attributes:
       group:
@@ -358,6 +361,34 @@ en:
         second_last_name: "Apellido materno"
         phone_number: "Telefono"
         cellphone_number: "Celular"
+      social_card:
+        date: "Fecha"
+        parish_church: "Parroquia"
+        name: "Nombre"
+        marital_status: "Estado Civil"
+        gender: "Sexo"
+        birthday: "Fecha De Nacimiento"
+        birthday_location: "Lugar De Nacimiento"
+        identity_card: "C.I."
+        phone: "Telfono"
+        movil: "Celular" 
+        address: "Direccion"
+        location_reference: "Referencia De Ubicacion"
+        grade_school: "Grado Escolar"
+        occupation: "Ocupacion"
+        family_members: "Total De Miembros En La Familia"
+        parish_belongs: "Parroquia A La Que Pertenece"
+        family_history: "Historia Familiar"
+        derivative_by: "Derivado Por"
+        reference_person: "Persona De Referencia"
+        address_reference: "Direccion"
+        phone_reference: "Telefono"
+        movil_reference: "Celular"
+        age_reference: "Edad"
+        occupation_reference: "Ocupacion"
+        type_of_case: "Tipo"
+        did_you_get_another_help: "Ha recibio otra Ayuda"
+        what_kind: "De que Tipo"
         
     description:
       
