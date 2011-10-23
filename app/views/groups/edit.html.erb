@@ -13,7 +13,13 @@
     <tr>
       <td>Responsable</td>
       <td>
-        <%= record_select_field 'group[volunteer_id]', @group.volunteer || Volunteer.new %>
+        <select name="group[volunteer_id]">
+          <% @volunteers.each do |volunteer| %>
+            <option value="<%=volunteer.id%>" <%='selected' if volunteer.id == @group.volunteer_id %>>
+              <%=volunteer.to_s%>
+            </option>
+          <%end%>
+        </select>
       </td>
     </tr>
 

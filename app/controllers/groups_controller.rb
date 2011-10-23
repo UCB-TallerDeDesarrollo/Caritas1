@@ -29,6 +29,7 @@ class GroupsController < ApplicationController
   # GET /groups/new.xml
   def new
     @group = Group.new
+    @volunteers = Volunteer.find(:all)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -39,6 +40,7 @@ class GroupsController < ApplicationController
   # GET /groups/1/edit
   def edit
     @group = Group.find(params[:id])
+    @volunteers = Volunteer.find(:all)
   end
 
   # POST /groups
