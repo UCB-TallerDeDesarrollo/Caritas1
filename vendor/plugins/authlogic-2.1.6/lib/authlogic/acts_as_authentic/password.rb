@@ -134,7 +134,7 @@ module Authlogic
         # * <tt>Default:</tt> validates_length_of_password_field_options
         # * <tt>Accepts:</tt> Hash of options accepted by validates_length_of
         def validates_length_of_password_confirmation_field_options(value = nil)
-          rw_config(:validates_length_of_password_confirmation_field_options, value, validates_length_of_ñpassword_field_options)
+          rw_config(:validates_length_of_password_confirmation_field_options, value, validates_length_of_password_field_options)
         end
         alias_method :validates_length_of_password_confirmation_field_options=, :validates_length_of_password_confirmation_field_options
         
