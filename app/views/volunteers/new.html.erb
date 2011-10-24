@@ -57,12 +57,12 @@
       <tr>
         <td>&nbsp&nbsp&nbspGrupo</td>
         <td>
-          <select name="volunteer[group_id]">
-            <% @groups.each do |group| %>
-              <option value="<%=group.id%>">
+          <select name="volunteer[group_id]" >
+            <%@groups.each do |group| %>
+              <option value="<%=group.id%>" >
                 <%=group.name%>
               </option>
-            <%end%>
+            <%end%>              
           </select>
         </td>
       </tr>
