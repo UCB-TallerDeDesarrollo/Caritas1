@@ -14,6 +14,7 @@
       <td>Responsable</td>
       <td>
         <select name="group[volunteer_id]">
+          <option value="-1"></option>
           <% @volunteers.each do |volunteer| %>
             <option value="<%=volunteer.id%>">
               <%=volunteer.to_s%>

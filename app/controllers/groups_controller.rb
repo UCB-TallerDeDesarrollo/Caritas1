@@ -1,8 +1,4 @@
 class GroupsController < ApplicationController
-  record_select :per_page => 5,
-    :search_on => ['name'],
-    :full_text_search => true
-
   # GET /groups
   # GET /groups.xml
   def index

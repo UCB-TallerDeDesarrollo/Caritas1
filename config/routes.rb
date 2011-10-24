@@ -1,12 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :helps
-
   map.resources :social_cards
-
   map.resources :parishes
-
   map.resources :notices
-
   map.resources :vicarious
 
   map.login 'login', :controller => 'user_sessions', :action => 'new'  
@@ -14,13 +10,12 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :user_sessions
   map.resources :users
-  
   map.resources :social_works
   map.resources :vicarious
   map.resources :pastors
   map.resources :groups
   map.resources :campaings
-  map.resources :volunteers, :collection => {:browse => :get}, :member => {:select => :post}
+  map.resources :volunteers
 
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -54,19 +54,20 @@
       <td><%= f.text_field :email %></td>
     </tr>  
   
-      <tr><td>&nbsp&nbsp&nbspGrupo</td><td>
+      <tr>
+        <td>&nbsp&nbsp&nbspGrupo</td>
+        <td>
           <select name="volunteer[group_id]">
-            <% @group.each do |group| %>
+            <option value="-1"></option>
+            <% @groups.each do |group| %>
               <option value="<%=group.id%>">
                 <%=group.name%>
               </option>
             <%end%>
           </select>
-  
-  
-        </td></tr>
-    
-    
+        </td>
+      </tr>
+
     <tr align="right">
       <td colspan="2">
         <%= f.submit 'Registrar' %>
