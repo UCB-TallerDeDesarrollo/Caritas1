@@ -13,8 +13,8 @@ class SocialCard < ActiveRecord::Base
   validates_presence_of :birthday_location, :if => lambda { |o| o.current_step == "personal" }
   validates_presence_of :address, :if => lambda { |o| o.current_step == "personal" }
   validates_presence_of :identity_card, :if => lambda { |o| o.current_step == "personal" }
-  validates_numericality_of :phone, :greater_than => 1000000, :less_than => 9999999,:allow_blank => true  , :message => "El Telefono no es un numero o es incorrecto" ,  :if => lambda { |o| o.current_step == "personal" }
-  validates_numericality_of :movil, :greater_than => 10000000, :less_than => 99999999,:allow_blank => true  ,:message => "El Celular no es un numero o es incorrecto" ,  :if => lambda { |o| o.current_step == "personal" }
+  validates_numericality_of :phone, :greater_than => 1000000, :less_than => 9999999,:allow_blank => true  , :message => " no es un numero o es incorrecto" ,  :if => lambda { |o| o.current_step == "personal" }
+  validates_numericality_of :movil, :greater_than => 10000000, :less_than => 99999999,:allow_blank => true  ,:message => " no es un numero o es incorrecto" ,  :if => lambda { |o| o.current_step == "personal" }
   validates_presence_of :occupation, :with => /^([a-zA-Z\ ]{3,50})$/i, :if => lambda { |o| o.current_step == "personal" }
   validates_presence_of :family_members, :if => lambda { |o| o.current_step == "personal" }
 
