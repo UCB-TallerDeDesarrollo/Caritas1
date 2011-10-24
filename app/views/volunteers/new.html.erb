@@ -34,11 +34,11 @@
     </tr>
 
     <tr>
-      <td>&nbsp&nbsp&nbspFecha de Nacimiento</td>
+      <td>* Fecha de Nacimiento</td>
       <td><%= f.date_select :date_of_birth,  :start_year => 1935%></td>            
     </tr>
     <tr>
-      <td>&nbsp&nbsp&nbspGenero</td>          
+      <td>* Genero</td>          
       <td>masculino
       <%= f.radio_button(:genre, "masculino") %>         
       femenino
@@ -53,7 +53,20 @@
       <td>&nbsp&nbsp&nbspEmail</td>
       <td><%= f.text_field :email %></td>
     </tr>  
-    
+  
+      <tr>
+        <td>&nbsp&nbsp&nbspGrupo</td>
+        <td>
+          <select name="volunteer[group_id]" >
+            <%@groups.each do |group| %>
+              <option value="<%=group.id%>" >
+                <%=group.name%>
+              </option>
+            <%end%>              
+          </select>
+        </td>
+      </tr>
+
     <tr align="right">
       <td colspan="2">
         <%= f.submit 'Registrar' %>

@@ -35,7 +35,7 @@ class VicariousController < ApplicationController
   # GET /vicarious/1/edit
   def edit
     @vicariou = Vicariou.find(params[:id])
-    @pastor = Pastor.find(:all)
+    @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious) or id= ?","#{@vicariou.pastor_id}"])
   end
 
   # POST /vicarious
