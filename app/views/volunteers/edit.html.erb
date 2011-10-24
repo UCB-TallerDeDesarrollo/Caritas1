@@ -30,7 +30,7 @@
       <td><%= f.text_field :movil %></td>
     </tr>
     <tr>
-      <td>&nbsp&nbsp&nbspFecha de Nacimiento</td>
+      <td>* Fecha de Nacimiento</td>
       <td><%= f.date_select :date_of_birth ,  :start_year => 1935%></td>
     </tr>
     <tr>
@@ -49,18 +49,31 @@
       <td><%= f.text_field :email %></td>
     </tr>
     
-    <tr>
+      <tr>
+        <td>&nbsp&nbsp&nbspGrupo</td>
+        <td>
+          <select name="volunteer[group_id]">
+            <% @groups.each do |group| %>
+              <option value="<%=group.id%>" <%='selected' if group.id == @volunteer.group_id %>>
+                <%=group.name%>
+              </option>
+            <%end%>
+          </select>
+        </td>
+      </tr>
+  
+    
+   <tr align="right">
+      <td colspan="2">
+        <%= f.submit 'Guardar' %>
+        <%= link_to 'Ver', :action => :show %>
+        <%= link_to 'Cancelar', volunteers_path %>
+      </td>
+    </tr>
+    
+        <tr>
       <td>*  Estos campos son obligatorios</td>
     </tr>
-    <tr>
-      <td>
   </table>
 
-
-  <p>
-    <%= f.submit 'Editar' %>
-  </p>
 <% end %>
-
-<%= link_to 'Ver', @volunteer %> |
-<%= link_to 'Cancelar', volunteers_path %>

@@ -176,15 +176,15 @@ module Authlogic
           def validate_by_password
             self.invalid_password = false
             
-            errors.add(login_field, I18n.t('error_messages.login_blank', :default => "cannot be blank")) if send(login_field).blank?
-            errors.add(password_field, I18n.t('error_messages.password_blank', :default => "cannot be blank")) if send("protected_#{password_field}").blank?
+            errors.add(login_field, I18n.t('error_messages.login_blank', :default => "no puede estar en blanco.")) if send(login_field).blank?
+            errors.add(password_field, I18n.t('error_messages.password_blank', :default => "no puede estar en blanco.")) if send("protected_#{password_field}").blank?
             return if errors.count > 0
 
             self.attempted_record = search_for_record(find_by_login_method, send(login_field))
             if attempted_record.blank?
               generalize_credentials_error_messages? ?
                 add_general_credentials_error :
-                errors.add(login_field, I18n.t('error_messages.login_not_found', :default => "is not valid"))
+                errors.add(login_field, I18n.t('error_messages.login_not_found', :default => "no es valido."))
               return
             end
 
@@ -192,7 +192,7 @@ module Authlogic
               self.invalid_password = true
               generalize_credentials_error_messages? ?
                 add_general_credentials_error :
-                errors.add(password_field, I18n.t('error_messages.password_invalid', :default => "is not valid"))
+                errors.add(password_field, I18n.t('error_messages.password_invalid', :default => "no es valido."))
               return
             end
           end

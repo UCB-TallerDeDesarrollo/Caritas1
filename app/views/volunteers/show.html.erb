@@ -70,9 +70,20 @@
       <%=h @volunteer.email %>
     </td>
   </tr>
-  <tr>
-    <td> 
-</table>
+  
+    <tr>
+    <td>
 
-<%= link_to 'Editar', edit_volunteer_path(@volunteer) %> |
-<%= link_to 'Volver', volunteers_path %>
+      <b>Grupo:</b></td><td>
+      <%=h Group.find(@volunteer.group_id).name %>
+    </td>
+  </tr>
+
+  
+  <tr align="right">
+    <td colspan="2">
+      <%= link_to 'Editar', edit_volunteer_path(@volunteer) %> |
+      <%= link_to 'Volver', volunteers_path %>
+    </td>
+  </tr>
+</table>

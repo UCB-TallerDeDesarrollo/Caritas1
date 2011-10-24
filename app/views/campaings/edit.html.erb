@@ -6,128 +6,67 @@
  <TABLE   ALIGN="CENTER">
 
     <TR>
-      <TD >
-        <p>
-          *<b> <%= f.label :Nombre   %></b>
-
-        </p>
-      </TD>
+      <td>* Nombre</td>
 
       <TD >
-        <p>
           <%= f.text_field :name %>
-        </p>
       </TD>
     </TR>
 
     <TR>
-      <TD >
-        <p>
-          *<b><%= f.label :Lugar   %></b>   
-        </p>
-      </TD>
+      <td>* Lugar</td> 
 
-      <TD >
-        <p>
-          <%= f.text_field :location %>
-        </p>
+      <TD >        
+          <%= f.text_field :location %>        
       </TD>
     </TR>
 
     <TR>
-      <TD >
-        <p>
-          <b> <%= f.label :Descripcion %></b><br />
-
-        </p>
-      </TD>
+     <td>&nbsp&nbsp&nbspDescripción</td>
 
       <TD >
-        <p>
-
-          <%= f.text_area :description , :rows=>6, :cols=>30  %>
-        </p>
+          <%= f.text_area :description , :rows=>6, :cols=>22  %>
       </TD>
     </TR>
 
 
     <TR>
-      <TD >
-        <p>
-          <b><%= f.label :Fecha_de_inicio   %></b>    
-
-        </p>
-      </TD>
+     <td>&nbsp&nbsp&nbspFecha de Inicio</td>
 
       <TD >
-        <p>
-
           <%= f.date_select :date_ini %>  
-
-        </p>
       </TD>
     </TR>
 
     <TR>
-      <TD >
-        <p>
-          <b> <%= f.label :Fecha_de_finalizacion   %></b>
-
-        </p>
-      </TD>
+      <td>&nbsp&nbsp&nbspFecha de Finalización</td>
 
       <TD >
-        <p>
           <%= f.date_select :date_end %>
-        </p>
       </TD>
     </TR>
 
     <TR>
-      <TD >
-        <p>
-          <b> *<%= f.label :Responsable   %></b>
-
-        </p>
-      </TD>
+    <td>* Responsable</td>
 
       <TD >
-        <p>
           <%= f.text_field :responsible %>
-        </p>
       </TD>
     </TR>
-
-
-    <TR>
-      <TD >
-        <p>
-          <b> *<%= f.label :Estado    %></b>
-
-        </p>
-      </TD>
-
-      <TD >
-        <p>
-          <%= f.text_field :state %>    
-        </p>
-      </TD>
-    </TR>
-      <TR>
-        <TD>
-            <p>
   
-              <%= f.submit 'Actualizar' %>
-  
-              <button type="reset">Limpiar</button>
-             <%= link_to 'Ver', @campaing %> |
-             <%= link_to 'Atras', campaings_path %> 
-            </p>
-        </TD>  
-      </TR>
-  
+          <tr align="right">
+      <td colspan="2">
+        <%= f.submit 'Actualizar' %>
+        <%= link_to 'Ver', :action => :show %>
+        <%= link_to 'Volver', campaings_path %>
+      </td>
+    </tr>
+    
+        <tr>
+      <td>*  Estos campos son obligatorios</td>
+    </tr>
    </TABLE>   
 
 <% end %>
 
-<hr align="LEFT" size="1" width="800" color="Red" noshade/> 
+

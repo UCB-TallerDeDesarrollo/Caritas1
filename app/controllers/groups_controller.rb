@@ -1,8 +1,4 @@
 class GroupsController < ApplicationController
-  record_select :per_page => 5,
-    :search_on => ['name'],
-    :full_text_search => true
-
   # GET /groups
   # GET /groups.xml
   def index
@@ -29,6 +25,7 @@ class GroupsController < ApplicationController
   # GET /groups/new.xml
   def new
     @group = Group.new
+    @volunteers = Volunteer.find(:all)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -39,6 +36,7 @@ class GroupsController < ApplicationController
   # GET /groups/1/edit
   def edit
     @group = Group.find(params[:id])
+    @volunteers = Volunteer.find(:all)
   end
 
   # POST /groups

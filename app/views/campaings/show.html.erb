@@ -92,27 +92,11 @@
 </TD>
 </TR>
 
-
-<TR>
-<TD WIDTH=100>
-  
-<p>
-  <b>Estado:</b>
-</p>
-</TD>
-
-<TD WIDTH=100>
-  
-<p>
-  <%=h @campaing.state %>
-</p>
-</TD>
-</TR>
-<TR>
-  <TD>
- <%= link_to 'Actualizar', edit_campaing_path(@campaing) %>|<%= link_to 'Atras', campaings_path %>
-  </TD>
-</TR>
+  <tr align="right">
+    <td colspan="2">
+      <%= link_to 'Actualizar', edit_campaing_path %>|
+      <%= link_to 'Volver', campaings_path %>
+    </td>
+  </tr>
 </TABLE>
 
-<hr align="LEFT" size="1" width="800" color="Red" noshade/> 

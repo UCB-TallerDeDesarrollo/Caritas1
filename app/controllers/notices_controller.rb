@@ -1,9 +1,13 @@
 class NoticesController < ApplicationController
   # GET /notices
   # GET /notices.xml
-  layout "main"
+  
+    record_select :per_page => 5,
+    :search_on => ['title'],
+    :full_text_search => true
+  
   def index
-    @notices = Notice.all
+    @notices = Notice.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb

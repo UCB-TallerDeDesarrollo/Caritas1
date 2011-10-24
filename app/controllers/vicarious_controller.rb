@@ -14,7 +14,7 @@ class VicariousController < ApplicationController
   # GET /vicarious/1.xml
   def show
     @vicariou = Vicariou.find(params[:id])
-
+    @pastor = Pastor.find(@vicariou.pastor_id)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @vicariou }
@@ -25,7 +25,7 @@ class VicariousController < ApplicationController
   # GET /vicarious/new.xml
   def new
     @vicariou = Vicariou.new
-
+    @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious)"])
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @vicariou }
@@ -35,13 +35,13 @@ class VicariousController < ApplicationController
   # GET /vicarious/1/edit
   def edit
     @vicariou = Vicariou.find(params[:id])
+    @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious) or id= ?","#{@vicariou.pastor_id}"])
   end
 
   # POST /vicarious
   # POST /vicarious.xml
   def create
     @vicariou = Vicariou.new(params[:vicariou])
-
     respond_to do |format|
       if @vicariou.save
         format.html { redirect_to(@vicariou, :notice => 'Vicariou was successfully created.') }

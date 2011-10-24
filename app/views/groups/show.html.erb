@@ -12,6 +12,18 @@
     <td><%=h @group.volunteer %></td>
   </tr>
 
+  <tr>
+    <td>Voluntarios</td>
+    <td>
+      <ul style="list-style-type: disc;">
+      <% volunteers = Volunteer.find(:all,:conditions => ['group_id = ? ', "#{@group.id}"])
+         volunteers.each do |volunteer|%>
+        <li><%=h volunteer.to_s %>
+      <% end %>
+      </ul>
+    </td>
+  </tr>
+
   <tr align="right">
     <td colspan="2">
       <%= link_to 'Editar', edit_group_path(@group) %> |

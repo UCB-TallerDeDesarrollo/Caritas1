@@ -295,8 +295,11 @@ en:
 
       full_messages:
         format: "%{attribute} %{message}"
-
+        
     models:
+      group:
+        one: "Grupo"
+        other: "Grupos"
       vicariou:
         one: "Vicaria"
         other: "Vicarias"
@@ -306,11 +309,28 @@ en:
       social_work:
         one: "Obra Social"
         other: "Obras Sociales"
+      campaing:
+        one: "Campaña"
+        other: "Campañas"
       pastor:
         one: "Párroco"
         other: "Párrocos"
-
+      social_card:
+        one: "Ficha Social"
+        other: "Fichas Sociales"
+      user:
+        one: "Usuario"
+        other: "Usuarios"
+      user_session:
+        one: "Usuario"
+        other: "Usuarios"
+      notice:
+        one: "Noticia"  
+        other: "Noticias"
+        
     attributes:
+      group:
+        name: "Nombre"
       volunteer:
         name: "Nombre"
         last_name: "Apellido paterno"
@@ -336,18 +356,62 @@ en:
         phone: "Telefono"
         movil: "Celular"
         transport: "Transporte"
+      campaing:
+        name: "Nombre"
+        location: "Lugar"
+        description: "Descripción"
+        date_ini: "Fecha de inicio"
+        date_end: "Fecha de finalización"
+        responsible: "Responsable"
+    
       pastor:
         name: "Nombre"
         primary_last_name: "Apellido paterno"
         second_last_name: "Apellido materno"
         phone_number: "Telefono"
         cellphone_number: "Celular"
-        
-    description:
-      
-      hospital_expense:
-        price: Bs
-      
+      social_card:
+        date: "Fecha"
+        parish_church: "Parroquia"
+        name: "Nombre"
+        marital_status: "Estado Civil"
+        gender: "Sexo"
+        birthday: "Fecha De Nacimiento"
+        birthday_location: "Lugar De Nacimiento"
+        identity_card: "C.I."
+        phone: "Telfono"
+        movil: "Celular" 
+        address: "Direccion"
+        location_reference: "Referencia De Ubicacion"
+        grade_school: "Grado Escolar"
+        occupation: "Ocupacion"
+        family_members: "Total De Miembros En La Familia"
+        parish_belongs: "Parroquia A La Que Pertenece"
+        family_history: "Historia Familiar"
+        derivative_by: "Derivado Por"
+        reference_person: "Persona De Referencia"
+        address_reference: "Direccion"
+        phone_reference: "Telefono"
+        movil_reference: "Celular"
+        age_reference: "Edad"
+        occupation_reference: "Ocupacion"
+        type_of_case: "Tipo"
+        did_you_get_another_help: "Ha recibio otra Ayuda"
+        what_kind: "De que Tipo"
+      user:
+        username: "Nombre de usuario"
+        password: "Contraseña"
+      user_session:
+        username: "Nombre de usuario"
+       
+      notice:
+        title: "Titulo"
+        notice_type: "Tipo de noticia"
+        notice_photo: "Imagen"
+        description: "Descripción"
+        is_published: "Publicándose"
+        last_date: "Última Fecha"
+       
   active_scaffold:
     add: 'Añadir'
     add_existing: 'Añadir existente'

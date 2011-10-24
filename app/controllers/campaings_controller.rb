@@ -1,8 +1,9 @@
 class CampaingsController < ApplicationController
   # GET /campaings
-  # GET /campaings.xml
+  # GET /campaings.xml 
+  
   def index
-    @campaings = Campaing.all
+    @campaings = Campaing.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +45,7 @@ class CampaingsController < ApplicationController
 
     respond_to do |format|
       if @campaing.save
-        format.html { redirect_to(@campaing, :notice => 'Campaing was successfully created.') }
+        format.html { redirect_to(@campaing, :notice => 'La campaña fue creada correctamente.') }
         format.xml  { render :xml => @campaing, :status => :created, :location => @campaing }
       else
         format.html { render :action => "new" }
@@ -60,7 +61,7 @@ class CampaingsController < ApplicationController
 
     respond_to do |format|
       if @campaing.update_attributes(params[:campaing])
-        format.html { redirect_to(@campaing, :notice => 'Campaing was successfully updated.') }
+        format.html { redirect_to(@campaing, :notice => 'La campaña fue actualizada correctamente.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
