@@ -8,13 +8,20 @@
   </tr>
 
   <tr>
-    <td>Voluntarios</td>
-    <td><%=h Volunteer.find(:all,:conditions => ['group_id = ? ', "#{@group.id}"]) %></td>
+    <td>Responsable</td>
+    <td><%=h @group.volunteer %></td>
   </tr>
 
   <tr>
-    <td>Responsable</td>
-    <td><%=h @group.volunteer %></td>
+    <td>Voluntarios</td>
+    <td>
+      <ul style="list-style-type: disc;">
+      <% volunteers = Volunteer.find(:all,:conditions => ['group_id = ? ', "#{@group.id}"])
+         volunteers.each do |volunteer|%>
+        <li><%=h volunteer.to_s %>
+      <% end %>
+      </ul>
+    </td>
   </tr>
 
   <tr align="right">
