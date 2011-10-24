@@ -21,7 +21,6 @@
         
       <tr>
         <th>Título</th>
-        <th>Descripción</th>
         <th>Tipo de Noticia</th>
         <th>Publicada</th>
         <th>Fecha</th>
@@ -31,7 +30,6 @@
       <% @notices.each do |notice| %>
       <tr>
         <td><%=h notice.title %></td>
-        <td><%=h notice.description %></td>
         <td><%=h notice.notice_type %></td>
         <td><%=h notice.is_published %></td>
         <td><%=h notice.last_date %></td>

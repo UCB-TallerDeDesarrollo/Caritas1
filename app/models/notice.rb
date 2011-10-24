@@ -13,7 +13,15 @@ class Notice < ActiveRecord::Base
   validates_file_format_of :notice_photo, :in => ["gif", "jpg", "png"]
   #imagen valida de 1 KB to 3 MB
   validates_filesize_of :notice_photo, :in => 1.kilobytes..3000.kilobytes
+  
   #put class methods here
-
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+  
   #put object methods here
 end
