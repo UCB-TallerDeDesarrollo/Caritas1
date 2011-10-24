@@ -105,7 +105,9 @@ ActiveRecord::Schema.define(:version => 20111023205929) do
   end
 
   create_table "social_works", :force => true do |t|
-    t.string   "name"
+    t.string   "parish"
+    t.string   "social_work_name"
+    t.string   "social_work"
     t.string   "responsible"
     t.string   "location"
     t.integer  "phone"
@@ -113,6 +115,7 @@ ActiveRecord::Schema.define(:version => 20111023205929) do
     t.string   "email"
     t.string   "transport"
     t.text     "description"
+    t.string   "responsible_filling"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -139,9 +142,9 @@ ActiveRecord::Schema.define(:version => 20111023205929) do
     t.string   "ubication"
     t.string   "transport"
     t.string   "telephone"
-    t.string   "vicar_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "pastor_id"
   end
 
   create_table "volunteers", :force => true do |t|
