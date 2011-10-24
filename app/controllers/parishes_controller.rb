@@ -2,7 +2,7 @@ class ParishesController < ApplicationController
   # GET /parishes
   # GET /parishes.xml
   def index
-    @parishes = Parish.all
+    @parishes = Parish.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb
