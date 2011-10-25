@@ -108,9 +108,11 @@
       <%= f.radio_button(:type_of_case, "Conocido") %> Conocido</td>
   </tr>
   <tr>
-    <td><p>Ha Recibido Ayuda En Otras Instituciones O Parroquias?<br />
+    <td><p>Ha Recibido Ayuda En Otras Instituciones O Parroquias?
     </p></td>
-    <td><%= f.text_field :did_you_get_another_help%></td>
+    <td>Si <%= f.radio_button(:did_you_get_another_help, "Si") %>
+      No
+      <%= f.radio_button(:did_you_get_another_help, "No") %></td>
   </tr>
   <tr>
     <td>De Que tipo?

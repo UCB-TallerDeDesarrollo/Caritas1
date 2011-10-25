@@ -13,7 +13,7 @@
         <tr id = 'head-table'>
           <th>Nombre</th>
           <th>Parroquia</th>
-          <th colspan="2">Acciones</th>
+          <th >Acciones</th>
         </tr>
 
        <% @social_cards.each do |social_card| %>
@@ -21,7 +21,7 @@
             <td><%= link_to social_card.name,social_card %></td>
             <td><%=h social_card.parish_church%></td>
             <td><%= link_to 'Editar', edit_social_card_path(social_card) %></td>
-            <td><%= link_to 'Eliminar', social_card, :confirm => 'Esta Seguro?', :method => :delete %></td>
+           
           </tr>
         <% end %>
       </table>

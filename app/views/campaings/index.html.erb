@@ -58,8 +58,7 @@
             <td><%=h campaing.date_ini %></td>
             <td><%=h campaing.date_end %></td>
             <td><%=h campaing.responsible %></td>     
-            <td><%= link_to 'Actualizar', edit_campaing_path(campaing) %></td>
-            <td><%= link_to 'Borrar', campaing, :confirm => 'Esta seguro que desea borrar esta campania?', :method => :delete %></td>
+            <td><%= link_to 'Editar', edit_campaing_path(campaing) %></td>            
           </tr>
         <% end %>
           
