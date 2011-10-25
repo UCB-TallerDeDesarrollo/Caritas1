@@ -3,6 +3,7 @@ class VolunteersController < ApplicationController
   # GET /volunteers.xml
   def index
     @volunteers = Volunteer.search(params[:search])
+    @groups = Group.find(:all)
     #@volunteers = Volunteer.all
 
     respond_to do |format|
