@@ -3,6 +3,14 @@ class Parish < ActiveRecord::Base
   
   validates_presence_of :pastor_id
   
+  validates_presence_of :parish_name  
+  validates_presence_of :ubication
+  validates_presence_of :transport
+  validates_presence_of :telephone
+  validates_presence_of :sensitize
+
+  validates_numericality_of :telephone, :greater_than => 0, :if => "self.telephone.present?"
+  validates_uniqueness_of :parish_name, :message => "La Parroquia ya existe"
 
   
   def self.search(search)

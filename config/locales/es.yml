@@ -303,6 +303,9 @@ en:
       vicariou:
         one: "Vicaria"
         other: "Vicarias"
+      parish:
+        one: "Parroquia"
+        other: "Parroquias"
       volunteer:
         one: "Voluntario/a"
         other: "Voluntarios/as"
@@ -349,6 +352,13 @@ en:
         transport: "Transporte"
         telephone: "Telefono"
         vicar_name: "Nombre Vicario"
+      parish:
+        parish_name: "Nombre Parroquia"
+        ubication: "Ubicacion"
+        transport: "Transporte"
+        telephone: "Telefono"
+        pastor_name: "Nombre Parroco"
+        sensitize: "Sensibilizada"
       social_work:
         parish: "parroquia"
         social_work_name: "Nombre Obra Social"
