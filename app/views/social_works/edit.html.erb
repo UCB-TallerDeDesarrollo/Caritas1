@@ -47,11 +47,17 @@
     <td>* Responsable del llenado</td>
     <td><%= f.text_field :responsible_filling %></td>
   </tr>
-</table>
-  <p>
-    <%= f.submit 'Editar' %>
-  </p>
-<% end %>
-
-<%= link_to 'Ver', @social_work %> |
+  
+  <tr align="right">
+      <td colspan="2">
+        <%= f.submit 'Guardar' %>
+        <%= link_to 'Ver', @social_work %> |
 <%= link_to 'Cancelar', social_works_path %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>*  Estos campos son obligatorios</td>
+    </tr>
+</table>
+<% end %>
