@@ -9,7 +9,7 @@ class Parish < ActiveRecord::Base
   validates_presence_of :telephone
 
   validates_numericality_of :telephone, :greater_than => 0, :if => "self.telephone.present?"
-  validates_uniqueness_of :parish_name, :message => "La Parroquia ya existe"
+  validates_uniqueness_of :parish_name, :message => "La Parroquia ya existe!"
 
   
   def self.search(search)
