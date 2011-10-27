@@ -25,7 +25,7 @@ class GroupsController < ApplicationController
   # GET /groups/new.xml
   def new
     @group = Group.new
-    @volunteers = Volunteer.find(:all)
+    @volunteers = Volunteer.all(:select => "id,name,last_name,second_last_name",:conditions=> ["id not in (select volunteer_id from groups) or id= ?","#{@group.volunteer_id}"])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,7 +36,7 @@ class GroupsController < ApplicationController
   # GET /groups/1/edit
   def edit
     @group = Group.find(params[:id])
-    @volunteers = Volunteer.find(:all)
+    @volunteers = Volunteer.all(:select => "id,name,last_name,second_last_name",:conditions=> ["id not in (select volunteer_id from groups) or id= ?","#{@group.volunteer_id}"])
   end
 
   # POST /groups
