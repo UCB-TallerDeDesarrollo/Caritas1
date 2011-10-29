@@ -25,7 +25,7 @@ class GroupsController < ApplicationController
   # GET /groups/new.xml
   def new
     @group = Group.new
-    @volunteers = Volunteer.all(:select => "id,name,last_name,second_last_name",:conditions=> ["id not in (select volunteer_id from groups) or id= ?","#{@group.volunteer_id}"])
+    @volunteers = Volunteer.all(:select => "id,name,last_name,second_last_name",:conditions=> ["id not in (select volunteer_id from groups)"])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -75,6 +75,7 @@ class GroupsController < ApplicationController
   # DELETE /groups/1.xml
   def destroy
     @group = Group.find(params[:id])
+    @group.volunteer.update_attribute(position, 'voluntario')
     @group.destroy
 
     respond_to do |format|

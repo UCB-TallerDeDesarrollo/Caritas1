@@ -30,16 +30,8 @@ class Volunteer < ActiveRecord::Base
       find(:all)
     end
   end
-
+  
   #put object methods here
-  def close()
-    if params(:must_close)
-      render :template => "close", :layout => false
-    else
-      return_to_main
-    end
-  end
-
   def to_s
     "#{name} #{last_name} #{second_last_name}"
   end
