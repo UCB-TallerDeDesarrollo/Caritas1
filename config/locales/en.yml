@@ -350,12 +350,14 @@ en:
         telephone: "Telefono"
         vicar_name: "Nombre Vicario"
       social_work:
-        name: "Nombre"
+        parish: Parroquia"
+        social_work_name: "Nombre Obra Social"
         responsible: "Responsable"
         location: "Ubicacion"
         phone: "Telefono"
         movil: "Celular"
         transport: "Transporte"
+        responsible_filling: "Responsable de llenado"
       campaing:
         name: "Nombre"
         location: "Lugar"

@@ -24,6 +24,7 @@
           <th>Apellido Paterno</th>
           <th>Apellido Materno</th>
           <th>Cargo</th>
+          <th>Grupo</th>
           <th>Acciones</th>
         </tr>
 
@@ -33,6 +34,17 @@
             <td><%=h volunteer.last_name %></td>
             <td><%=h volunteer.second_last_name %></td>
             <td><%=h volunteer.position %></td>
+            
+            
+            <td>
+            <% @groups.each do |group| %>
+               <%= group.name.to_s  if group.id == volunteer.group_id  %>
+            <%end%>
+          
+
+      </td>
+            
+            
             <td><%= link_to 'Editar', edit_volunteer_path(volunteer) %></td>
           </tr>
         <% end %>

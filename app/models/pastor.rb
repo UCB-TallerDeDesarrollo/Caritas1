@@ -11,6 +11,11 @@ class Pastor < ActiveRecord::Base
   validates_format_of :primary_last_name, :with => /^([a-zA-Z\ \-]{3,50})$/i
   validates_format_of :second_last_name, :with => /^([a-zA-Z\ \-]{3,50})$/i
   
+  validates_numericality_of :phone_number, :allow_nil => true, :only_integer => true, :less_than => 999999999, :message => "no es un numero valido"
+  validates_numericality_of :cellphone_number, :allow_nil => true, :only_integer => true, :less_than => 999999999, :message => "no es un numero valido"
+
+
+  
     #put class methods here
   def self.search(search)
     if search

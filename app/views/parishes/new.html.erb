@@ -20,6 +20,10 @@
         <td><%= p.text_field :telephone %></td>
       </tr>
       <tr>
+        <td>*Sensibilizada</td>
+        <td><%= p.check_box :sensitize %></td>
+      </tr>
+      <tr>
         <td>*Nombre del Parroco</td>
         <td><select name="parish[pastor_id]">
     <% if @pastor  
