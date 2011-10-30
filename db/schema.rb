@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20111023205929) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "pastor_id"
+    t.boolean  "sensitize"
   end
 
   create_table "pastors", :force => true do |t|
@@ -68,6 +69,13 @@ ActiveRecord::Schema.define(:version => 20111023205929) do
     t.string   "second_last_name"
     t.integer  "phone_number"
     t.integer  "cellphone_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "people", :force => true do |t|
+    t.string   "name"
+    t.binary   "sexo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
