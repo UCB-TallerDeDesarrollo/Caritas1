@@ -13,7 +13,7 @@ a, a:visited {
 }
 a:hover {
 	color: #73471B;
-	background: #990000;
+	background: inherit;
 	text-decoration: underline;
 }
 
@@ -269,7 +269,7 @@ input.button {
     border-width:1px 2px 2px 1px;
     position:relative;
     z-index:200;
-    background-color: #990000;
+    background-color: #b22222;
 }
 #nav table {
     border-collapse:collapse;
