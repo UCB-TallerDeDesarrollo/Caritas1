@@ -96,7 +96,6 @@ blockquote {
 }
 
 /* start - table */
-/* start - table */
 table {
 	border-collapse: collapse;
 	margin: 10px 10px;
@@ -329,7 +328,6 @@ input.button {
     position:absolute;
     left:-9999px; top:-9999px;
 }
-
 /* it could have been this simple if all browsers understood */
 /* show next level */
 #nav li:hover li:hover > ul {
