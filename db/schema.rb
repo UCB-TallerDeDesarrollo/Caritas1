@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111103174415) do
+ActiveRecord::Schema.define(:version => 20111103210407) do
 
   create_table "campaings", :force => true do |t|
     t.string   "name"
@@ -114,7 +114,6 @@ ActiveRecord::Schema.define(:version => 20111103174415) do
 
   create_table "social_works", :force => true do |t|
     t.string   "parish"
-    t.string   "social_work_name"
     t.string   "social_work"
     t.string   "responsible"
     t.string   "location"
@@ -126,6 +125,7 @@ ActiveRecord::Schema.define(:version => 20111103174415) do
     t.string   "responsible_filling"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "user_sessions", :force => true do |t|
