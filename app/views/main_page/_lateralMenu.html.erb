@@ -1,14 +1,11 @@
 <div id="notice">
 
   <h3>Campañas</h3>
-
-
     <ul>
-  <li><a href="index.html">01/10/11 17:30 Campaña 1</a></li>
-  <li><a href="index.html">06/10/11 11:21 Campaña 2</a></li>
-  <li><a href="index.html">15/10/11 20:41 Campaña 3</a></li>
-  <li><a href="index.html">23/10/11 08:59 Campaña 4</a></li>
-
+       <% Campaing.find_last.each do |last| %>
+          <li><%= link_to "#{last.name}-> #{last.date_ini}",:action => "show"%>
+          </li>
+          <% end %>
       <li>+Ver mas</li>
 
     </ul>
