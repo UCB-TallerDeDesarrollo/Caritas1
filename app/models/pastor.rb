@@ -6,6 +6,7 @@ class Pastor < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :primary_last_name
   validates_presence_of :second_last_name
+  validates_presence_of :date_of_birth
   
   validates_format_of :name, :with => /^([a-zA-Z\ ]{3,50})$/i
   validates_format_of :primary_last_name, :with => /^([a-zA-Z\ \-]{3,50})$/i

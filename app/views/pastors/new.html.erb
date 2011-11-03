@@ -19,7 +19,10 @@
         <td>* Apellido materno</td>
         <td><%= f.text_field :second_last_name %></td>
       </tr>      
-      
+      <tr>
+      <td>* Fecha de Nacimiento</td>
+      <td><%= f.date_select :date_of_birth,  :start_year => 1935%></td>            
+    </tr>
       <tr>
         <td>Telefono</td>
         <td><%= f.text_field :phone_number %></td>
@@ -29,6 +32,7 @@
         <td>Celular</td>
         <td><%= f.text_field :cellphone_number %></td>
       </tr>     
+      
             
       <tr align="right">
         <td colspan="2">
