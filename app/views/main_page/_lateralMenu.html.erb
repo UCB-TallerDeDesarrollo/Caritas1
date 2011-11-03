@@ -3,8 +3,7 @@
   <h3>Campañas</h3>
     <ul>
        <% Campaing.find_last.each do |last| %>
-          <li><%= link_to "#{last.name}-> #{last.date_ini}",:action => "show"%>
-          </li>
+          <li><%= link_to "#{last.name}-> #{last.date_ini}", last%></li>
           <% end %>
       <li>+Ver mas</li>
 
