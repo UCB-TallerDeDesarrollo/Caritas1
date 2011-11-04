@@ -1,6 +1,7 @@
 class Parish < ActiveRecord::Base
   has_one :pastor
   has_one :vicariou
+  belongs_to :group
   
   validates_presence_of :pastor_id
   validates_presence_of :vicariou_id
