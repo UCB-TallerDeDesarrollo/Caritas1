@@ -14,7 +14,8 @@ class GroupsController < ApplicationController
   # GET /groups/1.xml
   def show
     @group = Group.find(params[:id])
-
+    @parish = Parish.find(@group.parish_id)
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @group }
@@ -25,6 +26,7 @@ class GroupsController < ApplicationController
   # GET /groups/new.xml
   def new
     @group = Group.new
+    @parish = Parish.find(:all)
     @volunteers = Volunteer.find(:all)
 
     respond_to do |format|
@@ -37,13 +39,15 @@ class GroupsController < ApplicationController
   def edit
     @group = Group.find(params[:id])
     @volunteers = Volunteer.find(:all)
+    @parish = Parish.find(:all)
   end
 
   # POST /groups
   # POST /groups.xml
   def create
     @group = Group.new(params[:group])
-
+    @parish = Parish.find(:all)
+    
     respond_to do |format|
       if @group.save
         format.html { redirect_to(@group, :notice => 'El grupo se creo correctamente.') }

@@ -12,12 +12,31 @@
         <td><%= p.text_field :ubication %></td>
       </tr>
       <tr>
+        <td>*Vicaria a la que Pertenece:</td>
+        <td><select name="parish[vicariou_id]"> 
+<% if @vicariou  
+    @vicariou.each do |vicariou| %>
+    <option value="<%=vicariou.id%>">
+               <%=vicariou.name_vicariou%>
+    </option>
+      <%end%>
+    <%end%>
+</select></td>
+      </tr>
         <td>*Transporte</td>
         <td><%= p.text_field :transport %></td>
       </tr>
       <tr>
-        <td>*Telefono</td>
+        <td>*Telefono Parroquia</td>
         <td><%= p.text_field :telephone %></td>
+      </tr>
+      <tr>
+        <td>Nombre del Contacto</td>
+        <td><%= p.text_field :contact %></td>
+      </tr>
+      <tr>
+        <td>Telefono Contacto</td>
+        <td><%= p.text_field :contact_telephone %></td>
       </tr>
       <tr>
         <td>*Sensibilizada</td>
