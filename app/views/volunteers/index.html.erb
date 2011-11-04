@@ -46,6 +46,7 @@
             
             
             <td><%= link_to 'Editar', edit_volunteer_path(volunteer) %></td>
+            <td><%= link_to 'Eliminar', volunteer, :confirm => 'Esta seguro?', :method => :delete %></td>
           </tr>
         <% end %>
       </table>

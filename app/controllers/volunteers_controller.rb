@@ -52,7 +52,7 @@ class VolunteersController < ApplicationController
         format.xml  { render :xml => @volunteer, :status => :created, :location => @volunteer }
         
         t = Volunteer.find(@volunteer.id)
-        t.update_attributes(:state => "A")
+        t.update_attributes(:state => true)
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @volunteer.errors, :status => :unprocessable_entity }
@@ -80,7 +80,7 @@ class VolunteersController < ApplicationController
   # DELETE /volunteers/1.xml
   def destroy
     @volunteer = Volunteer.find(params[:id])
-    @volunteer.destroy
+    @volunteer.update_attributes(:state => false)
 
     respond_to do |format|
       format.html { redirect_to(volunteers_url) }
