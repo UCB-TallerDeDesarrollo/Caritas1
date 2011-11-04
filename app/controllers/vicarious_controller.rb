@@ -73,12 +73,23 @@ class VicariousController < ApplicationController
   # DELETE /vicarious/1
   # DELETE /vicarious/1.xml
   def destroy
-    @vicariou = Vicariou.find(params[:id])
-    @vicariou.destroy
-
+#   @vicariou = Vicariou.find(params[:id])
+#    @vicariou.destroy
+#
+#   respond_to do |format|
+#     format.html { redirect_to(vicarious_url) }
+#     format.xml  { head :ok }
+#   end
+   
+    @vicariou = Vicariou.find(params[:id]) 
+    @vicariou= Vicariou.update(params[:id], :state => false  )
     respond_to do |format|
       format.html { redirect_to(vicarious_url) }
       format.xml  { head :ok }
     end
   end
+  
+ 
+ 
+
 end
