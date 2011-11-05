@@ -5,8 +5,7 @@
     <% Campaing.find_last_five.each do |campaing| %>
       <li><%= link_to "#{campaing.name}-> #{campaing.date_ini}", campaing%></li>
     <% end %>
-    <li>+Ver mas</li>
-
+    <li><%=link_to "Ver Todos", campaings_path%></li>
   </ul>
   <h3>Ultimas noticias</h3>
   <ul>
