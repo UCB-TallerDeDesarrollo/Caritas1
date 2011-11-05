@@ -83,12 +83,29 @@ class VicariousController < ApplicationController
 #     format.xml  { head :ok }
 #   end
    
+#    @vicariou = Vicariou.find(params[:id]) 
+# 
+#      @vicariou= Vicariou.update(params[:id], :state => false  )
+#      respond_to do |format|
+#        format.html { redirect_to(vicarious_url) }
+#        format.xml  { head :ok }
+#      end
+
     @vicariou = Vicariou.find(params[:id]) 
-    @vicariou= Vicariou.update(params[:id], :state => false  )
-    respond_to do |format|
-      format.html { redirect_to(vicarious_url) }
-      format.xml  { head :ok }
+    if @vicariou.state == true
+      @vicariou= Vicariou.update(params[:id], :state => false  )
+      respond_to do |format|
+        format.html { redirect_to(vicarious_url) }
+        format.xml  { head :ok }
+      end
+    else
+       @vicariou= Vicariou.update(params[:id], :state => true  )
+      respond_to do |format|
+        format.html { redirect_to(vicarious_url) }
+        format.xml  { head :ok }
+      end
     end
+    
   end
   
  
