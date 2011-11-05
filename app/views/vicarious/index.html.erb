@@ -25,14 +25,16 @@
   </tr>
 
 <% @vicarious.each do |vicariou| %>
-  <tr>
-    <td><%= link_to  vicariou.name_vicariou,vicariou %></td>
-    <td><%=h vicariou.ubication %></td>
-    <td><%=h vicariou.telephone %></td>
-    <td><%= link_to 'Editar', edit_vicariou_path(vicariou) %></td>
-    <td><%= link_to 'Desabilitar/Habilitar', vicariou, :confirm => 'Esta Seguro?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <%if vicariou.state  %>
+      <tr>
+        <td><%= link_to  vicariou.name_vicariou,vicariou %></td>
+        <td><%=h vicariou.ubication %></td>
+        <td><%=h vicariou.telephone %></td>
+        <td><%= link_to 'Editar', edit_vicariou_path(vicariou) %></td>
+        <td><%= link_to 'Desabilitar', vicariou, :confirm => 'Esta Seguro que desea desabilitar esta vicaria? ', :method => :delete %></td>
+      </tr>
+    <%end%>
+  <% end %>
 </table>
 </td>
   </tr>
