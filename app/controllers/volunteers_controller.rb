@@ -80,7 +80,7 @@ class VolunteersController < ApplicationController
   # DELETE /volunteers/1.xml
   def destroy
     @volunteer = Volunteer.find(params[:id])
-    @volunteer.update_attributes(:state => false)
+    @volunteer.state ? @volunteer.update_attributes(:state => false) : @volunteer.update_attributes(:state => true)    
 
     respond_to do |format|
       format.html { redirect_to(volunteers_url) }

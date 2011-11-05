@@ -15,7 +15,7 @@
     </td>
   </tr>
   <tr>
-    <td>
+    <td>      
 
       <table border="3">
 
@@ -30,7 +30,8 @@
 
         <% @volunteers.each do |volunteer| %>
   
-          <% if volunteer.state == true %>
+          <% if volunteer.state == true %>              
+        
             <tr>
     
               <td><%=link_to (h volunteer.name), volunteer %></td>
@@ -45,9 +46,13 @@
                 <%end%>
               </td>
     
-              
-              <td><%= link_to 'Editar', edit_volunteer_path(volunteer) %></td>
-              <td><%= link_to 'Deshabilitar', volunteer, :confirm => 'Esta seguro?', :method => :delete %></td>
+    
+                  <td><%= link_to 'Editar', edit_volunteer_path(volunteer) %></td>
+                  <%if volunteer.state == false %>
+                    <td><%= link_to 'Habilitar', volunteer, :confirm => 'Esta seguro?', :method => :delete %></td>
+                  <%else%>
+                    <td><%= link_to 'Deshabilitar', volunteer, :confirm => 'Esta seguro?', :method => :delete %></td>
+                  <%end%>
             </tr>
           
           <%end%>
