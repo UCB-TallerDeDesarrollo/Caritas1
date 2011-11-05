@@ -5,11 +5,12 @@ class Group < ActiveRecord::Base
   #put relations and references here
   belongs_to :volunteer   # relacion para group_leader
   has_many :volunteers
-
+  has_one :parish
   #put active record callbacks here
 
   #put validates here
   validates_presence_of :name, :message => ' no puede estar vacio'    
+  validates_presence_of :parish_id
 
   #put class methods here
   def self.search(search)

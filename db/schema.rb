@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111025015125) do
+ActiveRecord::Schema.define(:version => 20111105010302) do
 
   create_table "campaings", :force => true do |t|
     t.string   "name"
@@ -22,11 +22,19 @@ ActiveRecord::Schema.define(:version => 20111025015125) do
     t.datetime "updated_at"
   end
 
+  create_table "courses", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "volunteer_id"
+    t.integer  "parish_id"
   end
 
   create_table "helps", :force => true do |t|
@@ -61,6 +69,9 @@ ActiveRecord::Schema.define(:version => 20111025015125) do
     t.datetime "updated_at"
     t.integer  "pastor_id"
     t.boolean  "sensitize"
+    t.string   "contact"
+    t.string   "contact_telephone"
+    t.integer  "vicariou_id"
   end
 
   create_table "pastors", :force => true do |t|
@@ -71,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20111025015125) do
     t.integer  "cellphone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "date_of_birth"
   end
 
   create_table "social_cards", :force => true do |t|
@@ -106,7 +118,8 @@ ActiveRecord::Schema.define(:version => 20111025015125) do
   end
 
   create_table "social_works", :force => true do |t|
-    t.string   "name"
+    t.string   "parish"
+    t.string   "social_work"
     t.string   "responsible"
     t.string   "location"
     t.integer  "phone"
@@ -114,8 +127,10 @@ ActiveRecord::Schema.define(:version => 20111025015125) do
     t.string   "email"
     t.string   "transport"
     t.text     "description"
+    t.string   "responsible_filling"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "user_sessions", :force => true do |t|
@@ -143,6 +158,7 @@ ActiveRecord::Schema.define(:version => 20111025015125) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "pastor_id"
+    t.boolean  "state",         :default => true
   end
 
   create_table "volunteers", :force => true do |t|
@@ -159,7 +175,7 @@ ActiveRecord::Schema.define(:version => 20111025015125) do
     t.datetime "updated_at"
     t.integer  "group_id"
     t.string   "email"
-    t.string   "state"
+    t.boolean  "state"
   end
 
 end

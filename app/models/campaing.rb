@@ -25,5 +25,10 @@ class Campaing < ActiveRecord::Base
     end
   end
   
+  def self.find_last_five
+    last = find(:all,:order => "date_ini")
+    last.sort{|a,b| b.date_ini <=> a.date_ini}.slice(0..4)
+  end
+  
   #put object methods here
 end

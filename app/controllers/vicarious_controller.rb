@@ -14,11 +14,14 @@ class VicariousController < ApplicationController
   # GET /vicarious/1.xml
   def show
     @vicariou = Vicariou.find(params[:id])
-    @pastor = Pastor.find(@vicariou.pastor_id)
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @vicariou }
-    end
+   
+      @pastor = Pastor.find(@vicariou.pastor_id)
+      @parish = Parish.all(:select => "id,parish_name,ubication,telephone",:conditions=> ["id in (select id from parishes where vicariou_id= ?)","#{@vicariou.id}"])
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml  { render :xml => @vicariou }
+      end
+  
   end
 
   # GET /vicarious/new
@@ -72,12 +75,40 @@ class VicariousController < ApplicationController
   # DELETE /vicarious/1
   # DELETE /vicarious/1.xml
   def destroy
-    @vicariou = Vicariou.find(params[:id])
-    @vicariou.destroy
+#   @vicariou = Vicariou.find(params[:id])
+#    @vicariou.destroy
+#
+#   respond_to do |format|
+#     format.html { redirect_to(vicarious_url) }
+#     format.xml  { head :ok }
+#   end
+   
+#    @vicariou = Vicariou.find(params[:id]) 
+# 
+#      @vicariou= Vicariou.update(params[:id], :state => false  )
+#      respond_to do |format|
+#        format.html { redirect_to(vicarious_url) }
+#        format.xml  { head :ok }
+#      end
 
-    respond_to do |format|
-      format.html { redirect_to(vicarious_url) }
-      format.xml  { head :ok }
+    @vicariou = Vicariou.find(params[:id]) 
+    if @vicariou.state == true
+      @vicariou= Vicariou.update(params[:id], :state => false  )
+      respond_to do |format|
+        format.html { redirect_to(vicarious_url) }
+        format.xml  { head :ok }
+      end
+    else
+       @vicariou= Vicariou.update(params[:id], :state => true  )
+      respond_to do |format|
+        format.html { redirect_to(vicarious_url) }
+        format.xml  { head :ok }
+      end
     end
+    
   end
+  
+ 
+ 
+
 end

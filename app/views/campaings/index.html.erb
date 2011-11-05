@@ -47,7 +47,9 @@
           <th>Fecha de inicio</th>
           <th>Fecha de finalizacion</th>
           <th>Responsable</th>
-          <th colspan="2">Acciones</th>
+          <% if current_user %>
+            <th colspan="2">Acciones</th>
+            <%end%>
         </tr>
 
         <% @campaings.each do |campaing| %>
@@ -57,8 +59,10 @@
             <td><%=h campaing.description %></td>
             <td><%=h campaing.date_ini %></td>
             <td><%=h campaing.date_end %></td>
-            <td><%=h campaing.responsible %></td>     
-            <td><%= link_to 'Editar', edit_campaing_path(campaing) %></td>            
+            <td><%=h campaing.responsible %></td> 
+            <% if current_user %>
+              <td><%= link_to 'Editar', edit_campaing_path(campaing) %></td> 
+              <%end%>
           </tr>
         <% end %>
           
@@ -67,5 +71,4 @@
     </td>      
   </tr>  
 </table>
-
-<br />
+<br/>
