@@ -1,6 +1,6 @@
 <h1>Editar Parroquia</h1>
 
-<% form_for(@parish) do |p| %>
+<% form_for(@parish, :html => {:multipart => true}) do |p| %>
   <%= p.error_messages %>
     <table>
       <tr>
@@ -54,6 +54,16 @@
         <td>*Sensibilizada</td>
         <td><%= p.check_box :sensitize %></td>
       </tr>
+      <tr>  
+      <td><%= "Fotografia De La Parroquia" %></td>
+      <% if @parish.parish_photo %>
+      <td><%=  image_tag url_for_file_column("parish", "parish_photo"), :size=>"300x200" %>
+      <% else %>
+      <td>No Esta Disponible La Imagen
+      <% end %>
+      <br>
+      <%= file_column_field "parish", "parish_photo"%> </td>
+    </tr>
       <tr>
         <td>*  Estos campos son obligatorios</td>
       </tr>

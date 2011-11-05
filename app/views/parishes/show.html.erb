@@ -50,6 +50,14 @@
       </td>
       <td><%=h @parish.sensitize? %></td>
     </tr>
+    <tr>  
+      <td><%= "Imagen" %></td>
+      <% if @parish.parish_photo %>
+      <td><%=  image_tag url_for_file_column("parish", "parish_photo"), :size=>"300x200" %></td>
+      <% else %>
+      <td>No Esta Disponible La Fotografia</td>
+      <% end   %>
+    </tr>
   </table>
 
 
