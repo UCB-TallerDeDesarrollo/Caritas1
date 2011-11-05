@@ -1,5 +1,7 @@
-class InsertarCamposEnGrupos < ActiveRecord::Migration
-  def self.up  
+class InsertarDatosPordefectoVoluntariosGrupos < ActiveRecord::Migration
+  def self.up      
+    execute "truncate table volunteers"
+    execute "truncate table groups"    
     execute "insert into groups(id,name,volunteer_id) values(0,'',0);"
     execute "insert into groups(name,volunteer_id) values('Corazonsitos',0);"
     execute "insert into groups(name,volunteer_id) values('La piedad',0);"
@@ -13,7 +15,8 @@ class InsertarCamposEnGrupos < ActiveRecord::Migration
     
   end
 
-  def self.down    
-    execute "truncate table groups"    
+  def self.down
+    execute "truncate table volunteers"
+    execute "truncate table groups"        
   end
 end
