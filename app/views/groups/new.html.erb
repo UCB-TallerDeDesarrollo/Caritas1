@@ -1,6 +1,6 @@
 <h1>Nuevo Grupo</h1>
 
-<% form_for(@group) do |f| %>
+<% form_for(@group, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
 
   <table>
@@ -36,7 +36,10 @@
       <%end%>
     <%end%>
 </select></td>
-      </tr>
+      </tr> <tr>
+      <td><%= "Fotografia o Insignia Del Grupo"  %> </td>
+      <td><%= file_column_field "group",  "group_photo" %></td>
+    </tr>
       
     <tr align="right">
       <td colspan="2">
