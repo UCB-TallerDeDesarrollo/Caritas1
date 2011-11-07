@@ -1,20 +1,6 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-<<<<<<< HEAD
-  parish_name: MyString
-  ubication: MyString
-  transport: MyString
-  telephone: 1
-  pastor_name: MyString
-
-two:
-  parish_name: MyString
-  ubication: MyString
-  transport: MyString
-  telephone: 1
-  pastor_name: MyString
-=======
   name: MyString
   address: MyString
   transportation: MyText
@@ -27,4 +13,3 @@ two:
   transportation: MyText
   pastor: MyString
   phone: 1
->>>>>>> agragando parroquia
