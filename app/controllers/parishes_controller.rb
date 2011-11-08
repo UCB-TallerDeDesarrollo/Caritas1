@@ -27,7 +27,7 @@ class ParishesController < ApplicationController
   # GET /parishes/new.xml
   def new
     @parish = Parish.new
-    @vicariou = Vicariou.find(:all)
+    @vicariou = Vicariou.all(:select => "id,name_vicariou",:conditions=>["state=TRUE"])
     @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious)"])
     
     respond_to do |format|
