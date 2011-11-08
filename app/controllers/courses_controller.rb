@@ -1,8 +1,13 @@
 class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.xml
+    
+    record_select :per_page => 5,
+    :search_on => ['name'],
+    :full_text_search => true
+  
   def index
-    @courses = Course.all
+    @courses = Course.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb

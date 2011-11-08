@@ -52,6 +52,9 @@ class GroupsController < ApplicationController
       if @group.save
         format.html { redirect_to(@group, :notice => 'El grupo se creo correctamente.') }
         format.xml  { render :xml => @group, :status => :created, :location => @group }
+        
+          t = Group.find(@group.id)
+          t.update_attributes(:state => true)
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @group.errors, :status => :unprocessable_entity }
@@ -77,9 +80,10 @@ class GroupsController < ApplicationController
 
   # DELETE /groups/1
   # DELETE /groups/1.xml
-  def destroy
-    @group = Group.find(params[:id])
-    @group.destroy
+  
+    def destroy
+     @group = Group.find(params[:id])
+     @group.state ? @group.update_attributes(:state => false) : @group.update_attributes(:state => true)    
 
     respond_to do |format|
       format.html { redirect_to(groups_url) }

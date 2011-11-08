@@ -81,12 +81,20 @@ class ParishesController < ApplicationController
   # DELETE /parishes/1
   # DELETE /parishes/1.xml
   def destroy
-    @parish = Parish.find(params[:id])
-    @parish.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(parishes_url) }
-      format.xml  { head :ok }
+    @parish = Parish.find(params[:id]) 
+    if @parish.state == true
+      @parish= Parish.update(params[:id], :state => false  )
+      respond_to do |format|
+        format.html { redirect_to(parishes_url) }
+        format.xml  { head :ok }
+      end
     end
+    
+#    @parish.destroy
+#
+#    respond_to do |format|
+#      format.html { redirect_to(parishes_url) }
+#      format.xml  { head :ok }
+#    end
   end
 end

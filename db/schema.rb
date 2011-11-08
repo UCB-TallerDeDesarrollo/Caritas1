@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20111106133054) do
     t.datetime "updated_at"
     t.integer  "volunteer_id"
     t.integer  "parish_id"
+    t.string   "group_photo"
+    t.boolean  "state"
   end
 
   create_table "helps", :force => true do |t|
@@ -73,6 +75,7 @@ ActiveRecord::Schema.define(:version => 20111106133054) do
     t.string   "contact_telephone"
     t.integer  "vicariou_id"
     t.string   "parish_photo"
+    t.boolean  "state",             :default => true
   end
 
   create_table "pastors", :force => true do |t|
@@ -84,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20111106133054) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "date_of_birth"
+    t.boolean  "state"
   end
 
   create_table "social_cards", :force => true do |t|

@@ -1,6 +1,6 @@
 <h1>Editar Grupo</h1>
 
-<% form_for(@group) do |f| %>
+<% form_for(@group, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
 
   <table>
@@ -34,6 +34,16 @@
     
     
   </td></tr>
+    <tr>  
+      <td><%= "Fotografia o Insignia Del Grupo" %></td>
+      <% if @group.group_photo %>
+      <td><%=  image_tag url_for_file_column("group", "group_photo"), :size=>"300x200" %>
+      <% else %>
+      <td>No Esta Disponible La Imagen
+      <% end %>
+      <br>
+      <%= file_column_field "group", "group_photo"%> </td>
+    </tr>
 
     <tr align="right">
       <td colspan="2">

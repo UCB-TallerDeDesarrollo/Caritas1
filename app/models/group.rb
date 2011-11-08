@@ -7,10 +7,13 @@ class Group < ActiveRecord::Base
   has_many :volunteers
   has_one :parish
   #put active record callbacks here
-
+  file_column :group_photo
   #put validates here
   validates_presence_of :name, :message => ' no puede estar vacio'    
   validates_presence_of :parish_id
+  
+  validates_file_format_of :group_photo, :in => ["gif", "jpg", "png"]
+  validates_filesize_of :group_photo, :in => 1.kilobytes..3000.kilobytes
 
   #put class methods here
   def self.search(search)
