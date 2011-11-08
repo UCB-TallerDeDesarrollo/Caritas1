@@ -30,7 +30,7 @@
               <td><%=h parish.ubication %></td>
               <td><%=h parish.telephone %></td>
               <td><%= link_to 'Editar', edit_parish_path(parish) %></td>
-              <td><%= link_to 'Desabilitar', parish, :confirm => 'Esta seguro que desea desabilitar esta parroquia?', :method => :delete %></td>
+              <td><%= link_to 'Eliminar', parish, :confirm => 'Esta seguro que desea eliminar esta parroquia?', :method => :delete %></td>
             </tr>
           <%end%>
         <% end %>
