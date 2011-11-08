@@ -24,13 +24,15 @@
         </tr>
 
         <% @parishes.each do |parish| %>
-          <tr>
-            <td><%= link_to  parish.parish_name,parish %></td>
-            <td><%=h parish.ubication %></td>
-            <td><%=h parish.telephone %></td>
-            <td><%= link_to 'Editar', edit_parish_path(parish) %></td>
-            <td><%= link_to 'Eliminar', parish, :confirm => 'Esta Seguro?', :method => :delete %></td>
-          </tr>
+          <%if parish.state %>
+            <tr>
+              <td><%= link_to  parish.parish_name,parish %></td>
+              <td><%=h parish.ubication %></td>
+              <td><%=h parish.telephone %></td>
+              <td><%= link_to 'Editar', edit_parish_path(parish) %></td>
+              <td><%= link_to 'Desabilitar', parish, :confirm => 'Esta seguro que desea desabilitar esta parroquia?', :method => :delete %></td>
+            </tr>
+          <%end%>
         <% end %>
       </table>
     </td>
