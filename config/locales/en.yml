@@ -327,6 +327,9 @@ en:
       notice:
         one: "Noticia"  
         other: "Noticias"
+      courses:
+        one: "Curso"
+        other: "Cursos"
         
     attributes:
       group:
@@ -365,6 +368,10 @@ en:
         date_ini: "Fecha de inicio"
         date_end: "Fecha de finalización"
         responsible: "Responsable"
+      
+      courses:
+        name: "Nombre"
+        description: "Descripcion"
     
       pastor:
         name: "Nombre"

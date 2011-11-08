@@ -19,17 +19,17 @@
     <table border="3">
       <tr id = 'head-table'>      
         <th>Nombre</th>
-        <th>Descripción</th>
-        <th colspan="3">Acciones</th>
+        <th WIDTH=250>Descripción</th>
+        <th colspan="3">Accion</th>
       </tr>
 
       <% @courses.each do |course| %>
         <tr>
-          <td><%=h course.name %></td>
-          <td><%=h course.description %></td>
-          <td><%= link_to 'Ver', course %></td>
+          <td><%= link_to course.name, course %></td>
+          <td WIDTH=250><%=h course.description %></td>
+<!--          <td><%= link_to 'Ver', course %></td>  -->
           <td><%= link_to 'Editar', edit_course_path(course) %></td>
-          <td><%= link_to 'Eliminar', course, :confirm => '¿Está seguro', :method => :delete %></td>
+<!--          <td><%= link_to 'Eliminar', course, :confirm => '¿Está seguro', :method => :delete %></td>  -->
         </tr>
       <% end %>
     </table>
