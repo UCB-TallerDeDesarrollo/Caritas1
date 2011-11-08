@@ -4,6 +4,6 @@ class AddPhotoToParish < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :parish, :parish_photo
+    remove_column :parishes, :parish_photo
   end
 end
