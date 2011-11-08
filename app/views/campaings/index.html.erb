@@ -34,7 +34,9 @@
 <table>
   <tr align="right">
     <td>
-      <%= button_to 'Registrar Campa&ntilde;a', new_campaing_path %>
+      <% if current_user %>
+        <%= button_to 'Registrar Campa&ntilde;a', new_campaing_path %>
+      <%end%>
     </td>
   </tr>
   <tr>
