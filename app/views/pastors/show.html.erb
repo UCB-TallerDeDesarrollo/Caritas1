@@ -21,7 +21,7 @@
     <td>
 
       <b>Fecha de Nacimiento:</b></td><td>
-      <%=h @pastor.date_of_birth %>
+      <%=h @pastor.date_of_birth.strftime("%d de %B") %>
     </td>
   </tr>
   <tr>
