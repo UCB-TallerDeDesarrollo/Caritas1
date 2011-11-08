@@ -31,7 +31,7 @@
         <td><%=h vicariou.ubication %></td>
         <td><%=h vicariou.telephone %></td>
         <td><%= link_to 'Editar', edit_vicariou_path(vicariou) %></td>
-        <td><%= link_to 'Desabilitar', vicariou, :confirm => 'Esta seguro que desea desabilitar esta vicaria? ', :method => :delete %></td>
+        <td><%= link_to 'Eliminar', vicariou, :confirm => 'Esta seguro que desea eliminar esta vicaria? ', :method => :delete %></td>
       </tr>
     <%end%>
   <% end %>
