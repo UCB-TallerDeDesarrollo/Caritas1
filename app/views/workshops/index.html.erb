@@ -1,0 +1,44 @@
+<h1>Listing workshops</h1>
+
+<table>
+  <tr>
+    <th>Pastor or administrator</th>
+    <th>Parish</th>
+    <th>Phone</th>
+    <th>Responsible for training</th>
+    <th>Course1</th>
+    <th>Course2</th>
+    <th>Course3</th>
+    <th>Course4</th>
+    <th>Course5</th>
+    <th>Course6</th>
+    <th>follow_up </th>
+    <th>observation </th>
+    </tr>
+
+<% @workshops.each do |workshop| %>
+  <tr>
+    <td><%=h workshop.pastor_or_administrator %></td>
+    <td><%=h workshop.parish %></td>
+    <td><%=h workshop.phone %></td>
+    <td><%=h workshop.responsible_for_training %></td>
+    
+    <td><%=h workshop.course1 %></td>
+    <td><%=h workshop.course2 %></td>
+    <td><%=h workshop.course3 %></td>
+    <td><%=h workshop.course4 %></td>
+    <td><%=h workshop.course5 %></td>
+    <td><%=h workshop.course6 %></td>
+    <td><%=h workshop.follow_up %></td>
+    <td><%=h workshop.observation %></td>
+    
+    <td><%= link_to 'Show', workshop %></td>
+    <td><%= link_to 'Edit', edit_workshop_path(workshop) %></td>
+    <td><%= link_to 'Destroy', workshop, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New workshop', new_workshop_path %>
