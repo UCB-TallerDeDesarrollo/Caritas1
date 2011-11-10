@@ -6,7 +6,7 @@ class Volunteer < ActiveRecord::Base
   belongs_to :group
 
   #put active record callbacks here
-
+  file_column :volunteer_photo
   #put validates here
   validates_presence_of :name
   validates_presence_of :last_name
@@ -22,6 +22,8 @@ class Volunteer < ActiveRecord::Base
   validates_format_of :profession, :with => /^([a-zA-Z\ \-]{3,50})$/i,:allow_blank => true  
   validates_format_of :position, :with => /^([a-zA-Z\ \-]{3,20})$/i
 
+   validates_file_format_of :volunteer_photo, :in => ["gif", "jpg", "png"]
+  validates_filesize_of :volunteer_photo, :in => 1.kilobytes..3000.kilobytes
   #put class methods here
   def self.search(search)
     if search
