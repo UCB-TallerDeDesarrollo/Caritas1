@@ -75,7 +75,7 @@ class GroupsController < ApplicationController
   # DELETE /groups/1.xml
   def destroy
     @group = Group.find(params[:id])
-    @group.volunteer.update_attribute(position, 'voluntario')
+#    @group.volunteer.update_attributes(:position => 'voluntario', :group_id => @group.id)
     @group.destroy
 
     respond_to do |format|

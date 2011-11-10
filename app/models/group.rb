@@ -24,4 +24,14 @@ class Group < ActiveRecord::Base
   def to_s
     "#{name}"
   end
+  
+  def before_update
+    if self.volunteer.changed?
+      self.volunteer.update_attributes(:position, 'voluntario')
+    end
+  end
+  
+  def after_save
+    
+  end
 end
