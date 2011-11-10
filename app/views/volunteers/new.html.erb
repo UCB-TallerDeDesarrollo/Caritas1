@@ -1,6 +1,6 @@
 <h1>Crear Voluntario</h1>
 
-<% form_for(@volunteer) do |f| %>
+<% form_for(@volunteer, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
   <table>
 
@@ -71,17 +71,23 @@
       </td>
     </tr>
 
-    <tr align="right">
-      <td colspan="2">
-        <%= f.submit 'Registrar' %>
-        <button type="reset">Limpiar</button>
-        <%= link_to 'Cancelar', volunteers_path %>
-      </td>
-    </tr>
+  </tr>
+  <tr>
+    <td><%= "Fotografia Del Voluntario"  %> </td>
+    <td><%= file_column_field "volunteer",  "volunteer_photo" %></td>
+  </tr>
+  
+  <tr align="right">
+    <td colspan="2">
+      <%= f.submit 'Registrar' %>
+      <button type="reset">Limpiar</button>
+      <%= link_to 'Cancelar', volunteers_path %>
+    </td>
+  </tr>
 
-    <tr>
-      <td>*  Estos campos son obligatorios</td>
-    </tr>
+  <tr>
+    <td>*  Estos campos son obligatorios</td>
+  </tr>
   </table>
 
 

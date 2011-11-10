@@ -1,3 +1,4 @@
+
 # This file is auto-generated from the current state of the database. Instead of editing this file, 
 # please use the migrations feature of Active Record to incrementally modify your database, and
 # then regenerate this schema definition.
@@ -9,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111025015125) do
+ActiveRecord::Schema.define(:version => 20111109115124) do
 
   create_table "campaings", :force => true do |t|
     t.string   "name"
@@ -22,11 +23,21 @@ ActiveRecord::Schema.define(:version => 20111025015125) do
     t.datetime "updated_at"
   end
 
+  create_table "courses", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "volunteer_id"
+    t.integer  "parish_id"
+    t.string   "group_photo"
+    t.boolean  "state"
   end
 
   create_table "helps", :force => true do |t|
@@ -57,10 +68,15 @@ ActiveRecord::Schema.define(:version => 20111025015125) do
     t.string   "ubication"
     t.string   "transport"
     t.integer  "telephone"
+    t.boolean  "sensitize"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "pastor_id"
-    t.boolean  "sensitize"
+    t.string   "contact"
+    t.string   "contact_telephone"
+    t.integer  "vicariou_id"
+    t.string   "parish_photo"
+    t.boolean  "state",             :default => true
   end
 
   create_table "pastors", :force => true do |t|
@@ -71,6 +87,8 @@ ActiveRecord::Schema.define(:version => 20111025015125) do
     t.integer  "cellphone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "date_of_birth"
+    t.boolean  "state"
   end
 
   create_table "social_cards", :force => true do |t|
@@ -107,7 +125,6 @@ ActiveRecord::Schema.define(:version => 20111025015125) do
 
   create_table "social_works", :force => true do |t|
     t.string   "parish"
-    t.string   "social_work_name"
     t.string   "social_work"
     t.string   "responsible"
     t.string   "location"
@@ -119,6 +136,7 @@ ActiveRecord::Schema.define(:version => 20111025015125) do
     t.string   "responsible_filling"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "user_sessions", :force => true do |t|
@@ -146,6 +164,7 @@ ActiveRecord::Schema.define(:version => 20111025015125) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "pastor_id"
+    t.boolean  "state",         :default => true
   end
 
   create_table "volunteers", :force => true do |t|
@@ -162,7 +181,25 @@ ActiveRecord::Schema.define(:version => 20111025015125) do
     t.datetime "updated_at"
     t.integer  "group_id"
     t.string   "email"
-    t.string   "state"
+    t.boolean  "state"
+    t.string   "volunteer_photo"
+  end
+
+  create_table "workshops", :force => true do |t|
+    t.string   "pastor_or_administrator"
+    t.string   "parish"
+    t.string   "phone"
+    t.string   "responsible_for_training"
+    t.boolean  "course1"
+    t.boolean  "course2"
+    t.boolean  "course3"
+    t.boolean  "course4"
+    t.boolean  "course5"
+    t.boolean  "course6"
+    t.string   "follow_up"
+    t.string   "observation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

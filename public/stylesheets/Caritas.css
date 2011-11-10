@@ -13,7 +13,7 @@ a, a:visited {
 }
 a:hover {
 	color: #73471B;
-	background: #990000;
+	background: inherit;
 	text-decoration: underline;
 }
 
@@ -95,7 +95,6 @@ blockquote {
 	background: #F0FFD2 url(/images/quote.gif) no-repeat 7px 10px;
 }
 
-/* start - table */
 /* start - table */
 table {
 	border-collapse: collapse;
@@ -269,7 +268,7 @@ input.button {
     border-width:1px 2px 2px 1px;
     position:relative;
     z-index:200;
-    background-color: #990000;
+    background-color: #b22222;
 }
 #nav table {
     border-collapse:collapse;
@@ -329,7 +328,6 @@ input.button {
     position:absolute;
     left:-9999px; top:-9999px;
 }
-
 /* it could have been this simple if all browsers understood */
 /* show next level */
 #nav li:hover li:hover > ul {

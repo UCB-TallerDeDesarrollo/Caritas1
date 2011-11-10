@@ -23,7 +23,20 @@
       </ul>
     </td>
   </tr>
-
+  <tr>
+      <td>
+        <b>Parroquia a la que pertenece:</b>
+      </td>
+      <td><%=h @parish.parish_name %></td>
+    </tr>
+<tr>  
+      <td><%= "Fotografia O Insignia" %></td>
+      <% if @group.group_photo %>
+      <td><%=  image_tag url_for_file_column("group", "group_photo"), :size=>"300x200" %></td>
+      <% else %>
+      <td>No Esta Disponible La Fotografia</td>
+      <% end   %>
+    </tr>
   <tr align="right">
     <td colspan="2">
       <%= link_to 'Editar', edit_group_path(@group) %> |

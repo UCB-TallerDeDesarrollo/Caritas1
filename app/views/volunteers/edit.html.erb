@@ -1,6 +1,6 @@
 <h1>Editar Voluntario</h1>
 
-<% form_for(@volunteer) do |f| %>
+<% form_for(@volunteer, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
 
   <table>
@@ -61,6 +61,16 @@
           </select>
         </td>
       </tr>
+      <tr>  
+      <td><%= "Fotografia Del Voluntario" %></td>
+      <% if @volunteer.volunteer_photo %>
+      <td><%=  image_tag url_for_file_column("volunteer", "volunteer_photo"), :size=>"300x200" %>
+      <% else %>
+      <td>No Esta Disponible La Imagen
+      <% end %>
+      <br>
+      <%= file_column_field "volunteer", "volunteer_photo"%> </td>
+    </tr>
   
     
    <tr align="right">

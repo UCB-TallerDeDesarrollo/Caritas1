@@ -6,7 +6,7 @@ class CreateParishes < ActiveRecord::Migration
       t.string :transport
       t.integer :telephone
       t.string :pastor_name
-      t.bool :sensitize
+      t.boolean :sensitize
 
       t.timestamps
     end

@@ -78,7 +78,14 @@
       <%=h Group.find(@volunteer.group_id).name %>
     </td>
   </tr>
-
+<tr>  
+      <td><%= "Fotografia Del Voluntario" %></td>
+      <% if @volunteer.volunteer_photo %>
+      <td><%=  image_tag url_for_file_column("volunteer", "volunteer_photo"), :size=>"300x200" %></td>
+      <% else %>
+      <td>No Esta Disponible La Fotografia</td>
+      <% end   %>
+    </tr>
   
   <tr align="right">
     <td colspan="2">

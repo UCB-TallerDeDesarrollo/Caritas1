@@ -361,7 +361,7 @@ en:
         sensitize: "Sensibilizada"
       social_work:
         parish: "parroquia"
-        social_work_name: "Nombre Obra Social"
+        name: "Nombre Obra Social"
         social_work: "Obra Social"
         responsible: "Responsable"
         location: "Ubicacion"

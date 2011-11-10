@@ -14,6 +14,12 @@
     </tr>
     <tr>
       <td>
+        <b>Vicaria a la que pertenece:</b>
+      </td>
+      <td><%=h @vicariou.name_vicariou %></td>
+    </tr>
+    <tr>
+      <td>
         <b>Transporte:</b>
       </td>
       <td><%=h @parish.transport %></td>
@@ -25,6 +31,14 @@
       <td><%=h @parish.telephone %></td>
     </tr>
     <tr>
+        <td><b>Contacto:</b></td>
+        <td><%=h @parish.contact %></td>
+      </tr>
+      <tr>
+        <td><b>Telefono del Contacto:</b></td>
+        <td><%=h @parish.contact_telephone %></td>
+      </tr>
+    <tr>
       <td>
         <b>Nombre del Parroco:</b>
       </td>
@@ -35,6 +49,14 @@
         <b>Sensibilizada</b>
       </td>
       <td><%=h @parish.sensitize? %></td>
+    </tr>
+    <tr>  
+      <td><%= "Imagen" %></td>
+      <% if @parish.parish_photo %>
+      <td><%=  image_tag url_for_file_column("parish", "parish_photo"), :size=>"300x200" %></td>
+      <% else %>
+      <td>No Esta Disponible La Fotografia</td>
+      <% end   %>
     </tr>
   </table>
 

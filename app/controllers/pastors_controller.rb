@@ -52,6 +52,9 @@ class PastorsController < ApplicationController
       if @pastor.save
         format.html { redirect_to(@pastor, :notice => 'El párroco fué creado correctamente.') }
         format.xml  { render :xml => @pastor, :status => :created, :location => @pastor }
+        
+        t = Pastor.find(@pastor.id)
+        t.update_attributes(:state => true)
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @pastor.errors, :status => :unprocessable_entity }
@@ -77,9 +80,10 @@ class PastorsController < ApplicationController
 
   # DELETE /pastors/1
   # DELETE /pastors/1.xml
-  def destroy
+  def destroy  
+    
     @pastor = Pastor.find(params[:id])
-    @pastor.destroy
+    @pastor.update_attributes(:state => false) 
 
     respond_to do |format|
       format.html { redirect_to(pastors_url) }

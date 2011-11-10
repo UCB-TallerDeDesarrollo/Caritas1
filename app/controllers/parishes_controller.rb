@@ -14,6 +14,7 @@ class ParishesController < ApplicationController
   # GET /parishes/1.xml
   def show
     @parish = Parish.find(params[:id])
+    @vicariou = Vicariou.find(@parish.vicariou_id)
     @pastor = Pastor.find(@parish.pastor_id)
     
     respond_to do |format|
@@ -26,6 +27,7 @@ class ParishesController < ApplicationController
   # GET /parishes/new.xml
   def new
     @parish = Parish.new
+    @vicariou = Vicariou.all(:select => "id,name_vicariou",:conditions=>["state=TRUE"])
     @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious)"])
     
     respond_to do |format|
@@ -37,14 +39,18 @@ class ParishesController < ApplicationController
   # GET /parishes/1/edit
   def edit
     @parish = Parish.find(params[:id])
+    @vicariou = Vicariou.find(:all)
     @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious) or id= ?","#{@parish.pastor_id}"])
   end
 
   # POST /parishes
   # POST /parishes.xml
   def create
+    
     @parish = Parish.new(params[:parish])
     @pastor = Pastor.find(:all)
+    @vicariou = Vicariou.find(:all)
+    
     respond_to do |format|
       if @parish.save
         format.html { redirect_to(@parish, :notice => 'Parish was successfully created.') }
@@ -75,12 +81,20 @@ class ParishesController < ApplicationController
   # DELETE /parishes/1
   # DELETE /parishes/1.xml
   def destroy
-    @parish = Parish.find(params[:id])
-    @parish.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(parishes_url) }
-      format.xml  { head :ok }
+    @parish = Parish.find(params[:id]) 
+    if @parish.state == true
+      @parish= Parish.update(params[:id], :state => false  )
+      respond_to do |format|
+        format.html { redirect_to(parishes_url) }
+        format.xml  { head :ok }
+      end
     end
+    
+#    @parish.destroy
+#
+#    respond_to do |format|
+#      format.html { redirect_to(parishes_url) }
+#      format.xml  { head :ok }
+#    end
   end
 end
