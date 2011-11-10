@@ -1,8 +1,14 @@
 class WorkshopsController < ApplicationController
   # GET /workshops
   # GET /workshops.xml
+    
+    record_select :per_page => 5,
+    :search_on => ['parish'],
+    :full_text_search => true
+  
   def index
-    @workshops = Workshop.all
+     
+    @workshops = Workshop.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb
