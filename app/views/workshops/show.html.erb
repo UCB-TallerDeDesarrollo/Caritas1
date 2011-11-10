@@ -1,12 +1,7 @@
 <h1>Ver Taller</h1>
 <table>
 
-  <tr>
-    <td>
-      <b>Parroco o Administrador:</b> </td><td>       
-      <%=h @workshop.pastor_or_administrator %>
-    </td>
-  </tr>
+  
   <tr>
     <td>
       <b>Parroquia:</b> </td><td>
@@ -15,71 +10,23 @@
   </tr>
   <tr>
     <td>
-
-      <b>Telefono:</b></td><td>
-      <%=h @workshop.phone %>
+      <b>Encargado:</b> </td><td>
+      <%=h @workshop.in_charge %>
     </td>
   </tr>
   <tr>
     <td>
-      <b>Encargado de capacitacion:</b></td><td>
-
-      <%=h @workshop.responsible_for_training %>
+      <b>Curso:</b> </td><td>
+      <%=h @workshop.course %>
     </td>
   </tr>
   <tr>
     <td>
-      <b>Curso1:</b></td><td>      
-      <%=h @workshop.course1 %>
+      <b>Observaciones:</b> </td><td>
+      <%=h @workshop.observations %>
     </td>
   </tr>
-  <tr>
-    <td>
-      <b>Curso2:</b></td><td>      
-      <%=h @workshop.course2 %>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <b>Curso3:</b></td><td>      
-      <%=h @workshop.course3 %>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <b>Curso4:</b></td><td>      
-      <%=h @workshop.course4 %>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <b>Curso5:</b></td><td>      
-      <%=h @workshop.course5 %>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <b>Curso6:</b></td><td>      
-      <%=h @workshop.course6 %>
-    </td>
-  </tr>
-  <tr>
-    <td>
-
-      <b>Seguimiento:</b></td><td>
-
-      <%=h @workshop.follow_up %>
-    </td>
-  </tr>
-  <tr>
-    <td>
-
-      <b>Observaciones:</b></td><td>
-
-      <%=h @workshop.observation %>
-
-    </td>
-  </tr>  
+   
   <tr align="right">
     <td colspan="2">
       <%= link_to 'Editar', edit_workshop_path(@workshop) %> |

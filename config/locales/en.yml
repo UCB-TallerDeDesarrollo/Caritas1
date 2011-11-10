@@ -302,7 +302,7 @@ en:
         other: "Grupos"
       vicariou:
         one: "Vicaria"
-        other: "Vicarias"
+        other: "Vicarias"     
       volunteer:
         one: "Voluntario/a"
         other: "Voluntarios/as"
@@ -352,6 +352,8 @@ en:
         transport: "Transporte"
         telephone: "Telefono"
         vicar_name: "Nombre Vicario"
+      
+        
       social_work:
         parish: Parroquia"
         name: "Nombre Obra Social"

@@ -1,56 +1,25 @@
-<h1>Editing workshop</h1>
+<h1>Editar Taller</h1>
 
 <% form_for(@workshop) do |f| %>
   <%= f.error_messages %>
 
-  <table>
-  <tr>
-    <td>Pastor o Administrador </td>
-    <td><%= f.text_field :pastor_or_administrator %></td>
-  </tr>
+  <table>  
   <tr>
     <td>Parroquia</td>
     <td> <%= f.text_field :parish %></td>
   </tr>
+  
   <tr>
-      <td>Telefono</td>          
-        <td><%= f.text_field :phone %></td>  
-    </tr>
+    <td>Encargado</td>
+    <td><%= f.text_field :in_charge %></td>
+  </tr>  
   <tr>
-    <td>Encargado de capacitacion</td>
-    <td><%= f.text_field :responsible_for_training %></td>
-  </tr>
-  <tr>
-    <td>Cusro 1</td>
-    <td> <%= f.check_box :course1 %></td>
-  </tr>
-  <tr>
-    <td>Cusro 2</td>
-    <td> <%= f.check_box :course2 %></td>
-  </tr>
-  <tr>
-    <td>Cusro 3</td>
-    <td> <%= f.check_box :course3 %></td>
-  </tr>
-  <tr>
-    <td>Cusro 4</td>
-    <td> <%= f.check_box :course4 %></td>
-  </tr>
-  <tr>
-    <td>Cusro 5</td>
-    <td> <%= f.check_box :course5 %></td>
-  </tr>
-  <tr>
-    <td>Cusro 6</td>
-    <td> <%= f.check_box :course6 %></td>
-  </tr>
-  <tr>
-    <td>Seguimiento</td>
-    <td><%= f.text_field :follow_up %></td>
-  </tr>
+    <td>Curso</td>
+    <td><%= f.text_field :course %></td>
+  </tr> 
   <tr>
     <td>Observaciones</td>
-    <td><%= f.text_field :observation %></td>
+    <td><%= f.text_area :observations , :rows=>6, :cols=>22%></td>
   </tr> 
   <tr align="right">
       <td colspan="2">         

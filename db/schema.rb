@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111109115124) do
+ActiveRecord::Schema.define(:version => 20111110024446) do
 
   create_table "campaings", :force => true do |t|
     t.string   "name"
@@ -186,20 +186,12 @@ ActiveRecord::Schema.define(:version => 20111109115124) do
   end
 
   create_table "workshops", :force => true do |t|
-    t.string   "pastor_or_administrator"
     t.string   "parish"
-    t.string   "phone"
-    t.string   "responsible_for_training"
-    t.boolean  "course1"
-    t.boolean  "course2"
-    t.boolean  "course3"
-    t.boolean  "course4"
-    t.boolean  "course5"
-    t.boolean  "course6"
-    t.string   "follow_up"
-    t.string   "observation"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "in_charge"
+    t.string   "course"
+    t.text     "observations"
   end
 
 end
