@@ -3,7 +3,9 @@
   <h3>Campañas</h3>
   <ul>
     <% Campaing.find_last_five.each do |campaing| %>
-      <li><%= link_to "#{campaing.name}-> #{campaing.date_ini}", campaing%></li>
+      <li><%= link_to "#{campaing.name}-> #{campaing.date_ini}" , campaing%>
+          <%= truncate(campaing.description, :length => 30) %>
+      </li>
     <% end %>
     <li><%=link_to "Ver Todos", campaings_path%></li>
   </ul>
