@@ -1,5 +1,19 @@
 <div id="notice">
 
+  <div id="lateralMenu">
+  <h3>Ejemplo</h3>
+    <ul>
+    <li>
+    <a href="#">Titulo 1
+      <span> ... el contenido oculto que se desplegará ...</span>
+    </a>
+  </li>
+  <li>
+    <a href="#">Titulo 2
+      <span> ... el contenido oculto que se desplegará ...</span>
+    </a>
+  </li>
+</ul>
   <h3>Campañas</h3>
   <ul>
     <% Campaing.find_last_five.each do |campaing| %>
@@ -23,4 +37,5 @@
     <% end %>
     <li><%= link_to 'Ver Todos', social_works_path %></li>
   </ul>
+        </div>
 </div>
