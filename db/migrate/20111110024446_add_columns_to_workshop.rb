@@ -8,8 +8,8 @@ class AddColumnsToWorkshop < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :workshops, :in_charge, :string
-    remove_column :workshops, :course, :string
-    remove_column :workshops, :observations, :text
+    remove_column :workshops, :in_charge
+    remove_column :workshops, :course
+    remove_column :workshops, :observations
   end
 end
