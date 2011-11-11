@@ -17,7 +17,8 @@
   <h3>Campañas</h3>
   <ul>
     <% Campaing.find_last_five.each do |campaing| %>
-      <li><%= link_to "#{campaing.name} <br> #{truncate(campaing.description, :length => 100)}" , campaing%>
+      <li>
+        <%= link_to"#{campaing.name}" "<span>#{truncate(campaing.description, :length => 100)}</span>", campaing%>
       </li>
     <% end %>
     <li><%=link_to "Ver Todos", campaings_path%></li>
