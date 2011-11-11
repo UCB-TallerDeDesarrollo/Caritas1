@@ -4,9 +4,17 @@
   <%= f.error_messages %>
 <table>
   <tr>
-    <td>Parroquia</td>
-    <td> <%= f.text_field :parish %></td>
-  </tr>
+        <td>Parroquia </td>
+        <td><select name="workshop[parish_id]"> 
+<% if @parish  
+    @parish.each do |parish| %>
+    <option value="<%=parish.id%>">
+               <%=parish.parish_name%>
+    </option>
+      <%end%>
+    <%end%>
+</select></td>
+      </tr>
   
   <tr>
     <td>Encargado</td>

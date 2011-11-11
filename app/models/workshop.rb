@@ -1,5 +1,5 @@
 class Workshop < ActiveRecord::Base
-
+has_one :parish
    
   def self.search(search)
     

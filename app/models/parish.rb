@@ -2,7 +2,7 @@ class Parish < ActiveRecord::Base
   has_one :pastor
   has_one :vicariou
   belongs_to :group
-  
+  belongs_to :workshop
   file_column :parish_photo
   
   validates_presence_of :pastor_id

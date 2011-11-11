@@ -3,11 +3,17 @@
 
   
   <tr>
-    <td>
-      <b>Parroquia:</b> </td><td>
-      <%=h @workshop.parish %>
-    </td>
-  </tr>
+      <td>
+        <b>Parroquia:</b>
+      </td>
+      <% @parish.each do |parish| 
+      if parish.id == @workshop.parish_id
+      %>
+      
+      <td><%= link_to parish.parish_name,parish %></td>
+      <%end
+      end%>
+    </tr>
   <tr>
     <td>
       <b>Encargado:</b> </td><td>
