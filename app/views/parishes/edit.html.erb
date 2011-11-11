@@ -50,6 +50,11 @@
           </select>
         </td>
       </tr>
+          <tr>
+      <td>* <%= "Estado" %> </td>
+      <td><%= p.select  :current_state, Parish::PARISH_STATES %></td>
+    </tr>
+      
       <tr>
         <td>*Sensibilizada</td>
         <td><%= p.check_box :sensitize %></td>
