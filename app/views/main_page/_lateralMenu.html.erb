@@ -35,7 +35,7 @@
     <ul>
       <% SocialWork.find_last_five.each do |social_work| %>
         <li>
-          <%= link_to"#{social_work.to_lable}" "<span>Ubicacion: #{social_work.location}</span>", social_work%>
+          <%= link_to"#{social_work.name}" "<span>Ubicacion: #{truncate(social_work.location, :length => 100)}</span>", :controller => "social_works", :action => "show_public", :id =>social_work%>
         </li>
       <% end %>
       <li><%= link_to 'Ver Todos', social_works_path %></li>

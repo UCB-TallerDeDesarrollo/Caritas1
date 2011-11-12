@@ -1,0 +1,25 @@
+<div id="content-wrap">
+    		<%= render "main_page/lateralMenu.html" %>
+  
+  <div id="main" >
+    <CENTER><h1><%=h @social_work.name %></h1></center>          
+          
+          <br/>
+          <br/>
+          <p class="campaniaContent">
+            <b>Parroquia:<%= @social_work.parish %></b>  
+          </p>                   
+
+          <p class="campaniaContent">
+          <b>Descripcion:</b>
+          <br/>
+          <%=h @social_work.description %>
+          </p>
+          <p class="campaniaContent">
+            <%= link_to "Ver A Detalle", @social_work %>            
+          </p>          
+          
+  </div>           
+  
+
+
