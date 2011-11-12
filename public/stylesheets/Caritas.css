@@ -716,3 +716,8 @@ a:hover { color: #fff; background-color:#000; }
   background-color: #c00;
   color: #fff;
 }
+
+.campaniaContent{
+    text-align: left;
+    font-size: 14px;
+}

@@ -1,101 +1,22 @@
-<CENTER><h1>Campa&ntilde;a</h1></center>
-<TABLE ALIGN="CENTER">
-
-<TR>
-<TD WIDTH=100>
-  <p>
-  <b>Nombre2:</b>
- </p>
-</TD>
-
-<TD WIDTH=100>
-  <p>
-  <%=h @campaing.name %>
-</p>
-</TD>
-</TR>
-
-<TR>
-<TD WIDTH=100>
-  <p>
-  <b>Lugar:</b>
-</p>
-</TD>
-
-<TD WIDTH=100>
-  <p>
- 
-  <%=h @campaing.location %>
-</p>
-</TD>
-</TR>
-
-<TR>
-<TD WIDTH=100>
-  <p>
-  <b>Descripcion:</b>
-
-</p>
-</TD>
-
-<TD WIDTH=100>
-  <p>
-    <%=h @campaing.description %>
-</p>
-</TD>
-</TR>
-
-<TR>
-<TD WIDTH=100>
-  <p>
-  <b>Fecha de inicio:</b>
+<div id="content-wrap">
+    		<%= render "main_page/lateralMenu.html" %>
   
-</p>
-</TD>
+  <div id="main" >
+          <CENTER><h1><%=h @campaing.name %></h1></center>          
+          
+          <br/>
+          <br/>
+          <p class="campaniaContent">
+            <b>Fecha de inicio:<%= @campaing.date_ini %></b>  
+          </p>                   
 
-<TD WIDTH=100>
-  <p>
-
-  <%=h @campaing.date_ini %>
-</p>
-</TD>
-</TR>
-
-
-<TR>
-<TD WIDTH=100>
+          <p class="campaniaContent">
+          <b>Descripcion:</b>
+          <br/>
+          <%=h @campaing.description %>
+          </p>
+          
+  </div>           
   
-<p>
-  <b>Fecha de finalizacion:</b>
-</p>
-</TD>
 
-<TD WIDTH=100>
-  
-<p>
-  <%=h @campaing.date_end %>
-</p>
-</TD>
-</TR>
-<TR>
-<TD WIDTH=100>
-  <p>
-  <b>Responsable:</b>
-  
-</p>
-</TD>
-
-<TD WIDTH=100>
-  <p>
-  <%=h @campaing.responsible %>
-</p>
-</TD>
-</TR>
-
-  <tr align="right">
-    <td>
-      <%= link_to 'Volver', campaings_path %>
-    </td>
-  </tr>
-</TABLE>
 
