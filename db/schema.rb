@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111110015424) do
+ActiveRecord::Schema.define(:version => 20111111164503) do
 
   create_table "campaings", :force => true do |t|
     t.string   "name"
@@ -51,6 +51,16 @@ ActiveRecord::Schema.define(:version => 20111110015424) do
     t.integer  "social_card_id"
   end
 
+  create_table "history_courses", :force => true do |t|
+    t.integer  "idGroup"
+    t.integer  "idParish"
+    t.string   "instructor"
+    t.date     "dateCourse"
+    t.integer  "idCourse"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "notices", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -76,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20111110015424) do
     t.integer  "vicariou_id"
     t.string   "parish_photo"
     t.boolean  "state",             :default => true
+    t.string   "current_state"
   end
 
   create_table "pastors", :force => true do |t|
@@ -185,20 +196,12 @@ ActiveRecord::Schema.define(:version => 20111110015424) do
   end
 
   create_table "workshops", :force => true do |t|
-    t.string   "pastor_or_administrator"
-    t.string   "parish"
-    t.string   "phone"
-    t.string   "responsible_for_training"
-    t.boolean  "course1"
-    t.boolean  "course2"
-    t.boolean  "course3"
-    t.boolean  "course4"
-    t.boolean  "course5"
-    t.boolean  "course6"
-    t.string   "follow_up"
-    t.string   "observation"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "in_charge"
+    t.string   "course"
+    t.text     "observations"
+    t.integer  "parish_id"
   end
 
 end

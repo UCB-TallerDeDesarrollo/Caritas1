@@ -2,8 +2,7 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.xml
   def index
-    @groups = Group.search(params[:search])
-
+    @groups = Group.search(params[:search])    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @groups }

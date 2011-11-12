@@ -25,12 +25,17 @@ class Volunteer < ActiveRecord::Base
    validates_file_format_of :volunteer_photo, :in => ["gif", "jpg", "png"]
   validates_filesize_of :volunteer_photo, :in => 1.kilobytes..3000.kilobytes
   #put class methods here
-  def self.search(search)
-    if search
-      find(:all, :conditions => ['name LIKE ? OR last_name LIKE ? OR second_last_name LIKE ? OR profession LIKE ?', "%#{search}%","%#{search}%","%#{search}%","%#{search}%"])
-    else
-      find(:all)
+  def self.search(search,group)
+    if search       
+          find(:all, :conditions => ['name LIKE ? OR last_name LIKE ? OR second_last_name LIKE ? OR profession LIKE ?', "%#{search}%","%#{search}%","%#{search}%","%#{search}%"])           
+    else     
+      if group
+          find(:all, :conditions => ['group_id = ?', "#{group}"])   
+        else 
+        find(:all)  
+      end
     end
+         
   end
   
   #put object methods here

@@ -25,6 +25,17 @@ class NoticesController < ApplicationController
       format.xml  { render :xml => @notice }
     end
   end
+  
+  # GET /notices/1
+  # GET /notices/1.xml
+  def show_public
+    @notice = Notice.find(params[:id])
+
+    respond_to do |format|
+      format.html # show_public.html.erb
+      format.xml  { render :xml => @notice }
+    end
+  end
 
   # GET /notices/new
   # GET /notices/new.xml

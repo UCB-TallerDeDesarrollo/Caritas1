@@ -303,6 +303,7 @@ en:
       vicariou:
         one: "Vicaria"
         other: "Vicarias"
+   
       parish:
         one: "Parroquia"
         other: "Parroquias"
@@ -352,6 +353,7 @@ en:
         transport: "Transporte"
         telephone: "Telefono"
         vicar_name: "Nombre Vicario"
+           
       parish:
         parish_name: "Nombre Parroquia"
         ubication: "Ubicacion"

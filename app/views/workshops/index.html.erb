@@ -19,20 +19,22 @@
     <table border="3">
       <tr id = 'head-table'>
         <th>Parroquia</th>
-        <th>Nombre del Administrador</th>
-        <th>Telefono</th>
-        <th>Responsable</th>
+        <th>Encargado</th>
+        <th>Curso</th>
+        <th>Observacion</th>
         <th colspan="3">Accion</th>
       </tr>
-      
-    <% @workshops.each do |workshop| %>
+    <% @parish.each do |parish| %>
+    <% @workshops.each do |workshop| 
+      if parish.id == workshop.parish_id %>
     <tr>
-      <td><%=link_to workshop.parish, workshop %></td>
-    <td><%=h workshop.pastor_or_administrator %></td>
-    <td><%=h workshop.phone %></td>
-    <td><%=h workshop.responsible_for_training %></td>
+    <td><%=h parish.parish_name%></td>
+    <td><%=h workshop.in_charge%></td>
+    <td><%=h workshop.course %></td>
+    <td><%=h workshop.observations %></td>
     <td><%= link_to 'Editar', edit_workshop_path(workshop) %></td>
     </tr>
+    <%end end%>
     <%end%>
     </table>
 

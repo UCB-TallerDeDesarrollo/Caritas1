@@ -1,5 +1,7 @@
 class Workshop < ActiveRecord::Base
-def self.search(search)
+has_one :parish
+   
+  def self.search(search)
     
    if search
       find(:all, :conditions => ['parish LIKE ?', "%#{search}%"])

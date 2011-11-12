@@ -9,7 +9,7 @@ class WorkshopsController < ApplicationController
   def index
      
     @workshops = Workshop.search(params[:search])
-
+    @parish = Parish.all(:select => "parish_name,id",:conditions=> ["id in (select id from parishes)"])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @workshops }
@@ -20,7 +20,7 @@ class WorkshopsController < ApplicationController
   # GET /workshops/1.xml
   def show
     @workshop = Workshop.find(params[:id])
-
+    @parish = Parish.find(:all)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @workshop }
@@ -31,7 +31,7 @@ class WorkshopsController < ApplicationController
   # GET /workshops/new.xml
   def new
     @workshop = Workshop.new
-
+    @parish = Parish.find(:all)
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @workshop }
@@ -41,6 +41,7 @@ class WorkshopsController < ApplicationController
   # GET /workshops/1/edit
   def edit
     @workshop = Workshop.find(params[:id])
+    @parish = Parish.find(:all)
   end
 
   # POST /workshops

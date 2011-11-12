@@ -3,8 +3,7 @@
 body {
 	background: #f3ebe0 url(/images/bg.gif) repeat-x;
 	font: 12px/170% 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	color: #666666; 
-	text-align: center;	
+	text-align: center;
 }
 /* links */
 a, a:visited {
@@ -40,7 +39,7 @@ p { padding: 12px 10px;	}
 /* Lists */
 ul, ol {
 	margin: 10px 20px;
-	padding: 0 20px;	
+	padding: 0 20px;
 }
 ul { list-style: none; }
 
@@ -90,8 +89,7 @@ blockquote {
 	line-height: 1.6em;
 	font-style: italic;
 	font-family: Georgia, 'Times New Roman', Times, serif;		
-	color: #80614D;	
-	border: 1px solid #DFF4B5; 
+	border: 1px solid #DFF4B5;
 	background: #F0FFD2 url(/images/quote.gif) no-repeat 7px 10px;
 }
 
@@ -164,8 +162,6 @@ input.button {
 	width: 920px;
 	background: url(/images/wrap.gif) repeat-y center top;
 	margin: 35px auto;
-	text-align: left;
-
 }
 #content-wrap {
 	clear: both;
@@ -182,6 +178,9 @@ input.button {
 	padding: 25px 0;
 	background: #edf8c7 url(/images/content.gif) repeat-y;
     text-align: center;
+}
+#lateralMenu{
+    color: #ffffff;
 }
 #header {
 	width: 920px;
@@ -334,6 +333,7 @@ input.button {
     left:-15px;
     margin-left:100%;
     top:-1px;
+
 }
 /* keep further levels hidden */
 #nav li:hover > ul ul {
@@ -397,6 +397,49 @@ input.button {
 	color: #666666;	
 }
 
+
+/* menu lateral*/
+#lateralMenu ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 250px;
+  /* propiedades optativas */
+  background-color: #CD853F;
+  border: 1px solid #300;
+  outline: 1px solid #FFF;
+}
+#lateralMenu ul li a {
+  /* el enlace de cada item */
+  display: block;
+  text-decoration: none;
+  /* propiedades optativas */
+  border-bottom: 1px solid #AD651F;
+  border-top: 1px solid #300;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 15px 10px 10px 45px;
+  width: 195px;
+}
+#lateralMenu ul li a:hover {
+  /* propiedades optativas */
+  border-top:1px solid #300;
+    background:#b75;
+}
+#lateralMenu ul li span {
+  /* el contenido permanece oculto por defecto */
+  display:  none;
+}
+#lateralMenu ul li a:hover span {
+  /* el contenido se muestra al pasar el cursor encima */
+  display: block;
+  /* propiedades optativas */
+  font-size: 12px;
+  padding: 10px 0;
+  margin: 0 0 0 -30px;
+}
+
+/*fin menu lateral*/
 /* Main Column */
 #main {
 	float: left;

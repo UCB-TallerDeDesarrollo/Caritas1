@@ -16,7 +16,7 @@ class Pastor < ActiveRecord::Base
   validates_numericality_of :cellphone_number, :allow_nil => true, :only_integer => true, :less_than => 999999999, :message => "no es un numero valido"
 
 
-  
+  #deco prueba
     #put class methods here
   def self.search(search)
     if search
