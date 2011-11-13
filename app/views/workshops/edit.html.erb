@@ -4,24 +4,26 @@
   <%= f.error_messages %>
 
   <table>  
-  <tr><td>Parroquia </td><td>
+  <tr><td>* Parroquia </td><td>
     <select name="workshop[parish_id]">
-    <% @parish.each do |parish| %>
+      <% if @parish  
+     @parish.each do |parish| %>
     <option value="<%=parish.id%>" <%='selected' if parish.id == @workshop.parish_id %>>
                <%=parish.parish_name%>
     </option>
 <%end%>
+     <%end%>
 </select>
     
     
   </td></tr>
   
   <tr>
-    <td>Encargado</td>
+    <td>* Encargado</td>
     <td><%= f.text_field :in_charge %></td>
   </tr>  
   <tr>
-    <td>Curso</td>
+    <td>* Curso</td>
     <td><%= f.text_field :course %></td>
   </tr> 
   <tr>

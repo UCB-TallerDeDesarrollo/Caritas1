@@ -21,6 +21,17 @@ class CampaingsController < ApplicationController
       format.xml  { render :xml => @campaing }
     end
   end
+  
+  # GET /campaings/1
+  # GET /campaings/1.xml
+  def show_public
+    @campaing = Campaing.find(params[:id])
+
+    respond_to do |format|
+      format.html # show_public.html.erb
+      format.xml  { render :xml => @campaing }
+    end
+  end
 
   # GET /campaings/new
   # GET /campaings/new.xml
@@ -80,14 +91,6 @@ class CampaingsController < ApplicationController
       format.html { redirect_to(campaings_url) }
       format.xml  { head :ok }
     end
-  end
-  def show_public
-    @campaing = Campaing.find(params[:id])
-
-    respond_to do |format|
-      format.html # show_public.html.erb
-      format.xml  { render :xml => @campaing }
-    end
-  end
+  end  
 
 end

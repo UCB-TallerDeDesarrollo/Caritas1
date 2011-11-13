@@ -20,7 +20,28 @@ class SocialWorksController < ApplicationController
       format.xml  { render :xml => @social_work }
     end
   end
+  
+  # GET /social_works/1
+  # GET /social_works/1.xml
+  def show_public       
+    
+    @social_work = SocialWork.find(params[:id])
 
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @social_work }
+    end
+  end
+
+  # show_public
+   def show_public
+    @social_work = SocialWork.find(params[:id])
+
+    respond_to do |format|
+      format.html # show_public.html.erb
+      format.xml  { render :xml => @social_work}
+    end
+  end
   # GET /social_works/new
   # GET /social_works/new.xml
   def new
