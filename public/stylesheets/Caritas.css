@@ -412,27 +412,28 @@ input.button {
   text-decoration: none;
   /* propiedades optativas */
   border-top: 1px solid #333333;
-    	color: #333333;
-  font-size: 15px;
-  padding: 15px 10px 10px 45px;
-  width: 175px;
+  color: #333333;
+  font-size: 16px;
+  padding: 10px;
+  width: 207px;
 }
 #lateralMenu ul li a:hover {
-  /* propiedades optativas */
   border-top:1px solid #300;
-    background:#b75;
+    background:#778899;
+    color: #ffffff;
+}
+#lateralMenu ul li h3 {
+  border-top:1px solid #300;
+    background:#990000;
+    color: #ffffff;
 }
 #lateralMenu ul li span {
-  /* el contenido permanece oculto por defecto */
   display:  none;
 }
 #lateralMenu ul li a:hover span {
-  /* el contenido se muestra al pasar el cursor encima */
   display: block;
-  /* propiedades optativas */
   font-size: 12px;
   padding: 10px 0;
-  margin: 0 0 0 -30px;
 }
 
 /*fin menu lateral*/
