@@ -3,7 +3,6 @@
 
   <div id="main" >
     <CENTER><h2><%= @social_work.name %></h2></center>          
-          
           <br/>
           <br/>
           <p class="mostrarContent">
@@ -16,9 +15,11 @@
           <%=h @social_work.description %>
           </p>
           <p class="mostrarContent">
+            <b>Parroquia:<%= @social_work.location %></b>
+          </p>
+          <p class="mostrarContent">
             <%= link_to "Ver A Detalle", @social_work %>            
-          </p>          
-          
+          </p>
   </div>           
   
-
+    </div>
