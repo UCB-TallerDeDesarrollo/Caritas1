@@ -21,6 +21,10 @@ class WorkshopsController < ApplicationController
   def show
     @workshop = Workshop.find(params[:id])
     @parish = Parish.find(:all)
+    
+    @parish1 = Parish.find(@workshop.parish_id)
+    @vicariou = Vicariou.find(@parish1.vicariou_id)
+    @pastor = Pastor.find(@parish1.pastor_id)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @workshop }

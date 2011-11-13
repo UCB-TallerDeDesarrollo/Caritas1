@@ -1,19 +1,40 @@
 <h1>Ver Taller</h1>
 <table>
-
-  
   <tr>
-      <td>
-        <b>Parroquia:</b>
-      </td>
-      <% @parish.each do |parish| 
+    <td>
+      <b>Parroquia:</b>
+    </td>
+    <% @parish.each do |parish| 
       if parish.id == @workshop.parish_id
       %>
-      
-      <td><%= link_to parish.parish_name,parish %></td>
+    
+        <td><%= link_to parish.parish_name,parish %></td>
       <%end
-      end%>
-    </tr>
+    end%>
+  </tr>
+  <tr>
+    <td>
+      <b>Parroco:</b>
+    </td>
+
+
+    <td><%=h @pastor.name+" "+@pastor.primary_last_name+" "+@pastor.second_last_name  %></td>
+
+  </tr>
+  <tr>
+    <td>
+      <b>Estado de parroquia:</b>
+    </td>
+
+
+    <td><%=h @parish1.current_state%></td>
+
+  </tr>
+  <tr>
+    <td>
+      <b>Vicaria a la que pertenece:</b>
+    </td> 
+    <td><%=h  @vicariou.name_vicariou%></td>      
   <tr>
     <td>
       <b>Encargado:</b> </td><td>

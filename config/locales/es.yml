@@ -331,6 +331,9 @@ en:
       notice:
         one: "Noticia"  
         other: "Noticias"
+      workshop:
+        one: "Taller"
+        other: "Talleres"
         
     attributes:
       group:
@@ -353,6 +356,12 @@ en:
         transport: "Transporte"
         telephone: "Telefono"
         vicar_name: "Nombre Vicario"
+        
+      workshop:
+        in_charge: "Encargado"
+        course: "Curso"
+        observations: "Observaciones"
+        
            
       parish:
         parish_name: "Nombre Parroquia"

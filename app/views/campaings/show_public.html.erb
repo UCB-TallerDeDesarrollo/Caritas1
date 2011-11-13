@@ -2,20 +2,20 @@
     		<%= render "main_page/lateralMenu.html" %>
   
   <div id="main" >
-          <CENTER><h1><%=h @campaing.name %></h1></center>          
+          <CENTER><h2><%= @campaing.name %></h2></center>          
           
           <br/>
           <br/>
-          <p class="campaniaContent">
+          <p class="mostrarContent">
             <b>Fecha de inicio:<%= @campaing.date_ini %></b>  
           </p>                   
 
-          <p class="campaniaContent">
+          <p class="mostrarContent">
           <b>Descripcion:</b>
           <br/>
           <%=h @campaing.description %>
           </p>
-          <p class="campaniaContent">
+          <p class="mostrarContent">
             <%= link_to "Ver A Detalle", @campaing %>            
           </p>          
           

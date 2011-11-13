@@ -4,7 +4,7 @@
   <%= f.error_messages %>
 <table>
   <tr>
-        <td>Parroquia </td>
+        <td>* Parroquia </td>
         <td><select name="workshop[parish_id]"> 
 <% if @parish  
     @parish.each do |parish| %>
@@ -17,11 +17,11 @@
       </tr>
   
   <tr>
-    <td>Encargado</td>
+    <td>* Encargado</td>
     <td><%= f.text_field :in_charge %></td>
   </tr>  
   <tr>
-    <td>Curso</td>
+    <td>* Curso</td>
     <td><%= f.text_field :course %></td>
   </tr> 
   <tr>
