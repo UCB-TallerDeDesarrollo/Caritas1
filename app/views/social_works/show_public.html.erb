@@ -1,4 +1,8 @@
-<h1>Ver Obra Social</h1>
+<div id="content-wrap">
+    		<%= render "main_page/lateralMenu.html" %>
+
+  <div id="main" >
+    <h1>Ver Obra Social</h1>
 <table>
   <tr>
     <td><b>Parroquia:</b></td>
@@ -44,10 +48,9 @@
     <td><b>Responsable del llenado:</b></td>
     <td><%=h @social_work.responsible_filling %></td>
   </tr>
-  <tr align="right">
-      <td colspan="2">
-        <%= link_to 'Editar', edit_social_work_path(@social_work) %> |
-        <%= link_to 'Volver', social_works_path %>
-      </td>
-    </tr>
+  <p>
+            <%= link_to "Ver A Detalle", @social_work %>
+          </p>
 </table>
+      </div>
+    </div>
