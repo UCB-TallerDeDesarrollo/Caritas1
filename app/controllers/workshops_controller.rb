@@ -35,7 +35,7 @@ class WorkshopsController < ApplicationController
   # GET /workshops/new.xml
   def new
     @workshop = Workshop.new
-    @parish = Parish.find(:all)
+    @parish = Parish.all(:select => "parish_name,id",:conditions=> ["id not in (select parish_id from workshops) and state=true"])
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @workshop }
