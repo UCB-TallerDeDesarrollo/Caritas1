@@ -3,7 +3,7 @@ class Group < ActiveRecord::Base
   #put constants here
 
   #put relations and references here
-  belongs_to :volunteer   # relacion para group_leader
+  belongs_to :volunteer # relacion para group_leader
   has_many :volunteers
   has_one :parish
   
@@ -32,12 +32,13 @@ class Group < ActiveRecord::Base
   end
   
   def before_update
-    if self.volunteer.changed?
-      self.volunteer.update_attributes(:position, 'voluntario')
+    if parish.nil?
+      self.parish_id = '0'
     end
-  end
-  
-  def after_save
-    
+    if volunteer.nil?
+      self.volunteer_id = '0'
+    else
+      volunteer.update_attributes(:position => 'responsable', :group_id => self.id)
+    end
   end
 end

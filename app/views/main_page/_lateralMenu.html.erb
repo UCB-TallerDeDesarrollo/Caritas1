@@ -28,7 +28,7 @@
       <% Notice.find_last_five.each do |notice| %>
         <li><%= link_to "#{notice.title}", :controller => "notices", :action => "show_public", :id =>notice %></li>
       <%end %>
-      <li>><%= link_to 'Ver Todos', notices_path %></li>
+      <li><%= link_to 'Ver Todos', notices_path %></li>
 
     </ul>
     <h3>Obras Sociales</h3>
