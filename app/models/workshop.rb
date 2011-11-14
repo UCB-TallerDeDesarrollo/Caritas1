@@ -1,6 +1,10 @@
 class Workshop < ActiveRecord::Base
-has_one :parish
-   
+  has_one :parish 
+  #has_and_belongs_to_many :course
+  has_many :progress
+  has_many :courses, :through => :progresses
+  
+  
   validates_presence_of :parish_id 
   validates_presence_of :in_charge
   validates_presence_of :course

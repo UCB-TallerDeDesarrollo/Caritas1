@@ -20,9 +20,20 @@
     <td>* Encargado</td>
     <td><%= f.text_field :in_charge %></td>
   </tr>  
-  <tr>
+  <tr>  
     <td>* Curso</td>
-    <td><%= f.text_field :course %></td>
+          
+    <td><select name="workshop[course]"> 
+<% if @course  
+    @course.each do |course| %>
+    <option value="<%=course.id%>">
+               <%=course.name%>
+    </option>
+      <%end%>
+    <%end%>
+</select></td>
+
+
   </tr> 
   <tr>
     <td>Observaciones</td>
