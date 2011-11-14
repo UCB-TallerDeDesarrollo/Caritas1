@@ -4,11 +4,11 @@ class VolunteersController < ApplicationController
   def index
     @volunteers = Volunteer.search(params[:search],params[:group])
     @groups = Group.find(:all)
-    #@volunteers = Volunteer.all
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @volunteers }
+      format.xls
     end
   end
 
