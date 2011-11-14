@@ -2,7 +2,7 @@ class HistoryCoursesController < ApplicationController
   # GET /history_courses
   # GET /history_courses.xml
   def index
-    @history_courses = HistoryCourse.all
+    @history_courses = HistoryCourse.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb
