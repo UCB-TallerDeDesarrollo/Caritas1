@@ -20,7 +20,7 @@
             <option value="0"></option>
             <% if @courses 
             @courses.each do |course| %>
-              <option value="<%=course.id%>" >
+              <option value="<%=course.id%>" <%='selected' if course.id == @history_course.idCourse %> >
                 <%=course.name%>
               </option>
             <%end%>              
