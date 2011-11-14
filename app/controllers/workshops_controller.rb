@@ -23,6 +23,7 @@ class WorkshopsController < ApplicationController
     @parish = Parish.find(:all)
     
     @volunteer = Volunteer.find(:all)
+    @course = Course.find(:all)
     
     @parish1 = Parish.find(@workshop.parish_id)
     @vicariou = Vicariou.find(@parish1.vicariou_id)

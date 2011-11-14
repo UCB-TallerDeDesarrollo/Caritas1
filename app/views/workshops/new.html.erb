@@ -32,14 +32,14 @@
   <tr>  
     <td>* Curso</td>        
     <td><select name="workshop[course]"> 
-<% if @course  
-    @course.each do |course| %>
-    <option value="<%=course.name%>">
-               <%=course.name%>
-    </option>
+    <% if @course  
+      @course.each do |course| %>
+      <option value="<%=course.name%>">
+        <%=course.name%>
+      </option>
       <%end%>
     <%end%>
-</select></td>
+    </select></td>
   </tr> 
   
   <tr>
