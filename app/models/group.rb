@@ -32,9 +32,6 @@ class Group < ActiveRecord::Base
   end
   
   def before_update
-    if parish.nil?
-      self.parish_id = '0'
-    end
     if volunteer.nil?
       self.volunteer_id = '0'
     else
