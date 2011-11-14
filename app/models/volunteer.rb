@@ -4,6 +4,9 @@ class Volunteer < ActiveRecord::Base
   #put relations and references here
   has_one :group #relacion para group_leader
   belongs_to :group
+  
+  has_many :workshops
+  #belongs_to :workshop
 
   #put active record callbacks here
   file_column :volunteer_photo

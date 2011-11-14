@@ -17,12 +17,20 @@
       </tr>
   
   <tr>
-    <td>* Encargado</td>
-    <td><%= f.text_field :in_charge %></td>
+    <td>* Encargado</td>  
+     <td><select name="workshop[in_charge]"> 
+<% if @volunteer  
+    @volunteer.each do |volunteer| %>
+    <option value="<%=volunteer.id%>">
+               <%=volunteer.name + " " + volunteer.last_name%>
+    </option>
+      <%end%>
+    <%end%>
+</select></td>   
   </tr>  
+  
   <tr>  
-    <td>* Curso</td>
-          
+    <td>* Curso</td>        
     <td><select name="workshop[course]"> 
 <% if @course  
     @course.each do |course| %>
@@ -32,9 +40,8 @@
       <%end%>
     <%end%>
 </select></td>
-
-
   </tr> 
+  
   <tr>
     <td>Observaciones</td>
     <td><%= f.text_area :observations , :rows=>6, :cols=>22%></td>

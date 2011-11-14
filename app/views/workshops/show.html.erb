@@ -38,7 +38,14 @@
   <tr>
     <td>
       <b>Encargado:</b> </td><td>
-      <%=h @workshop.in_charge %>
+    <% @volunteer.each do |volunteer| 
+      if volunteer.id == @workshop.in_charge
+      %>
+    <%= link_to volunteer.name + " " + volunteer.last_name,volunteer   %></td>
+      <%end%>
+    <%end%>
+      
+
     </td>
   </tr>
   <tr>
