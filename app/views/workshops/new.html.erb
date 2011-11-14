@@ -26,7 +26,7 @@
     <td><select name="workshop[course]"> 
 <% if @course  
     @course.each do |course| %>
-    <option value="<%=course.id%>">
+    <option value="<%=course.name%>">
                <%=course.name%>
     </option>
       <%end%>

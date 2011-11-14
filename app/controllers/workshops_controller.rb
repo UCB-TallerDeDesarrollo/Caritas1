@@ -36,7 +36,7 @@ class WorkshopsController < ApplicationController
   def new
     @workshop = Workshop.new
     @parish = Parish.all(:select => "parish_name,id",:conditions=> ["id not in (select parish_id from workshops) and state=true"])
-    #@course = Course.all(:select => "name",:conditions=> ["name not in (select course from workshops)"])
+    @course = Course.all(:select => "name")
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @workshop }
