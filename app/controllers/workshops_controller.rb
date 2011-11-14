@@ -47,6 +47,7 @@ class WorkshopsController < ApplicationController
   def edit
     @workshop = Workshop.find(params[:id])
     @parish = Parish.find(:all)
+    @course = Course.all(:all)
   end
 
   # POST /workshops
