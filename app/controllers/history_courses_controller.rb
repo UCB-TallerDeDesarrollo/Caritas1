@@ -33,6 +33,8 @@ class HistoryCoursesController < ApplicationController
   def new
     @history_course = HistoryCourse.new
     @courses = Course.find(:all)
+    
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @history_course }
@@ -43,10 +45,7 @@ class HistoryCoursesController < ApplicationController
   def edit
     @history_course = HistoryCourse.find(params[:id])
     @courses = Course.find(:all)
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @history_course }
-    end
+
   end
 
   # POST /history_courses
