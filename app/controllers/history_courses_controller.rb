@@ -1,9 +1,16 @@
 class HistoryCoursesController < ApplicationController
   # GET /history_courses
   # GET /history_courses.xml
+  
+  record_select :per_page => 5,
+  :search_on => ['idParish'],
+  :full_text_search => true
+  
+  
   def index
     @history_courses = HistoryCourse.search(params[:search])
-
+    #@history_courses = HistoryCourse.all
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @history_courses }
