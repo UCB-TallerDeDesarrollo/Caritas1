@@ -15,9 +15,9 @@
     <tr><td>
     *Fecha del Curso:</td><td>
     <%= f.date_select :dateCourse %></td></tr>
+    
     <tr><td>
     *Curso:</td><td><select name="history_course[idCourse]" >
-            <option value=""></option>
             <% if @courses 
             @courses.each do |course| %>
               <option value="<%=course.id%>" >

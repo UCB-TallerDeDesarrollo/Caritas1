@@ -1,4 +1,4 @@
-class HistoryCourse < ActiveRecord::Base
+  class HistoryCourse < ActiveRecord::Base
   belongs_to :course
   validates_presence_of :idGroup , :message => "El Grupo no puede ser vacio"
   validates_format_of :idGroup, :with => /^([a-zA-Z ñÑ]{0,255})$/i , :message => " es demasiado grande o tiene caracteres invalidos"
