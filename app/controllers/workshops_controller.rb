@@ -5,17 +5,6 @@ class WorkshopsController < ApplicationController
     record_select :per_page => 5,
     :search_on => ['parish'],
     :full_text_search => true
-  
-  def index
-     
-    @workshops = Workshop.search(params[:search])
-    @parish = Parish.all(:select => "parish_name,id",:conditions=> ["id in (select id from parishes)"])
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @workshops }
-    end
-  end
-
   # GET /workshops/1
   # GET /workshops/1.xml
   def show
