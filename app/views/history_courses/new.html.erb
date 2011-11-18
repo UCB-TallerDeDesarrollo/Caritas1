@@ -17,15 +17,9 @@
     <%= f.date_select :dateCourse %></td></tr>
     
     <tr><td>
-    *Curso:</td><td><select name="history_course[idCourse]" >
-            <% if @courses 
-            @courses.each do |course| %>
-              <option value="<%=course.id%>" >
-                <%=course.name%>
-              </option>
-            <%end%>              
-              <%end%>   
-          </select></td></tr><tr>
+    *Curso:</td><td>
+        <%= select("post", "idCourse", Course.all.collect {|p| [ p.name, p.id ] }, {:prompt => ''}) %>
+          </td></tr><tr>
         <td colspan="2">*  Estos campos son obligatorios</td>
       </tr>
   
