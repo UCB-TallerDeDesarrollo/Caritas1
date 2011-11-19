@@ -1,6 +1,6 @@
-class CreateCourses < ActiveRecord::Migration
+class CreateCoursesTypes < ActiveRecord::Migration
   def self.up
-    create_table :courses do |t|
+    create_table :courses_types do |t|
       t.string :name
       t.string :description
 
@@ -9,6 +9,6 @@ class CreateCourses < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :courses
+    drop_table :courses_types
   end
 end

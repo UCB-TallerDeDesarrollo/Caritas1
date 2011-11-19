@@ -1,9 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :courses_types
+
   map.resources :history_courses
 
   map.resources :workshops
-
-  map.resources :courses
 
   map.resources :helps
   map.resources :social_cards
