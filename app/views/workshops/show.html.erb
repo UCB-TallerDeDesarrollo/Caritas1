@@ -39,25 +39,12 @@
   
   <tr>
     <td>
-    <b>Encargado:</b> </td><td>
-    <% @volunteer.each do |volunteer| 
-      if volunteer.id == @workshop.in_charge %>
-    <%= link_to volunteer.name + " " + volunteer.last_name,volunteer %></td>
-      <%end%>
-    <%end%>
+    <b>Encargado:</b> </td>
+      <td><%=h  @workshop.in_charge%></td>
     </td>
   </tr>
   
-  <tr>
-    <td>
-    <b>Curso:</b> </td><td>
-    <% @course.each do |course| 
-      if course.name == @workshop.course %>
-    <%= link_to course.name,course %></td>
-      <%end%>
-    <%end%>     
-    </td>
-  </tr>
+  
   
   <tr>
     <td>

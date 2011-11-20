@@ -3,6 +3,7 @@ class ParishesController < ApplicationController
   # GET /parishes.xml
   def index
     @parishes = Parish.search(params[:search])
+    #@workshop = Workshop.all(:select => "id",:conditions=> ["parish_id= ?","#{@parish.id}"])
 
     respond_to do |format|
       format.html # index.html.erb

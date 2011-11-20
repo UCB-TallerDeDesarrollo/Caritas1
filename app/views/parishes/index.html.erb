@@ -36,7 +36,7 @@
               
               <td><%= link_to 'Editar', edit_parish_path(parish) %></td>
               <% if parish.current_state != "En Contacto" && parish.current_state != "No Alcanzada" && parish.current_state != "No Aceptada"%>
-              <td><%= link_to "Taller"%></td> <!--,edit_workshop_path(2)-->
+              <td><%= link_to "Taller" %></td> <!--, edit_workshop_path(@workshop)-->
               <%end%>                                          
 <!--              <td><%= link_to 'Eliminar', parish, :confirm => 'Esta seguro que desea eliminar esta parroquia?', :method => :delete %></td> -->
             </tr>
