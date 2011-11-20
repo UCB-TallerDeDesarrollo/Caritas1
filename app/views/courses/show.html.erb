@@ -1,23 +1,34 @@
-<p>
-  <b>Name:</b>
-  <%=h @course.name %>
-</p>
+<CENTER><h1>Curso</h1></center>
 
-<p>
-  <b>Responsible:</b>
-  <%=h @course.responsible %>
-</p>
+<TABLE ALIGN="CENTER">
 
-<p>
-  <b>Date ini:</b>
-  <%=h @course.date_ini %>
-</p>
+  <tr>
+    <td><b>Name:</b></td>
+    <td><%=h @course.name %></td>
+  </tr>
 
-<p>
-  <b>Description:</b>
-  <%=h @course.description %>
-</p>
+  <tr>
+  <td><b>Responsible:</b></td>
+  <td><%=h @course.responsible %></td>
+  </tr>
 
+  <tr>  
+    <td><b>Date ini:</b></td>
+    <td><%=h @course.date_ini %></td>
+  </tr>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+  <tr>
+    <td><b>Description:</b></td>
+    <td><%=h @course.description %></td>
+  </tr>
+
+<tr align="right">
+    <td colspan="2">
+      <% if current_user %>
+            <%= link_to 'Editar', edit_course_path %>|
+          <% end %>
+      <%= link_to 'Volver', courses_path %>
+    </td>
+  </tr>
+
+</table>
