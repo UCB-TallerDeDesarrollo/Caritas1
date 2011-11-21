@@ -317,6 +317,7 @@ input.button {
 
 #nav :hover ul {
     left:0; top:22px;
+
 }
 
 #nav a:hover ul {
@@ -458,12 +459,16 @@ input.button {
 	border-bottom: 1px solid #D2E9A4;
 
 }
+
 #main h2 a {
 	color: #CC0000;
 	text-decoration: none;		
 }
 #main ul li {
 	list-style-image: url(/images/bullet.gif);
+}
+#main em :hover{
+     background-color: #990000;
 }
 
 #sidebar {
@@ -509,7 +514,7 @@ input.button {
 	font-weight: normal;		
 }
 #sidebar .sidemenu li a:hover {	
-	color: #000;	
+	color: #000;
 	background: none;	
 }
 #sidebar .sidemenu ul { margin: 0 0 0 5px; padding: 0; }
@@ -561,7 +566,8 @@ input.button {
 	text-transform: uppercase;
 }
 #footer-wrap a:hover { 
-	color: #000; 
+	color: #000;
+    background-color: #8b0000;
 	text-decoration: none;
 }
 
