@@ -146,6 +146,8 @@ textarea {
 	width: 200px;
 	display: block;
 }
+
+/*
 input.button {
 	font: bold 12px Arial, Sans-serif;
 	height: 30px;
@@ -154,6 +156,42 @@ input.button {
 	color: #fff;
 	background: #990000;
   	border-color: #C4DE8F #8DB836 #8DB836 #C4DE8F;
+}
+*/
+
+
+input.button.submit, button, input[type="submit"] {
+    /*
+        outline-style: none;
+	color:#333;
+        font: bold 90% 'trebuchet ms',helvetica,sans-serif;
+        font-size: 10px;
+	border:2px solid;
+        height: 23px;
+        border-color: #999 #666 #666 #999;
+        background-color:#ddd;
+        line-height: 2em; 
+        float: none;
+        margin-right: 5px;
+      */
+        background: #810 30% url(/images/alert-overlay.png) repeat-x;
+        display: inline-block;
+        padding: 5px 10px 6px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        line-height: 1;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-box-shadow: 0 1px 3px #999;
+        -webkit-box-shadow: 0 1px 3px #999;
+        text-shadow: 0 -1px 1px #222;
+        border-bottom: 1px solid #222;
+        position: relative;
+        cursor: pointer; 
+        font-size: 11px;
+        margin-right: 5px;
+
 }
 
 /********************************************
