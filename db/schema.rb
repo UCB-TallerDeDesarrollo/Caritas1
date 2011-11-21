@@ -204,7 +204,7 @@ ActiveRecord::Schema.define(:version => 20111114171024) do
   create_table "workshops", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "in_charge"
+    t.string   "in_charge"
     t.string   "course"
     t.text     "observations"
     t.integer  "parish_id"
