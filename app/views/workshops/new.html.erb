@@ -19,14 +19,7 @@
   <tr>
     <td>* Encargado</td>  
      <td><select name="workshop[in_charge]"> 
-<% if @volunteer  
-    @volunteer.each do |volunteer| %>
-    <option value="<%=volunteer.id%>">
-               <%=volunteer.name + " " + volunteer.last_name%>
-    </option>
-      <%end%>
-    <%end%>
-</select></td>   
+    <td><%= f.text_field :in_charge %></td>
   </tr>  
   
   <tr>  

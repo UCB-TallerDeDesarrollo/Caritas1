@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @courses_type.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @courses_type.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_courses_type_path(@courses_type) %> |
+<%= link_to 'Back', courses_types_path %>

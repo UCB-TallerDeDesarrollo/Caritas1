@@ -1,13 +1,8 @@
 class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.xml
-    
-    record_select :per_page => 5,
-    :search_on => ['name'],
-    :full_text_search => true
-  
   def index
-    @courses = Course.search(params[:search])
+    @courses = Course.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -49,7 +44,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to(@course, :notice => 'El curso fue creado correctamente.') }
+        format.html { redirect_to(@course, :notice => 'Course was successfully created.') }
         format.xml  { render :xml => @course, :status => :created, :location => @course }
       else
         format.html { render :action => "new" }
@@ -65,7 +60,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.update_attributes(params[:course])
-        format.html { redirect_to(@course, :notice => 'El curso fue actualizado correctamente.') }
+        format.html { redirect_to(@course, :notice => 'Course was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
