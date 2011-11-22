@@ -48,11 +48,49 @@
   
   <tr>
     <td>
-      <b>Observaciones:</b> </td><td>
+      <b>Observaciones:</b> 
+    </td>
+    <td>
       <%=h @workshop.observations %>
     </td>
   </tr>
-   
+    <tr>
+    <td colspan="2" align="CENTER">
+  <% if @rel.count!=0 %>
+      
+      <h1>Cursos Realizados</h1>
+<table border="3" align="CENTER">
+
+        <tr id ='head-table'>
+          <th>Curso Formacion</th>
+          <th>Cantidad</th>
+        </tr>
+
+     
+
+
+      
+      
+  <%   @rel.each do |r| %>
+      <% @cour=Course.find(r.course_id) %>
+        <tr>
+          <td align="CENTER">
+     <%= link_to r.to_s, @cour %>
+            </td>
+            
+          <td align="CENTER">
+    
+    <%=  WorkshopsCourse.findByCourseWorshop(r.course_id,r.workshop_id).count%>
+            </td>
+            
+      </tr>
+    <%  end %>
+     </table> 
+    <%  else  %>
+      <h1>No Tiene Cursos!!! </h1>
+    <%  end %>
+   </td>
+  </tr>   
   <tr align="right">
     <td colspan="2">
       <%= link_to 'Editar', edit_workshop_path(@workshop) %> |

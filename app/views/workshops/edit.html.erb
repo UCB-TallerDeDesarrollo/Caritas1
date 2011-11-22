@@ -52,6 +52,44 @@
     <td><b>Observaciones</b></td>
     <td><%= f.text_area :observations , :rows=>6, :cols=>22%></td>
   </tr> 
+  <tr>
+    <td colspan="2" align="CENTER">
+       <% if @rel.count!=0 %>
+      
+      <h1>Cursos Realizados</h1>
+<table border="3" align="CENTER">
+
+        <tr id ='head-table'>
+          <th align="CENTER">Curso Formacion</th>
+          <th align="CENTER">Cantidad</th>
+          <th align="CENTER">Accion</th>
+        </tr>
+
+     
+
+
+      
+      
+  <%   @rel.each do |r| %>
+      <% @cour=Course.find(r.course_id) %>
+        <tr>
+          <td align="CENTER">
+     <%= link_to r.to_s, @cour %>
+            </td>
+            
+          <td align="CENTER">
+    <%=  WorkshopsCourse.findByCourseWorshop(r.course_id,r.workshop_id).count%>
+            </td>
+            
+          <td align="CENTER">
+     accion
+            </td>
+      </tr>
+    <%  end %>
+     </table> 
+    <%  else  %>
+      <h1 align="CENTER">No Tiene Cursos!!! </h1>
+    <%  end %>
   <tr align="right">
       <td colspan="2">         
           <%= f.submit 'Actualizar' %>
