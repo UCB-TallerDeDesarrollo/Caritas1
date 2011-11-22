@@ -46,7 +46,9 @@
   </tr>
   <tr align="right">
       <td colspan="2">
-        <%= link_to 'Editar', edit_social_work_path(@social_work) %> |
+        <% if current_user %>
+              <%= link_to 'Editar', edit_social_work_path(@social_work) %> |
+        <%end%>
         <%= link_to 'Volver', social_works_path %>
       </td>
     </tr>
