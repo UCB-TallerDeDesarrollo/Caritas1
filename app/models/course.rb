@@ -1,4 +1,7 @@
 class Course < ActiveRecord::Base
+  
+  belongs_to :assistance_list
+  
   validates_presence_of :name   
   validates_presence_of :responsible
   

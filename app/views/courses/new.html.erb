@@ -24,6 +24,17 @@
     <td>&nbsp&nbsp&nbspDescripción<br /></td>
     <td><%= f.text_area :description, :rows=>6, :cols=>22  %></td>
   </tr>
+  
+  <tr>
+      <td>* Seleccione los Voluntarios</td>
+      <td>
+        <select id="listaVoluntarios" multiple="multiple">
+          <%Volunteer.find(:all).each do |volunteer| %>
+            <option><%=h volunteer.name %></option>         
+          <%end%>
+        </select>
+      </td>
+    </tr>
     
     <tr align="right">
       <td colspan="2">
@@ -39,3 +50,9 @@
     
     </TABLE>   
 <% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#listaVoluntarios").dropdownchecklist( { emptyText: "Please Select...", width: 150 } );
+  });
+</script>
