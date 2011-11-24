@@ -46,9 +46,7 @@ class CoursesController < ApplicationController
     respond_to do |format|
       if @course.save        
         volunteers_ids.each do |id|
-          @assistence = AssistanceList.new
-          @assistence.volunteer = Volunteer.find(id)
-          @assistence.course = @course
+          @assistence = AssistanceList.new( :volunteer_id => id , :course_id => @course.id)          
           @assistence.save
         end
         format.html { redirect_to(@course, :notice => 'Course was successfully created.') }
