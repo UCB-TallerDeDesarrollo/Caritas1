@@ -1,3 +1,4 @@
+<%if current_user%>
 <p>
   <b>Name:</b>
   <%=h @courses_type.name %>
@@ -11,3 +12,6 @@
 
 <%= link_to 'Edit', edit_courses_type_path(@courses_type) %> |
 <%= link_to 'Back', courses_types_path %>
+<%else%>
+<h1>no puede realizar esta accion, porfavor contactese</h1>
+<%end%>

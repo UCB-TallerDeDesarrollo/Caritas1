@@ -1,3 +1,4 @@
+<%if current_user%>
 <h1>Editing courses_type</h1>
 
 <% form_for(@courses_type) do |f| %>
@@ -18,3 +19,6 @@
 
 <%= link_to 'Show', @courses_type %> |
 <%= link_to 'Back', courses_types_path %>
+<%else%>
+<h1>no puede realizar esta accion, porfavor contactese</h1>
+<%end%>
