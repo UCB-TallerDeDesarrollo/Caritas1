@@ -1,3 +1,4 @@
+<%if current_user%>
 <h1>Parroquias</h1>
 
 <% form_tag parishes_path, :method => 'get' do %>
@@ -47,3 +48,6 @@
 </table>
 
 <br />
+<%else%>
+<h1>no puede realizar esta accion, porfavor contactese</h1>
+<%end%>
