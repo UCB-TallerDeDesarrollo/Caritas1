@@ -41,9 +41,16 @@ class CoursesController < ApplicationController
   # POST /courses.xml
   def create
     @course = Course.new(params[:course])
-
+    volunteers_ids = params[:listaVoluntarios]
+    
     respond_to do |format|
-      if @course.save
+      if @course.save        
+        volunteers_ids.each do |id|
+          @assistence = AssistanceList.new
+          @assistence.volunteer = Volunteer.find(id)
+          @assistence.course = @course
+          @assistence.save
+        end
         format.html { redirect_to(@course, :notice => 'Course was successfully created.') }
         format.xml  { render :xml => @course, :status => :created, :location => @course }
       else

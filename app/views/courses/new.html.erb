@@ -1,4 +1,4 @@
-<CENTER><h1>Nueva Curso</h1></center>
+<CENTER><h1>Nuevo Curso</h1></center>
 
 <% form_for(@course) do |f| %>
   <%= f.error_messages %>
@@ -28,11 +28,10 @@
   <tr>
       <td>* Seleccione los Voluntarios</td>
       <td>
-        <select id="listaVoluntarios" multiple="multiple">
-          <%Volunteer.find(:all).each do |volunteer| %>
-            <option><%=h volunteer.name %></option>         
-          <%end%>
-        </select>
+        <%= select_tag "listaVoluntarios",options_from_collection_for_select(Volunteer.all,:id,:name),:multiple=>true%>
+        <%#*<select id="listaVoluntarios" multiple="multiple">%>
+          <%#= options_for_select Volunteer.all %>          
+        <%#*</select>%>
       </td>
     </tr>
     
