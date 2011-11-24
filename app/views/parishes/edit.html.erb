@@ -1,3 +1,4 @@
+<%if current_user%>
 <h1>Editar Parroquia</h1>
 
 <% form_for(@parish, :html => {:multipart => true}) do |p| %>
@@ -55,10 +56,6 @@
       <td><%= p.select  :current_state, Parish::PARISH_STATES %></td>
     </tr>
       
-      <tr>
-        <td>*Sensibilizada</td>
-        <td><%= p.check_box :sensitize %></td>
-      </tr>
       <tr>  
       <td><%= "Fotografia De La Parroquia" %></td>
       <% if @parish.parish_photo %>
@@ -84,5 +81,8 @@
     </table>
 
 <% end %>
+<%else%>
+<h1>no puede realizar esta accion, porfavor contactese</h1>
+<%end%>
 
 

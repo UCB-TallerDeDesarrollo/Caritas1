@@ -1,12 +1,18 @@
 class HistoryCoursesController < ApplicationController
   # GET /history_courses
   # GET /history_courses.xml
-  def index
-    @history_courses = HistoryCourse.all
-
+  
+  #record_select :per_page => 5,
+  #:search_on => ['idParish'],
+  #:full_text_search => true
+  
+  
+  def index   
+    @courses = Course.all
+       
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @history_courses }
+      format.xml  { render :xml => @courses }
     end
   end
 
@@ -26,6 +32,8 @@ class HistoryCoursesController < ApplicationController
   def new
     @history_course = HistoryCourse.new
     @courses = Course.find(:all)
+    
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @history_course }
@@ -36,10 +44,7 @@ class HistoryCoursesController < ApplicationController
   def edit
     @history_course = HistoryCourse.find(params[:id])
     @courses = Course.find(:all)
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @history_course }
-    end
+
   end
 
   # POST /history_courses

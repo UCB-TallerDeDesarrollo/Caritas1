@@ -1,3 +1,4 @@
+<%if current_user%>
 <h1>Editing social_card</h1>
 
 <% form_for(@social_card) do |f| %>
@@ -128,3 +129,6 @@
 
 <%= link_to 'Mostrar', @social_card %> |
 <%= link_to 'Atras', social_cards_path %>
+<%else%>
+  <h1>no puede realizar esta accion, porfavor contactese</h1>
+<%end%>

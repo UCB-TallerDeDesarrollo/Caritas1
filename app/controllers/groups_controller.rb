@@ -14,7 +14,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @parish = Parish.find(@group.parish_id)
-    
+    #@parish = Parish.all(:select => "parish_name")
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @group }

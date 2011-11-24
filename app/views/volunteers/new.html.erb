@@ -1,3 +1,4 @@
+<%if current_user%>
 <h1>Crear Voluntario</h1>
 
 <% form_for(@volunteer, :html => {:multipart => true}) do |f| %>
@@ -92,4 +93,7 @@
 
 
 <% end %>
+<%else%>
+  <h1>no puede realizar esta accion, porfavor contactese</h1>
+<%end%>
 

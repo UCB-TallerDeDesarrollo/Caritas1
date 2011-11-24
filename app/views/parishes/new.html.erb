@@ -1,3 +1,4 @@
+<%if current_user%>
 <h1>Crear Parroquia</h1>
 
 <% form_for(@parish, :html => {:multipart => true})do |p| %>
@@ -44,10 +45,6 @@
       <td><%= p.select  :current_state, Parish::PARISH_STATES %></td>
     </tr>
       <tr>
-        <td>*Sensibilizada</td>
-        <td><%= p.check_box :sensitize %></td>
-      </tr>
-      <tr>
         <td>*Nombre del Parroco</td>
         <td><select name="parish[pastor_id]">
     <% if @pastor  
@@ -75,5 +72,7 @@
       </tr>
     </table>
 <% end %>
-
+<%else%>
+<h1>no puede realizar esta accion, porfavor contactese</h1>
+<%end%>
 

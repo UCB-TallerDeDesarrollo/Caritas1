@@ -1,3 +1,4 @@
+<%if current_user%>
 <h1>Nuevo Ficha Social</h1>
 
 <% form_for(@social_card) do |f| %>
@@ -129,3 +130,6 @@
 
   </table>
 <% end %>
+  <%else%>
+  <h1>no puede realizar esta accion, porfavor contactese</h1>
+<%end%>

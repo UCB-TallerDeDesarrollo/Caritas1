@@ -4,49 +4,92 @@
   <%= f.error_messages %>
 
   <table>  
-  <tr><td>* Parroquia </td><td>
-    <select name="workshop[parish_id]">
-      <% if @parish  
-     @parish.each do |parish| %>
-    <option value="<%=parish.id%>" <%='selected' if parish.id == @workshop.parish_id %>>
-               <%=parish.parish_name%>
-    </option>
-<%end%>
-     <%end%>
-</select>
-  </td></tr>
+   <tr>
+    <td>
+      <b>Parroquia:</b>
+    </td>
+    <% @parish.each do |parish| 
+      if parish.id == @workshop.parish_id
+      %>
+    
+        <td><%= link_to parish.parish_name,parish %></td>
+      <%end
+    end%>
+  </tr>
+  <tr>
+    <td>
+      <b>Parroco:</b>
+    </td>
+
+
+    <td><%=h @pastor.name+" "+@pastor.primary_last_name+" "+@pastor.second_last_name  %></td>
+
+  </tr>
+  <tr>
+    <td>
+      <b>Estado de parroquia:</b>
+    </td>
+
+
+    <td><%=h @parish1.current_state%></td>
+
+  </tr>
+  <tr>
+    <td>
+      <b>Vicaria a la que pertenece:</b>
+    </td> 
+    <td><%=h  @vicariou.name_vicariou%></td>   
+  </tr>
   
   <tr>
-    <td>* Encargado</td>
-    <td><select name="workshop[in_charge]"> 
-    <% if @volunteer 
-        @volunteer.each do |volunteer| %>
-          <option value="<%=volunteer.id%>" 
-          <%='selected' if volunteer.id == @workshop.in_charge %>>
-          <%=volunteer.name + " " + volunteer.last_name%>
-          </option>
-        <%end%>
-      <%end%>
-    </select></td>    
+  <td><b> * Encargado</b></td>
+    <td><%= f.text_field :in_charge %></td>    
   </tr>  
 
-  <tr>  
-    <td>* Curso</td>
-    <td><select name="workshop[course]"> 
-    <% if @course  
-        @course.each do |course| %>
-          <option value="<%=course.name%>" <%='selected' if course.name == @workshop.course %>>
-          <%=course.name%>
-          </option>
-          <%end%>
-        <%end%>
-    </select></td>
-  </tr> 
+ 
   
   <tr>
-    <td>Observaciones</td>
+    <td><b>Observaciones</b></td>
     <td><%= f.text_area :observations , :rows=>6, :cols=>22%></td>
   </tr> 
+  <tr>
+    <td colspan="2" align="CENTER">
+       <% if @rel.count!=0 %>
+      
+      <h1>Cursos Realizados</h1>
+<table border="3" align="CENTER">
+
+        <tr id ='head-table'>
+          <th align="CENTER">Curso Formacion</th>
+          <th align="CENTER">Cantidad</th>
+          <th align="CENTER">Accion</th>
+        </tr>
+
+     
+
+
+      
+      
+  <%   @rel.each do |r| %>
+      <% @cour=Course.find(r.course_id) %>
+        <tr>
+          <td align="CENTER">
+     <%= link_to r.to_s, @cour %>
+            </td>
+            
+          <td align="CENTER">
+    <%=  WorkshopsCourse.findByCourseWorshop(r.course_id,r.workshop_id).count%>
+            </td>
+            
+          <td align="CENTER">
+     accion
+            </td>
+      </tr>
+    <%  end %>
+     </table> 
+    <%  else  %>
+      <h1 align="CENTER">No Tiene Cursos!!! </h1>
+    <%  end %>
   <tr align="right">
       <td colspan="2">         
           <%= f.submit 'Actualizar' %>

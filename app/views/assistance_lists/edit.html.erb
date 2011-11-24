@@ -1,0 +1,12 @@
+<h1>Editing assistance_list</h1>
+
+<% form_for(@assistance_list) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @assistance_list %> |
+<%= link_to 'Back', assistance_lists_path %>

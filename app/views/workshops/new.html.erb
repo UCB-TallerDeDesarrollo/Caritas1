@@ -19,27 +19,27 @@
   <tr>
     <td>* Encargado</td>  
      <td><select name="workshop[in_charge]"> 
-<% if @volunteer  
-    @volunteer.each do |volunteer| %>
-    <option value="<%=volunteer.id%>">
-               <%=volunteer.name + " " + volunteer.last_name%>
-    </option>
-      <%end%>
-    <%end%>
-</select></td>   
+    <td><%= f.text_field :in_charge %></td>
   </tr>  
   
   <tr>  
     <td>* Curso</td>        
-    <td><select name="workshop[course]"> 
-    <% if @course  
-      @course.each do |course| %>
-      <option value="<%=course.name%>">
-        <%=course.name%>
+    <!--<td><select name="workshop[course]"> 
+    <% #if @course  
+      #@course.each do |course| %>
+      <option value="<%#=course.name%>">
+        <%#=course.name%>
       </option>
-      <%end%>
-    <%end%>
-    </select></td>
+      <%#end%>
+    <%#end%>
+    </select></td>-->
+    <td>
+      <select id="s2" multiple="multiple">
+	            <option>Low</option>
+	            <option selected="selected">Medium</option>
+	            <option selected="selected">High</option>
+	        </select>
+    </td>
   </tr> 
   
   <tr>
@@ -58,3 +58,16 @@
     </tr>
 </table>   
 <% end %>
+
+<script type="text/javascript">
+        $(document).ready(function() {
+            $("#s1").dropdownchecklist();
+            $("#s2").dropdownchecklist( {icon: {}, width: 150 } );
+            $("#s3").dropdownchecklist( { width: 150 } );
+            $("#s4").dropdownchecklist( { maxDropHeight: 150 } );
+            $("#s5").dropdownchecklist( { firstItemChecksAll: true, explicitClose: '...close' } );
+            $("#s6").dropdownchecklist();
+            $("#s7").dropdownchecklist();
+            $("#s8").dropdownchecklist( { emptyText: "Please Select...", width: 150 } );
+        });
+    </script>

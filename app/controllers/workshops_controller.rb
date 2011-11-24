@@ -5,26 +5,13 @@ class WorkshopsController < ApplicationController
     record_select :per_page => 5,
     :search_on => ['parish'],
     :full_text_search => true
-  
-  def index
-     
-    @workshops = Workshop.search(params[:search])
-    @parish = Parish.all(:select => "parish_name,id",:conditions=> ["id in (select id from parishes)"])
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @workshops }
-    end
-  end
-
   # GET /workshops/1
   # GET /workshops/1.xml
   def show
     @workshop = Workshop.find(params[:id])
     @parish = Parish.find(:all)
-    
-    @volunteer = Volunteer.find(:all)
     @course = Course.find(:all)
-    
+    @rel = WorkshopsCourse.searchByWorkshop(@workshop.id)
     @parish1 = Parish.find(@workshop.parish_id)
     @vicariou = Vicariou.find(@parish1.vicariou_id)
     @pastor = Pastor.find(@parish1.pastor_id)
@@ -40,7 +27,7 @@ class WorkshopsController < ApplicationController
     @workshop = Workshop.new
     @parish = Parish.all(:select => "parish_name,id",:conditions=> ["id not in (select parish_id from workshops) and state=true"])
     @course = Course.all(:select => "name")
-    @volunteer = Volunteer.all(:select => "name,id,last_name")
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @workshop }
@@ -52,7 +39,11 @@ class WorkshopsController < ApplicationController
     @workshop = Workshop.find(params[:id])
     @parish = Parish.find(:all)
     @course = Course.all(:all)
-    @volunteer = Volunteer.find(:all)
+    
+    @rel = WorkshopsCourse.searchByWorkshop(@workshop.id)
+    @parish1 = Parish.find(@workshop.parish_id)
+    @vicariou = Vicariou.find(@parish1.vicariou_id)
+    @pastor = Pastor.find(@parish1.pastor_id)
   end
 
   # POST /workshops

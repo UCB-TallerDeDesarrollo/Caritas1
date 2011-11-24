@@ -9,7 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111114033742) do
+ActiveRecord::Schema.define(:version => 20111124020148) do
+
+  create_table "assistance_lists", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "volunteer_id"
+    t.integer  "course_id"
+  end
 
   create_table "campaings", :force => true do |t|
     t.string   "name"
@@ -24,7 +31,18 @@ ActiveRecord::Schema.define(:version => 20111114033742) do
 
   create_table "courses", :force => true do |t|
     t.string   "name"
+    t.date     "date_ini"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "responsible"
+    t.integer  "workshop_id"
+    t.integer  "courses_types_id"
+  end
+
+  create_table "courses_types", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -52,13 +70,13 @@ ActiveRecord::Schema.define(:version => 20111114033742) do
   end
 
   create_table "history_courses", :force => true do |t|
-    t.integer  "idGroup"
-    t.integer  "idParish"
     t.string   "instructor"
     t.date     "dateCourse"
     t.integer  "idCourse"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "idParish"
+    t.string   "idGroup"
   end
 
   create_table "notices", :force => true do |t|
@@ -77,7 +95,6 @@ ActiveRecord::Schema.define(:version => 20111114033742) do
     t.string   "ubication"
     t.string   "transport"
     t.integer  "telephone"
-    t.boolean  "sensitize"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "pastor_id"
@@ -205,10 +222,10 @@ ActiveRecord::Schema.define(:version => 20111114033742) do
   create_table "workshops", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "in_charge"
     t.string   "course"
     t.text     "observations"
     t.integer  "parish_id"
+    t.string   "in_charge"
   end
 
   create_table "workshops_courses", :force => true do |t|

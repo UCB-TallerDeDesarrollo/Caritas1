@@ -1,3 +1,4 @@
+<%if current_user%>
 <h1>Lista De Fichas Sociales</h1>
 
 <table>
@@ -31,4 +32,7 @@
 </table>
 
 <br />
+<%else%>
+  <h1>no puede realizar esta accion, porfavor contactese</h1>
+<%end%>
 
