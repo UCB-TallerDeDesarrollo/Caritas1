@@ -1,3 +1,4 @@
+<%if current_user%>
 <CENTER><h1>Nuevo Curso</h1></center>
 
 <% form_for(@course) do |f| %>
@@ -55,3 +56,6 @@
     $("#listaVoluntarios").dropdownchecklist( { emptyText: "Please Select...", width: 150 } );
   });
 </script>
+<%else%>
+<h1>no puede realizar esta accion, porfavor contactese</h1>
+<%end%>

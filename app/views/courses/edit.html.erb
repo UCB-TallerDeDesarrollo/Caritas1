@@ -1,3 +1,4 @@
+<%if current_user%>
 <CENTER><h1>Actualizar Cursos</h1></center>
 
 <% form_for(@course) do |f| %>
@@ -38,3 +39,6 @@
     </tr>
    </TABLE>
 <% end %>
+<%else%>
+<h1>no puede realizar esta accion, porfavor contactese</h1>
+<%end%>
