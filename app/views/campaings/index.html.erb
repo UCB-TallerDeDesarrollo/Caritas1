@@ -64,6 +64,8 @@
             <td><%=h campaing.responsible %></td> 
             <% if current_user %>
               <td><%= link_to 'Editar', edit_campaing_path(campaing) %></td> 
+              <td><%= link_to 'Agregar fotos', :controller => "campaings", :action=>"add_photos", :id => campaing %></td>
+              <td><%= link_to 'Ver fotos', :controller => "campaings", :action=>"show_photos", :id => campaing %></td>
             <%end%>
           </tr>
         <% end %>

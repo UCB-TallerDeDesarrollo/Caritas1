@@ -2,7 +2,8 @@ class Campaing < ActiveRecord::Base
   #put constants here
 
   #put relations and references here
-
+  has_many :campaing_photos
+  accepts_nested_attributes_for :campaing_photos, :allow_destroy => true
   #put active record callbacks here
 
   #put validates here

@@ -2,7 +2,8 @@ class SocialWork < ActiveRecord::Base
   #put constants here
 
   #put relations and references here
-
+  has_many :social_work_photos
+  accepts_nested_attributes_for :social_work_photos, :allow_destroy => true
   #put active record callbacks here
 
   #put validates here

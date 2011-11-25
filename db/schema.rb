@@ -10,12 +10,22 @@
 # It's strongly recommended to check this file into your version control system.
 
 ActiveRecord::Schema.define(:version => 20111125155358) do
-
+  
   create_table "assistance_lists", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "volunteer_id"
     t.integer  "course_id"
+  end
+
+  create_table "campaing_photos", :force => true do |t|
+    t.integer  "campaing_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "data_file_name"
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.datetime "data_updated_at"
   end
 
   create_table "campaings", :force => true do |t|
@@ -155,6 +165,16 @@ ActiveRecord::Schema.define(:version => 20111125155358) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "what_kind"
+  end
+
+  create_table "social_work_photos", :force => true do |t|
+    t.integer  "social_work_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "data_file_name"
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.datetime "data_updated_at"
   end
 
   create_table "social_works", :force => true do |t|
