@@ -71,18 +71,19 @@
 
 
       
-      
-  <%   @rel.each do |r| %>
-      <% @cour=Course.find(r.course_id) %>
+       <%   @rel.each do |r| %>
         <tr>
+          
+          
+      <% @cour= CoursesType.findf(r.id_course_type)[0] %>
           <td align="CENTER">
      <%= link_to r.to_s, @cour %>
             </td>
             
           <td align="CENTER">
     
-    <%=  WorkshopsCourse.findByCourseWorshop(r.course_id,r.workshop_id).count%>
-            </td>
+    <%=  Course.findf(r.id_course_type,@workshop.id).count%>
+                    </td>
             
       </tr>
     <%  end %>

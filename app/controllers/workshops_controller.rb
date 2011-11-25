@@ -11,7 +11,7 @@ class WorkshopsController < ApplicationController
     @workshop = Workshop.find(params[:id])
     @parish = Parish.find(:all)
     @course = Course.find(:all)
-    @rel = WorkshopsCourse.searchByWorkshop(@workshop.id)
+    @rel = WorkshopCourseType.searchByWork(@workshop.id)
     @parish1 = Parish.find(@workshop.parish_id)
     @vicariou = Vicariou.find(@parish1.vicariou_id)
     @pastor = Pastor.find(@parish1.pastor_id)
@@ -39,8 +39,7 @@ class WorkshopsController < ApplicationController
     @workshop = Workshop.find(params[:id])
     @parish = Parish.find(:all)
     @course = Course.all(:all)
-    
-    @rel = WorkshopsCourse.searchByWorkshop(@workshop.id)
+    @rel = WorkshopCourseType.searchByWork(@workshop.id)
     @parish1 = Parish.find(@workshop.parish_id)
     @vicariou = Vicariou.find(@parish1.vicariou_id)
     @pastor = Pastor.find(@parish1.pastor_id)

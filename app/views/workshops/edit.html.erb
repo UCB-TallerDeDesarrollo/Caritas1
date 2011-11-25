@@ -9,13 +9,9 @@
     <td>
       <b>Parroquia:</b>
     </td>
-    <% @parish.each do |parish| 
-      if parish.id == @workshop.parish_id
-      %>
     
-        <td><%= link_to parish.parish_name,parish %></td>
-      <%end
-    end%>
+    
+        <td><%= link_to Parish.find(@workshop.parish_id).parish_name,Parish.find(@workshop.parish_id) %></td>
   </tr>
   <tr>
     <td>
@@ -23,7 +19,7 @@
     </td>
 
 
-    <td><%=h @pastor.name+" "+@pastor.primary_last_name+" "+@pastor.second_last_name  %></td>
+    <td><%=h @pastor.to_s  %></td>
 
   </tr>
   <tr>
@@ -32,14 +28,14 @@
     </td>
 
 
-    <td><%=h @parish1.current_state%></td>
+    <td><%=h Parish.find(@workshop.parish_id).current_state%></td>
 
   </tr>
   <tr>
     <td>
       <b>Vicaria a la que pertenece:</b>
     </td> 
-    <td><%=h  @vicariou.name_vicariou%></td>   
+    <td><%=h Vicariou.find(Parish.find(@workshop.parish_id).pastor_id).name_vicariou%></td>   
   </tr>
   
   <tr>
@@ -57,7 +53,7 @@
   
   <tr>
     <td colspan="2" align="CENTER">
-       <% if @rel.count!=0 %>
+       <% if WorkshopCourseType.searchByWork(@workshop.id).count!=0 %>
       
       <h1>Cursos Realizados</h1>
 <table border="3" align="CENTER">
@@ -73,20 +69,24 @@
 
       
       
-  <%   @rel.each do |r| %>
-      <% @cour=Course.find(r.course_id) %>
+  <%   WorkshopCourseType.searchByWork(@workshop.id).each do |r| %>
         <tr>
+          
+          
+      <% @cour= CoursesType.findf(r.id_course_type)[0] %>
           <td align="CENTER">
      <%= link_to r.to_s, @cour %>
             </td>
             
           <td align="CENTER">
-    <%=  WorkshopsCourse.findByCourseWorshop(r.course_id,r.workshop_id).count%>
+            <%=  Course.findf(r.id_course_type,@workshop.id).count%>
             </td>
             
           <td align="CENTER">
      accion
             </td>
+            
+            
       </tr>
     <%  end %>
      </table> 
