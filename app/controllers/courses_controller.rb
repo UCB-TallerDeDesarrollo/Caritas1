@@ -14,7 +14,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.xml
   def show
     @course = Course.find(params[:id])
-
+    @volunteers = Volunteer.all(:select => "name,last_name",:conditions=> ["id in (select volunteer_id from assistance_lists where course_id= ?)","#{@course.id}"])
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @course }

@@ -22,7 +22,6 @@
     <td><b>Description:</b></td>
     <td><%=h @course.description %></td>
   </tr>
-
 <tr align="right">
     <td colspan="2">
       <% if current_user %>
@@ -33,6 +32,18 @@
   </tr>
 
 </table>
-<%else%>
-<h1>no puede realizar esta accion, porfavor contactese</h1>
+  <h1>Lista de Asistencia</h1>
+  
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+  </tr>
+  <% @volunteers.each do |volunteer| %>
+  <tr>  
+    <td><%=h volunteer.name %></td>
+    <td><%=h volunteer.last_name %></td>
+  </tr>
+  <% end %>
+ </table>
 <%end%>
