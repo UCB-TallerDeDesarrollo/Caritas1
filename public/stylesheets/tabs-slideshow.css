@@ -3,13 +3,11 @@
 	background:#fff url(../images/h300.png) repeat-x;
 	border:1px solid #ccc;
 	position:relative;	
-	height:300px;
-	
-	width:650px;
 	float:left;	
 	margin:15px;
 	cursor:pointer;
-	
+        width: 480px;
+        height: 300px;
 	/* CSS3 tweaks for modern browsers */
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
@@ -70,8 +68,8 @@
 	float:left;
 	margin-top:140px;
 	display:block;
-	width:72px;
-	height:72px;
+	width:36px;
+	height:36px;
 	cursor:pointer;
 	font-size:1px;
 	text-indent:-9999em;	

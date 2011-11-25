@@ -5,7 +5,7 @@ class Workshop < ActiveRecord::Base
   has_many :courses, :through => :progresses
   
   #validates_presence_of :parish_id 
-  validates_presence_of :in_charge
+  #validates_presence_of :in_charge
   #validates_presence_of :course
   
   #validates_length_of :in_charge, :within => 0..80
