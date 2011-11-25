@@ -29,7 +29,8 @@
   <tr>
       <td>* Seleccione los Voluntarios</td>
       <td>
-        <%= select_tag "listaVoluntarios",options_from_collection_for_select(Volunteer.all,:id,:name),:multiple=>true%>
+        <% listaVoluntarios = Volunteer.all.map { |volunteer| [volunteer.name.to_s+ " " + volunteer.last_name.to_s, volunteer.id] } %>
+        <%= select_tag "listaVoluntarios",options_for_select(listaVoluntarios),:multiple=>true%>
         <%#*<select id="listaVoluntarios" multiple="multiple">%>
           <%#= options_for_select Volunteer.all %>          
         <%#*</select>%>
