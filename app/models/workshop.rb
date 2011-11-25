@@ -21,6 +21,7 @@ class Workshop < ActiveRecord::Base
       find(:all)
     end
   end
+  
   def self.searchByParish(parish)
       find(:all, :conditions => ['parish_id = ?', "#{parish}"])
   end

@@ -52,7 +52,9 @@
   <tr>
     <td><b>Observaciones</b></td>
     <td><%= f.text_area :observations , :rows=>6, :cols=>22%></td>
-  </tr> 
+  </tr>   
+
+  
   <tr>
     <td colspan="2" align="CENTER">
        <% if @rel.count!=0 %>
@@ -91,6 +93,9 @@
     <%  else  %>
       <h1 align="CENTER">No Tiene Cursos!!! </h1>
     <%  end %>
+      
+
+      
   <tr align="right">
       <td colspan="2">         
           <%= f.submit 'Actualizar' %>
