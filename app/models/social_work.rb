@@ -45,4 +45,8 @@ class SocialWork < ActiveRecord::Base
     "#{self.name}"
   end
   
+  def getRandomPicture (id)
+    @photos=SocialWorkPhoto.find(:all,:order => "id",:conditions => ['social_work_id = ?',id])
+    @photos[rand(@photos.count)]
+  end
 end

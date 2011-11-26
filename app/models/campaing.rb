@@ -35,6 +35,9 @@ class Campaing < ActiveRecord::Base
     find(:all,:order => "date_ini", :limit=>6,:conditions => ['id IN (Select campaing_id As id From campaing_photos)'])
 
   end
-  
+  def self.getRandomPicture (id)
+    @photos=CampaingPhoto.find(:all,:order => "id",:conditions => ['campaing_id = ?',id])
+    @photos[rand(@photos.count)]
+  end
   #put object methods here
 end
