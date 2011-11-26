@@ -8,9 +8,7 @@
    <tr>
     <td>
       <b>Parroquia:</b>
-    </td>
-    
-    
+    </td>    
         <td><%= link_to Parish.find(@workshop.parish_id).parish_name,Parish.find(@workshop.parish_id) %></td>
   </tr>
   <tr>
@@ -41,12 +39,6 @@
   <tr>
   <td><b> * Encargado</b></td>
     <td><%= f.text_field :in_charge %></td>    
-  </tr>  
-
-  <tr>
-    <td>
-      <%= link_to "cursos", :controller => "courses/new", :nada=>@workshop.id, :nada1=>2  %>
-    </td> 
   </tr>  
   
   <tr>
@@ -86,9 +78,9 @@
             <%=  Course.findf(r.id_course_type,@workshop.id).count%>
             </td>
             
-          <td align="CENTER">
-     accion
-            </td>
+          <td align="CENTER">         
+              <%= link_to "cursos", :controller => "courses/new", :workshop_code=>@workshop.id, :course_type_code=>r.id_course_type%>  
+          </td
             
             
       </tr>

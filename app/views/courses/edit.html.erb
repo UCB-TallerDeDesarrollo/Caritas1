@@ -30,7 +30,7 @@
       <td colspan="3">
         <%= f.submit 'Actualizar' %>
         <%= link_to 'Ver', :action => :show %>
-        <%= link_to 'Volver', courses_path %>
+        <%= link_to 'Volver', edit_workshop_path(@course.workshop_id) %>
       </td>
     </tr>
      

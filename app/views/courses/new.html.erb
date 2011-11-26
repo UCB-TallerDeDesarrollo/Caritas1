@@ -3,16 +3,11 @@
 
 <% form_for(@course) do |f| %>
   <%= f.error_messages %>
-<TABLE   ALIGN="CENTER">   
-  
-  <tr>
-    <td>       
-      <%= f.hidden_field :workshop_id, :value => params[:nada] %>
-      <%= f.hidden_field :courses_types_id, :value => params[:nada1] %>      
-      <% @cour= CoursesType.findf(params[:nada1])[0] %>
-    </td>
-  </tr>    
-  
+
+<%= f.hidden_field :workshop_id, :value => params[:workshop_code] %>
+      <%= f.hidden_field :courses_types_id, :value => params[:course_type_code] %>      
+      <% @cour= CoursesType.findf(params[:course_type_code])[0] %>
+<TABLE   ALIGN="CENTER">       
   <tr>
     <td>* Nombre<br /></td>
     <td><%= f.text_field :name , :value => @cour.name %></td>
