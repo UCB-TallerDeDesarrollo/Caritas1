@@ -9,7 +9,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20111126000032) do
 
   create_table "assistance_lists", :force => true do |t|
