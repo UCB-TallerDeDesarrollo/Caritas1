@@ -2,7 +2,7 @@ class SocialCardsController < ApplicationController
   # GET /social_cards
   # GET /social_cards.xml
   def index
-    @social_cards = SocialCard.all
+    @social_cards = SocialCard.find_all_by_state(true)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -100,7 +100,7 @@ class SocialCardsController < ApplicationController
   # DELETE /social_cards/1.xml
   def destroy
     @social_card = SocialCard.find(params[:id])
-    @social_card.destroy
+    @social_card.state ? @social_card.update_attributes(:state => false) : @social_card.update_attributes(:state => true)    
 
     respond_to do |format|
       format.html { redirect_to(social_cards_url) }
