@@ -39,6 +39,7 @@
 .slidetabs {
 	clear:both;
 	margin-left:330px;
+	background:#555 0 0 no-repeat;
 }
 
 /* single tab */
@@ -47,19 +48,18 @@
 	height:8px;
 	float:left;
 	margin:3px;
-	background:#555 0 0 no-repeat;
 	display:block;
 	font-size:1px;		
 }
 
 /* mouseover state */
 .slidetabs a:hover {
-	background-position:0 -8px;      
+	background-position:center center;      
 }
 
 /* active state (current page state) */
 .slidetabs a.current {
-	background-position:0 -16px;     
+	background-position:bottom center;     
 } 	
 
 
