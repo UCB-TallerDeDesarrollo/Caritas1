@@ -25,7 +25,7 @@ class CoursesController < ApplicationController
   # GET /courses/new.xml
   def new
     @course = Course.new
-
+    @volunteers = Volunteer.find(:all)
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @course }
@@ -41,7 +41,7 @@ class CoursesController < ApplicationController
   # POST /courses.xml
   def create
     @course = Course.new(params[:course])
-    volunteers_ids = params[:listaVoluntarios]
+    volunteers_ids = params[:lista_voluntarios]
     
     respond_to do |format|
       if @course.save        
