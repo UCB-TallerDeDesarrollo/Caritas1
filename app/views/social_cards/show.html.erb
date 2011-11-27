@@ -3,7 +3,7 @@
   <table width="50%" border="0">
   <tr>
     <td width="15"> Parroquia</td>
-    <td width="35%"> <%= h @social_card.parish_church %></td>
+    <td width="35%"> <%= h Parish.find(@social_card.parish_id).parish_name %></td>
    </tr>
   <tr>
     <td width="15%">Fecha</td>
@@ -97,7 +97,7 @@
 <table  border="0">
   <tr>
     <td width="21%">Caso </td>
-    <td width="79%"><%= h @social_card.type_of_case %></td>
+    <td><%= h @social_card.type_of_case %></td>
   </tr>
   
   <tr>
@@ -111,8 +111,6 @@
      <td><%= h @social_card.what_kind%></td>
   </tr>
 </table>
-    <ul>
-  </ul>
   
   
 <%= link_to 'Editar', edit_social_card_path(@social_card) %> |
