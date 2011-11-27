@@ -35,6 +35,10 @@ class CoursesController < ApplicationController
   # GET /courses/1/edit
   def edit
     @course = Course.find(params[:id])
+    @volunteers = Volunteer.find(:all)
+    
+    @volunteers_checked = Volunteer.all(:select => "id,name,last_name",:conditions=> ["id in (select volunteer_id from assistance_lists where course_id= ?)","#{@course.id}"])
+    @volunteers_not_checked = Volunteer.all(:select => "id,name,last_name",:conditions=> ["id not in (select volunteer_id from assistance_lists where course_id= ?)","#{@course.id}"])
   end
 
   # POST /courses

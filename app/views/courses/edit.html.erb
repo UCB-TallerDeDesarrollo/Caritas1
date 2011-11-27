@@ -25,6 +25,21 @@
     <td>&nbsp&nbsp&nbspDescripción<br /></td>
     <td><%= f.text_area :description , :rows=>6, :cols=>22 %></td>
   </tr>
+    <tr>
+      <td>* Seleccione los Asistentes</td>
+      <td>
+    <% @volunteers_checked.each do |volunteer| %>
+    <li>
+      <%= check_box_tag "lista_voluntarios[]", volunteer.id,:checked=>true %>
+      <%= volunteer.name %>  <%= volunteer.last_name %>
+  <% end %>
+    <% @volunteers_not_checked.each do |volunteer| %>
+      <%= check_box_tag "lista_voluntarios[]", volunteer.id %>
+      <%= volunteer.name %>  <%= volunteer.last_name %><br>
+    <%end%>
+      </li>
+      </td>
+    </tr>
     
       <tr align="right">
       <td colspan="3">
