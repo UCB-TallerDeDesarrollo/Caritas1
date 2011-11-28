@@ -9,6 +9,14 @@ class SocialWorksController < ApplicationController
       format.xml  { render :xml => @social_works }
     end
   end
+  def index_public
+    @social_works = SocialWork.all
+
+    respond_to do |format|
+      format.html # index_public.html.erb
+      format.xml  { render :xml => @social_works }
+    end
+  end
 
   # GET /social_works/1
   # GET /social_works/1.xml
