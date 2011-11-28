@@ -11,6 +11,15 @@ class CampaingsController < ApplicationController
     end
   end
 
+  def index_public
+    @campaings = Campaing.search(params[:search])
+
+    respond_to do |format|
+      format.html # index_public.html.erb
+      format.xml  { render :xml => @campaings }
+    end
+  end
+
   # GET /campaings/1
   # GET /campaings/1.xml
   def show

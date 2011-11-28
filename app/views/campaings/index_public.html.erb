@@ -1,0 +1,54 @@
+<div id="content-wrap">
+    		<%= render "main_page/lateralMenu.html" %>
+
+  <div id="main" >
+<h1>Campañas</h1>
+
+<p>
+  <% form_tag campaings_path, :method => 'get' do %>
+    Nombre: <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Buscar", :name => nil %>
+  <% end %>
+</p>
+<br/>
+<br/>
+<br/>
+
+<table>
+  <tr>
+    <td>
+      <table border="3">
+        <tr id = 'head-table'>
+          <th>Nombre</th>
+          <th>Lugar</th>
+          <th>Descripcion</th>
+          <th>Fecha de inicio</th>
+          <th>Fecha de finalizacion</th>
+          <th>Responsable</th>
+          <% if current_user %>
+            <th colspan="2">Acciones</th>
+            <%end%>
+        </tr>
+
+        <% @campaings.each do |campaing| %>
+          <tr>
+            <td><%=link_to campaing.name, campaing %></td>
+            <td><%=h campaing.location %></td>
+            <td><%=h campaing.description %></td>
+            <td><%=h campaing.date_ini %></td>
+            <td><%=h campaing.date_end %></td>
+            <td><%=h campaing.responsible %></td> 
+            <% if current_user %>
+              <td><%= link_to 'Ver fotos', :controller => "campaings", :action=>"show_photos", :id => campaing %></td>
+            <%end%>
+          </tr>
+        <% end %>
+          
+      </table>
+      
+    </td>      
+  </tr>  
+</table>
+<br/>
+</div>
+</div>
