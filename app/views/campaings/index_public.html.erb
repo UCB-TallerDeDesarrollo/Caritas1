@@ -24,24 +24,16 @@
           <th>Descripcion</th>
           <th>Fecha de inicio</th>
           <th>Fecha de finalizacion</th>
-          <th>Responsable</th>
-          <% if current_user %>
-            <th colspan="2">Acciones</th>
-            <%end%>
+
         </tr>
 
         <% @campaings.each do |campaing| %>
           <tr>
-            <td><%=link_to campaing.name, campaing %></td>
+            <td><%=link_to campaing.name, :controller => "campaings", :action => "show_public", :id =>campaing %></td>
             <td><%=h campaing.location %></td>
             <td><%=h campaing.description %></td>
             <td><%=h campaing.date_ini %></td>
             <td><%=h campaing.date_end %></td>
-            <td><%=h campaing.responsible %></td> 
-            <% if current_user %>
-              <td><%= link_to 'Ver fotos', :controller => "campaings", :action=>"show_photos", :id => campaing %></td>
-            <%end%>
-          </tr>
         <% end %>
           
       </table>
