@@ -13,13 +13,6 @@
 
 <table>
   <tr>
-    <td align="RIGHT">
-      <% if current_user %>
-        <%= button_to 'Crear Obra Social', new_social_work_path %>
-      <%end%>
-    </td>
-  </tr>
-  <tr>
     <td colspan="2">
       <table border ="3">
         <tr id="head-table">
@@ -30,7 +23,7 @@
         </tr>
         <% @social_works.each do |social_work| %>
           <tr>
-            <td><%=link_to (h social_work.name), social_work %></td>
+            <td><%=link_to (h social_work.name), :controller => "social_works", :action => "show_public", :id =>social_work %></td>
             <td><%=h social_work.responsible %></td>
             <td><%=h social_work.location %></td>
             <td><%= link_to 'Ver',  :controller => "social_works", :action => "show_public", :id =>social_work %></td>
