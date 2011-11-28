@@ -1,3 +1,9 @@
+<%= stylesheet_link_tag "jquery-ui-1.8.13.custom"  %>
+<%= stylesheet_link_tag "ui.dropdownchecklist.themeroller"  %>
+
+<%= javascript_include_tag "jquery-1.6.1.min"  %>
+<%= javascript_include_tag "jquery-ui-1.8.13.custom.min"  %>
+<%= javascript_include_tag "ui.dropdownchecklist-1.4-min"  %>
 <%if current_user%>
 <CENTER><h1>Nuevo Curso</h1></center>
 
@@ -6,13 +12,11 @@
 
 <%= f.hidden_field :workshop_id, :value => params[:workshop_code] %>
       <%= f.hidden_field :courses_types_id, :value => params[:course_type_code] %>      
-<TABLE   ALIGN="CENTER">       
-  
-  <script type="text/javascript" src="jquery.js">
-  $(document).ready(function() {
-    $("#listaVoluntarios").dropdownchecklist( { emptyText: "Please Select...", width: 150 } );
-  });
-</script>
+<TABLE   ALIGN="CENTER">      
+  <tr>
+    <td>* Nombre<br /></td>
+    <td><%= f.text_field :name %></td>
+  </tr>
   <tr>
     <td>* Responsable<br /></td>
     <td><%= f.text_field :responsible %></td>
@@ -31,13 +35,11 @@
   <tr>
       <td>* Seleccione los Asistentes</td>
       <td>
-    <% @volunteers.each do |volunteer| %>
-    <li>
-      <%= check_box_tag "lista_voluntarios[]", volunteer.id %>
-      <%= volunteer.name %>  <%= volunteer.last_name %>
-    </li>
-  <% end %>
-      </td>
+   
+      <% lista_voluntarios = Volunteer.all.map { |volunteer| [volunteer.name, volunteer.id] } %>
+        <%= select_tag "lista_voluntarios", options_from_collection_for_select(Volunteer.all, :id , :name),:multiple=>true %>  
+      
+    </td>
     </tr>
     
     <tr align="right">
@@ -59,3 +61,17 @@
 <%else%>
 <h1>no puede realizar esta accion, porfavor contactese</h1>
 <%end%>
+
+<script type="text/javascript">
+        $(document).ready(function() {
+            $("#s1").dropdownchecklist();
+            $("#lista_voluntarios").dropdownchecklist( {icon: {}, width: 150 } );
+            $("#s3").dropdownchecklist( { width: 150 } );
+            $("#s4").dropdownchecklist( { maxDropHeight: 150 } );
+            $("#s5").dropdownchecklist( { firstItemChecksAll: true, explicitClose: '...close' } );
+            $("#s6").dropdownchecklist();
+            $("#s7").dropdownchecklist();
+            $("#s8").dropdownchecklist( { emptyText: "Please Select...", width: 150 } );
+
+        });
+    </script>
