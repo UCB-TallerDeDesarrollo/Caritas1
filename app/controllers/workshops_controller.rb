@@ -65,9 +65,14 @@ class WorkshopsController < ApplicationController
   # PUT /workshops/1.xml
   def update
     @workshop = Workshop.find(params[:id])
+    courses_types_ids = params[:coursesList]
 
     respond_to do |format|
       if @workshop.update_attributes(params[:workshop])
+        courses_types_ids.each do |id|
+          @coursesAsigned= WorkshopCourseType.new(:id_course_type => id, :id_workshop => @workshop.id)
+          @coursesAsigned.save
+        end
         format.html { redirect_to(@workshop, :notice => 'Workshop was successfully updated.') }
         format.xml  { head :ok }
       else
