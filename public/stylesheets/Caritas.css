@@ -178,6 +178,7 @@ input.button.submit, button, input[type="submit"] {
         display: inline-block;
         padding: 5px 10px 6px;
         color: #fff;
+        height: 25px;
         text-decoration: none;
         font-weight: bold;
         line-height: 1;

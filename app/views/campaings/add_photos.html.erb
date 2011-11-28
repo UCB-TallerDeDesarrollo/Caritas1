@@ -1,0 +1,30 @@
+<CENTER><h1>Campa&ntilde;a</h1></center>
+<% form_for(@campaing, :html => {:multipart => true}) do |f| %>
+<TABLE ALIGN="CENTER">
+
+<TR>
+<TD WIDTH=100>
+  <p>
+  <b>Nombre: </b>
+  <%=h @campaing.name %>
+ </p>
+</TD>
+</TR>
+
+<tr>
+  <td>
+  <%= add_photo(f) %>
+  </td>
+</tr>
+
+<tr align="right">
+      <td colspan="2">
+        <%= f.submit 'Actualizar' %>
+        <%= link_to 'Volver', campaings_path %>
+      </td>
+    </tr>
+</TABLE>
+
+<% end %>
+
+

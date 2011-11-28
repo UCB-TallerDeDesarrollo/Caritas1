@@ -92,5 +92,18 @@ class CampaingsController < ApplicationController
       format.xml  { head :ok }
     end
   end  
+  
+  def add_photos
+    @campaing = Campaing.find(params[:id])
+  end
+  
+  def show_photos
+    @campaing = Campaing.find(params[:id])
+
+    respond_to do |format|
+      format.html # show_public.html.erb
+      format.xml  { render :xml => @campaing }
+    end
+  end
 
 end

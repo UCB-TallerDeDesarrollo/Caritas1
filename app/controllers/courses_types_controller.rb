@@ -2,7 +2,7 @@ class CoursesTypesController < ApplicationController
   # GET /courses_types
   # GET /courses_types.xml
   def index
-    @courses_types = CoursesType.all
+    @courses_types = CoursesType.search(params[:search]) 
 
     respond_to do |format|
       format.html # index.html.erb

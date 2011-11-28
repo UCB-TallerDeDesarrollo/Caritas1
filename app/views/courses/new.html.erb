@@ -1,15 +1,18 @@
+<%if current_user%>
 <CENTER><h1>Nuevo Curso</h1></center>
 
 <% form_for(@course) do |f| %>
   <%= f.error_messages %>
 
-<TABLE   ALIGN="CENTER">
+<%= f.hidden_field :workshop_id, :value => params[:workshop_code] %>
+      <%= f.hidden_field :courses_types_id, :value => params[:course_type_code] %>      
+<TABLE   ALIGN="CENTER">       
   
-  <tr>
-    <td>* Nombre<br /></td>
-    <td><%= f.text_field :name %></td>
-  </tr>
-  
+  <script type="text/javascript" src="jquery.js">
+  $(document).ready(function() {
+    $("#listaVoluntarios").dropdownchecklist( { emptyText: "Please Select...", width: 150 } );
+  });
+</script>
   <tr>
     <td>* Responsable<br /></td>
     <td><%= f.text_field :responsible %></td>
@@ -26,12 +29,14 @@
   </tr>
   
   <tr>
-      <td>* Seleccione los Voluntarios</td>
+      <td>* Seleccione los Asistentes</td>
       <td>
-        <%= select_tag "listaVoluntarios",options_from_collection_for_select(Volunteer.all,:id,:name),:multiple=>true%>
-        <%#*<select id="listaVoluntarios" multiple="multiple">%>
-          <%#= options_for_select Volunteer.all %>          
-        <%#*</select>%>
+    <% @volunteers.each do |volunteer| %>
+    <li>
+      <%= check_box_tag "lista_voluntarios[]", volunteer.id %>
+      <%= volunteer.name %>  <%= volunteer.last_name %>
+    </li>
+  <% end %>
       </td>
     </tr>
     
@@ -50,8 +55,7 @@
     </TABLE>   
 <% end %>
 
-<script type="text/javascript">
-  $(document).ready(function() {
-    $("#listaVoluntarios").dropdownchecklist( { emptyText: "Please Select...", width: 150 } );
-  });
-</script>
+
+<%else%>
+<h1>no puede realizar esta accion, porfavor contactese</h1>
+<%end%>

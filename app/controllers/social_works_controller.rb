@@ -101,4 +101,17 @@ class SocialWorksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def add_photos
+    @social_work = SocialWork.find(params[:id])
+  end
+  
+  def show_photos
+    @social_work = SocialWork.find(params[:id])
+
+    respond_to do |format|
+      format.html # show_public.html.erb
+      format.xml  { render :xml => @social_work }
+    end
+  end
 end

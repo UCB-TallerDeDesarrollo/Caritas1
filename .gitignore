@@ -11,6 +11,6 @@ doc/app
 nbproject/*
 nbproject/**/*
 coverage/*
-public/system/*
+public/system/**/*
 config/database.yml
 .idea

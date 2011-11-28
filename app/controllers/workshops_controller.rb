@@ -11,7 +11,7 @@ class WorkshopsController < ApplicationController
     @workshop = Workshop.find(params[:id])
     @parish = Parish.find(:all)
     @course = Course.find(:all)
-    @rel = WorkshopsCourse.searchByWorkshop(@workshop.id)
+    @rel = WorkshopCourseType.searchByWork(@workshop.id)
     @parish1 = Parish.find(@workshop.parish_id)
     @vicariou = Vicariou.find(@parish1.vicariou_id)
     @pastor = Pastor.find(@parish1.pastor_id)
@@ -39,8 +39,7 @@ class WorkshopsController < ApplicationController
     @workshop = Workshop.find(params[:id])
     @parish = Parish.find(:all)
     @course = Course.all(:all)
-    
-    @rel = WorkshopsCourse.searchByWorkshop(@workshop.id)
+    @rel = WorkshopCourseType.searchByWork(@workshop.id)
     @parish1 = Parish.find(@workshop.parish_id)
     @vicariou = Vicariou.find(@parish1.vicariou_id)
     @pastor = Pastor.find(@parish1.pastor_id)
@@ -66,9 +65,16 @@ class WorkshopsController < ApplicationController
   # PUT /workshops/1.xml
   def update
     @workshop = Workshop.find(params[:id])
+    courses_types_ids = params[:s2]
 
     respond_to do |format|
       if @workshop.update_attributes(params[:workshop])
+        if(courses_types_ids)
+          courses_types_ids.each do |id|
+            @coursesAsigned= WorkshopCourseType.new(:id_course_type => id, :id_workshop => @workshop.id)
+            @coursesAsigned.save
+          end
+        end
         format.html { redirect_to(@workshop, :notice => 'Workshop was successfully updated.') }
         format.xml  { head :ok }
       else

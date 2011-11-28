@@ -1,5 +1,5 @@
+<%if current_user%>
 <h1>Listing courses</h1>
-
 <table>
   <tr>
     <th>Name</th>
@@ -24,3 +24,6 @@
 <br />
 
 <%= link_to 'New course', new_course_path %>
+<%else%>
+<h1>no puede realizar esta accion, porfavor contactese</h1>
+<%end%>
