@@ -36,9 +36,8 @@
       <td>* Seleccione los Asistentes</td>
       <td>
    
-      <% lista_voluntarios = Volunteer.all.map { |volunteer| [volunteer.name, volunteer.id] } %>
-        <%= select_tag "lista_voluntarios", options_from_collection_for_select(Volunteer.all, :id , :name),:multiple=>true %>  
-      
+            <% lista_voluntarios = Volunteer.all.map { |volunteer| [volunteer.name.to_s + " " + volunteer.last_name, volunteer.id] } %>
+            <%= select_tag "lista_voluntarios", options_for_select(lista_voluntarios),:multiple=>true %>        
     </td>
     </tr>
     
@@ -63,15 +62,7 @@
 <%end%>
 
 <script type="text/javascript">
-        $(document).ready(function() {
-            $("#s1").dropdownchecklist();
-            $("#lista_voluntarios").dropdownchecklist( {icon: {}, width: 150 } );
-            $("#s3").dropdownchecklist( { width: 150 } );
-            $("#s4").dropdownchecklist( { maxDropHeight: 150 } );
-            $("#s5").dropdownchecklist( { firstItemChecksAll: true, explicitClose: '...close' } );
-            $("#s6").dropdownchecklist();
-            $("#s7").dropdownchecklist();
-            $("#s8").dropdownchecklist( { emptyText: "Please Select...", width: 150 } );
-
+        $(document).ready(function() {            
+            $("#lista_voluntarios").dropdownchecklist( { emptyText: "Por favor Seleccione Uno", width: 150 } );
         });
     </script>
