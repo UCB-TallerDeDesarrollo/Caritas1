@@ -1,3 +1,10 @@
+<%= stylesheet_link_tag "jquery-ui-1.8.13.custom"  %>
+<%= stylesheet_link_tag "ui.dropdownchecklist.themeroller"  %>
+
+<%= javascript_include_tag "jquery-1.6.1.min"  %>
+<%= javascript_include_tag "jquery-ui-1.8.13.custom.min"  %>
+<%= javascript_include_tag "ui.dropdownchecklist-1.4-min"  %>
+
 <%if current_user%>
 <CENTER><h1>Actualizar Cursos</h1></center>
 
@@ -28,16 +35,13 @@
     <tr>
       <td>* Seleccione los Asistentes</td>
       <td>
-    <% @volunteers_checked.each do |volunteer| %>
-    <li>
-      <%= check_box_tag "lista_voluntarios[]", volunteer.id,:checked=>true %>
-      <%= volunteer.name %>  <%= volunteer.last_name %>
-  <% end %>
-    <% @volunteers_not_checked.each do |volunteer| %>
-      <%= check_box_tag "lista_voluntarios[]", volunteer.id %>
-      <%= volunteer.name %>  <%= volunteer.last_name %><br>
-    <%end%>
-      </li>
+        <% lista_voluntarios = Volunteer.all.map { |volunteer| [volunteer.name.to_s + " " + volunteer.last_name, volunteer.id] } %>                                        
+        <% volunteers =[]  
+          @volunteers_checked.each { |volunteer|
+            volunteers.push(volunteer.id)
+          }            
+        %>
+        <%= select_tag "lista_voluntarios", options_for_select(lista_voluntarios,volunteers),:multiple=>true %>                  
       </td>
     </tr>
     
@@ -57,3 +61,9 @@
 <%else%>
 <h1>no puede realizar esta accion, porfavor contactese</h1>
 <%end%>
+
+<script type="text/javascript">
+        $(document).ready(function() {            
+            $("#lista_voluntarios").dropdownchecklist( { emptyText: "Por favor Seleccione Uno", width: 150 } );
+        });
+</script>
