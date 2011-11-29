@@ -4,6 +4,7 @@ class SocialCardsController < ApplicationController
   def index
 
     @social_cards = SocialCard.find_all_by_state(true)
+    @parishes = Parish.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
