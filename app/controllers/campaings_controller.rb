@@ -114,5 +114,15 @@ class CampaingsController < ApplicationController
       format.xml  { render :xml => @campaing }
     end
   end
+  
+  def destroy_all_photos
+    @campaing = Campaing.find(params[:id])
+    @campaing.campaing_photos.clear
+
+    respond_to do |format|
+      format.html { redirect_to(campaings_url) }
+      format.xml  { head :ok }
+    end
+  end
 
 end

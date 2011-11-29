@@ -48,11 +48,14 @@ class CoursesController < ApplicationController
     volunteers_ids = params[:lista_voluntarios]
     
     respond_to do |format|
-      if @course.save        
-        volunteers_ids.each do |id|
-          @assistence = AssistanceList.new( :volunteer_id => id , :course_id => @course.id)          
-          @assistence.save
+      if @course.save    
+        if volunteers_ids != nil
+          volunteers_ids.each do |id|
+            @assistence = AssistanceList.new( :volunteer_id => id , :course_id => @course.id)          
+            @assistence.save
+          end
         end
+        
         format.html { redirect_to(@course, :notice => 'Course was successfully created.') }
         format.xml  { render :xml => @course, :status => :created, :location => @course }
       else
@@ -66,9 +69,25 @@ class CoursesController < ApplicationController
   # PUT /courses/1.xml
   def update
     @course = Course.find(params[:id])
-
+    volunteers_ids = params[:lista_voluntarios]    
+    volunteers_checked = AssistanceList.all(:select => "id",:conditions=> ["id in (select id from assistance_lists where course_id= ?)","#{@course.id}"])    
+    
     respond_to do |format|
       if @course.update_attributes(params[:course])
+        if volunteers_checked != nil
+          volunteers_checked.each do |id|
+          @assistence = AssistanceList.find(id)
+          @assistence.destroy
+        end
+        end        
+        
+        if volunteers_ids != nil
+          volunteers_ids.each do |id|
+            @assistence = AssistanceList.new( :volunteer_id => id , :course_id => @course.id)          
+            @assistence.save
+          end
+        end
+        
         format.html { redirect_to(@course, :notice => 'Course was successfully updated.') }
         format.xml  { head :ok }
       else
