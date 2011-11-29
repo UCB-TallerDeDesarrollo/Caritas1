@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.xml
   def index
-    @courses = Course.all
+    @courses = Course.findf(params[:course_type], params[:workshop])
 
     respond_to do |format|
       format.html # index.html.erb
