@@ -39,5 +39,6 @@ class Campaing < ActiveRecord::Base
     @photos=CampaingPhoto.find(:all,:order => "id",:conditions => ['campaing_id = ?',id])
     @photos[rand(@photos.count)]
   end
+  
   #put object methods here
 end

@@ -48,11 +48,14 @@ class CoursesController < ApplicationController
     volunteers_ids = params[:lista_voluntarios]
     
     respond_to do |format|
-      if @course.save        
-        volunteers_ids.each do |id|
-          @assistence = AssistanceList.new( :volunteer_id => id , :course_id => @course.id)          
-          @assistence.save
+      if @course.save    
+        if volunteers_ids != nil
+          volunteers_ids.each do |id|
+            @assistence = AssistanceList.new( :volunteer_id => id , :course_id => @course.id)          
+            @assistence.save
+          end
         end
+        
         format.html { redirect_to(@course, :notice => 'Course was successfully created.') }
         format.xml  { render :xml => @course, :status => :created, :location => @course }
       else
@@ -71,16 +74,20 @@ class CoursesController < ApplicationController
     
     respond_to do |format|
       if @course.update_attributes(params[:course])
-        
-        volunteers_checked.each do |id|
+        if volunteers_checked != nil
+          volunteers_checked.each do |id|
           @assistence = AssistanceList.find(id)
           @assistence.destroy
         end
+        end        
         
-        volunteers_ids.each do |id|
-          @assistence = AssistanceList.new( :volunteer_id => id , :course_id => @course.id)          
-          @assistence.save
+        if volunteers_ids != nil
+          volunteers_ids.each do |id|
+            @assistence = AssistanceList.new( :volunteer_id => id , :course_id => @course.id)          
+            @assistence.save
+          end
         end
+        
         format.html { redirect_to(@course, :notice => 'Course was successfully updated.') }
         format.xml  { head :ok }
       else
