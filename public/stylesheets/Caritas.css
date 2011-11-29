@@ -424,7 +424,7 @@ input.button.submit, button, input[type="submit"] {
 #notice {
 	height:70%;
 	float:right;
-	width:32%;
+	width:22%;
 	position: relative;
 	clear: both;
 	margin-top: 0;
@@ -433,7 +433,7 @@ input.button.submit, button, input[type="submit"] {
 	margin-left: 0;
 	display: block;
 	font-weight: normal;
-	color: #666666;	
+	color: #666666;
 }
 
 
@@ -442,7 +442,7 @@ input.button.submit, button, input[type="submit"] {
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  width: 210px;
+  width: 180px;
   background-color: #d4d4d4;
   border: 1px solid #300;
   outline: 1px solid #FFF;
@@ -454,7 +454,7 @@ input.button.submit, button, input[type="submit"] {
   color: #333333;
   font-size: 15px;
   padding: 10px;
-  width: 190px;
+  width: 160px;
   text-align: left;
 }
 #lateralMenu ul li a:hover {

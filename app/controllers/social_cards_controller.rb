@@ -2,6 +2,7 @@ class SocialCardsController < ApplicationController
   # GET /social_cards
   # GET /social_cards.xml
   def index
+
     @social_cards = SocialCard.find_all_by_state(true)
 
     respond_to do |format|
@@ -25,6 +26,7 @@ class SocialCardsController < ApplicationController
   # GET /social_cards/new.xml
   def new
     @social_card = SocialCard.new
+    @parishes = Parish.find(:all)
     
     #session[:social_card_params] ||= {}
     #@social_card=SocialCard.new(session[:social_card_params])
@@ -39,6 +41,7 @@ class SocialCardsController < ApplicationController
   # GET /social_cards/1/edit
   def edit
     @social_card = SocialCard.find(params[:id])
+    @parishes = Parish.find(:all)
   end
 
   # POST /social_cards

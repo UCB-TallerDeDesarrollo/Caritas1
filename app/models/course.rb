@@ -1,7 +1,7 @@
 class Course < ActiveRecord::Base
   
   #belongs_to :workshop
-  #belongs_to :workshop
+  belongs_to :workshop
   belongs_to :assistance_list
   
   validates_presence_of :name   

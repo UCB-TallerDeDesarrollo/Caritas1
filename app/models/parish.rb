@@ -5,6 +5,7 @@ class Parish < ActiveRecord::Base
   has_one :vicariou
   belongs_to :group
   has_one :workshop
+  has_many :social_cards
   file_column :parish_photo
   
   validates_presence_of :pastor_id

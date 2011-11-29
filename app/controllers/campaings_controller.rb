@@ -11,6 +11,15 @@ class CampaingsController < ApplicationController
     end
   end
 
+  def index_public
+    @campaings = Campaing.search(params[:search])
+
+    respond_to do |format|
+      format.html # index_public.html.erb
+      format.xml  { render :xml => @campaings }
+    end
+  end
+
   # GET /campaings/1
   # GET /campaings/1.xml
   def show
@@ -103,6 +112,16 @@ class CampaingsController < ApplicationController
     respond_to do |format|
       format.html # show_public.html.erb
       format.xml  { render :xml => @campaing }
+    end
+  end
+  
+  def destroy_all_photos
+    @campaing = Campaing.find(params[:id])
+    @campaing.campaing_photos.clear
+
+    respond_to do |format|
+      format.html { redirect_to(campaings_url) }
+      format.xml  { head :ok }
     end
   end
 

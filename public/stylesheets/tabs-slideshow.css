@@ -6,7 +6,7 @@
 	float:left;	
 	margin:15px;
 	cursor:pointer;
-        width: 480px;
+        width: 456px;
         height: 300px;
 	/* CSS3 tweaks for modern browsers */
 	-moz-border-radius:5px;
@@ -35,10 +35,10 @@
 	color:#456;
 }
 
-/* tabs (those little circles below slides) */
 .slidetabs {
 	clear:both;
 	margin-left:330px;
+	background:#555 0 0 no-repeat;
 }
 
 /* single tab */
@@ -47,21 +47,19 @@
 	height:8px;
 	float:left;
 	margin:3px;
-	background:#555 0 0 no-repeat;
 	display:block;
 	font-size:1px;		
 }
 
 /* mouseover state */
 .slidetabs a:hover {
-	background-position:0 -8px;      
+	background-position:center center;      
 }
 
 /* active state (current page state) */
 .slidetabs a.current {
-	background-position:0 -16px;     
+	background-position:bottom center;     
 } 	
-
 
 /* prev and next buttons */
 #forward, #backward {
@@ -76,13 +74,13 @@
 }
 
 /* next */
-#forward 				{ background-position: center top; background: url(../images/arrowsf.png) no-repeat; }
+#forward 				{background-position: center top; background: url(../images/arrowsf.png) no-repeat; }
 #forward:hover 		{ background-position: center center; }
 #forward:active 	 	{ background-position:center bottom; } 
 
 
 /* prev */
-#backward 				{ background-position: center top; background: url(../images/arrowsb.png) no-repeat; }
+#backward 				{margin-left: 35px; background-position: center top; background: url(../images/arrowsb.png) no-repeat; }
 #backward:hover 		{ background-position: center center; }
 #backward:active 	 	{ background-position:center bottom; } 
 

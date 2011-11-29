@@ -27,7 +27,7 @@
       <% if current_user %>
             <%= link_to 'Editar', edit_course_path %>|
           <% end %>
-      <%= link_to 'Volver', courses_path %>
+      <%= link_to 'Volver', edit_workshop_path(@course.workshop_id) %>
     </td>
   </tr>
 

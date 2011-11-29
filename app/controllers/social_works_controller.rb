@@ -9,6 +9,14 @@ class SocialWorksController < ApplicationController
       format.xml  { render :xml => @social_works }
     end
   end
+  def index_public
+    @social_works = SocialWork.all
+
+    respond_to do |format|
+      format.html # index_public.html.erb
+      format.xml  { render :xml => @social_works }
+    end
+  end
 
   # GET /social_works/1
   # GET /social_works/1.xml
@@ -112,6 +120,16 @@ class SocialWorksController < ApplicationController
     respond_to do |format|
       format.html # show_public.html.erb
       format.xml  { render :xml => @social_work }
+    end
+  end
+  
+  def destroy_all_photos
+    @social_work = SocialWork.find(params[:id])
+    @social_work.social_work_photos.clear
+
+    respond_to do |format|
+      format.html { redirect_to(social_works_url) }
+      format.xml  { head :ok }
     end
   end
 end
