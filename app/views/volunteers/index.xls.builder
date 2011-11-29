@@ -25,6 +25,7 @@ xml.Workbook({
         xml.Cell { xml.Data 'Cumpleaños', 'ss:Type' => 'String' }
         xml.Cell { xml.Data 'Sexo', 'ss:Type' => 'String' }
         xml.Cell { xml.Data 'E-mail', 'ss:Type' => 'String' }
+        xml.Cell { xml.Data 'Grupos', 'ss:Type' => 'String' }
 
         
       end
@@ -41,6 +42,8 @@ xml.Workbook({
           xml.Cell { xml.Data volunteer.date_of_birth, 'ss:Type' => 'String' }
           xml.Cell { xml.Data volunteer.genre, 'ss:Type' => 'String' }
           xml.Cell { xml.Data volunteer.email, 'ss:Type' => 'String' }
+          xml.Cell { xml.Data volunteer.group.name, 'ss:Type' => 'String' }
+
          
         end
       end
