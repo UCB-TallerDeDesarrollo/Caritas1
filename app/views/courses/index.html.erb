@@ -1,29 +1,27 @@
 <%if current_user%>
-<h1>Listing courses</h1>
+<h1>Historial de Cursos</h1>
 <table>
   <tr>
-    <th>Name</th>
-    <th>Responsible</th>
-    <th>Date ini</th>
-    <th>Description</th>
+    <th>Nombre</th>
+    <th>Responsable</th>
+    <th>Fecha Inicial</th>
+    <th colspan="2">Acciones</th>
   </tr>
 
 <% @courses.each do |course| %>
   <tr>
-    <td><%=h course.name %></td>
+    <td><%= link_to course.name, course%></td>
     <td><%=h course.responsible %></td>
     <td><%=h course.date_ini %></td>
-    <td><%=h course.description %></td>
-    <td><%= link_to 'Show', course %></td>
-    <td><%= link_to 'Edit', edit_course_path(course) %></td>
-    <td><%= link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete %></td>
+    
+    <td><%= link_to 'Editar', edit_course_path(course) %></td>
+    <td><%= link_to 'Eliminar', course, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New course', new_course_path %>
 <%else%>
 <h1>no puede realizar esta accion, porfavor contactese</h1>
 <%end%>

@@ -87,9 +87,9 @@
           
       <% @cour= CoursesType.findf(r.id_course_type)[0] %>
           <td align="CENTER">
-     <%= link_to r.to_s, @cour %>
+     <%= link_to r.to_s, :controller => "courses", :course_type=>r.id_course_type, :workshop=>@workshop.id %>
             </td>
-            
+   
           <td align="CENTER">
             <%=  Course.findf(r.id_course_type,@workshop.id).count%>
             </td>
@@ -113,7 +113,7 @@
           <%= f.submit 'Actualizar' %>
     <button type="reset">Limpiar</button>
     <%= link_to 'Ver', @workshop %> |
-    <%= link_to 'Atras', workshops_path %>
+    <%= link_to 'Atras', parishes_path %>
       </td>
     </tr>  
   <tr>
