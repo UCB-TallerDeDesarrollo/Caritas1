@@ -122,4 +122,14 @@ class SocialWorksController < ApplicationController
       format.xml  { render :xml => @social_work }
     end
   end
+  
+  def destroy_all_photos
+    @social_work = SocialWork.find(params[:id])
+    @social_work.social_work_photos.clear
+
+    respond_to do |format|
+      format.html { redirect_to(social_works_url) }
+      format.xml  { head :ok }
+    end
+  end
 end
