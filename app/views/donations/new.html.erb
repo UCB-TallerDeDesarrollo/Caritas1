@@ -14,7 +14,7 @@
       <td>* Cantidad</td>
       <td><%= f.text_field :amount %></td>
       <td>Unidad</td>
-      <td><%= f.text_field :unit %></td>
+      <td><%= f.select  :unit, Donation::DONATION_UNITS %></td>
   </tr>
 <tr align="right">
     <td colspan="2">
