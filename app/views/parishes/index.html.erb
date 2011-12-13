@@ -14,6 +14,9 @@
         <%= button_to 'Crear Parroquia', new_parish_path %>
       </div>
     </td>
+      <td>
+             <%= link_to 'Export to Excel', parishes_path(:xls) %>
+            </td>
   <tr>
     <td>
       <table border="3">
@@ -28,6 +31,7 @@
         <% @parishes.each do |parish| %>
           <%if parish.state %>
             <tr>
+              
               <td><%= link_to  parish.parish_name,parish %></td>
               <td><%=h parish.ubication %></td>
               <td><%=h parish.telephone %></td>              
