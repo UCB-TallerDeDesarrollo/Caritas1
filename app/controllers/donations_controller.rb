@@ -39,12 +39,13 @@ class DonationsController < ApplicationController
 
   # POST /donations
   # POST /donations.xml
+  
   def create
     @donation = Donation.new(params[:donation])
 
     respond_to do |format|
       if @donation.save
-        format.html { redirect_to(@donation, :notice => 'Donation was successfully created.') }
+        format.html { redirect_to(@donation, :notice => 'Donacion creada con exito') }
         format.xml  { render :xml => @donation, :status => :created, :location => @donation }
       else
         format.html { render :action => "new" }
@@ -60,7 +61,7 @@ class DonationsController < ApplicationController
 
     respond_to do |format|
       if @donation.update_attributes(params[:donation])
-        format.html { redirect_to(@donation, :notice => 'Donation was successfully updated.') }
+        format.html { redirect_to(@donation, :notice => 'Donacion ha sido actualizada') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -71,6 +72,19 @@ class DonationsController < ApplicationController
 
   # DELETE /donations/1
   # DELETE /donations/1.xml
+  # GET /volunteers.xml
+  def index
+    @donations = Donation.search(params[:search],params[:campaing])
+    @campaings = Campaing.find(:all)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @campaings }
+      format.xls
+    end
+  end
+
+  # GET /volunteers/1
   def destroy
     @donation = Donation.find(params[:id])
     @donation.destroy
