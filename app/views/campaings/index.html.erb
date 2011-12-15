@@ -67,7 +67,7 @@
               <td><%= link_to 'Agregar fotos', :controller => "campaings", :action=>"add_photos", :id => campaing %></td>
               <td><%= link_to 'Ver fotos', :controller => "campaings", :action=>"show_photos", :id => campaing %></td>
               <td><%= link_to 'Eliminar fotos', :confirm => "esta por eliminar todas las imagenes de esta campaña, desea continuar??", :controller => "campaings", :action => "destroy_all_photos", :id => campaing  %> </td>
-              <td><%= link_to 'Agregar Donacion', donations_path() %></td>
+              <td><%= link_to 'Agregar Donacion', new_donation_path() %></td>
             <%end%>
           </tr>
         <% end %>
