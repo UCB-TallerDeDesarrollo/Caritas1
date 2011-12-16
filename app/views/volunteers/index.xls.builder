@@ -43,7 +43,6 @@ xml.Workbook({
           xml.Cell { xml.Data volunteer.genre, 'ss:Type' => 'String' }
           xml.Cell { xml.Data volunteer.email, 'ss:Type' => 'String' }
           xml.Cell { xml.Data volunteer.group.name, 'ss:Type' => 'String' }
-
          
         end
       end

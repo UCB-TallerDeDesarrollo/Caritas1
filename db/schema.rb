@@ -173,8 +173,8 @@ ActiveRecord::Schema.define(:version => 20111216000348) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "what_kind"
-    t.boolean  "state",                    :default => true
     t.integer  "parish_id"
+    t.boolean  "state",                    :default => true
   end
 
   create_table "social_work_photos", :force => true do |t|
@@ -248,6 +248,7 @@ ActiveRecord::Schema.define(:version => 20111216000348) do
     t.string   "email"
     t.boolean  "state"
     t.string   "volunteer_photo"
+    t.string   "thumb_url"
   end
 
   create_table "workshop_course_types", :force => true do |t|
