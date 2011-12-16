@@ -14,7 +14,7 @@
       </tr>
       <tr>
         <td>*Vicaria a la que Pertenece:</td>
-        <td><select name="parish[vicariou_id]"> 
+        <td><select name="parish[vicariou_id]" style="width: 150px"> 
 <% if @vicariou  
     @vicariou.each do |vicariou| %>
     <option value="<%=vicariou.id%>">
@@ -42,11 +42,11 @@
 
           <tr>
       <td>* <%= "Estado" %> </td>
-      <td><%= p.select  :current_state, Parish::PARISH_STATES %></td>
+      <td><%= p.select   :current_state, Parish::PARISH_STATES %></td>
     </tr>
       <tr>
         <td>*Nombre del Parroco</td>
-        <td><select name="parish[pastor_id]">
+        <td><select name="parish[pastor_id]" style="width: 195px">
     <% if @pastor  
     @pastor.each do |pastor| %>
     <option value="<%=pastor.id%>">
