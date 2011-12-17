@@ -10,12 +10,13 @@
 
 <% form_for(@course) do |f| %>
   <%= f.error_messages %>
+<%= f.hidden_field :name, :value => CoursesType.find(@course.courses_types_id).name %> 
 
 <TABLE   ALIGN="CENTER">
   
   <tr>        
     <td>* Nombre<br /></td>
-    <td><%= f.text_field :name %></td>
+    <td><%=  CoursesType.find(@course.courses_types_id).name %></td>
   </tr>
   
   <tr>
