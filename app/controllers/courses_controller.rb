@@ -7,6 +7,7 @@ class CoursesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @courses }
+      format.xls
     end
   end
 
