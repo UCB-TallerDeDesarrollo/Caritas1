@@ -38,7 +38,7 @@ xml.Workbook({
         xml.Cell { xml.Data 'Firma', 'ss:Type' => 'String' }
       end
       
-      for listVolunteers in Assistance_list.all(:all,:conditions=>['course_id=?', "#{courses.id}"])               
+      for listVolunteers in AssistanceList.all(:all,:conditions=>['course_id=?', "#{courses.id}"])               
         
           volunteer = Volunteer.find(listVolunteers.volunteer_id)               
         xml.Row do                    
