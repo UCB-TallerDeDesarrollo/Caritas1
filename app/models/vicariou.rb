@@ -4,7 +4,6 @@ class Vicariou < ActiveRecord::Base
   
   validates_presence_of :name_vicariou
   validates_presence_of :ubication
-  validates_presence_of :transport
   validates_presence_of :telephone
   validates_presence_of :pastor_id
   

@@ -1,6 +1,7 @@
 <div id="content-wrap">
-    		<%= render "main_page/lateralMenu.html" %>
+  <%= render :partial => "main_page/acordeon" %>
   <div id="main" >
+
       <center><H2><%= @notice.title%></h2></center>
       <br>
           <% if @notice.notice_photo %>
@@ -15,4 +16,5 @@
       </p>
      <%=link_to "Volver", :controller => "notices", :action => "index_public",:id =>'find'%>
   </div>
+
 
