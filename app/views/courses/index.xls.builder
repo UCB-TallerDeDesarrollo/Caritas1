@@ -43,10 +43,10 @@ xml.Workbook({
           volunteer = Volunteer.find(listVolunteers.volunteer_id)               
         xml.Row do                    
           xml.Cell { xml.Data volunteer.name+" "+volunteer.last_name+" "+volunteer.second_last_name, 'ss:Type' => 'String' }
-          xml.Cell { xml.Data " ", 'ss:Type' => 'String' }                    
+          xml.Cell { xml.Data Parish.find(Group.find(volunteer.group_id).parish_id).parish_name, 'ss:Type' => 'String' }                    
           xml.Cell { xml.Data volunteer.email, 'ss:Type' => 'String' }                    
-          xml.Cell { xml.Data volunteer.phone_number, 'ss:Type' => 'Number' }   
-          xml.Cell { xml.Data volunteer.movil, 'ss:Type' => 'Number' }  
+          xml.Cell { xml.Data volunteer.phone_number, 'ss:Type' => 'String' }   
+          xml.Cell { xml.Data volunteer.movil, 'ss:Type' => 'String' }  
           xml.Cell { xml.Data '', 'ss:Type' => 'String' }   
         end
       end
