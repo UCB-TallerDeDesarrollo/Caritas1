@@ -13,6 +13,9 @@
              <%= link_to 'Reporte de Parroquias por Vicaria', parishes_path(:xls) %>
           </td>
           <td>
+             <%= link_to 'Reporte de Parroquias Ordenado por Vicaria', :controller => :parishes, :action => 'report.xls' %>
+          </td>
+          <td>
              <%= link_to 'Reporte de Cursos por Parroquia', workshops_path(:xls) %>
           </td> 
             </tr>
