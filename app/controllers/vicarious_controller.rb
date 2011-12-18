@@ -9,20 +9,18 @@ class VicariousController < ApplicationController
       format.xml  { render :xml => @vicarious }
     end
   end
+    def index
+    #@vicarious = Vicariou.all
+    @vicarious = Vicariou.search(params[:search])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @vicarious }
+    end
+  end
 
   # GET /vicarious/1
   # GET /vicarious/1.xml
-  def show
-    @vicariou = Vicariou.find(params[:id])
-   
-      @pastor = Pastor.find(@vicariou.pastor_id)
-      @parish = Parish.all(:select => "id,parish_name,ubication,telephone",:conditions=> ["id in (select id from parishes where vicariou_id= ?)","#{@vicariou.id}"])
-      respond_to do |format|
-        format.html # show.html.erb
-        format.xml  { render :xml => @vicariou }
-      end
-  
-  end
+
 
   # GET /vicarious/new
   # GET /vicarious/new.xml

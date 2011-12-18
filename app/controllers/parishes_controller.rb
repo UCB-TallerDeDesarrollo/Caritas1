@@ -10,6 +10,13 @@ class ParishesController < ApplicationController
       format.xls
     end
   end
+    def report
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xls
+        format.html { redirect_to(parishes_url) }        
+      end  
+  end
 
   # GET /parishes/1
   # GET /parishes/1.xml
