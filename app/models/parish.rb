@@ -8,6 +8,13 @@ class Parish < ActiveRecord::Base
   has_many :social_cards
   file_column :parish_photo
   
+  validates_length_of :parish_name, :within => 0..50
+  validates_length_of :ubication, :within => 0..255
+  validates_length_of :transport, :within => 0..255
+  validates_length_of :telephone, :within => 0..50
+  validates_length_of :contact_telephone, :within => 0..50
+  
+  
   validates_presence_of :pastor_id
   validates_presence_of :vicariou_id
   
