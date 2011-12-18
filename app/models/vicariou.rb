@@ -13,7 +13,7 @@ class Vicariou < ActiveRecord::Base
   validates_length_of :telephone, :maximum => 30
   #validates_numericality_of :telephone
   
-  validates_uniqueness_of :name_vicariou, :message => "La Vicaria ya Existe"
+  validates_uniqueness_of :name_vicariou, :message => "La vicaria ya existe"
   
   def self.search(search)
     if search

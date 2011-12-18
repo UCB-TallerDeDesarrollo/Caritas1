@@ -13,6 +13,8 @@ class Group < ActiveRecord::Base
   #put validates here
   validates_presence_of :name, :message => ' no puede estar vacio'    
   validates_presence_of :parish_id
+  
+  validates_length_of :name, :maximum => 50
 
   validates_file_format_of :group_photo, :in => ["gif", "jpg", "png"]
   validates_filesize_of :group_photo, :in => 1.kilobytes..3000.kilobytes
