@@ -13,7 +13,6 @@ class Parish < ActiveRecord::Base
   
   validates_presence_of :parish_name  
   validates_presence_of :ubication
-  validates_presence_of :transport
   validates_presence_of :telephone
 
   validates_numericality_of :telephone, :greater_than => 0, :if => "self.telephone.present?"
