@@ -9,9 +9,9 @@ class Pastor < ActiveRecord::Base
   
   validates_length_of :name, :maximum => 50 
   validates_length_of :primary_last_name, :maximum => 50
-  validates_length_of :second_last_name, :maximum => 50
-  validates_length_of :phone_number, :maximum => 50
-  validates_length_of :cellphone_number, :maximum => 50
+  validates_length_of :second_last_name, :maximum => 50, :allow_nil => true, :allow_blank => true
+  validates_length_of :phone_number, :maximum => 50, :allow_nil => true, :allow_blank => true
+  validates_length_of :cellphone_number, :maximum => 50, :allow_nil => true, :allow_blank => true
   #deco prueba
     #put class methods here
   def self.search(search)
