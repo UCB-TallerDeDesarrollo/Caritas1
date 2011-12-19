@@ -53,19 +53,19 @@ dd {
   padding-left: 25px; 
 }
 
-/* images */
+/* images
 img {
 	background: #fafafa;
    border: 1px solid #dcdcdc;
 	padding: 7px;
 }
 img.float-right {
-  	margin: 5px 0px 10px 10px;  
+  	margin: 5px 0px 10px 10px;
 }
 img.float-left {
   	margin: 5px 10px 10px 0px;
 }
-
+      */
 code {
   	margin: 5px 0;
   	padding: 15px;
@@ -208,7 +208,6 @@ input.button.submit, button, input[type="submit"] {
 	background: #edf8c7 url(/images/content.gif) repeat-y;
 }
 #content-layout{
-	width: 90%;
 	clear: both;
 	float: left;
 	width: 920px;
