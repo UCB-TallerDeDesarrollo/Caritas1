@@ -7,12 +7,14 @@
     <% @i = 1; %>
 
         <% @p1 = SocialWork.getRandomPicture(@campaing.id) %>
+
         <% @p2 = SocialWork.getRandomPicture(@campaing.id) %>
         <% @p3 = SocialWork.getRandomPicture(@campaing.id) %>
         <% if @p1 != nil %>
    <img style="float:left;margin:0 30px 20px 0" src="/system/datas/<%=@p1.id%>/original/<%=@p1.data_file_name%>" alt="Flying screens" height="200" width="400"/>
    <img style="float:left;margin:0 30px 20px 0" src="/system/datas/<%=@p2.id%>/original/<%=@p2.data_file_name%>" alt="Flying screens" height="200" width="400"/>
   <img style="float:left;margin:0 30px 20px 0" src="/system/datas/<%=@p3.id%>/original/<%=@p3.data_file_name%>" alt="Flying screens" height="200" width="400"/>
+
    </div>
 
   <script type="text/javascript">sweet.slider('highlight','navegation',6)</script>
