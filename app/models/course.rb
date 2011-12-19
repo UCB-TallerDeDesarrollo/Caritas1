@@ -13,6 +13,11 @@ class Course < ActiveRecord::Base
   validates_format_of :responsible, :with => /^([a-zA-Z\ \-]{3,100})$/i  
     
     def self.findf(course,work)
-      find(:all,:conditions => ['courses_types_id = ? AND workshop_id = ?', "#{course}", "#{work}"])
-  end
+      if(course)
+        find(:all,:conditions => ['courses_types_id = ? AND workshop_id = ?', "#{course}", "#{work}"])
+      end
+  end  
+  def self.finda(course_id)
+  find(:all,:conditions => ['id=?', "#{course_id}"]) if (course_id)
+    end
 end

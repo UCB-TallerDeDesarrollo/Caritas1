@@ -420,18 +420,12 @@ input.button.submit, button, input[type="submit"] {
 #notice {
 	height:70%;
 	float:right;
-	width:22%;
+	width:32%;
 	position: relative;
-	clear: both;
 	margin-top: 0;
-	margin-right: 30px;
-	margin-bottom: 0;
-	margin-left: 0;
-	display: block;
-	font-weight: normal;
-	color: #666666;
+	float:right;
+	color: #888;
 }
-
 
 /* menu lateral*/
 #lateralMenu ul {
@@ -481,7 +475,7 @@ input.button.submit, button, input[type="submit"] {
 /* Main Column */
 #main {
 	float: left;
-	width: 525px;
+	width: 535px;
 	padding: 0; margin: 0 0 0 45px;
 	display: inline;	
 }
@@ -628,36 +622,7 @@ input.button.submit, button, input[type="submit"] {
 	width: 96%;
 	color: #666666;	
 }
-#notice {
-	height:70%;
-	float:right;
-	width:32%;
-	position: relative;
-	clear: both;
-	margin-top: 0;
-	margin-right: 30px;
-	margin-bottom: 0;
-	margin-left: 0;
-	color: #888;	
-}
-#notice li a {
-	display: block;
-	font-weight: normal;
-	color: #666666;	
-}
-#notice h3 {
-	color: #CC0000;
-	margin: 0;
-	padding: 5px 0 5px 10px; 
-	text-transform: uppercase;
-}
-#notice ul {
-	list-style: none;
-	border-top: 1px solid #BFD286;
-}
-#notice li {
-	border-bottom: 1px solid #CCDA9E;		
-}
+
 
 #footer-columns .col3, .col3-center{
 	float: left;
