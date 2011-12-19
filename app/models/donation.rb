@@ -10,7 +10,7 @@ class Donation < ActiveRecord::Base
   #put validates here
   validates_presence_of :name
   validates_presence_of :amount
-  validates_format_of :name, :with => /^([a-zA-Z\ ]{3,50})$/i
+  #validates_format_of :name, :with => /^([a-zA-Z\ ]{3,50})$/i
   #put class methods here
   def self.search(search,campaing)
     if search       
