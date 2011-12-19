@@ -5,8 +5,8 @@
 <%= f.error_messages %>
   <table>
     <tr>  
-      <td>* <%= "Título" %></td>
-      <td><p class="word_wrap"><%= f.text_field :title %></p></p></td>
+      <td><%= f.label :title, "* Titulo" %></td>
+      <td><p class="word_wrap"><%= f.text_field :title %></p></td>
     </tr>
     
     <tr>
@@ -26,7 +26,7 @@
     </tr>
 
     <tr>
-      <td>* <%= "Tipo Noticia" %> </td>
+      <td><%= f.label :notice_type, "* Tipo Noticia" %></td>
       <td><p class="word_wrap"><%= f.select  :notice_type, Notice::NOTICES_TYPES %></p></td>
     </tr>
 
