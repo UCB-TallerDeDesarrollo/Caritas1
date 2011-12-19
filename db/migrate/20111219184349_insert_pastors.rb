@@ -1,0 +1,9 @@
+class InsertPastors < ActiveRecord::Migration
+  def self.up
+        execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Estanislao','Bofill',' ','10/10/2010',TRUE);"
+
+  end
+
+  def self.down
+  end
+end
