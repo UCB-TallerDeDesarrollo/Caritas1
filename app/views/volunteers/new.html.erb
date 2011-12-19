@@ -57,8 +57,7 @@
     <tr>
       <td>&nbsp;&nbsp;&nbsp;Grupo</td>
       <td>
-        <select name="volunteer[group_id]" style="width: 150px">
-          <option value="0"></option>
+        <select name="volunteer[group_id]" style="width: 150px">          
           <% if @groups 
             @groups.each do |group| 
               if group.id != 0%>
