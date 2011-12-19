@@ -9,7 +9,7 @@
               <% Campaing.find_last_five.each do |campaing| %>
                   <li class="block" id=block_<%= indice %>><a class="header" href=#block_<%= indice %>><%= campaing.name %></a><div class="arrow"></div>
                   <div>
-                    <p><%= "#{truncate(campaing.description, :length => 250)}" %>   </p>
+                    <p class="word_wrap"><%= "#{truncate(campaing.description, :length => 250)}" %>   </p>
                    <%= link_to "Seguir leyendo.", :controller => "campaings", :action => "show_public", :id =>campaing %>
                     <% indice = indice+1 %>
 					</div>
