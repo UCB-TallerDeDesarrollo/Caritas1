@@ -55,9 +55,9 @@
         <% @campaings.each do |campaing| %>
           <tr>
             <td><%=link_to campaing.name, campaing %></td>
-            <td><%=h campaing.location %></td>
+            <td><p class="word_wrap"><%=h campaing.location %></p></td>
             <td><%=h campaing.date_end %></td>
-            <td><%=h campaing.responsible %></td> 
+            <td><p class="word_wrap"><%=h campaing.responsible %></p></td>
             <% if current_user %>
               <td><%= link_to 'Editar', edit_campaing_path(campaing) %></td> 
               <td><%= link_to 'Fotos', :controller => "campaings", :action=>"add_photos", :id => campaing %></td>

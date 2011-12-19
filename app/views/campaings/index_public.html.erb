@@ -21,7 +21,6 @@
         <tr id = 'head-table'>
           <th>Nombre</th>
           <th>Lugar</th>
-          <th>Descripcion</th>
           <th>Fecha de inicio</th>
           <th>Fecha de finalizacion</th>
         </tr>
@@ -29,8 +28,7 @@
         <% @campaings.each do |campaing| %>
           <tr>
             <td><%=link_to campaing.name, :controller => "campaings", :action => "show_public", :id =>campaing %></td>
-            <td><%=h campaing.location %></td>
-            <td><%=h campaing.description %></td>
+            <td><p class="word_wrap"><%=h campaing.location %></p></td>
             <td><%=h campaing.date_ini %></td>
             <td><%=h campaing.date_end %></td>
 
