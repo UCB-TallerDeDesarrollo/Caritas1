@@ -9,7 +9,8 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111219121215) do
+
+ActiveRecord::Schema.define(:version => 20111219122309) do
 
   create_table "assistance_lists", :force => true do |t|
     t.datetime "created_at"
@@ -119,7 +120,6 @@ ActiveRecord::Schema.define(:version => 20111219121215) do
     t.string   "parish_name"
     t.string   "ubication"
     t.string   "transport"
-    t.integer  "telephone"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "pastor_id"
@@ -129,6 +129,7 @@ ActiveRecord::Schema.define(:version => 20111219121215) do
     t.string   "parish_photo"
     t.boolean  "state",             :default => true
     t.string   "current_state"
+    t.string   "telephone"
   end
 
   create_table "pastors", :force => true do |t|

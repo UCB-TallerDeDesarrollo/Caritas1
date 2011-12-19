@@ -19,8 +19,8 @@ class Volunteer < ActiveRecord::Base
   validates_length_of :last_name, :within => 0..50
   validates_length_of :second_last_name, :within => 0..50
   validates_length_of :profession, :within => 0..50
-  validates_length_of :phone_number, :within => 0..50
-  validates_length_of :movil, :within => 0..50
+  validates_length_of :phone_number, :within => 0..50, :allow_blank => true  
+  validates_length_of :movil, :within => 0..50, :allow_blank => true  
   validates_length_of :position, :within => 0..50
   validates_length_of :email, :within => 0..150
   
