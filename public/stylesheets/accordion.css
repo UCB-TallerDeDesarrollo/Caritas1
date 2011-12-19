@@ -9,7 +9,7 @@ body {
 	padding: 0px;
 	background-color: #eeeeee;
 }
-	
+
 /* --- accordion body --- */
 div.accordion-container {
 	width: 250px;	/* total width = 510 */
@@ -26,7 +26,7 @@ div.accordion-container {
 	-moz-border-radius: 3px;
 	-webkit-background-clip: padding-box;
 }
-	
+
 /* --- lists global --- */
 div.accordion-container ul,
 div.accordion-container li {
@@ -127,7 +127,7 @@ div.accordion-container li.block.target a.header {
 div.accordion-container li:target div,
 div.accordion-container li.target div {
 	width: 100%;
-	height: 150px;	/* expanded section height */
+	height: 100px;	/* expanded section height */
 	visibility: visible;
 	overflow: auto;
 }
