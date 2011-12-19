@@ -11,7 +11,7 @@ class Emailer < ActionMailer::Base
   end
   def email_contact_us(emailContact, nameContact, subject, message, sent_at = Time.now)
       @subject = subject
-      @recipients = "amapola-s@hotmail.com"
+      @recipients = "info@caritascbba.org"
       @emailContact = emailContact
       @name = nameContact
       @from = 'no-reply@caritascbba.org'
