@@ -1,107 +1,107 @@
 <%if current_user%>
-<CENTER><h1>Nueva Obra Social</h1></center>
+  <CENTER><h1>Nueva Obra Social</h1></center>
 
-<% form_for(@social_work) do |f| %>
-  <%= f.error_messages %>
+  <% form_for(@social_work) do |f| %>
+    <%= f.error_messages %>
 
- <TABLE   ALIGN="CENTER">
+    <TABLE   ALIGN="CENTER">
 
-   <TR>
-      <td>* Parroquia</td>
+      <TR>
+        <td><%= f.label :parish, "* Parroquia" %></td>
 
-      <TD >
+        <TD >
           <p class="word_wrap"><%= f.text_field :parish %></p>
-      </TD>
-    </TR>
-    <TR>
-      <td>* Nombre</td>
+        </TD>
+      </TR>
+      <TR>
+        <td><%= f.label :name, "* Nombre" %></td>
 
-      <TD >
+        <TD >
           <p class="word_wrap"><%= f.text_field :name %></p>
-      </TD>
-    </TR>
-    <TR>
-      <td>* Obra social de:</td>
+        </TD>
+      </TR>
+      <TR>
+        <td><%= f.label :social_work, "* Obra social de" %></td>
 
-      <TD >
+        <TD >
           <p class="word_wrap"><%= f.text_field :social_work %></p>
-      </TD>
-    </TR>
-    <TR>
-    <td>* Responsable</td>
+        </TD>
+      </TR>
+      <TR>
+        <td><%= f.label :responsible, "* Responsable" %></td>
 
-      <TD >
+        <TD >
           <p class="word_wrap"><%= f.text_field :responsible %></p>
-      </TD>
-    </TR>
+        </TD>
+      </TR>
 
-    <TR>
-      <td>* Lugar</td> 
+      <TR>
+        <td><%= f.label :location, "* Lugar" %></td> 
 
-      <TD >        
+        <TD >        
           <p class="word_wrap"><%= f.text_field :location %></p>
-      </TD>
-    </TR>
-    <TR>
-    <td> Telefono</td>
+        </TD>
+      </TR>
+      <TR>
+        <td> Telefono</td>
 
-      <TD >
-          <%= f.text_field :phone %>
-      </TD>
-    </TR>
-    <TR>
-    <td> Movil</td>
+        <TD >
+          <p><%= f.text_field :phone %></p>
+        </TD>
+      </TR>
+      <TR>
+        <td> Movil</td>
 
-      <TD >
-          <%= f.text_field :movil %>
-      </TD>
-    </TR>
-    <TR>
-    <td> Email</td>
+        <TD >
+          <p><%= f.text_field :movil %></p>
+        </TD>
+      </TR>
+      <TR>
+        <td> Email</td>
 
-      <TD >
-          <%= f.text_field :email %>
-      </TD>
-    </TR>
-    <TR>
-    <td> Transporte</td>
+        <TD >
+          <p><%= f.text_field :email %></p>
+        </TD>
+      </TR>
+      <TR>
+        <td> Transporte</td>
 
-      <TD >
-          <%= f.text_field :transport %>
-      </TD>
-    </TR>
+        <TD >
+          <p><%= f.text_field :transport %></p>
+        </TD>
+      </TR>
 
-    <TR>
-     <td>&nbsp&nbsp&nbspDescripción</td>
+      <TR>
+        <td>&nbsp&nbsp&nbspDescripción</td>
 
-      <TD >
+        <TD >
           <p class="word_wrap"><%= f.text_area :description , :size => "60x10", :style => "resize:none"  %></p>
-      </TD>
-    </TR>
+        </TD>
+      </TR>
 
 
-    <TR>
-    <td>* Responsable del Llenado</td>
+      <TR>
+        <td><%= f.label :responsible_filling, "* Responsable del Llenado" %></td>
 
-      <TD >
+        <TD >
           <p class="word_wrap"><%= f.text_field :responsible_filling %></p>
-      </TD>
-    </TR>
-  
-          <tr align="right">
-      <td colspan="2">
-        <%= f.submit 'Registrar' %>
-        <button type="reset">Limpiar</button>
-        <%= link_to 'Volver', social_works_path %>
-      </td>
-    </tr>
-    
-        <tr>
-      <td>*  Estos campos son obligatorios</td>
-    </tr>
-   </TABLE>   
+        </TD>
+      </TR>
 
-<% end %>
+      <tr align="right">
+        <td colspan="2">
+          <%= f.submit 'Registrar' %>
+          <button type="reset">Limpiar</button>
+          <%= link_to 'Volver', social_works_path %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>*  Estos campos son obligatorios</td>
+      </tr>
+    </TABLE>   
+
+  <% end %>
 <%else%>
   <h1>no puede realizar esta accion, porfavor contactese</h1>
 <%end%>
