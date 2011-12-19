@@ -15,12 +15,12 @@
 <TABLE   ALIGN="CENTER">
   
   <tr>        
-    <td>* Nombre<br /></td>
+    <td>Nombre<br /></td>
     <td><%=  CoursesType.find(@course.courses_types_id).name %></td>
   </tr>
   
   <tr>
-    <td>* Responsable<br /></td>
+    <td><%= f.label :responsible, "* Responsable" %><br /></td>
     <td><%= f.text_field :responsible %></td>
   </tr>
   
@@ -34,7 +34,7 @@
     <td><%= f.text_area :description , :rows=>6, :cols=>22 , :style => "resize:none"%></td>
   </tr>
     <tr>
-      <td>* Seleccione los Asistentes</td>
+      <td>Seleccione los Asistentes</td>
       <td>
         <% lista_voluntarios = Volunteer.all.map { |volunteer| [volunteer.name.to_s + " " + volunteer.last_name, volunteer.id] } %>                                        
         <% volunteers =[]  
