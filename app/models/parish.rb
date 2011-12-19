@@ -18,7 +18,7 @@ class Parish < ActiveRecord::Base
   validates_format_of :ubication, :with => /^([a-zA-Z\ ]{3,50})$/i
   validates_format_of :transport, :with => /^([a-zA-Z0-9\ ]{3,50})$/i
   validates_format_of :telephone, :with => /([0-9 ( ) - ])/
-  validates_format_of :contact_telephone, :with => /([0-9 ( ) - ])/
+  validates_format_of :contact_telephone, :with => /([0-9 ( ) - ])/, :allow_blank => true 
   
   validates_presence_of :pastor_id
   validates_presence_of :vicariou_id
