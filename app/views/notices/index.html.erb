@@ -29,7 +29,7 @@
   
       <% @notices.each do |notice| %>
       <tr>
-        <td><%=h notice.title %></td>
+        <td><p class="word_wrap"><%=h notice.title %></p></td>
         <td><%=h notice.notice_type %></td>
         <td><%=h notice.show_if(notice.is_published) %></td>
         <td><%=h notice.last_date %></td>
