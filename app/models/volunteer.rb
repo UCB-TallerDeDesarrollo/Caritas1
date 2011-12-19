@@ -15,7 +15,18 @@ class Volunteer < ActiveRecord::Base
   validates_presence_of :position  
   validates_presence_of :date_of_birth
   validates_presence_of :genre  
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{0,50})\Z/i, :allow_blank => true  
+  
+   
+  validates_format_of :name, :with => /^([a-zA-Z\ ]{3,50})$/i
+  validates_format_of :last_name, :with => /^([a-zA-Z\ ]{3,50})$/i
+  validates_format_of :second_last_name, :with => /^([a-zA-Z\ ]{3,50})$/i
+  validates_format_of :profession, :with => /^([a-zA-Z\ ]{3,50})$/i
+  validates_format_of :phone_number, :with => /([0-9 ( ) - ])/
+  validates_format_of :movil, :with => /([0-9 ( ) - ])/
+  validates_format_of :position, :with => /^([a-zA-Z\ ]{3,50})$/i
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{0,50})\Z/i, :allow_blank => true 
+  
+  
   #validates_format_of :name, :with => /^([a-zA-Z\ ]{3,50})$/i
   #validates_format_of :last_name, :with => /^([a-zA-Z\ \-]{3,50})$/i
   #validates_format_of :second_last_name, :with => /^([a-zA-Z\ \-]{3,50})$/i
