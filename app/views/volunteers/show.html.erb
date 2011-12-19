@@ -76,7 +76,7 @@
     <td>
 
       <b>Grupo:</b></td><td>
-      <%=h Group.find(@volunteer.group_id).name %>
+      <%=h Group.find(@volunteer.group_id).name unless @volunteer.group_id.blank? %>
     </td>
   </tr>
 <tr>  
