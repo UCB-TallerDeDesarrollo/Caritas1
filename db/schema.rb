@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111219122309) do
+ActiveRecord::Schema.define(:version => 20111219134203) do
 
   create_table "assistance_lists", :force => true do |t|
     t.datetime "created_at"
@@ -135,8 +135,8 @@ ActiveRecord::Schema.define(:version => 20111219122309) do
     t.string   "name"
     t.string   "primary_last_name"
     t.string   "second_last_name"
-    t.integer  "phone_number"
-    t.integer  "cellphone_number"
+    t.string   "phone_number"
+    t.string   "cellphone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "date_of_birth"
