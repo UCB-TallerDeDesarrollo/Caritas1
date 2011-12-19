@@ -4,7 +4,7 @@
       <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%>
         <ul>
           <li><%= link_to 'Quienes somos?',:controller => "main_page", :action => "quienesSomos"%></li>
-          <li><%= link_to 'Contacto',:controller => "main_page", :action => "index" %></li>
+          <li><%= link_to 'Contactanos',:controller => "emailer", :action => "contact_us"%></li>
         </ul>
       </li>
       <li><a href="#">Grupos y Voluntarios</a>
@@ -27,14 +27,14 @@
             <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%>
               <ul>
                 <li><%= link_to 'Quienes somos?',:controller => "main_page", :action => "quienesSomos"%></li>
-                <li><%= link_to 'Contacto',:controller => "main_page", :action => "index" %></li>
+                <li><%= link_to 'Contactanos',:controller => "emailer", :action => "contact_us"%></li>
               </ul>
               <li><a href="#">Campañas</a>
         <ul>
           <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
           <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
           <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
-          <li><%= link_to 'Contactanos',:controller => "emailer", :action => "index_contact_us"%></li>
+
 
          </ul>
             </li>
