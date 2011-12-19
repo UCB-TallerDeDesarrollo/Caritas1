@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111219004941) do
+ActiveRecord::Schema.define(:version => 20111219121215) do
 
   create_table "assistance_lists", :force => true do |t|
     t.datetime "created_at"
@@ -158,8 +158,6 @@ ActiveRecord::Schema.define(:version => 20111219004941) do
     t.date     "birthday"
     t.string   "birthday_location"
     t.integer  "identity_card"
-    t.integer  "phone"
-    t.integer  "movil"
     t.string   "address"
     t.string   "location_reference"
     t.string   "grade_school"
@@ -170,8 +168,6 @@ ActiveRecord::Schema.define(:version => 20111219004941) do
     t.string   "derivative_by"
     t.string   "reference_person"
     t.string   "address_reference"
-    t.integer  "phone_reference"
-    t.integer  "movil_reference"
     t.integer  "age_reference"
     t.string   "occupation_reference"
     t.string   "type_of_case"
@@ -179,9 +175,13 @@ ActiveRecord::Schema.define(:version => 20111219004941) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "what_kind"
-    t.boolean  "state",                    :default => true
     t.integer  "parish_id"
+    t.boolean  "state",                    :default => true
     t.string   "social_card_photo"
+    t.string   "phone"
+    t.string   "movil"
+    t.string   "phone_reference"
+    t.string   "movil_reference"
   end
 
   create_table "social_work_photos", :force => true do |t|
