@@ -723,5 +723,9 @@ a:hover { color: #fff; background-color:#000; }
   background-color: #c00;
   color: #fff;
 }
+.word_wrap{
+    word-wrap: break-word;
+    width: 500px;
+}
 
 
