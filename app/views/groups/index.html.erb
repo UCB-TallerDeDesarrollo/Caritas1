@@ -33,7 +33,7 @@
               <!--<td><#%= link_to 'Voluntarios', volunteers_url %></td>-->
               <td><%= link_to "Ver Voluntarios", :controller => "volunteers", :group=> group.id %></td>              
               <td><%= link_to 'Editar', edit_group_url(group) %></td>
-              <td><%= link_to 'Eliminar', group, :confirm => 'Esta seguro que desea eliminar el grupo?', :method => :delete %></td>
+              <td><%= link_to 'Eliminar', group, :confirm => '¿Está seguro que desea eliminar el grupo?', :method => :delete %></td>
             </tr>
           <% end 
         end %>
