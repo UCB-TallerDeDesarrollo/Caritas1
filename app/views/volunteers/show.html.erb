@@ -25,14 +25,14 @@
   </tr>
   <tr>
     <td>
-      <b>Profesion:</b></td><td>
+      <b>Profesión:</b></td><td>
       <%=h @volunteer.profession %>
 
     </td>
   </tr>
   <tr>
     <td>
-      <b>Telefono:</b></td><td>
+      <b>Teléfono:</b></td><td>
       <%=h @volunteer.phone_number %>
     </td>
   </tr>
@@ -53,7 +53,7 @@
   <tr>
     <td>
 
-      <b>Genero:</b></td><td>
+      <b>Género:</b></td><td>
       <%=h @volunteer.genre %>
     </td>
   </tr>
@@ -80,7 +80,7 @@
     </td>
   </tr>
 <tr>  
-      <td><%= "Fotografia Del Voluntario" %></td>
+      <td><%= "Fotografía del Voluntario" %></td>
       <% if @volunteer.volunteer_photo %>
       <td><%=  image_tag url_for_file_column("volunteer", "volunteer_photo"), :size=>"300x200" %></td>
       <% else %>
