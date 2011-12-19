@@ -7,12 +7,12 @@
   <table>
 
     <tr>
-      <td>* Nombre</td>
+      <td><%= f.label :name, "* Nombre" %></td>
       <td><%= f.text_field :name %></td>
     </tr>
 
     <tr>
-      <td width="250">* Descripcion</td>
+      <td width="250"><%= f.label :description, "* Descripcion" %></td>
       <td width="250"><%= f.text_area :description , :style => "resize:none"%></td>
     </tr>
     
