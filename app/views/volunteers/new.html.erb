@@ -6,15 +6,15 @@
   <table>
 
     <tr>     
-      <td>* Nombre</td>
+      <td><%= f.label :name, "* Nombre" %></td>
       <td><%= f.text_field :name %></td>
     </tr>
     <tr>
-      <td>* Apellido Paterno</td>
+      <td><%= f.label :last_name, "* Apellido Paterno" %></td>
       <td><%= f.text_field :last_name %></td>
-    </tr
+    </tr>
     <tr>
-      <td>* Apellido Materno</td>
+      <td><%= f.label :second_last_name, "Apellido Materno" %></td>
       <td><%= f.text_field :second_last_name %></td>
     </tr>
 
@@ -34,11 +34,11 @@
     </tr>
 
     <tr>
-      <td>* Fecha de Nacimiento</td>
+      <td><%= f.label :date_of_birth, "* Fecha de Nacimiento" %></td>
       <td><%= f.date_select :date_of_birth,  :start_year => 1935%></td>            
     </tr>
     <tr>
-      <td>* Género</td>          
+      <td><%= f.label :genre, "* Género" %></td>          
       <td>Masculino
         <%= f.radio_button(:genre, "masculino") %>         
         Femenino
@@ -46,7 +46,7 @@
     </tr>
 
     <tr>
-      <td>* Cargo</td>
+      <td><%= f.label :position, "* Cargo" %></td>
       <td><%= f.text_field :position %></td>
     </tr>
     <tr>
