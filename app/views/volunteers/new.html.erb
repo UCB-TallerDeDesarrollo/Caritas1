@@ -19,12 +19,12 @@
     </tr>
 
     <tr>
-      <td>&nbsp;&nbsp;&nbsp;Profesion</td>
+      <td>&nbsp;&nbsp;&nbsp;Profesión</td>
       <td><%= f.text_field :profession %></td>
     </tr>
 
     <tr>
-      <td>&nbsp;&nbsp;&nbsp;Telefono</td>
+      <td>&nbsp;&nbsp;&nbsp;Teléfono</td>
       <td><%= f.text_field :phone_number %></td>
     </tr>
 
@@ -38,10 +38,10 @@
       <td><%= f.date_select :date_of_birth,  :start_year => 1935%></td>            
     </tr>
     <tr>
-      <td>* Genero</td>          
-      <td>masculino
+      <td>* Género</td>          
+      <td>Masculino
         <%= f.radio_button(:genre, "masculino") %>         
-        femenino
+        Femenino
         <%= f.radio_button(:genre, "femenino",:checked=>true) %></td>
     </tr>
 
@@ -50,7 +50,7 @@
       <td><%= f.text_field :position %></td>
     </tr>
     <tr>
-      <td>&nbsp;&nbsp;&nbsp;Email</td>
+      <td>&nbsp;&nbsp;&nbsp;E-mail</td>
       <td><%= f.text_field :email %></td>
     </tr>  
 
@@ -73,7 +73,7 @@
 
   </tr>
   <tr>
-    <td><%= "Fotografia Del Voluntario"  %> </td>
+    <td><%= "Fotografía del Voluntario"  %> </td>
     <td><%= file_column_field "volunteer",  "volunteer_photo" %></td>
   </tr>
 
@@ -93,6 +93,6 @@
 
 <% end %>
 <%else%>
-  <h1>no puede realizar esta accion, porfavor contactese</h1>
+  <h1>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h1>
 <%end%>
 
