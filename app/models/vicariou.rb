@@ -18,7 +18,7 @@ class Vicariou < ActiveRecord::Base
   validates_format_of :transport, :with => /^([a-zA-Z0-9\ ]{3,50})$/i
   validates_format_of :telephone, :with => /([0-9 ( ) - ])/
   
-  validates_uniqueness_of :name_vicariou, :message => "La Vicaria ya Existe"
+  validates_uniqueness_of :name_vicariou, :message => "La vicaria ya existe"
   
   def self.search(search)
     if search
