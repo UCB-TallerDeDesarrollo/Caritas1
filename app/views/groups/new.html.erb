@@ -12,7 +12,7 @@
       </tr>
 
       <tr>
-        <td>Responsable</td>
+        <td>&nbsp;&nbsp;&nbsp;Responsable</td>
         <td>
           <select name="group[volunteer_id]" style="width: 195px">
             <option value="-1"></option>
@@ -27,7 +27,7 @@
         </td>
       </tr>
       <tr>
-        <td>Parroquia a la que Pertenece:</td>
+        <td>&nbsp;&nbsp;&nbsp;Parroquia a la que Pertenece</td>
         <td><select name="group[parish_id]" style="width: 150px"> 
             <% if @parish  
               @parish.each do |parish| %>
@@ -38,7 +38,7 @@
             <%end%>
           </select></td>
       </tr> <tr>
-        <td><%= "Fotografia o Insignia Del Grupo"  %> </td>
+        <td><%= "&nbsp;&nbsp;&nbsp;Fotografia o Insignia del Grupo"  %> </td>
         <td><%= file_column_field "group",  "group_photo" %></td>
       </tr>
 
@@ -53,6 +53,6 @@
     </table>
   <% end %>
 <%else%>
-  <h1>no puede realizar esta accion, porfavor contactese</h1>
+  <h1>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h1>
 <%end%>
 
