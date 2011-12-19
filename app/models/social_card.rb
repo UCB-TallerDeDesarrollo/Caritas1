@@ -11,9 +11,7 @@ class SocialCard < ActiveRecord::Base
 
   
   validates_numericality_of :identity_card,:allow_blank => true
-  validates_numericality_of :phone, :allow_blank => true  , :message => " no es un numero o es incorrecto" 
   validates_length_of :phone, :maximum => 50
-  validates_numericality_of :movil, :allow_blank => true  ,:message => " no es un numero o es incorrecto"
   validates_length_of :movil, :maximum => 50
   validates_presence_of :occupation
   validates_length_of :occupation, :maximum => 50
@@ -26,10 +24,8 @@ class SocialCard < ActiveRecord::Base
   validates_length_of :reference_person, :maximum => 150 
   validates_presence_of :address_reference
   validates_length_of :address_reference, :maximum => 150 
-  
-  validates_numericality_of :phone_reference, :allow_blank => true  , :message => " no es un numero o es incorrecto" 
+   
   validates_length_of :phone_reference, :maximum => 50 
-  validates_numericality_of :movil_reference, :allow_blank => true  ,:message => "  no es un numero o es incorrecto" 
   validates_length_of :movil_reference, :maximum => 50 
   validates_presence_of :occupation_reference
   validates_length_of :occupation_reference, :maximum => 50 
