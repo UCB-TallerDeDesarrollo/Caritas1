@@ -22,8 +22,8 @@
         <% @social_works.each do |social_work| %>
           <tr>
             <td><%=link_to (h social_work.name), :controller => "social_works", :action => "show_public", :id =>social_work %></td>
-            <td><%=h social_work.responsible %></td>
-            <td><%=h social_work.location %></td>
+            <td><p class="word_wrap"><%=h social_work.responsible %></p></td>
+            <td><p class="word_wrap"><%=h social_work.location %></p></td>
           </tr>
         <% end %>
   </tr>
