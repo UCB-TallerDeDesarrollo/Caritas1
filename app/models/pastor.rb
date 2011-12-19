@@ -7,6 +7,11 @@ class Pastor < ActiveRecord::Base
   validates_presence_of :primary_last_name
   validates_presence_of :date_of_birth
   
+  validates_length_of :name, :maximum => 50 
+  validates_length_of :primary_last_name, :maximum => 50
+  validates_length_of :second_last_name, :maximum => 50
+  validates_length_of :phone_number, :maximum => 50
+  validates_length_of :cellphone_number, :maximum => 50
   #deco prueba
     #put class methods here
   def self.search(search)
