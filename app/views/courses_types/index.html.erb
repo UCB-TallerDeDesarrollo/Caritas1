@@ -29,7 +29,7 @@
             if courses_type.id != 0 %>
             <tr>
               <td><%= link_to courses_type.name, courses_type %></td>
-              <td width="250"><%=h courses_type.description %></td>
+              <td width="250"><%= "#{truncate(courses_type.description, :length => 150)}" %></td>
                            
               <td><%= link_to 'Editar', edit_courses_type_url(courses_type) %></td>
               <td align="center">
