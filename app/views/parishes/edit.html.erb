@@ -5,11 +5,11 @@
   <%= p.error_messages %>
     <table>
       <tr>
-        <td>*Nombre Parroquia</td>
+        <td><%= p.label :parish_name, "*Nombre Parroquia" %></td>
         <td><%= p.text_field :parish_name %></td>
       </tr>
       <tr>
-        <td>*Ubicacion</td>
+        <td><%= p.label :ubication, "*Ubicacion" %></td>
         <td><%= p.text_field :ubication %></td>
       </tr>
       <tr>
@@ -28,7 +28,7 @@
         <td><%= p.text_field :transport %></td>
       </tr>
       <tr>
-        <td>*Telefono</td>
+        <td><%= p.label :telephone, "*Telefono Parroquia" %></td>
         <td><%= p.text_field :telephone %></td>
       </tr>
 
