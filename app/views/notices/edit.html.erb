@@ -6,12 +6,12 @@
   <table>
     <tr>  
       <td>* <%= "Título" %></td>
-      <td><%= f.text_field :title %></td>
+      <td><p class="word_wrap"><%= f.text_field :title %></p></p></td>
     </tr>
     
     <tr>
       <td><%= "Descripción"  %> </td>
-      <td><%= f.text_area :description, :size => "60x10", :style => "resize:none" %></td>
+      <td><p class="word_wrap"><%= f.text_area :description, :size => "60x10", :style => "resize:none" %></p></td>
     </tr>
     
     <tr>  
@@ -27,7 +27,7 @@
 
     <tr>
       <td>* <%= "Tipo Noticia" %> </td>
-      <td><%= f.select  :notice_type, Notice::NOTICES_TYPES %></td>
+      <td><p class="word_wrap"><%= f.select  :notice_type, Notice::NOTICES_TYPES %></p></td>
     </tr>
 
     <tr>

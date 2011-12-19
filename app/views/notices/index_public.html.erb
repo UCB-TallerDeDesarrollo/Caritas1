@@ -25,7 +25,7 @@
   
       <% @notices.each do |notice| %>
       <tr>
-        <td><%=link_to notice.title, :controller => "notices", :action => "show_public", :id =>notice %></td>
+        <td><p class="word_wrap"><%=link_to notice.title, :controller => "notices", :action => "show_public", :id =>notice %></p></td>
         <td><%=h notice.show_if(notice.is_published) %></td>
         <td><%=h notice.last_date %></td>
       </tr>
