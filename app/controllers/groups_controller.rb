@@ -45,7 +45,9 @@ class GroupsController < ApplicationController
   # POST /groups.xml
   def create
     @group = Group.new(params[:group])
-    
+    @parish = Parish.find(:all)
+    @volunteers = Volunteer.find(:all)
+
     respond_to do |format|
       if @group.save
         format.html { redirect_to(@group, :notice => 'El grupo se creo correctamente.') }

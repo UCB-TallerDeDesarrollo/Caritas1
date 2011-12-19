@@ -11,7 +11,7 @@ class Group < ActiveRecord::Base
   file_column :group_photo
   
   #put validates here
-  validates_presence_of :name, :message => ' no puede estar vacio'    
+  validates_presence_of :name  
   validates_presence_of :parish_id
   
   validates_length_of :name, :maximum => 50
