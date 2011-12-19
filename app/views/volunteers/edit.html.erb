@@ -19,11 +19,11 @@
       <td><%= f.text_field :second_last_name %></td>
     </tr>
     <tr>
-      <td>&nbsp;&nbsp;&nbsp;Profesion</td>
+      <td>&nbsp;&nbsp;&nbsp;Profesión</td>
       <td><%= f.text_field :profession %></td>
     </tr>
     <tr>
-      <td>&nbsp;&nbsp;&nbsp;Telefono</td>
+      <td>&nbsp;&nbsp;&nbsp;Teléfono</td>
       <td><%= f.text_field :phone_number %></td>
     </tr>
     <tr>
@@ -35,10 +35,10 @@
       <td><%= f.date_select :date_of_birth ,  :start_year => 1935%></td>
     </tr>
     <tr>
-        <td>* Genero</td>      
-        <td>masculino
+        <td>* Género</td>      
+        <td>Masculino
           <%= f.radio_button(:genre, "masculino") %>         
-          femenino
+          Femenino
           <%= f.radio_button(:genre, "femenino") %></td>  
       </tr>
     <tr>
@@ -63,7 +63,7 @@
         </td>
       </tr>
       <tr>  
-      <td><%= "Fotografia Del Voluntario" %></td>
+      <td><%= "Fotografía del Voluntario" %></td>
       <% if @volunteer.volunteer_photo %>
       <td><%=  image_tag url_for_file_column("volunteer", "volunteer_photo"), :size=>"300x200" %>
       <% else %>
