@@ -13,6 +13,11 @@ class Vicariou < ActiveRecord::Base
   validates_length_of :telephone, :maximum => 30
   #validates_numericality_of :telephone
   
+  validates_format_of :parish_name, :with => /^([a-zA-Z\ ]{3,50})$/i
+  validates_format_of :ubication, :with => /^([a-zA-Z\ ]{3,50})$/i
+  validates_format_of :transport, :with => /^([a-zA-Z0-9\ ]{3,50})$/i
+  validates_format_of :telephone, :with => /([0-9 ( ) - ])/
+  
   validates_uniqueness_of :name_vicariou, :message => "La vicaria ya existe"
   
   def self.search(search)
