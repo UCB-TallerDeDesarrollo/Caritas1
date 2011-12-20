@@ -36,7 +36,7 @@
                <% if courses_type.course_file %>
                   <%= link_to 'Descargar archivo', url_for_file_column(courses_type, "course_file") %>
                 <% else %>
-                  <% "Sin adjunto"   %>
+                  <%= "Sin adjunto"   %>
                 <%end%>
               </td>
               <td><%= link_to 'Eliminar', courses_type, :confirm => 'Esta seguro que desea eliminar el curso de formacion?', :method => :delete %></td>
