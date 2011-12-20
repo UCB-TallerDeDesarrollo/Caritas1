@@ -18,11 +18,11 @@ class Volunteer < ActiveRecord::Base
   validates_length_of :name, :within => 0..50
   validates_length_of :last_name, :within => 0..50
   validates_length_of :second_last_name, :within => 0..50
-  validates_length_of :profession, :within => 0..50
-  validates_length_of :phone_number, :within => 0..50
-  validates_length_of :movil, :within => 0..50
+  validates_length_of :profession, :within => 0..50, :allow_blank => true 
+  validates_length_of :phone_number, :within => 0..50, :allow_blank => true  
+  validates_length_of :movil, :within => 0..50, :allow_blank => true  
   validates_length_of :position, :within => 0..50
-  validates_length_of :email, :within => 0..150
+  validates_length_of :email, :within => 0..150, :allow_blank => true 
   
   validates_file_format_of :volunteer_photo, :in => ["gif", "jpg", "png"]
   validates_filesize_of :volunteer_photo, :in => 1.kilobytes..3000.kilobytes

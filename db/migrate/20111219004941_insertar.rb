@@ -29,7 +29,7 @@ class Insertar < ActiveRecord::Migration
     execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Jesus E.','Osorno','Gil','10/10/2010',TRUE);"
     execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Jose','Senteno',' ','10/10/2010',TRUE);"
     execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Marco','Verberckt',' ','10/10/2010',TRUE);"
-    execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Enrrique','Zabala',' ','10/10/2010',TRUE);"
+    execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Enrique','Zabala',' ','10/10/2010',TRUE);"
     execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Jaques','Delor',' ','10/10/2010',TRUE);"
     execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Jose','Gallo',' ','10/10/2010',TRUE);"
     execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Evar','Fernandez',' ','10/10/2010',TRUE);"
@@ -52,7 +52,7 @@ class Insertar < ActiveRecord::Migration
     execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Felix','Parra',' ','10/10/2010',TRUE);"
     execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Marcial','Sanchez',' ','10/10/2010',TRUE);"
     execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Virgilio','Anturiano',' ','10/10/2010',TRUE);"
-    execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Enrrique','Bustamante',' ','10/10/2010',TRUE);"
+    execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Enrique','Bustamante',' ','10/10/2010',TRUE);"
     execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Lucio','Arnez',' ','10/10/2010',TRUE);"
     execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Antonio','Gil','Aguilera','10/10/2010',TRUE);"
     execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Rodolfo','Benavente',' ','10/10/2010',TRUE);"
@@ -68,7 +68,7 @@ class Insertar < ActiveRecord::Migration
     execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Gregorio','Di Marchi',' ','10/10/2010',TRUE);"
     execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Mauro','Palamini',' ','10/10/2010',TRUE);"
     execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Misioneras De Jesus','V y Victima',' ','10/10/2010',TRUE);"
-    execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Esperandio','Ravasio',' ','10/10/2010',TRUE);"
+    execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Esperandio','Ravasio',' ','10/10/2010',TRUE);"    
   end
 
   def self.down

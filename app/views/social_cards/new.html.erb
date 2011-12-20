@@ -27,7 +27,7 @@
 <h2>Informacion Personal</h2>
 <table  border="0">
   <tr>
-    <td width="15%"><p>*Nombre</p></td>
+    <td width="15%"><p><%= f.label :name, "*Nombre" %></p></td>
     <td width="35%"><%= f.text_field :name %></td>
     <td width="15%">Estado Civil</td>
     <td width="35%"><select name="social_card[marital_status]">
@@ -40,7 +40,7 @@
   <tr>
      <td width="15%">CI</td>
     <td width="35%"><%= f.text_field :identity_card %></td>
-    <td width="15%">*Sexo</td>
+    <td width="15%"><%= f.label :gender, "*Sexo" %></td>
     <td width="35%">masculino
       <%= f.radio_button(:gender, "masculino") %>
       femenino
@@ -49,11 +49,11 @@
   <tr>
     <td>Fecha De Nacimiento</td>
     <td><%= f.date_select :birthday, :start_year => 1935 %></td>
-    <td >*Lugar De Nacimiento</td>
+    <td ><%= f.label :birthday_location, "*Lugar De Nacimiento" %></td>
     <td ><%= f.text_field :birthday_location %></td>
   </tr>
   <tr>
-    <td>*Domicilio</td>
+    <td><%= f.label :address, "*Domicilio" %></td>
     <td><%= f.text_field :address %></td>
     <td >Referencia De Ubicacion</td>
     <td ><%= f.text_field :location_reference %></td>
@@ -67,11 +67,11 @@
   <tr>
     <td>Grado Escolar</td>
     <td><%= f.text_field :grade_school %></td>
-    <td >*Ocupacion</td>
+    <td ><%= f.label :occupation, "*Ocupacion" %></td>
     <td ><%= f.text_field :occupation %></td>
   </tr>
   <tr>
-    <td>*Total De Miembros En la Familia </td>
+    <td><%= f.label :family_members, "*Total De Miembros En la Familia" %></td>
     <td><%= f.text_field :family_members %></td>
     <td >Parroquia A la Que Pertenece</td>
     <td ><%= f.text_field :parish_belongs %></td>
@@ -89,13 +89,13 @@
  <h2>Informacion De Referencia</h2>
   <table  border="0">
   <tr>
-    <td width="21%">*Persona De Referencia</td>
+    <td width="21%"><%= f.label :reference_person, "*Persona De Referencia" %></td>
     <td><%= f.text_field :reference_person %></td>
     <td>Edad</td>
     <td><%= f.text_field :age_reference %></td>
   </tr>
   <tr>
-    <td>*Domicilio </td>
+    <td><%= f.label :address_reference, "*Domicilio" %></td>
     <td colspan="3"><%= f.text_field :address_reference %></td>
   </tr>
   <tr>
@@ -105,7 +105,7 @@
     <td width="29%"><%= f.text_field :movil_reference %></td>
   </tr>
   <tr>
-    <td>*Ocupacion</td>
+    <td><%= f.label :occupation_reference, "*Ocupacion" %></td>
     <td colspan="3"><%= f.text_field :occupation_reference %></td>
   </tr>
 </table>
