@@ -3,7 +3,7 @@ class SocialCardsController < ApplicationController
   # GET /social_cards.xml
   def index
 
-    @social_cards = SocialCard.find_all_by_state(true)
+    @social_cards = SocialCard.search(params[:search])
     @parishes = Parish.find(:all)
 
     respond_to do |format|
