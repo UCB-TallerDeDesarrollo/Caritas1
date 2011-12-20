@@ -29,7 +29,7 @@ class Volunteer < ActiveRecord::Base
   #put class methods here
   def self.search(search,group)
     if search       
-          find(:all, :conditions => ['LOWER(name) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(second_last_name) LIKE ? OR LOWER(profession) LIKE ?', search.downcase,search.downcase,search.downcase,search.downcase])           
+          find(:all, :conditions => ['LOWER(name) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(second_last_name) LIKE ? OR LOWER(profession) LIKE ?', "%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%"])           
     else     
       if group
           find(:all, :conditions => ['group_id = ?', "#{group}"])   

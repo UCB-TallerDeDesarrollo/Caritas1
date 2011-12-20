@@ -22,7 +22,7 @@ class Group < ActiveRecord::Base
   #put class methods here
   def self.search(search)
     if search
-      find(:all, :conditions => ['LOWER(name) LIKE ?', search.downcase])
+      find(:all, :conditions => ['LOWER(name) LIKE ?', "%s#{earch.downcase}%"])
     else
       find(:all)
     end

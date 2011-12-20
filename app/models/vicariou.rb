@@ -16,7 +16,7 @@ class Vicariou < ActiveRecord::Base
   
   def self.search(search)
     if search
-      find(:all, :conditions => ['LOWER(name_vicariou) LIKE ? OR LOWER(ubication) LIKE ? OR LOWER(transport) LIKE ?', search.downcase,search.downcase,search.downcase])
+      find(:all, :conditions => ['LOWER(name_vicariou) LIKE ? OR LOWER(ubication) LIKE ? OR LOWER(transport) LIKE ?', "%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%"])
     else
       find(:all)
     end
