@@ -37,7 +37,7 @@ class SocialCard < ActiveRecord::Base
   validates_filesize_of :social_card_photo, :in => 1.kilobytes..3000.kilobytes
   def self.search(search)
     if search
-      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+      find(:all, :conditions => ['LOWER(name) LIKE ?', search.downcase])
     else
       find(:all)
     end

@@ -14,7 +14,7 @@ class Donation < ActiveRecord::Base
   #put class methods here
   def self.search(search,campaing)
     if search       
-          find(:all, :conditions => ['name LIKE ? OR last_name LIKE ? OR second_last_name LIKE ? OR profession LIKE ?', "%#{search}%","%#{search}%","%#{search}%","%#{search}%"])           
+          find(:all, :conditions => ['LOWER(name) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(second_last_name) LIKE ? OR LOWER(profession) LIKE ?', search.downcase,search.downcase,search.downcase,search.downcase])           
     else     
       if campaing
           find(:all, :conditions => ['campaing_id = ?', "#{campaing}"])   
