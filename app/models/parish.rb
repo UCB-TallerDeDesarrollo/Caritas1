@@ -40,5 +40,10 @@ class Parish < ActiveRecord::Base
     self.workshop = Workshop.new
     self.save
   end
+  
+  def create_workshop
+    self.workshop = Workshop.new
+    self.save
+  end
 
 end

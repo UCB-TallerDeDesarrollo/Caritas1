@@ -12,5 +12,8 @@ nbproject/*
 nbproject/**/*
 coverage/*
 public/system/**/*
+public/course_types
+public/notices
+public/volunteers
 config/database.yml
 .idea

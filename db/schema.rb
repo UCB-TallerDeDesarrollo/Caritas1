@@ -175,8 +175,8 @@ ActiveRecord::Schema.define(:version => 20111220021353) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "what_kind"
-    t.integer  "parish_id"
     t.boolean  "state",                    :default => true
+    t.integer  "parish_id"
     t.string   "social_card_photo"
     t.string   "phone"
     t.string   "movil"
