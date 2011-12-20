@@ -1,6 +1,6 @@
 <%if current_user%>
 
-  <h1>Lista de Fichas Sociales</h1>
+  <h1>Fichas Sociales</h1>
 <p>
   <% form_tag social_cards_path, :method => 'get' do %>
     Nombre <%= text_field_tag :search, params[:search] %>
@@ -44,6 +44,6 @@
 
   <br />
 <%else%>
-  <h1>no puede realizar esta accion, porfavor contactese</h1>
+  <h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
 <%end%>
 

@@ -15,7 +15,7 @@
       <td><%= f.text_field :last_name %></td>
     </tr>
     <tr>
-      <td><%= f.label :second_last_name, "Apellido Materno" %></td>
+      <td>&nbsp;&nbsp;&nbsp;<%= f.label :second_last_name, "Apellido Materno" %></td>
       <td><%= f.text_field :second_last_name %></td>
     </tr>
     <tr>
@@ -63,7 +63,7 @@
         </td>
       </tr>
       <tr>  
-      <td><%= "Fotografía del Voluntario" %></td>
+      <td>&nbsp;&nbsp;&nbsp;<%= "Fotografía del Voluntario" %></td>
       <% if @volunteer.volunteer_photo %>
       <td><%=  image_tag url_for_file_column("volunteer", "volunteer_photo"), :size=>"300x200" %>
       <% else %>

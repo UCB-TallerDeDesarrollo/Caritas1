@@ -80,7 +80,7 @@
 
   </tr>
 <tr>  
-      <td><%= "Fotografía del Voluntario" %></td>
+      <td><b><%= "Fotografía del Voluntario" %></b></td>
       <% if @volunteer.volunteer_photo %>
       <td><%=  image_tag url_for_file_column("volunteer", "volunteer_photo"), :size=>"300x200" %></td>
       <% else %>
