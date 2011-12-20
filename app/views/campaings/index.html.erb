@@ -1,8 +1,8 @@
-<h1>Campaña</h1>
+<h1>Campañas</h1>
 
 <p>
   <% form_tag campaings_path, :method => 'get' do %>
-    Nombre: <%= text_field_tag :search, params[:search] %>
+    Nombre <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Buscar", :name => nil %>
   <% end %>
 </p>
@@ -45,7 +45,7 @@
         <tr id = 'head-table'>
           <th>Nombre</th>
           <th>Lugar</th>
-          <th>Fecha de finalizacion</th>
+          <th>Fecha de Finalización</th>
           <th>Responsable</th>
           <% if current_user %>
             <th colspan="4">Acciones</th>

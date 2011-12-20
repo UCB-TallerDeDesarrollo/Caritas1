@@ -35,7 +35,7 @@
         <td><%=h notice.last_date %></td>
         <% if current_user %>
               <td><%= link_to 'Editar', edit_notice_path(notice) %></td>
-              <td><%= link_to 'Eliminar', notice, :confirm => '¿Está seguro?', :method => :delete %></td>
+              <td><%= link_to 'Eliminar', notice, :confirm => '¿Está seguro que desea eliminar la noticia?', :method => :delete %></td>
         <%end%>
       </tr>
       <% end %>
