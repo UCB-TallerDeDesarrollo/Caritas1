@@ -22,16 +22,21 @@
 </table>
 <br />
 <h2>Informacion Personal</h2>
-<table width="100%" border="0">
+<table border="0">
   <tr>
     <td width="15%"><p><%= f.label :name, "*Nombre" %></p></td>
     <td width="35%"><%= f.text_field :name %></td>
     <td width="15%">*Estado Civil</td>
-    <td width="35%"><%= f.text_field :marital_status %></td>
+    <td width="35%"><select name="social_card[marital_status]">
+         <option value="">Escoja Una Opcion</option>
+        <option value="Soltero/a" <%='selected' if @social_card.marital_status == 'Soltero/a' %>> Soltero/a</option>
+        <option value="Casado/a" <%='selected' if @social_card.marital_status == 'Casado/a' %>>>Casado/a</option>
+        <option value="Viudo/a" <%='selected' if @social_card.marital_status == 'Viudo/a' %>>>Viudo/a</option>
+      </select></td>
    </tr>
   <tr>
-     <td width="15%">&nbsp;</td>
-    <td width="35%">&nbsp;</td>
+     <td width="15%">CI</td>
+    <td width="35%"><%= f.text_field :identity_card %></td>
     <td width="15%"><%= f.label :gender, "*Sexo" %></td>
     <td width="35%">masculino
       <%= f.radio_button(:gender, "masculino") %>
@@ -41,18 +46,14 @@
   <tr>
     <td>Fecha De Nacimiento</td>
     <td><%= f.date_select :birthday,:start_year => 1935 %></td>
-    <td >*Lugar De Nacimiento</td>
+    <td >Lugar De Nacimiento</td>
     <td ><%= f.text_field :birthday_location %></td>
   </tr>
   <tr>
-    <td>*CI</td>
-    <td><%= f.text_field :identity_card %></td>
-    <td ><%= f.label :address, "*Domicilio" %></td>
-    <td ><%= f.text_field :address %></td>
-  </tr>
-  <tr>
-    <td>Referencia De Ubicacion</td>
-    <td colspan="5"><%= f.text_field :location_reference %></td>
+    <td><%= f.label :address, "*Domicilio" %></td>
+    <td><%= f.text_field :address %></td>
+    <td >Referencia De Ubicacion</td>
+    <td ><%= f.text_field :location_reference %></td>
   </tr>
   <tr>
     <td>Telefono Fijo</td>
@@ -95,7 +96,7 @@
     <td colspan="3"><%= f.text_field :address_reference %></td>
   </tr>
   <tr>
-    <td>*Telefono</td>
+    <td>Telefono</td>
     <td width="29%"><%= f.text_field :phone_reference %></td>
     <td width="21%">Celular</td>
     <td width="29%"><%= f.text_field :movil_reference %></td>
@@ -107,7 +108,7 @@
 </table>
 <br />
   <h2>Otros Datos</h2>
-<table width="100%" border="0">
+<table  border="0">
   <tr>
     <td width="21%">Caso </td>
     <td width="79%"> <%= f.radio_button(:type_of_case, "Nuevo") %>
