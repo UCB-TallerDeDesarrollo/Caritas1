@@ -1,5 +1,5 @@
 <%if current_user%>
-  <h1>Editar párroco</h1>
+  <h1>Editar Párroco</h1>
 
   <% form_for(@pastor) do |f| %>
     <%= f.error_messages %>
@@ -12,7 +12,7 @@
       </tr>
 
       <tr>
-        <td><%= f.label :primary_last_name, "* Apellido paterno" %></td>
+        <td><%= f.label :primary_last_name, "* Apellido Paterno" %></td>
         <td>
           <%= f.text_field :primary_last_name %>
         </td>
@@ -20,7 +20,7 @@
 
 
       <tr>
-        <td>Apellido materno</td>
+        <td>&nbsp;&nbsp;&nbsp;Apellido Materno</td>
         <td>
           <%= f.text_field :second_last_name %>
         </td>
@@ -30,14 +30,14 @@
         <td><%= f.date_select :date_of_birth ,  :start_year => 1935%></td>
       </tr>
       <tr>
-        <td>Teléfono</td>
+        <td>&nbsp;&nbsp;&nbsp;Teléfono</td>
         <td>
           <%= f.text_field :phone_number, :maxlength => 50, :size =>30 %>
         </td>
       </tr>      
 
       <tr>
-        <td>Celular</td>
+        <td>&nbsp;&nbsp;&nbsp;Celular</td>
         <td>
           <%= f.text_field :cellphone_number, :maxlength => 50, :size =>30 %>
         </td>
