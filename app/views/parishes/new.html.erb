@@ -24,7 +24,7 @@
     <%end%>
 </select></td>
       </tr>
-        <td>&nbsp;&nbsp;Transporte</td>
+        <td>&nbsp;&nbsp;&nbsp;Transporte</td>
         <td><%= p.text_field :transport %></td>
       </tr>
       <tr>
@@ -32,8 +32,15 @@
         <td><%= p.text_field :telephone %></td>
       </tr>
 
+      
       <tr>
-        <td>&nbsp;&nbsp;Teléfono del Contacto</td>
+        <td>&nbsp;&nbsp;&nbsp;Contacto</td>
+        <td><%= p.text_field :contact %></td>
+      </tr>
+
+ 
+      <tr>
+        <td>&nbsp;&nbsp;&nbsp;Teléfono del Contacto</td>
         <td><%= p.text_field :contact_telephone %></td>
       </tr>
 
@@ -54,7 +61,7 @@
 </select></td>
       </tr>
       <tr>
-      <td><%= "&nbsp;&nbsp;Fotografía de la Parroquia"  %> </td>
+      <td><%= "&nbsp;&nbsp;&nbsp;Fotografía de la Parroquia"  %> </td>
       <td><%= file_column_field "parish",  "parish_photo" %></td>
     </tr>
       <tr>
