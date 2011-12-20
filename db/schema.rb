@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111219205510) do
+ActiveRecord::Schema.define(:version => 20111220021353) do
 
   create_table "assistance_lists", :force => true do |t|
     t.datetime "created_at"
@@ -175,8 +175,8 @@ ActiveRecord::Schema.define(:version => 20111219205510) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "what_kind"
-    t.boolean  "state",                    :default => true
     t.integer  "parish_id"
+    t.boolean  "state",                    :default => true
     t.string   "social_card_photo"
     t.string   "phone"
     t.string   "movil"
