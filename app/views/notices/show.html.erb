@@ -11,7 +11,7 @@
     <tr>  
       <td><%= "Imagen" %></td>
       <% if @notice.notice_photo %>
-        <td align="center" ><%=  image_tag url_for_file_column("notice", "notice_photo"), :size=>"300x200" %></td>
+        <td align="center" ><%=  image_tag @notice.notice_photo.url%></td>
       <% else %>
       <td align="center"><%=  image_tag "NoticeDefault.png", :size=>"300x200" %></td>
       <% end   %>
