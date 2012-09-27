@@ -5,7 +5,8 @@
       <center><H2><%= @notice.title%></h2></center>
       <br>
           <% if @notice.notice_photo %>
-          <%=  image_tag url_for_file_column("notice", "notice_photo"), :size=>"500x350" %>
+          <%=  image_tag @notice.notice_photo.url %>
+        <td>
           <% else %>
           <%=  image_tag "NoticeDefault.png", :size=>"500x350" %>
           <% end   %>
