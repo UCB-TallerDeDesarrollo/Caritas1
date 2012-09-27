@@ -8,23 +8,25 @@ class Group < ActiveRecord::Base
   has_one :parish
   
   #put active record callbacks here
-  file_column :group_photo
-  
+  has_attached_file :group_photo,
+                    :url  => "/assets/products/:id/:style/:basename.:extension",
+                    :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
+
   #put validates here
   validates_presence_of :name  
   validates_presence_of :parish_id
   
   validates_length_of :name, :maximum => 50
 
-  validates_file_format_of :group_photo, :in => ["gif", "jpg", "png"]
-  validates_filesize_of :group_photo, :in => 1.kilobytes..3000.kilobytes
+  validates_attachment_size :group_photo, :less_than => 3.megabytes
+  validates_attachment_content_type :group_photo, :content_type => ['image/jpeg', 'image/png', 'image/gif']
 
   #put class methods here
   def self.search(search)
     if search
-      find(:all, :conditions => ['LOWER(name) LIKE ?', "%s#{earch.downcase}%"])
+      find(:all, :conditions => ['LOWER(name) LIKE ?', "%#{search.downcase}%"], :order => "name")
     else
-      find(:all)
+      find(:all, :order => "name")
     end
   end
 

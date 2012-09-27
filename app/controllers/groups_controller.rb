@@ -25,8 +25,8 @@ class GroupsController < ApplicationController
   # GET /groups/new.xml
   def new
     @group = Group.new
-    @parish = Parish.find(:all)
-    @volunteers = Volunteer.all(:select => "id,name,last_name,second_last_name",:conditions=> ["id not in (select volunteer_id from groups)"])
+    @parish = Parish.find(:all, :order => "parish_name")
+    @volunteers = Volunteer.all(:select => "id,name,last_name,second_last_name",:conditions=> ["id not in (select volunteer_id from groups)"], :order => "name")
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,8 +37,8 @@ class GroupsController < ApplicationController
   # GET /groups/1/edit
   def edit
     @group = Group.find(params[:id])
-    @parish = Parish.find(:all)
-    @volunteers = Volunteer.all(:select => "id,name,last_name,second_last_name",:conditions=> ["id not in (select volunteer_id from groups) or id= ?","#{@group.volunteer_id}"])
+    @parish = Parish.find(:all, :order => "parish_name")
+    @volunteers = Volunteer.all(:select => "id,name,last_name,second_last_name",:conditions=> ["id not in (select volunteer_id from groups) or id= ?","#{@group.volunteer_id}"], :order => "name")
   end
 
   # POST /groups
