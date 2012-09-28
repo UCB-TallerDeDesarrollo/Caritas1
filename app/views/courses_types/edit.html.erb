@@ -17,8 +17,14 @@
     </tr>
     
     <tr>
+
       <td>&nbsp;&nbsp;&nbsp;Archivo adjunto</td>
-      <td><%=  file_column_field "courses_type",  "course_file" %></td>
+      <% if @courses_type.course_file %>
+          <td><%=  image_tag @courses_type.course_file.url, :size =>"300x200" %></td>
+          <% else %>
+          <td>No esta disponible la fotografia</td>
+          <% end %><br>
+      <td><%=  file_field 'courses_type',  'course_file' %></td>
     </tr>
 
 

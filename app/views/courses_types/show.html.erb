@@ -12,11 +12,15 @@
     <td width="250"><b>Descripción</b></td>
     <td width="250"><%=h @courses_type.description %></td>
   </tr>
+  <tr>
+    <td><b>Avatar</b></td>
+    <td><%= image_tag @courses_type.course_file.url, :size => "300x200" %></td>
+  </tr>
 
 
   <tr align="right">
     <td colspan="2">
-      <%= link_to 'Editar', edit_courses_type_path(@group) %> |
+      <%= link_to 'Editar', edit_courses_type_path(@courses_type) %> |
       <%= link_to 'Volver', courses_types_path %>
     </td>
   </tr>
