@@ -46,7 +46,7 @@
         <td>
           <select name="parish[pastor_id]" style="width: 195px">
             <% @pastor.each do |pastor| %>
-              <option value="<%=pastor.id%>" <%='selected' if pastor.id == @parish.pastor_id %>>
+              <option value="<%=pastor.id%>" <%='selected' if pastor.id == @parish.pastor_id%>>
                <%=pastor.to_s%>
               </option>
             <%end%>

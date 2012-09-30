@@ -55,7 +55,7 @@ class ParishesController < ApplicationController
     @parish = Parish.find(params[:id])
     @vicariou = Vicariou.all(:select => "id,name_vicariou",:conditions=>["state=TRUE"])
     @pastor = Pastor.all(:all, :order => "name")
-    #:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious) or id= ?","#{@parish.pastor_id}"],
+    ##:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious) or id= ?","#{@parish.pastor_id}"],
   end
 
   # POST /parishes

@@ -38,6 +38,7 @@ class Parish < ActiveRecord::Base
   
   def to_s
     "#{parish_name}"
+    #para entrar
   end
   
   def after_create
