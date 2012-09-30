@@ -22,6 +22,19 @@ class Pastor < ActiveRecord::Base
     end
   end
 
+  
+ def self.order(order)
+    if order == "name"
+      find(:all, :order => "name ASC")
+    elsif order =="Apellido Paterno"
+    	    find(:all, :order => "primary_last_name ASC")
+     elsif order =="Apellido Materno"
+     	   find(:all, :order => "second_last_name ASC")
+   else
+	find(:all)	   
+      end
+  end
+  
   #put object methods here
   def close()
     if params(:must_close)

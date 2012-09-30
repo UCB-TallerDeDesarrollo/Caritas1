@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(:version => 20120927003250) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "course_file"
     t.string   "course_file_file_name"
     t.string   "course_file_content_type"
     t.integer  "course_file_file_size"
