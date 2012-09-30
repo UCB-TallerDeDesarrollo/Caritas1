@@ -36,6 +36,10 @@ class Parish < ActiveRecord::Base
     end
   end
   
+  def to_s
+    "#{parish_name}"
+  end
+  
   def after_create
     self.workshop = Workshop.new
     self.save

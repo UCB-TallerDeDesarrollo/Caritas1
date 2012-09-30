@@ -47,7 +47,7 @@
           <select name="parish[pastor_id]" style="width: 195px">
             <% @pastor.each do |pastor| %>
               <option value="<%=pastor.id%>" <%='selected' if pastor.id == @parish.pastor_id %>>
-               <%=pastor.name+" "+pastor.primary_last_name+" "+pastor.second_last_name%>
+               <%=pastor.to_s%>
               </option>
             <%end%>
           </select>
