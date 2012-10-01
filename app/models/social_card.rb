@@ -31,10 +31,14 @@ class SocialCard < ActiveRecord::Base
   validates_length_of :occupation_reference, :maximum => 50 
   
   
-  file_column :social_card_photo
+  has_attached_file :social_card_photo,
+                    :url  => "/assets/products/:id/:style/:basename.:extension",
+                    :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
   
-  validates_file_format_of :social_card_photo, :in => ["gif", "jpg", "png"]
-  validates_filesize_of :social_card_photo, :in => 1.kilobytes..3000.kilobytes
+  validates_attachment_content_type :social_card_photo, :content_type => ['image/jpeg', 'image/png', 'image/gif']
+  validates_attachment_size :social_card_photo, :less_than => 3.megabytes
+  
+  
   def self.search(search)
     if search
       find(:all, :conditions => ['LOWER(name) LIKE ?', "%#{search.downcase}%"])

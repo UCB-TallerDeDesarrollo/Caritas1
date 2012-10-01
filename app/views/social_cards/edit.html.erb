@@ -130,12 +130,12 @@
   <tr>  
       <td><%= "Fotografía de la Persona" %></td>
       <% if @social_card.social_card_photo %>
-      <td><%=  image_tag url_for_file_column("social_card", "social_card_photo"), :size=>"300x200" %>
+      <td><%=  image_tag  @social_card.social_card_photo.url, :size=>"300x200" %>
       <% else %>
       <td>No está disponible la fotografía
       <% end %>
       <br>
-      <%= file_column_field "social_card", "social_card_photo"%> </td>
+      <%= file_field 'social_card', 'social_card_photo'%> </td>
     </tr>
   <tr>
         <td>*  Estos campos son obligatorios</td>
