@@ -53,7 +53,7 @@ class ParishesController < ApplicationController
   # GET /parishes/1/edit
   def edit
     @parish = Parish.find(params[:id])
-    @vicariou = Vicariou.all(:select => "id,name_vicariou",:conditions=>["state=TRUE"])
+    @vicariou = Vicariou.find(:all, :order => "name_vicariou ASC",:conditions=>["state=TRUE"])
     @pastor = Pastor.all(:all, :order => "name")
     ##:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious) or id= ?","#{@parish.pastor_id}"],
   end

@@ -10,6 +10,9 @@ class VicariousController < ApplicationController
     end
   end
   
+  def order
+  	  @vicariou = Vicariou.find(:all, :order => "name_vicariou")
+  end
   
   def show
     @vicariou = Vicariou.find(params[:id])

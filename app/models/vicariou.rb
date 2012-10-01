@@ -21,5 +21,9 @@ class Vicariou < ActiveRecord::Base
       find(:all)
     end
   end
+  
+  def to_s
+    "#{name_vicariou}"
+  end
 
 end

@@ -18,7 +18,7 @@
         <td><select name="parish[vicariou_id]" style="width: 150px">
             <% @vicariou.each do |vicariou| %>
               <option value="<%=vicariou.id%>" <%='selected' if vicariou.id == @parish.vicariou_id %>>
-               <%=vicariou.name_vicariou%>
+               <%=vicariou.to_s%>
               </option>
             <%end%>
           </select></td>
