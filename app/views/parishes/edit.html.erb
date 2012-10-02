@@ -60,13 +60,13 @@
       
       <tr>  
       <td><%= "&nbsp;&nbsp;&nbsp;Fotografía de la Parroquia" %></td>
-      <% if @parish.parish_photo %>
-      <td><%=  image_tag url_for_file_column("parish", "parish_photo"), :size=>"300x200" %>
+      <% if @parish.parish_photo?nil %>
+      <td><%=  image_tag @parish.parish_photo.url, :size=>"300x200" %>
       <% else %>
       <td>No está disponible la fotografía
       <% end %>
       <br>
-      <%= file_column_field "parish", "parish_photo"%> </td>
+      <%= file_field "parish", "parish_photo"%> </td>
     </tr>
       
       <tr>

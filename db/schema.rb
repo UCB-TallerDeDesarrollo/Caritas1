@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120927003250) do
+ActiveRecord::Schema.define(:version => 20121002015007) do
 
   create_table "assistance_lists", :force => true do |t|
     t.datetime "created_at"
@@ -60,10 +60,7 @@ ActiveRecord::Schema.define(:version => 20120927003250) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "course_file_file_name"
-    t.string   "course_file_content_type"
-    t.integer  "course_file_file_size"
-    t.datetime "course_file_updated_at"
+    t.string   "course_file"
   end
 
   create_table "donations", :force => true do |t|
@@ -136,9 +133,13 @@ ActiveRecord::Schema.define(:version => 20120927003250) do
     t.string   "contact_telephone"
     t.integer  "vicariou_id"
     t.string   "parish_photo"
-    t.boolean  "state",             :default => true
+    t.boolean  "state",                     :default => true
     t.string   "current_state"
     t.string   "telephone"
+    t.string   "parish_photo_file_name"
+    t.string   "parish_photo_content_type"
+    t.integer  "parish_photo_file_size"
+    t.datetime "parish_photo_updated_at"
   end
 
   create_table "pastors", :force => true do |t|
