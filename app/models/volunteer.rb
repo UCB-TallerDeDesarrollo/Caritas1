@@ -39,7 +39,10 @@ class Volunteer < ActiveRecord::Base
     end
          
   end
-  
+
+  def self.order_by(param,criterion)
+    find(:all,:order =>param + " " + criterion)
+  end
   #put object methods here
   def to_s
     "#{name} #{last_name} #{second_last_name}"

@@ -1,11 +1,10 @@
 <div id="content-wrap">
   <%= render :partial => "main_page/acordeon" %>
   <div id="main" >
-
-      <center><H2><%= @notice.title%></h2></center>
+     <H2><%= @notice.title%></h2>
       <br>
           <% if @notice.notice_photo %>
-          <%=  image_tag @notice.notice_photo.url %>
+          <%=  image_tag @notice.notice_photo.url,:size=>"300x200" %>
         <td>
           <% else %>
           <%=  image_tag "NoticeDefault.png", :size=>"500x350" %>
@@ -17,5 +16,6 @@
       </p>
      <p class="word_wrap"><%=link_to "Volver", :controller => "notices", :action => "index_public",:id =>'find'%></p>
   </div>
+ </div>
 
 
