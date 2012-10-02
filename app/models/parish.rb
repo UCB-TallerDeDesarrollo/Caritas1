@@ -32,9 +32,9 @@ class Parish < ActiveRecord::Base
   
   def self.search(search)
     if search
-      find(:all, :conditions => ['LOWER(parish_name) LIKE ? OR LOWER(ubication) LIKE ?', "%#{search.downcase}%","%#{search.downcase}%"], :order => "name")
+      find(:all, :conditions => ['LOWER(parish_name) LIKE ? OR LOWER(ubication) LIKE ?', "%#{search.downcase}%","%#{search.downcase}%"], :order => "parish_name")
     else
-      find(:all)
+      find(:all, :order => "parish_name")
     end
   end
   
