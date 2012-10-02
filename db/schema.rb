@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121002015007) do
+ActiveRecord::Schema.define(:version => 20121002120630) do
 
   create_table "assistance_lists", :force => true do |t|
     t.datetime "created_at"
@@ -186,13 +186,16 @@ ActiveRecord::Schema.define(:version => 20121002015007) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "what_kind"
-    t.boolean  "state",                    :default => true
+    t.boolean  "state",                          :default => true
     t.integer  "parish_id"
-    t.string   "social_card_photo"
     t.string   "phone"
     t.string   "movil"
     t.string   "phone_reference"
     t.string   "movil_reference"
+    t.string   "social_card_photo_file_name"
+    t.string   "social_card_photo_content_type"
+    t.integer  "social_card_photo_file_size"
+    t.datetime "social_card_photo_updated_at"
   end
 
   create_table "social_work_photos", :force => true do |t|
