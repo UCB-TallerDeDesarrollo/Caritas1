@@ -727,4 +727,24 @@ a:hover { color: #fff; background-color:#000; }
     word-wrap: break-word;
 }
 
+/*para los link si decoracion*/
+#table_volunteers
+{
+    text-decoration:none;
+}
+#table_volunteers a
+{
+    background-color: #900;
+    text-decoration:none;
+}
+#table_volunteers a:hover
+{
+    color:white;
+    text-decoration:none;
+}
+#table_volunteers a:visited
+{
+    color:white;
+    text-decoration:none;
+}
 
