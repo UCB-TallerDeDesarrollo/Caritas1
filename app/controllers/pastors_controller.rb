@@ -6,15 +6,25 @@ class PastorsController < ApplicationController
     :search_on => ['name'],
     :full_text_search => true
 
-  
-  def index
-    @pastors = Pastor.search(params[:search])
-    #@pastors = Pastor.order(params[:order])
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @pastors }
-      format.xls
+
+
+  def index
+    if !params[:order].nil?
+      @pastors = Pastor.order(params[:order])
+      respond_to do |format|
+        format.html # index.html.erb
+        format.xml  { render :xml => @pastors }
+        format.xls
+      end
+    else
+
+      @pastors = Pastor.search(params[:search])
+      respond_to do |format|
+        format.html # index.html.erb
+        format.xml  { render :xml => @pastors }
+        format.xls
+      end
     end
   end
 
