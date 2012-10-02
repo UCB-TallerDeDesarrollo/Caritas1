@@ -61,6 +61,10 @@ ActiveRecord::Schema.define(:version => 20121002120630) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "course_file"
+    t.string   "course_file_file_name"
+    t.string   "course_file_content_type"
+    t.integer  "course_file_file_size"
+    t.datetime "course_file_updated_at"
   end
 
   create_table "donations", :force => true do |t|
