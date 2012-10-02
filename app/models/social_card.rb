@@ -33,7 +33,11 @@ class SocialCard < ActiveRecord::Base
   
   has_attached_file :social_card_photo,
                     :url  => "/assets/products/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
+                    :storage => :dropbox,
+                    :dropbox_settings => "#{Rails.root}/config/dropbox.yml", 
+                    :dropbox_options => {
+                        :path => "<table_name>/<record_id>_<attachment_name>_<filename>"
+                    }
   
   validates_attachment_content_type :social_card_photo, :content_type => ['image/jpeg', 'image/png', 'image/gif']
   validates_attachment_size :social_card_photo, :less_than => 3.megabytes

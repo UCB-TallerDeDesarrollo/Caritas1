@@ -1,6 +1,11 @@
 class CampaingPhoto < ActiveRecord::Base
   belongs_to :campaing
-  has_attached_file :data
+  has_attached_file :data,
+                    :storage => :dropbox,
+                    :dropbox_settings => "#{Rails.root}/config/dropbox.yml", 
+                    :dropbox_options => {
+                        :path => "<table_name>/<record_id>_<attachment_name>_<filename>"
+                    }
   before_post_process :normalize_file_name
   
   validates_attachment_size :data, :less_than => 1000.kilobytes, :message => 'las imagenes no puede tener un tamaño mayor a 1 MB'

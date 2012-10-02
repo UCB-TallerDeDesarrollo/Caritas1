@@ -10,7 +10,11 @@ class Group < ActiveRecord::Base
   #put active record callbacks here
   has_attached_file :group_photo,
                     :url  => "/assets/products/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
+                    :storage => :dropbox,
+                    :dropbox_settings => "#{Rails.root}/config/dropbox.yml", 
+                    :dropbox_options => {
+                        :path => "<table_name>/<record_id>_<attachment_name>_<filename>"
+                    }
 
   #put validates here
   validates_presence_of :name  

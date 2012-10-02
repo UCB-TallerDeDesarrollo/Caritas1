@@ -7,8 +7,12 @@ class Parish < ActiveRecord::Base
   has_one :workshop
   has_many :social_cards
   has_attached_file :parish_photo,
-                    :url  => "/assets/products/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
+                    :url  => "/assets/products/:id/:style/:basename.:extension",                    
+                    :storage => :dropbox,
+                    :dropbox_settings => "#{Rails.root}/config/dropbox.yml", 
+                    :dropbox_options => {
+                        :path => "<table_name>/<record_id>_<attachment_name>_<filename>"
+                    }
   
   validates_presence_of :pastor_id
   validates_presence_of :vicariou_id

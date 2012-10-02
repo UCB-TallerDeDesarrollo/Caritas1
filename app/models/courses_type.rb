@@ -1,5 +1,10 @@
 class CoursesType < ActiveRecord::Base
-  has_attached_file :course_file
+  has_attached_file :course_file,
+                    :storage => :dropbox,
+                    :dropbox_settings => "#{Rails.root}/config/dropbox.yml", 
+                    :dropbox_options => {
+                        :path => "<table_name>/<record_id>_<attachment_name>_<filename>"
+                    }
                     #:path =>'rails_root/public/system/:attachment/:id/:style/:basename.:extension',
                     #:url =>'/:class/:id/:attachment'
   validates_attachment_size :course_file, :in =>1..4000.kilobytes, :message => "no puede ser m'as grande de 10 MB"

@@ -4,7 +4,12 @@ class Notice < ActiveRecord::Base
 
 
   #put relations and references here
-  has_attached_file :notice_photo
+  has_attached_file :notice_photo,
+                    :storage => :dropbox,
+                    :dropbox_settings => "#{Rails.root}/config/dropbox.yml", 
+                    :dropbox_options => {
+                        :path => "<table_name>/<record_id>_<attachment_name>_<filename>"
+                    }
   #put active record callbacks here
 
   #put validates here

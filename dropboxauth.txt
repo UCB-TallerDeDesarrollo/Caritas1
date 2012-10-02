@@ -1,0 +1,6 @@
+App key 	cwj17jtlk5jq0e9
+App secret 	dbiv1588so5vgho
+Access token: erg4s8cmrnbhnau
+Access token secret: 1fa6vw7d565lupc
+
+rake dropbox:authorize APP_KEY=cwj17jtlk5jq0e9 APP_SECRET=dbiv1588so5vgho
