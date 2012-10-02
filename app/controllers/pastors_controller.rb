@@ -9,7 +9,7 @@ class PastorsController < ApplicationController
   
   def index
     @pastors = Pastor.search(params[:search])
-    @pastors = Pastor.order(params[:order])
+    #@pastors = Pastor.order(params[:order])
 
     respond_to do |format|
       format.html # index.html.erb

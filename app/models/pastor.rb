@@ -16,24 +16,24 @@ class Pastor < ActiveRecord::Base
     #put class methods here
   def self.search(search)
     if search
-      find(:all, :conditions => ['LOWER(name) LIKE ? OR LOWER(primary_last_name) LIKE ? OR LOWER(second_last_name) LIKE ?', "%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%"])
+      find(:all, :conditions => ['LOWER(name) LIKE ? OR LOWER(primary_last_name) LIKE ? OR LOWER(second_last_name) LIKE ?', "%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%"], :order => "name")
     else
-      find(:all)
+      find(:all, :order => "name")
     end
   end
 
   
- def self.order(order)
-    if order == "name"
-      find(:all, :order => "name ASC")
-    elsif order =="Apellido Paterno"
-    	    find(:all, :order => "primary_last_name ASC")
-     elsif order =="Apellido Materno"
-     	   find(:all, :order => "second_last_name ASC")
-   else
-	find(:all)	   
-      end
-  end
+ #def self.order(order)
+  #  if order == "name"
+  #    find(:all, :order => "name ASC")
+  #  elsif order =="Apellido Paterno"
+  #  	    find(:all, :order => "primary_last_name ASC")
+  #   elsif order =="Apellido Materno"
+  #   	   find(:all, :order => "second_last_name ASC")
+  # else
+	#find(:all)
+  #    end
+  #end
   
   #put object methods here
   def close()
