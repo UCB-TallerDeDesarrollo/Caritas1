@@ -60,7 +60,7 @@
       
       <tr>  
       <td><%= "&nbsp;&nbsp;&nbsp;Fotografía de la Parroquia" %></td>
-      <% if @parish.parish_photo.nil? %>
+      <% if @parish.parish_photo..exists? %>
       <td><%=  image_tag @parish.parish_photo.url, :size=>"300x200" %>
       <% else %>
       <td>No está disponible la fotografía
