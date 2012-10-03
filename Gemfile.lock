@@ -1,3 +1,8 @@
+PATH
+  remote: ./
+  specs:
+    paperclip-dropbox-taller (0.0.2)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -55,5 +60,6 @@ DEPENDENCIES
   hoe (= 2.5.0)
   paginator
   paperclip (= 2.7.1)
+  paperclip-dropbox-taller (= 0.0.2)!
   pg (= 0.14.0)
   rails (= 2.3.11)
