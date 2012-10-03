@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class WorkshopCourseTypesController < ApplicationController
   # GET /workshop_course_types
   # GET /workshop_course_types.xml

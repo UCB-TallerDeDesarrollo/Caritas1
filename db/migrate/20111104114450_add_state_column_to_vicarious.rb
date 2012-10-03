@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddStateColumnToVicarious < ActiveRecord::Migration
   def self.up
     add_column :vicarious, :state, :int, :default => 1

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AssistanceListAgregandoRelacionCourse < ActiveRecord::Migration
   def self.up
     add_column :assistance_lists, :course_id, :integer

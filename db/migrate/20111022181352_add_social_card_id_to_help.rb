@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddSocialCardIdToHelp < ActiveRecord::Migration
   def self.up
     add_column :helps, :social_card_id, :integer

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class RemovePhneNumberAndMovilColumnFromVolunteer < ActiveRecord::Migration
   def self.up
     remove_column :volunteers, :phone_number

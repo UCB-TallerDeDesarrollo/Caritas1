@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddPhotoToGroup < ActiveRecord::Migration
   def self.up
     add_column :groups, :group_photo, :string

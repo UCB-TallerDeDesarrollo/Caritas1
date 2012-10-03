@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 print "Using native MySQL\n"
 require 'logger'
 

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddAttachmentsSocialCardPhotoToSocialCards < ActiveRecord::Migration
   def self.up
 

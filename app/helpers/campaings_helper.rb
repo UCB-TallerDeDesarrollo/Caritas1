@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module CampaingsHelper
   def add_photo(form_builder)
     link_to_function "Agregar Foto", :id  => "add_photo" do |page|

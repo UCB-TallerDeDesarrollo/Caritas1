@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class SocialCardsController < ApplicationController
   # GET /social_cards
   # GET /social_cards.xml

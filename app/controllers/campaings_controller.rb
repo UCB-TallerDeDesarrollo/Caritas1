@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CampaingsController < ApplicationController
   # GET /campaings
   # GET /campaings.xml 

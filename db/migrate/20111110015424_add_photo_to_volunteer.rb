@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
  class AddPhotoToVolunteer < ActiveRecord::Migration
   def self.up
     add_column :volunteers, :volunteer_photo, :string

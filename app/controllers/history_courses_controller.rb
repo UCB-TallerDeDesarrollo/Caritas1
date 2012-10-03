@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class HistoryCoursesController < ApplicationController
   # GET /history_courses
   # GET /history_courses.xml

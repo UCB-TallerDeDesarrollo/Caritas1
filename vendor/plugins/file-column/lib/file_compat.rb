@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module FileColumn
 
   # This bit of code allows you to pass regular old files to

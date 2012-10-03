@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Workshop < ActiveRecord::Base
   belongs_to :parish 
   #has_and_belongs_to_many :course

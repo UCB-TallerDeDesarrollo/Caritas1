@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class WorkshopCourseType < ActiveRecord::Base
   validates_uniqueness_of :id_course_type, :scope => [:id_workshop]
   

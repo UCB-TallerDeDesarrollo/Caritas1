@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class RemoveSocialWorkNameFromSocialWorks < ActiveRecord::Migration
   def self.up
     remove_column :social_works, :social_work_name

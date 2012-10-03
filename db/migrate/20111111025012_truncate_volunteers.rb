@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class TruncateVolunteers < ActiveRecord::Migration
   def self.up
     execute "truncate table volunteers"

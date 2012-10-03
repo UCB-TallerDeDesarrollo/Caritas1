@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module RecordSelect
   def self.included(base)
     base.send :extend, ClassMethods

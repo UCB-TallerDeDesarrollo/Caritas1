@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CampaingPhoto < ActiveRecord::Base
   belongs_to :campaing
   has_attached_file :data,

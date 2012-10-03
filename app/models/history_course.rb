@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
   class HistoryCourse < ActiveRecord::Base
   belongs_to :course
   validates_presence_of :idGroup , :message => " no puede ser vacio"

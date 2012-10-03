@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class RemoveColummFromWorkshop < ActiveRecord::Migration
   def self.up
     

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Notice < ActiveRecord::Base
   #put constants here
   NOTICES_TYPES = Array.[]("Campañas","Dias Especiales", "Asambleas", "Otro")

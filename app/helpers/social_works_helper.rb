@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module SocialWorksHelper
   def add_social_work_photo(form_builder)
     link_to_function "Agregar Foto", :id  => "add_social_work_photo" do |page|

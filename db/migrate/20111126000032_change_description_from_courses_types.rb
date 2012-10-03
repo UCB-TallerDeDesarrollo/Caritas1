@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ChangeDescriptionFromCoursesTypes < ActiveRecord::Migration
   def self.up
     change_column :courses_types, :description, :text

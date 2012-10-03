@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CoursesTypesController < ApplicationController
   # GET /courses_types
   # GET /courses_types.xml

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PastorsController < ApplicationController
   # GET /pastors
   # GET /pastors.xml

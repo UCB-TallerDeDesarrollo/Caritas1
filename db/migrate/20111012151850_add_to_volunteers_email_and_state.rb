@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddToVolunteersEmailAndState < ActiveRecord::Migration
   def self.up
     add_column :volunteers, :email, :string

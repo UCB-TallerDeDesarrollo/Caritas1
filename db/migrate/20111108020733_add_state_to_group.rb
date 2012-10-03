@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddStateToGroup < ActiveRecord::Migration
   def self.up
         add_column :groups, :state, :boolean

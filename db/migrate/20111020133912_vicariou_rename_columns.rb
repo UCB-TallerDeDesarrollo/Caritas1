@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class VicariouRenameColumns < ActiveRecord::Migration
   def self.up
     rename_column :vicarious, :vicarName, :vicar_name

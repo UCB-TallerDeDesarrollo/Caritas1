@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddStateToSocialWorks < ActiveRecord::Migration
   def self.up
     add_column :social_works, :state, :boolean, :default => true

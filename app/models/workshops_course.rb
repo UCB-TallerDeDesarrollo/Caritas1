@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class WorkshopsCourse < ActiveRecord::Base
   
   def self.searchByWorkshop(work)

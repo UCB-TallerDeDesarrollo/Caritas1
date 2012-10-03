@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class VicariousController < ApplicationController
   # GET /vicarious
   # GET /vicarious.xml

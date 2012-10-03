@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class DeleteFileColumnFromSocialCard < ActiveRecord::Migration
   def self.up
 		remove_column :social_cards, :social_card_photo

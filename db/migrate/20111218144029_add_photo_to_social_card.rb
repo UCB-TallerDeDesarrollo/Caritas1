@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddPhotoToSocialCard < ActiveRecord::Migration
   def self.up
     add_column :social_cards, :social_card_photo, :string

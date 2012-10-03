@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddPhoneMovilToSocialCard < ActiveRecord::Migration
   def self.up
      add_column :social_cards, :phone,:string

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Insertar < ActiveRecord::Migration
   def self.up
     execute "insert into pastors(name,primary_last_name,second_last_name,date_of_birth,state) values('Irineo','Vargas',' ','10/10/2010',TRUE);"

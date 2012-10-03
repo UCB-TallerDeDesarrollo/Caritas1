@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class SocialWorksController < ApplicationController
   # GET /social_works
   # GET /social_works.xml

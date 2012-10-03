@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class HelpsController < ApplicationController
   # GET /helps
   # GET /helps.xml

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CambiarElTipoIntegerAStringParroco < ActiveRecord::Migration
   def self.up
     change_column :pastors, :phone_number, :string

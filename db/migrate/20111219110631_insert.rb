@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Insert < ActiveRecord::Migration
   def self.up
     execute "insert into vicarious(name_vicariou,ubication,transport,telephone,pastor_id,state) values('Foranea Capinota','dato no suministrado','dato no suministrado',00000000,42,true);"

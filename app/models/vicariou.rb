@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Vicariou < ActiveRecord::Base
   has_one :pastor
   belongs_to :parish

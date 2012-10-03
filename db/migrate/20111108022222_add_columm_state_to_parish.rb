@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddColummStateToParish < ActiveRecord::Migration
   def self.up
     add_column :parishes, :state, :boolean, :default => true

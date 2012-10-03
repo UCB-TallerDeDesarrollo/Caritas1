@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddAttachmentsDataToSocialWorkPhoto < ActiveRecord::Migration
   def self.up
     add_column :social_work_photos, :data_file_name, :string

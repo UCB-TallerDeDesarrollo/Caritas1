@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class RemoveInChargeFromWorkshop < ActiveRecord::Migration
   def self.up
     remove_column :workshops, :in_charge

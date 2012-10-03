@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AssistanceListAgregandoIdVolunteer < ActiveRecord::Migration
   def self.up
     add_column :assistance_lists, :volunteer_id, :integer

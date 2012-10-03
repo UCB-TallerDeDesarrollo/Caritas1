@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddThumbUrlToVolunteer < ActiveRecord::Migration
   def self.up
     add_column :volunteers, :thumb_url, :string

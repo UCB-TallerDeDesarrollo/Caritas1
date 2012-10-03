@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateWorkshopsVolunteersJoin < ActiveRecord::Migration
   def self.up
     create_table 'workshops_volunteers' do |t|

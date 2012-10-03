@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Donation < ActiveRecord::Base
   #put constants here
   DONATION_UNITS = Array.[]("...","KG","Litro")

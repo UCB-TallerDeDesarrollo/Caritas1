@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddPhoneAndMovilColumnAsStringInVolunteers < ActiveRecord::Migration
   def self.up
     add_column :volunteers, :phone_number, :string

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AssistanceListsController < ApplicationController
   # GET /assistance_lists
   # GET /assistance_lists.xml

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ParishesMigrations < ActiveRecord::Migration
   def self.up
     add_column(:parishes, :pastor_id, :integer)

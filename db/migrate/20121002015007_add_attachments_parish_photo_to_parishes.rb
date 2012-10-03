@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddAttachmentsParishPhotoToParishes < ActiveRecord::Migration
   def self.up
 

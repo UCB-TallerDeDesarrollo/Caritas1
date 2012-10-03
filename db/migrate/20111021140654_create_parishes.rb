@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateParishes < ActiveRecord::Migration
   def self.up
     create_table :parishes do |t|

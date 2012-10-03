@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddAttachmentsNoticePhotoToNotice < ActiveRecord::Migration
   def self.up
     add_column :notices, :notice_photo_file_name, :string

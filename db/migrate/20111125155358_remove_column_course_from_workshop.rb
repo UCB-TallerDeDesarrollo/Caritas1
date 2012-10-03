@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class RemoveColumnCourseFromWorkshop < ActiveRecord::Migration
   def self.up
      remove_column :workshops, :course

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CambiandoTipoDatosEnObraSocial < ActiveRecord::Migration
   def self.up
     change_column :social_works, :phone, :string

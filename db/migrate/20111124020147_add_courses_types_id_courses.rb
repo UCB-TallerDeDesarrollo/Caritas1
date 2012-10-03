@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddCoursesTypesIdCourses < ActiveRecord::Migration
   def self.up
     add_column :courses, :courses_types_id, :integer

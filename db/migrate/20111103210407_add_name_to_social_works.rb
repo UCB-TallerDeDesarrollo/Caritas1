@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddNameToSocialWorks < ActiveRecord::Migration
   def self.up
     add_column :social_works, :name, :string

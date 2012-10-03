@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class IngresarDatosCursosTalleres < ActiveRecord::Migration
 def self.up  
     execute "insert into workshops_courses(id,workshop_id,course_id) values(0,1,1);"

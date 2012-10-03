@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class VolunteersController < ApplicationController
   # GET /volunteers
   # GET /volunteers.xml

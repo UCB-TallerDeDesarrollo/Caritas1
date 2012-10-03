@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateAssistanceLists < ActiveRecord::Migration
   def self.up
     create_table :assistance_lists do |t|

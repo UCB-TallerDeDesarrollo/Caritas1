@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class InsertandoDatosDeParroquias < ActiveRecord::Migration
   def self.up
     #vicaria centro

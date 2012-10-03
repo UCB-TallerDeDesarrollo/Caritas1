@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CoursesType < ActiveRecord::Base
   has_attached_file :course_file,
                     :storage => :dropbox,

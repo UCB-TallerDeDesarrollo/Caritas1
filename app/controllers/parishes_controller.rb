@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ParishesController < ApplicationController
   # GET /parishes
   # GET /parishes.xml

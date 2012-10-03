@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class EmailerController < ApplicationController
  def sendmail
     email = params["email"]

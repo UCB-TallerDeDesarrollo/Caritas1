@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class InsertVolunteers < ActiveRecord::Migration
     def self.up
     execute "insert into volunteers(name,last_name,second_last_name,profession,phone_number,movil,date_of_birth,genre,position,email,state,group_id) values('Ruth','Valdez',' ',' ',4228478,71896110,'2011-10-10','femenino','Voluntario',' ',true,3);"

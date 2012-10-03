@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class DeleteGroupPhotoFileColumnFromGroups < ActiveRecord::Migration
   def self.up
     remove_column :groups, :group_photo

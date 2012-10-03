@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateProgresses < ActiveRecord::Migration
   def self.up
     create_table :progresses do |t|

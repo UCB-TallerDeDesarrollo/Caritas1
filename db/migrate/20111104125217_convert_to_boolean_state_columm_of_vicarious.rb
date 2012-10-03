@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ConvertToBooleanStateColummOfVicarious < ActiveRecord::Migration
   def self.up
     add_column :vicarious, :state, :boolean, :default => true

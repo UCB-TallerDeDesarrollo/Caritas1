@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ParishMigrationRelationshipWithVicariou < ActiveRecord::Migration
   def self.up
     add_column :parishes, :vicariou_id, :integer

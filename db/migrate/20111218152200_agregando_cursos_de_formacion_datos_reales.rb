@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AgregandoCursosDeFormacionDatosReales < ActiveRecord::Migration
   def self.up  
     execute "insert into courses_types(name,description) values('La pobreza y sus causas','Objetivos:\nAcercarnos a la realidad de la pobreza y exclusion social que existe en nuestro contexto local y parroquial.\nPromover las reflexion de situacion de marginacion que vivien los sectores vulnerables.\nDar a conocer la accion caritativa de la iglesia.\nAnimar al compromiso personal y comunitario ante la situacion analizada.');"

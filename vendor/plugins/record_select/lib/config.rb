@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module RecordSelect
   # a write-once configuration object
   class Config

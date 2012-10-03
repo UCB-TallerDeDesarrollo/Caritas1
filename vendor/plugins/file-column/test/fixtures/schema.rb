@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 ActiveRecord::Schema.define do
   create_table :entries, :force => true do |t|
     t.column :image, :string, :null => true

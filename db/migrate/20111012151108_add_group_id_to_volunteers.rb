@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddGroupIdToVolunteers < ActiveRecord::Migration
   def self.up
     add_column :volunteers, :group_id, :integer

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Campaing < ActiveRecord::Base
   #put constants here
 

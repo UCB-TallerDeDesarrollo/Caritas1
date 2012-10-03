@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddFileToCoursesTypes < ActiveRecord::Migration
   def self.up
     add_column :courses_types, :course_file, :string

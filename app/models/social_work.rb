@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class SocialWork < ActiveRecord::Base
   #put constants here
 

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Pastor < ActiveRecord::Base
   
   belongs_to :vicariou

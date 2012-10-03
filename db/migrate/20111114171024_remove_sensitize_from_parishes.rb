@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class RemoveSensitizeFromParishes < ActiveRecord::Migration
   def self.up
     remove_column :parishes, :sensitize

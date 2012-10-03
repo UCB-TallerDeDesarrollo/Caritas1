@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddNewStatePastors < ActiveRecord::Migration
   def self.up
     add_column :pastors, :state, :boolean

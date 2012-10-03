@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Entry < ActiveRecord::Base
   attr_accessor :validation_should_fail
 

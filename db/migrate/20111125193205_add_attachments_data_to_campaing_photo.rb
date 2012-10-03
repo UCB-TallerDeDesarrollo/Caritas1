@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddAttachmentsDataToCampaingPhoto < ActiveRecord::Migration
   def self.up
     add_column :campaing_photos, :data_file_name, :string

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ChangeIdsHistoryCourses < ActiveRecord::Migration
   def self.up
     remove_column :history_courses, :idParish

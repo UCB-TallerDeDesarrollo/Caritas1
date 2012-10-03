@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateHistoryCourses < ActiveRecord::Migration
   def self.up
     create_table :history_courses do |t|

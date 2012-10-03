@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateCampaings < ActiveRecord::Migration
   def self.up
     create_table :campaings do |t|

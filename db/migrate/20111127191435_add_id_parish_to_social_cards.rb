@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddIdParishToSocialCards < ActiveRecord::Migration
   def self.up
      remove_column :social_cards,:parish_church

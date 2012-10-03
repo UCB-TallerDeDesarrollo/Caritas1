@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class InsertarGruposEnlazadasConParroquias < ActiveRecord::Migration
 
   def self.up

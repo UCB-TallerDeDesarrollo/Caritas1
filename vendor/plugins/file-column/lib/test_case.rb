@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'test/unit'
 
 # Add the methods +upload+, the <tt>setup_file_fixtures</tt> and

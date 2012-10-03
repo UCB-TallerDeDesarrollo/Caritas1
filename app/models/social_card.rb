@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class SocialCard < ActiveRecord::Base
    belongs_to :parish
  

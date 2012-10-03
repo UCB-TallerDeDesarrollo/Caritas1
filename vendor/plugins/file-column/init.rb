@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # plugin init file for rails
 # this file will be picked up by rails automatically and
 # add the file_column extensions to rails

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module FileColumn
   module Validations #:nodoc:
     

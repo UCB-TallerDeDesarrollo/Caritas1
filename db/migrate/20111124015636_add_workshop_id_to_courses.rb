@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddWorkshopIdToCourses < ActiveRecord::Migration
   def self.up
     add_column :courses, :workshop_id, :integer

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddWhatKindToSocialCard < ActiveRecord::Migration
   def self.up
      add_column :social_cards, :what_kind, :string

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddCurrentStateToParishes < ActiveRecord::Migration
   def self.up
     add_column :parishes, :current_state, :string
