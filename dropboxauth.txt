@@ -4,3 +4,13 @@ Access token: erg4s8cmrnbhnau
 Access token secret: 1fa6vw7d565lupc
 
 rake dropbox:authorize APP_KEY=cwj17jtlk5jq0e9 APP_SECRET=dbiv1588so5vgho
+
+
+Testing
+App key 	9mstju129t8ukdx
+App secret 	r1svxtuzs15v5cx
+Access token: eptkgncwz65fqjy
+Access token secret: cxizfcfo0hc9sm5
+
+
+rake dropbox:authorize APP_KEY=9mstju129t8ukdx APP_SECRET=r1svxtuzs15v5cx
