@@ -1,16 +1,4 @@
-development:
 app_key: cwj17jtlk5jq0e9
 app_secret: dbiv1588so5vgho
 access_token: erg4s8cmrnbhnau
 access_token_secret: 1fa6vw7d565lupc
-test:
-app_key: cwj17jtlk5jq0e9
-app_secret: dbiv1588so5vgho
-access_token: erg4s8cmrnbhnau
-access_token_secret: 1fa6vw7d565lupc
-
-production:
-app_key: 9mstju129t8ukdx
-app_secret: r1svxtuzs15v5cx
-access_token: eptkgncwz65fqjy
-access_token_secret: cxizfcfo0hc9sm5
