@@ -1,0 +1,15 @@
+# -*- encoding : utf-8 -*-
+if defined?(::Rails::Railtie)
+  module Paperclip
+    module Storage
+      module Dropbox
+        class Railtie < Rails::Railtie
+          rake_tasks do
+            load "tasks/paperclip-dropbox.rake"
+          end
+        end
+      end
+    end
+  end
+end
+
