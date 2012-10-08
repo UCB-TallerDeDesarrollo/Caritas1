@@ -6,7 +6,7 @@ class Vicariou < ActiveRecord::Base
   validates_presence_of :name_vicariou
   validates_presence_of :ubication
   validates_presence_of :telephone
-  validates_presence_of :pastor_id
+  validates_presence_of :pastor_id, :message => "o Nombre del Vicario no puede estar en blanco."
   
   validates_length_of :name_vicariou, :maximum => 50
   validates_length_of :ubication, :maximum => 255
