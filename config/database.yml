@@ -11,8 +11,8 @@
 development:
   adapter: postgresql
   database: caritas
-  username: caritas
-  password: caritas
+  username: postgres
+  password: admin
   host: localhost
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -36,8 +36,8 @@ development:
 test:
   adapter: postgresql
   database: caritas_test
-  username: caritas
-  password: caritas
+  username: postgres
+  password: admin
   host: localhost
 
 
@@ -59,8 +59,8 @@ test:
 production:
   adapter: postgresql
   database: caritas_production
-  username: caritas
-  password: caritas
+  username: postgres
+  password: admin
   host: localhost
 
 
