@@ -53,7 +53,7 @@
     </tr>
     <tr>  
       <td><b><%= "Imagen" %></b></td>
-      <% if @parish.parish_photo? %>
+      <% if !@parish.parish_photo_file_name.nil? %>
       <td><%=  image_tag @parish.parish_photo.url, :size=>"300x200" %></td>
       <% else %>
       <td>No está disponible la fotografía</td>
