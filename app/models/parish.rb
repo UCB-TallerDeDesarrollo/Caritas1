@@ -12,7 +12,8 @@ class Parish < ActiveRecord::Base
                     :storage => :dropbox,
                     :dropbox_settings => "#{Rails.root}/config/dropbox.yml", 
                     :dropbox_options => {
-                        :path => "<table_name>/<record_id>_<attachment_name>_<filename>"
+                        :path => "<table_name>/<record_id>_<attachment_name>_<filename>",
+                        :unique_filename => true
                     }
   
   validates_presence_of :pastor_id

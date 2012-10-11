@@ -43,15 +43,14 @@
                     @s1=@socialWorks[@s] 
                     @p=SocialWork.getRandomPicture(@s1.id)%>
                 <%= link_to '<h2>'+@s1.name+'</h2>',@s1 %>
-                <img style="float:left;margin:0 30px 20px 0" src="/system/datas/<%=@p.id%>/original/<%=@p.data_file_name%>" alt="Flying screens" height="200" width="400"/>
+                <%= image_tag @p.data.url, :size => "400x200", :alt => "Flying screens", :style => "float:left;margin:0 30px 20px 0"%>                
 	            <%
                     @s+=1
                   else
                     @c1 = @campaings[@c]  
                     @p1 = Campaing.getRandomPicture(@c1.id)%>
                 <%= link_to '<h2>'+@c1.name+'</h2>',@c1 %>
-                <img style="float:left;margin:0 30px 20px 0" src="/system/datas/<%=@p1.id%>/original/<%=@p1.data_file_name%>" alt="Flying screens" height="200" width="400"/>
-	        
+                <%= image_tag @p1.data.url, :size => "400x200", :alt => "Flying screens", :style => "float:left;margin:0 30px 20px 0"%>
                     <%
                     @c+=1
                   end
@@ -60,7 +59,7 @@
                       @s1=@socialWorks[@s]  
                 @p=SocialWork.getRandomPicture(@s1.id)%>
                 <%= link_to '<h2>'+@s1.name+'</h2>',@s1 %>
-                <img style="float:left;margin:0 30px 20px 0" src="/system/datas/<%=@p.id%>/original/<%=@p.data_file_name%>" alt="Flying screens" height="200" width="400"/>
+                <%= image_tag @p.data.url, :size => "400x200", :alt => "Flying screens", :style => "float:left;margin:0 30px 20px 0"%>
 	             <%
                       @s+=1
                   end
@@ -68,7 +67,7 @@
                       @c1 = @campaings[@c] 
                       @p1 = Campaing.getRandomPicture(@c1.id)%>
                 <%= link_to '<h2>'+@c1.name+'</h2>',@c1 %>
-                <img style="float:left;margin:0 30px 20px 0" src="/system/datas/<%=@p1.id%>/original/<%=@p1.data_file_name%>" alt="Flying screens" height="200" width="400"/>
+                <%= image_tag @p1.data.url, :size => "400x200", :alt => "Flying screens", :style => "float:left;margin:0 30px 20px 0"%>
 	        
                     <%
                       @c+=1
