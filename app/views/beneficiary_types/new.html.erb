@@ -1,0 +1,25 @@
+<%if current_user%> <h1>Nuevo Tipo de Beneficiario</h1>
+
+<% form_for(@beneficiary_type) do |f| %>
+<%= f.error_messages %>
+
+<table>
+	<tr>
+		<td><%= f.label :name, "* Nombre" %></td>
+		<td><%= f.text_field :name %></td>
+	</tr>
+	<tr>
+		<td><%= f.label :description, "  Descripcion" %></td>
+		<td><%= f.text_field :description %></td>
+	</tr>
+	<tr align="right">
+		<td colspan="2"> <%= f.submit 'Registrar' %>
+		<button type="reset">
+			Limpiar
+		</button> <%= link_to 'Cancelar', beneficiary_types_path %> </td>
+	</tr>
+</table>
+<% end %>
+<%else%>
+<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
+<%end%>
