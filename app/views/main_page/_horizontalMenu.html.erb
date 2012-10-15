@@ -16,12 +16,14 @@
           <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
           <li><%= link_to 'Cursos de Formación',:controller => "courses_types", :action => "index"%></li>
         </ul></li>
+      <li><a href="#"><%= link_to 'Beneficiarios',:controller=> "beneficiaries", :action => "index" %></a>
       <li><a href="#">Campañas y Proyectos</a>
         <ul>
           <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
           <li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
           <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
           <li><%= link_to 'Ficha Social',:controller => "social_cards", :action => "index"%></li>
+          <li><%= link_to 'Tipos de Beneficiario',:controller => "beneficiary_types", :action => "index"%></li>
         </ul>
         <% else %>
             <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%>

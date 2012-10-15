@@ -37,7 +37,7 @@ class SocialCard < ActiveRecord::Base
                     :storage => :dropbox,
                     :dropbox_settings => "#{Rails.root}/config/dropbox.yml", 
                     :dropbox_options => {
-                        :path => "<table_name>/<record_id>_<attachment_name>_<filename>",
+                        :path => proc { |style| "SocialCard/#{style}/#{id}_#{social_card_photo.original_filename}"},
                         :unique_filename => true
                     }
   

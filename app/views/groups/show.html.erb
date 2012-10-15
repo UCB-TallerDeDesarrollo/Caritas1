@@ -33,7 +33,7 @@
     </tr>
 <tr>  
       <td><b><%= "Fotografía o Insignia del Grupo" %></b></td>
-      <% if @group.group_photo %>
+      <% if !@group.group_photo_file_name.nil? %>
       <td><%= image_tag @group.group_photo.url, :size=>"300x200" %></td>
       <% else %>
       <td>No está disponible la fotografía</td>

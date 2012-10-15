@@ -1,0 +1,39 @@
+<%if current_user%>
+    <h1>Ver Beneficiario</h1>
+
+    <% form_for(@beneficiary) do |f| %>
+        <%= f.error_messages %>
+        <table>
+          <tr>
+            <td><%= "CI:" %></td>
+            <td><%= @beneficiary.ci %> </td>
+          </tr>
+          <tr>
+            <td><%= "Nombre:" %></td>
+            <td><%= @beneficiary.name %> </td>
+          </tr>
+          <tr>
+            <td><%= "Apellido:" %></td>
+            <td><%= @beneficiary.last_name %> </td>
+          </tr>
+          <tr>
+            <td><%= "Rasgos personales:" %></td>
+            <td><%= @beneficiary.personal_traits %> </td>
+          </tr>
+          <tr>
+            <td>&nbsp;&nbsp;&nbsp;<%= "Observaciones"  %> </td>
+            <td><%= @beneficiary.observations %> </td>
+          </tr>
+          <tr align="right">
+            <td colspan="2">
+              <%if current_user%>
+
+              <%end%>
+              <%= link_to 'Volver', beneficiaries_path %>
+            </td>
+          </tr>
+        </table>
+    <% end %>
+<%else%>
+    <h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
+<%end%>
