@@ -10,10 +10,10 @@
 <div id="highlight">
 
   <div id=photos>
-
-   <img style="float:left;margin:0 30px 20px 0" src="/system/datas/<%=@p1.id%>/original/<%=@p1.data_file_name%>" alt="Flying screens" height="200" width="400"/>
-   <img style="float:left;margin:0 30px 20px 0" src="/system/datas/<%=@p2.id%>/original/<%=@p2.data_file_name%>" alt="Flying screens" height="200" width="400"/>
-  <img style="float:left;margin:0 30px 20px 0" src="/system/datas/<%=@p3.id%>/original/<%=@p3.data_file_name%>" alt="Flying screens" height="200" width="400"/>
+	 <%= image_tag @p1.data.url, :size => "400x200", :alt => "Flying screens", :style => "float:left;margin:0 30px 20px 0"%>
+	 <%= image_tag @p2.data.url, :size => "400x200", :alt => "Flying screens", :style => "float:left;margin:0 30px 20px 0"%>
+	 <%= image_tag @p3.data.url, :size => "400x200", :alt => "Flying screens", :style => "float:left;margin:0 30px 20px 0"%>
+   
 
    </div>
 
