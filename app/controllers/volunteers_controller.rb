@@ -53,7 +53,7 @@ end
   # GET /volunteers/new.xml
   def new
     @volunteer = Volunteer.new
-    @groups = Group.find(:all)
+    @groups = Group.find(:all,:order => "name")
     
     respond_to do |format|
       format.html # new.html.erb
@@ -64,7 +64,7 @@ end
   # GET /volunteers/1/edit
   def edit
     @volunteer = Volunteer.find(params[:id])
-    @groups = Group.find(:all)
+    @groups = Group.find(:all,:order => "name")
   end
 
   # POST /volunteers
@@ -80,7 +80,7 @@ end
         t = Volunteer.find(@volunteer.id)
         t.update_attributes(:state => true)
       else
-        @groups = Group.find(:all)
+        @groups = Group.find(:all,:order => "name")
         format.html { render :action => "new" }
         format.xml  { render :xml => @volunteer.errors, :status => :unprocessable_entity }
       end
@@ -97,7 +97,7 @@ end
         format.html { redirect_to(@volunteer, :notice => 'El voluntario fue editado exitosamente.') }
         format.xml  { head :ok }
       else
-        @groups = Group.find(:all)
+        @groups = Group.find(:all,:order => "name")
         format.html { render :action => "edit" }
         format.xml  { render :xml => @volunteer.errors, :status => :unprocessable_entity }
       end

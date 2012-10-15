@@ -1,0 +1,27 @@
+<h1>Beneficiarios</h1>
+
+<div style="position: inherit;">
+  <%=button_to  'Registrar beneficiario', new_beneficiary_path %>
+</div>
+
+<table border="3">
+  <tr id = 'head-table'>
+    <th>CI</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Rasgos personales</th>
+    <th>Observaciones</th>
+    <th>Acciones</th>
+  </tr>
+
+  <% @beneficiaries.each do |beneficiary| %>
+      <tr>
+        <td><%=h beneficiary.ci  %></td>
+        <td><%=h beneficiary.name %></td>
+        <td><%=h beneficiary.last_name %></td>
+        <td><%=h beneficiary.personal_traits %></td>
+        <td><%=h beneficiary.observations  %></td>
+        <td><%= link_to "Editar",edit_beneficiary_path(beneficiary) %> </td>
+      </tr>
+  <% end %>
+</table>

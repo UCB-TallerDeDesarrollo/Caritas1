@@ -2,6 +2,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :help_types
 
+  map.resources :beneficiary_types
+
   map.resources :donations
 
   map.resources :workshop_course_types
@@ -37,6 +39,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :volunteers
   map.resources :notices, :member => {:show_public => :get}
   map.resources :volunteers, :collection => {:export => :get}
+  map.resources :beneficiaries
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
