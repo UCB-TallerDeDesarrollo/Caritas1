@@ -24,6 +24,14 @@
             <td>&nbsp;&nbsp;&nbsp;<%= "Observaciones"  %> </td>
             <td><%= f.text_area :observations, :size => "60x10", :style =>"resize:none"%></td>
           </tr>
+          <tr>
+            <td><%= f.label :HelpType , "Tipo De Ayuda:" %></td>
+              <select name="helpType" style="width: 195px">
+              <%@help_type.each do |helpType| %>
+                  <option value="<%=help_type.name%>">
+                    <%=help_type.name%>
+                  </option>
+          </tr>
           <tr align="right">
             <td colspan="2">
               <%= f.submit 'Crear' %>
