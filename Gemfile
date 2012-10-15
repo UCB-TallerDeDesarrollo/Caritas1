@@ -6,7 +6,6 @@ gem "paginator"
 gem "authlogic", "2.1.6"
 gem "file-column", "0.3.2"
 gem "paperclip", "2.7.1"
-gem "paperclip-dropbox-taller", "0.0.2", :path => "./"
 gem "dropbox-sdk"
 
 # bundler requires these gems in all environments

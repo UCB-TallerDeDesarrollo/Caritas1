@@ -9,8 +9,10 @@ class Volunteer < ActiveRecord::Base
   
   #put active record callbacks here
   has_attached_file :volunteer_photo,
-                    :url  => "/assets/products/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
+                    :dropbox_options => {
+                        :path => proc { |style| ":class/#{style}/#{id}_#{volunteer_photo.original_filename}"},
+                        :unique_filename => true
+                    }
   #put validates here
   validates_presence_of :name
   validates_presence_of :last_name
