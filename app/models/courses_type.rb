@@ -4,7 +4,8 @@ class CoursesType < ActiveRecord::Base
                     :storage => :dropbox,
                     :dropbox_settings => "#{Rails.root}/config/dropbox.yml", 
                     :dropbox_options => {
-                        :path => "<table_name>/<record_id>_<attachment_name>_<filename>"
+                        :path => proc { |style| "CoursesType/#{style}/#{id}_#{course_file.original_filename}"},
+                        :unique_filename => true
                     }
                     #:path =>'rails_root/public/system/:attachment/:id/:style/:basename.:extension',
                     #:url =>'/:class/:id/:attachment'

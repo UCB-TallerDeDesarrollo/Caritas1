@@ -1,0 +1,36 @@
+<%if current_user%>
+    <h1>Editar Beneficiario</h1>
+
+    <% form_for(@beneficiary, :html => {:multipart => true}) do |f| %>
+        <%= f.error_messages %>
+        <table>
+          <tr>
+            <td><%= f.label :ci, "CI:" %></td>
+            <td><%= f.text_field :ci %> </td>
+          </tr>
+          <tr>
+            <td><%= f.label :name, "Nombre:" %></td>
+            <td><%= f.text_field :name %> </td>
+          </tr>
+          <tr>
+            <td><%= f.label :last_name, "Apellido:" %></td>
+            <td><%= f.text_field :last_name %> </td>
+          </tr>
+          <tr>
+            <td><%= f.label :personal_traits, "Rasgos personales:" %></td>
+            <td><%= f.text_field :personal_traits %> </td>
+          </tr>
+          <tr>
+            <td>&nbsp;&nbsp;&nbsp;<%= "Observaciones"  %> </td>
+            <td><%= f.text_area :observations, :size => "60x10", :style =>"resize:none"%></td>
+          </tr>
+          <tr align="right">
+            <td colspan="2">
+              <%= f.submit 'Guardar' %>
+            </td>
+          </tr>
+        </table>
+    <% end %>
+<%else%>
+    <h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
+<%end%>

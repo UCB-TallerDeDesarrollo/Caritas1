@@ -10,7 +10,10 @@ namespace :dropbox do
     answer = STDIN.gets.strip
     exit if answer == "n"
     session.get_access_token
+    dropbox_client = DropboxClient.new(session, "dropbox")
+    account_info = dropbox_client.account_info
     puts "Access token: #{session.access_token.key}"
     puts "Access token secret: #{session.access_token.secret}"
+    puts "User Id: #{account_info["uid"]}"
   end
 end

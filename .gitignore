@@ -1,6 +1,7 @@
 Gemfile.lock
 config/database.yml
-config/dropbox.yml
+runserver.sh
+runserver.bat
 db/*.sqlite3
 log/*.log
 tmp/**/*
@@ -17,4 +18,4 @@ public/course_types
 public/notices
 public/volunteers
 .idea
-.project/
+.project
