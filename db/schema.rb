@@ -9,13 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121012154607) do
+ActiveRecord::Schema.define(:version => 20121013025144) do
 
   create_table "assistance_lists", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "volunteer_id"
     t.integer  "course_id"
+  end
+
+  create_table "beneficiaries", :force => true do |t|
+    t.string "ci"
+    t.string "name"
+    t.string "last_name"
+    t.string "personal_traits"
+    t.string "address"
+    t.text   "observations"
   end
 
   create_table "campaing_photos", :force => true do |t|
@@ -244,6 +253,7 @@ ActiveRecord::Schema.define(:version => 20121012154607) do
     t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
   end
 
   create_table "vicarious", :force => true do |t|
