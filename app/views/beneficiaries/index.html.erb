@@ -16,9 +16,9 @@
 
   <% @beneficiaries.each do |beneficiary| %>
       <tr>
-        <td><%=h beneficiary.ci  %></td>
-        <td><%=h beneficiary.name %></td>
-        <td><%=h beneficiary.last_name %></td>
+        <td><%=link_to beneficiary.ci  %></td>
+        <td><%=link_to beneficiary.name %></td>
+        <td><%=link_to beneficiary.last_name %></td>
         <td><%=h beneficiary.personal_traits %></td>
         <td><%=h beneficiary.observations  %></td>
         <td><%= link_to "Editar",edit_beneficiary_path(beneficiary) %> </td>
