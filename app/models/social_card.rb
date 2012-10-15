@@ -33,7 +33,6 @@ class SocialCard < ActiveRecord::Base
   
   
   has_attached_file :social_card_photo,
-                    :url  => "/assets/products/:id/:style/:basename.:extension",
                     :storage => :dropbox,
                     :dropbox_settings => "#{Rails.root}/config/dropbox.yml", 
                     :dropbox_options => {

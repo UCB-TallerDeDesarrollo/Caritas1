@@ -1,5 +1,12 @@
 <h1>Beneficiarios</h1>
 
+<p>
+  <% form_tag beneficiaries_path, :method => 'get' do %>
+      Parametro <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Buscar", :name => nil %>
+  <% end %>
+</p>
+
 <div style="position: inherit;">
   <%=button_to  'Registrar beneficiario', new_beneficiary_path %>
 </div>
