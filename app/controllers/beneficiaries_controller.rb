@@ -1,6 +1,6 @@
 class BeneficiariesController < ApplicationController
   def index
-    @beneficiaries = Beneficiary.get_all_beneficiaries();
+    @beneficiaries = Beneficiary.search(params[:search])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @beneficiaries }
