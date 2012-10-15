@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121012154607) do
+ActiveRecord::Schema.define(:version => 20121013040730) do
 
   create_table "assistance_lists", :force => true do |t|
     t.datetime "created_at"
@@ -87,6 +87,13 @@ ActiveRecord::Schema.define(:version => 20121012154607) do
     t.string   "group_photo_content_type"
     t.integer  "group_photo_file_size"
     t.datetime "group_photo_updated_at"
+  end
+
+  create_table "help_types", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "helps", :force => true do |t|

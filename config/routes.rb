@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 ActionController::Routing::Routes.draw do |map|
+  map.resources :help_types
+
   map.resources :donations
 
   map.resources :workshop_course_types
