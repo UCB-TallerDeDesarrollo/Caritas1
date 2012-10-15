@@ -2,7 +2,7 @@
 class CoursesType < ActiveRecord::Base
   has_attached_file :course_file,
                     :storage => :dropbox,
-                    :dropbox_settings => "#{Rails.root}/config/dropbox.yml", 
+                    :dropbox_credentials => "#{Rails.root}/config/dropbox.yml", 
                     :dropbox_options => {
                         :path => proc { |style| "CoursesType/#{style}/#{id}_#{course_file.original_filename}"},
                         :unique_filename => true

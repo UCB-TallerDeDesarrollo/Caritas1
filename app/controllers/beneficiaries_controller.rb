@@ -1,6 +1,6 @@
 class BeneficiariesController < ApplicationController
   def index
-    @beneficiaries = Beneficiary.get_all_beneficiaries();
+    @beneficiaries = Beneficiary.search(params[:search])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @beneficiaries }
@@ -38,6 +38,17 @@ class BeneficiariesController < ApplicationController
   def edit
     @beneficiary = Beneficiary.find(params[:id])
   end
+   def destroy  
+    
+   @beneficiary = Beneficiary.find(params[:id])
+    @beneficiary.destroy 
+
+    respond_to do |format|
+      format.html { redirect_to(beneficiaries_url) }
+      format.xml  { head :ok }
+    end
+  end
+  
   def update
     @beneficiary = Beneficiary.find(params[:id])
 
