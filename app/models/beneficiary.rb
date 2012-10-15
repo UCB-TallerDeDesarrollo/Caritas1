@@ -7,4 +7,12 @@ class Beneficiary < ActiveRecord::Base
   def self.get_all_beneficiaries
     find(:all)
   end
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['LOWER(name) LIKE ? OR LOWER(ci) LIKE ? OR LOWER(last_name) LIKE ?',"%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%"])
+    else
+      find(:all)
+    end
+  end
 end

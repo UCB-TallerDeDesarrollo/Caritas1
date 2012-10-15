@@ -12,7 +12,7 @@ class Group < ActiveRecord::Base
   has_attached_file :group_photo,
                     :url  => "/assets/products/:id/:style/:basename.:extension",
                     :storage => :dropbox,
-                    :dropbox_settings => "#{Rails.root}/config/dropbox.yml", 
+                    :dropbox_credentials => "#{Rails.root}/config/dropbox.yml", 
                     :dropbox_options => {
                         :path => proc { |style| "Group/#{style}/#{id}_#{group_photo.original_filename}"},
                         :unique_filename => true

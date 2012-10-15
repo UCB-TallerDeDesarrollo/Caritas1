@@ -7,7 +7,7 @@ class Notice < ActiveRecord::Base
   #put relations and references here
   has_attached_file :notice_photo,
                     :storage => :dropbox,
-                    :dropbox_settings => "#{Rails.root}/config/dropbox.yml", 
+                    :dropbox_credentials => "#{Rails.root}/config/dropbox.yml", 
                     :dropbox_options => {
                         :path => proc { |style| "Notice/#{style}/#{id}_#{notice_photo.original_filename}"},
                         :unique_filename => true

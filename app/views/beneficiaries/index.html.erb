@@ -1,9 +1,18 @@
+<%if current_user%>
 <h1>Beneficiarios</h1>
+
+<p>
+  <% form_tag beneficiaries_path, :method => 'get' do %>
+      Parametro <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Buscar", :name => nil %>
+  <% end %>
+</p>
 
 <div style="position: inherit;">
   <%=button_to  'Registrar beneficiario', new_beneficiary_path %>
 </div>
-
+<tr>
+<td colspan="2">
 <table border="3">
   <tr id = 'head-table'>
     <th>CI</th>
@@ -16,12 +25,23 @@
 
   <% @beneficiaries.each do |beneficiary| %>
       <tr>
-        <td><%=h beneficiary.ci  %></td>
-        <td><%=h beneficiary.name %></td>
-        <td><%=h beneficiary.last_name %></td>
+        <td><%=link_to beneficiary.ci, beneficiary  %></td>
+        <td><%=link_to beneficiary.name, beneficiary %></td>
+        <td><%=link_to beneficiary.last_name, beneficiary %></td>
         <td><%=h beneficiary.personal_traits %></td>
         <td><%=h beneficiary.observations  %></td>
+        
         <td><%= link_to "Editar",edit_beneficiary_path(beneficiary) %> </td>
-      </tr>
-  <% end %>
+        <td><%= link_to 'Eliminar', beneficiary, :confirm => '¿Está seguro que desea eliminar al Beneficiario?', :method => :delete%></td>
+ </tr>
+    <% end %>
+      
+    </table>
+
+    </td>
+  </tr>
 </table>
+<br />
+<%else%>
+<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
+<%end%>

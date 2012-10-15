@@ -3,7 +3,7 @@ class CampaingPhoto < ActiveRecord::Base
   belongs_to :campaing
   has_attached_file :data,
                     :storage => :dropbox,
-                    :dropbox_settings => "#{Rails.root}/config/dropbox.yml", 
+                    :dropbox_credentials => "#{Rails.root}/config/dropbox.yml", 
                     :dropbox_options => {
                         :path => proc { |style| "Campaing/#{style}/#{id}_#{data.original_filename}"},
                         :unique_filename => true
