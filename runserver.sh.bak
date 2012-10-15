@@ -1,0 +1,9 @@
+rake db:migrate
+export APP_KEY=zl04w0uw4hmtxqe
+export APP_SECRET=8029s3lzlwuopat
+export ACCESS_TOKEN=4q8inemmv7331e1
+export ACCESS_TOKEN_SECRET=u7xknm1x15wkz3u
+export USER_ID=111780156
+
+ruby -E utf-8 script/server
+PAUSE
