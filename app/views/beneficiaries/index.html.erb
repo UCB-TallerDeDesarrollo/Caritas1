@@ -23,12 +23,14 @@
 
   <% @beneficiaries.each do |beneficiary| %>
       <tr>
-        <td><%=link_to beneficiary.ci  %></td>
-        <td><%=link_to beneficiary.name %></td>
-        <td><%=link_to beneficiary.last_name %></td>
+        <td><%=link_to beneficiary.ci, beneficiary  %></td>
+        <td><%=link_to beneficiary.name, beneficiary %></td>
+        <td><%=link_to beneficiary.last_name, beneficiary %></td>
         <td><%=h beneficiary.personal_traits %></td>
         <td><%=h beneficiary.observations  %></td>
+        
         <td><%= link_to "Editar",edit_beneficiary_path(beneficiary) %> </td>
+        <td><%= link_to 'Eliminar', beneficiary, :confirm => '¿Está seguro que desea eliminar al Beneficiario?', :method => :delete%></td>
       </tr>
   <% end %>
 </table>

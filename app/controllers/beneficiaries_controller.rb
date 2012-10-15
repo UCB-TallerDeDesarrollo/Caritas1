@@ -38,6 +38,17 @@ class BeneficiariesController < ApplicationController
   def edit
     @beneficiary = Beneficiary.find(params[:id])
   end
+   def destroy  
+    
+   @beneficiary = Beneficiary.find(params[:id])
+    @beneficiary.destroy 
+
+    respond_to do |format|
+      format.html { redirect_to(beneficiaries_url) }
+      format.xml  { head :ok }
+    end
+  end
+  
   def update
     @beneficiary = Beneficiary.find(params[:id])
 
