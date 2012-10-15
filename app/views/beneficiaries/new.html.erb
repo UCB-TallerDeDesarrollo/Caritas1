@@ -26,11 +26,19 @@
           </tr>
           <tr>
             <td><%= f.label :HelpType , "Tipo De Ayuda:" %></td>
+            <td>
+              <% if !@help_type.nil? %>
               <select name="helpType" style="width: 195px">
-              <%@help_type.each do |helpType| %>
-                  <option value="<%=help_type.name%>">
-                    <%=help_type.name%>
-                  </option>
+                <%@help_type.each do |help_type| %>
+                    <option value="<%=help_type.name%>">
+                      <%=help_type.name%>
+                    </option>
+                <% end %>
+              </select>
+               <%else%>
+                   No se registraron tipos de ayuda.
+              <%end%>
+            </td>
           </tr>
           <tr align="right">
             <td colspan="2">

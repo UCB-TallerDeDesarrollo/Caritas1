@@ -8,7 +8,7 @@ class BeneficiariesController < ApplicationController
   end
   def new
     @beneficiary = Beneficiary.new
-    @help_type = HelpType.all(:select => all)
+    @help_type =  HelpType.all
 
     respond_to do |format|
       format.html # new.html.erb
