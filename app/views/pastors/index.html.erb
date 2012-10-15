@@ -25,11 +25,11 @@
   <tr>
     <td colspan="2">
 
-    <table border="3">
+    <table border="3", >
       <tr id = 'head-table'>
-         <th><%= link_to 'Nombre', :order => "name"%></th>
-        <th><%= link_to 'Apellido Paterno', :order => "Apellido Paterno" %></th>
-        <th><%= link_to 'Apellido Materno', :order => "Apellido Materno" %></th>
+         <th><u><%= link_to 'Nombre',{:order => "name"}, {:style=>'color:#FFFFFF;'}%></u></th>
+        <th><u><%= link_to 'Apellido Paterno',{:order => "Apellido Paterno"}, {:style=>'color:#FFFFFF;'} %></u></th>
+        <th><u><%= link_to 'Apellido Materno',{:order => "Apellido Materno"}, {:style=>'color:#FFFFFF;'} %></u></th>
         <th>Teléfono</th>
         <th>Celular</th>
         <th colspan="3">Acciones</th>
