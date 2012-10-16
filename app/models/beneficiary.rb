@@ -1,4 +1,15 @@
 class Beneficiary < ActiveRecord::Base
+    #put active record callbacks here
+  has_attached_file :beneficiary_photo,
+                    :url  => "/assets/products/:id/:style/:basename.:extension",
+                    :storage => :dropbox,
+                    :dropbox_credentials => "#{Rails.root}/config/dropbox.yml", 
+                    :dropbox_options => {
+                        :path => proc { |style| "Beneficiary/#{style}/#{id}_#{beneficiary_photo.original_filename}"},
+                        :unique_filename => true
+                    }
+  validates_attachment_size :beneficiary_photo, :less_than => 3.megabytes
+  validates_attachment_content_type :beneficiary_photo, :content_type => ['image/jpeg', 'image/png', 'image/gif']
   validates_presence_of :name
   validates_presence_of :last_name
   validates_presence_of :personal_traits

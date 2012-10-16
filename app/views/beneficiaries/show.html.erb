@@ -24,6 +24,14 @@
             <td>&nbsp;&nbsp;&nbsp;<%= "Observaciones"  %> </td>
             <td><%= @beneficiary.observations %> </td>
           </tr>
+          <tr>  
+      <td><b><%= "Fotografía del Beneficiario" %></b></td>
+      <% if !@beneficiary.beneficiary_photo_file_name.nil? %>
+      <td><%= image_tag @beneficiary.beneficiary_photo.url, :size=>"300x200" %></td>
+      <% else %>
+      <td>No está disponible la fotografía</td>
+      <% end   %>
+    </tr>
           <tr align="right">
             <td colspan="2">
               <%if current_user%>
