@@ -24,6 +24,10 @@
             <td>&nbsp;&nbsp;&nbsp;<%= "Observaciones"  %> </td>
             <td><%= f.text_area :observations, :size => "60x10", :style =>"resize:none"%></td>
           </tr>
+          <tr>
+        <td><%= "&nbsp;&nbsp;&nbsp;Fotografia del Beneficiario"  %> </td>
+        <td><%= file_field 'beneficiary', 'beneficiary_photo' %></td>
+      </tr>
           <tr align="right">
             <td colspan="2">
               <%= f.submit 'Crear' %>

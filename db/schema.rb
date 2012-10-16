@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121014204113) do
+ActiveRecord::Schema.define(:version => 20121016022628) do
 
   create_table "assistance_lists", :force => true do |t|
     t.datetime "created_at"
@@ -19,12 +19,16 @@ ActiveRecord::Schema.define(:version => 20121014204113) do
   end
 
   create_table "beneficiaries", :force => true do |t|
-    t.string "ci"
-    t.string "name"
-    t.string "last_name"
-    t.string "personal_traits"
-    t.string "address"
-    t.text   "observations"
+    t.string   "ci"
+    t.string   "name"
+    t.string   "last_name"
+    t.string   "personal_traits"
+    t.string   "address"
+    t.text     "observations"
+    t.string   "beneficiary_photo_file_name"
+    t.string   "beneficiary_photo_content_type"
+    t.integer  "beneficiary_photo_file_size"
+    t.datetime "beneficiary_photo_updated_at"
   end
 
   create_table "beneficiary_types", :force => true do |t|
