@@ -24,6 +24,10 @@
 		<td><%= f.text_area :observations, :size => "60x10", :style =>"resize:none"%></td>
 	</tr>
 	<tr>
+          	<td>Tipo de ayuda</td>
+          	<td><%= link_to 'Administrar tipos de ayuda',:controller => "help_types", :action => "index"%></td>	
+    </tr>
+	<tr>
 		<td><%= "&nbsp;&nbsp;&nbsp;Fotografía del Beneficiario" %></td>
 		<% if !@beneficiary.beneficiary_photo_file_name.nil?  %>
 		<td><%=  image_tag @beneficiary.beneficiary_photo.url, :size=>"300x200" %>
