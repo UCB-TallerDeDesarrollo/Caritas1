@@ -1,3 +1,4 @@
+<%if current_user%>
 <h1>Beneficiarios</h1>
 
 <p>
@@ -10,7 +11,8 @@
 <div style="position: inherit;">
   <%=button_to  'Registrar beneficiario', new_beneficiary_path %>
 </div>
-
+<tr>
+<td colspan="2">
 <table border="3">
   <tr id = 'head-table'>
     <th>CI</th>
@@ -31,6 +33,15 @@
         
         <td><%= link_to "Editar",edit_beneficiary_path(beneficiary) %> </td>
         <td><%= link_to 'Eliminar', beneficiary, :confirm => '¿Está seguro que desea eliminar al Beneficiario?', :method => :delete%></td>
-      </tr>
-  <% end %>
+ </tr>
+    <% end %>
+      
+    </table>
+
+    </td>
+  </tr>
 </table>
+<br />
+<%else%>
+<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
+<%end%>
