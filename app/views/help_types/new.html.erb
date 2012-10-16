@@ -1,0 +1,29 @@
+<h1>Registrar tipo de ayuda</h1>
+
+<% form_for(@help_type) do |f| %>
+  <%= f.error_messages %>
+
+	<table>
+		<tr>
+			<td>*Nombre del tipo de ayuda</td>
+			<td><%= f.text_field :name %></td>
+		</tr>
+		<tr>
+			<td>*Descripción</td>
+			<td><%= f.text_area :description %></td>
+		</tr>
+		<tr align="right">
+			<td colspan="2">
+				<%= f.submit 'Crear' %>
+				<button type="reset">Limpiar</button>
+				<%= link_to 'Atrás', help_types_path %>
+			</td>
+		</tr>
+		<tr>
+			<td>* Estos campos son obligatorios</td>
+		</tr>
+	</table>
+  <p>
+    
+  </p>
+<% end %>

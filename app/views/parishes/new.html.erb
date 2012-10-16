@@ -50,13 +50,16 @@
     </tr>
       <tr>
         <td>* Nombre del Párroco</td>
-        <td><select name="parish[pastor_id]" style="width: 195px">
-    <% if @pastor  
-    @pastor.each do |pastor| %>
+        
+    <% if !@pastor.empty?%>
+    <td><select name="parish[pastor_id]" style="width: 195px">
+    <%@pastor.each do |pastor| %>
     <option value="<%=pastor.id%>">
                <%=pastor.name+" "+pastor.primary_last_name+" "+pastor.second_last_name%>
     </option>
       <%end%>
+      <% else %>
+      	<td>No existen pastores disponibles
     <%end%>
 </select></td>
       </tr>

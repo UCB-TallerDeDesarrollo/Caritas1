@@ -3,9 +3,9 @@ class SocialWorkPhoto < ActiveRecord::Base
   belongs_to :social_work
   has_attached_file :data,
                     :storage => :dropbox,
-                    :dropbox_settings => "#{Rails.root}/config/dropbox.yml", 
+                    :dropbox_credentials => "#{Rails.root}/config/dropbox.yml", 
                     :dropbox_options => {
-                        :path => "<table_name>/<record_id>_<attachment_name>_<filename>",
+                        :path => proc { |style| "SocialWork/#{style}/#{id}_#{data.original_filename}"},
                         :unique_filename => true
                     }
   before_post_process :normalize_file_name

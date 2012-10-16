@@ -105,6 +105,13 @@ ActiveRecord::Schema.define(:version => 20121014204113) do
     t.datetime "group_photo_updated_at"
   end
 
+  create_table "help_types", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "helps", :force => true do |t|
     t.text     "what_is_persons_problem"
     t.string   "type_of_help"

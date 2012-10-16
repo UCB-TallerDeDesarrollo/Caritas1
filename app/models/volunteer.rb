@@ -9,8 +9,10 @@ class Volunteer < ActiveRecord::Base
   
   #put active record callbacks here
   has_attached_file :volunteer_photo,
-                    :url  => "/assets/products/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
+                    :dropbox_options => {
+                        :path => proc { |style| ":class/#{style}/#{id}_#{volunteer_photo.original_filename}"},
+                        :unique_filename => true
+                    }
   #put validates here
   validates_presence_of :name
   validates_presence_of :last_name
@@ -32,12 +34,12 @@ class Volunteer < ActiveRecord::Base
   #put class methods here
   def self.search(search,group)
     if search       
-          find(:all, :conditions => ['LOWER(name) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(second_last_name) LIKE ? OR LOWER(profession) LIKE ?', "%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%"])           
+          find(:all, :conditions => ['LOWER(name) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(second_last_name) LIKE ? OR LOWER(profession) LIKE ?', "%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%"], :order => "name")           
     else     
       if group
-          find(:all, :conditions => ['group_id = ?', "#{group}"])   
+          find(:all, :conditions => ['group_id = ?', "#{group}"],:order => "name")   
         else 
-        find(:all)  
+        find(:all,:order => "name")  
       end
     end
          
