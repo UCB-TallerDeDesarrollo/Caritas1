@@ -17,6 +17,7 @@ class BeneficiariesController < ApplicationController
   end
   def create
     @beneficiary = Beneficiary.new(params[:beneficiary])
+    @help_type = HelpType.find(:all)
 
     respond_to do |format|
       if @beneficiary.save

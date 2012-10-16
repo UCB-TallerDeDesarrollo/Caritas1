@@ -6,7 +6,7 @@ class CreateBeneficiaries < ActiveRecord::Migration
       t.string :last_name
       t.string :personal_traits
       t.string :address
-      t.text :observations
+      t.text :observations	
     end
   end
 

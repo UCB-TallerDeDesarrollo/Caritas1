@@ -25,9 +25,9 @@
             <td><%= f.text_area :observations, :size => "60x10", :style =>"resize:none"%></td>
           </tr>
           <tr>
-            <td><%= f.label :HelpType , "Tipo De Ayuda:" %></td>
+            <td><%= f.label :HelpType , "Tipo De Ayuda(*):" %></td>
             <td>
-              <% if !@help_type.nil? %>
+              <% if !@help_type.empty? %>
               <select name="helpType" style="width: 195px">
                 <%@help_type.each do |help_type| %>
                     <option value="<%=help_type.name%>">
