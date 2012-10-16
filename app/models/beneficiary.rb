@@ -10,9 +10,13 @@ class Beneficiary < ActiveRecord::Base
                     }
   validates_attachment_size :beneficiary_photo, :less_than => 3.megabytes
   validates_attachment_content_type :beneficiary_photo, :content_type => ['image/jpeg', 'image/png', 'image/gif']
+  validates_numericality_of :ci
   validates_presence_of :name
+  validates_length_of :name,:within => 3..25
   validates_presence_of :last_name
+  validates_length_of :last_name, :within => 3..25
   validates_presence_of :personal_traits
+
   def self.get_all_beneficiaries
     find(:all)
   end
