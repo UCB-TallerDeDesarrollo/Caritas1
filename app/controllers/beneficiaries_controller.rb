@@ -8,6 +8,7 @@ class BeneficiariesController < ApplicationController
   end
   def new
     @beneficiary = Beneficiary.new
+    @parish = Parish.find(:all, :order => "parish_name")
 
     respond_to do |format|
       format.html # new.html.erb

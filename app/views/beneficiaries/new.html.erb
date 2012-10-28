@@ -25,6 +25,18 @@
             <td><%= f.text_field :telephone %> </td>
           </tr>
           <tr>
+            <td><%= f.label :parish_belongs, "Parroquia:" %></td>
+            <td><select name="beneficiarie[parish_id]" style="width: 150px"> 
+            <% if @parish  
+              @parish.each do |parish| %>
+                <option value="<%=parish.id%>">
+                  <%=parish.parish_name%>
+                </option>
+              <%end%>
+            <%end%>
+          </select></td>
+          </tr>
+          <tr>
             <td><%= f.label :personal_traits, "Rasgos personales:" %></td>
             <td><%= f.text_field :personal_traits %> </td>
           </tr>

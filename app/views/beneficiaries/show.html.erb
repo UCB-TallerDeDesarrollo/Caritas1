@@ -24,6 +24,13 @@
             <td><%= "Telefono de referencia:" %></td>
             <td><%= @beneficiary.telephone %> </td>
           </tr>
+           <tr>
+	      <td>
+		<b>Parroquia a la que Pertenece</b>
+	      </td>
+	      <td><%=h if @beneficiary.parish_id.nil?
+		 @parish.parish_name %></td>
+	    </tr>
           <tr>
             <td><%= "Rasgos personales:" %></td>
             <td><%= @beneficiary.personal_traits %> </td>
