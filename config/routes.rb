@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 ActionController::Routing::Routes.draw do |map|
+  map.resources :beneficiary_helps
+
   map.resources :help_types
 
   map.resources :beneficiary_types

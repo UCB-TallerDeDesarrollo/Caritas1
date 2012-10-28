@@ -1,0 +1,28 @@
+<%if current_user%> <h1>Ayuda a beneficiario: <%= @beneficiary_help.beneficiary.name %> <%= @beneficiary_help.beneficiary.last_name %></h1>
+<table>
+	<tr>
+		<td><b>Fecha:</b></td>
+		<td><%= h @beneficiary_help.date %></td>		
+	</tr>
+
+	<tr>
+		<td><b>Tipo de ayuda:</b></td>
+		<td><%= h @beneficiary_help.helpType %></td>
+		</p>
+
+	<tr>
+		<td><b>Cantidad:</b></td>
+		<td><%= h @beneficiary_help.amount %></td>
+	</tr>
+
+	<tr>
+		<td><b>Detalle:</b></td>
+		<td><%= h @beneficiary_help.detail %></td>
+	</tr>
+</table>
+
+<%= link_to 'Editar', edit_beneficiary_help_path(@beneficiary_help) %> |
+<%= link_to 'Atras', @beneficiary_help.beneficiary %>
+<%else%>
+<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
+<%end%>
