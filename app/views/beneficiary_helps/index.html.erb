@@ -1,0 +1,26 @@
+<h1>Listing beneficiary_helps</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Helptype</th>
+    <th>Amount</th>
+    <th>Detail</th>
+  </tr>
+
+<% @beneficiary_helps.each do |beneficiary_help| %>
+  <tr>
+    <td><%=h beneficiary_help.date %></td>
+    <td><%=h beneficiary_help.helpType %></td>
+    <td><%=h beneficiary_help.amount %></td>
+    <td><%=h beneficiary_help.detail %></td>
+    <td><%= link_to 'Show', beneficiary_help %></td>
+    <td><%= link_to 'Edit', edit_beneficiary_help_path(beneficiary_help) %></td>
+    <td><%= link_to 'Destroy', beneficiary_help, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New beneficiary_help', new_beneficiary_help_path %>

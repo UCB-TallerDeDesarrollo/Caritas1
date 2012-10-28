@@ -7,8 +7,7 @@ class BeneficiariesController < ApplicationController
     end
   end
   def new
-    @beneficiary = Beneficiary.new
-
+    @beneficiary = Beneficiary.new    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @beneficiary }
@@ -29,10 +28,12 @@ class BeneficiariesController < ApplicationController
   end
   def show
     @beneficiary = Beneficiary.find(params[:id])
-
+    @beneficiary_helps = @beneficiary.beneficiary_helps
+    #@beneficiary_helps = BeneficiaryHelp.find(:all, :conditions => { :beneficiary_id => params[:id] })
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @beneficiary }
+      format.xml  { render :xml => @beneficiary_help }
     end
   end
   def edit

@@ -1,4 +1,6 @@
 class Beneficiary < ActiveRecord::Base
+  
+  has_many :beneficiary_helps
     #put active record callbacks here
   has_attached_file :beneficiary_photo,
                     :url  => "/assets/products/:id/:style/:basename.:extension",
