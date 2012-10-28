@@ -23,7 +23,14 @@ class Beneficiary < ActiveRecord::Base
   def self.get_all_beneficiaries
     find(:all)
   end
-
+  
+ def self.order(order)
+    if order == "name"
+      find(:all, :order => "name ASC")        
+    end
+ end
+  
+  
   def self.search(search)
     if search
       find(:all, :conditions => ['LOWER(name) LIKE ? OR LOWER(ci) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(personal_traits) LIKE ?',"%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%"])

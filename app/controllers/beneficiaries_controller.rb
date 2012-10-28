@@ -1,6 +1,7 @@
 class BeneficiariesController < ApplicationController
   def index
     @beneficiaries = Beneficiary.search(params[:search])
+    @parishes = Parish.find(:all)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @beneficiaries }
@@ -22,6 +23,8 @@ class BeneficiariesController < ApplicationController
       if @beneficiary.save
         format.html { redirect_to(@beneficiary, :beneficiary => 'Beneficiary was successfully created.') }
         format.xml  { render :xml => @beneficiary, :status => :created, :location => @beneficiary }
+        
+        
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @beneficiary.errors, :status => :unprocessable_entity }
@@ -30,6 +33,7 @@ class BeneficiariesController < ApplicationController
   end
   def show
     @beneficiary = Beneficiary.find(params[:id])
+    @parish = Parish.find(@beneficiary.parish_id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -38,6 +42,7 @@ class BeneficiariesController < ApplicationController
   end
   def edit
     @beneficiary = Beneficiary.find(params[:id])
+     @parish = Parish.find(:all, :order => "parish_name")
   end
    def destroy  
     
