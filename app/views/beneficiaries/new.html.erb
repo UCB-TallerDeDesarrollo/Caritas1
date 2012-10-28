@@ -17,13 +17,29 @@
             <td><%= f.text_field :last_name %> </td>
           </tr>
           <tr>
+            <td><%= f.label :address, "Dirección:" %></td>
+            <td><%= f.text_field :address %> </td>
+          </tr>
+          <tr>
+            <td><%= f.label :telephone, "Telephone de referencia:" %></td>
+            <td><%= f.text_field :telephone %> </td>
+          </tr>
+          <tr>
             <td><%= f.label :personal_traits, "Rasgos personales:" %></td>
             <td><%= f.text_field :personal_traits %> </td>
           </tr>
           <tr>
-            <td>&nbsp;&nbsp;&nbsp;<%= "Observaciones"  %> </td>
+            <td>&nbsp;&nbsp;&nbsp;<%= "Observaciones:"  %> </td>
             <td><%= f.text_area :observations, :size => "60x10", :style =>"resize:none"%></td>
           </tr>
+          <tr>
+          	<td>Tipo de ayuda</td>
+          	<td><%= link_to 'Administrar tipos de ayuda',:controller => "help_types", :action => "index"%></td>	
+          </tr>
+          <tr>
+        <td><%= "&nbsp;&nbsp;&nbsp;Fotografia del Beneficiario"  %> </td>
+        <td><%= file_field 'beneficiary', 'beneficiary_photo' %></td>
+      </tr>
           <tr align="right">
             <td colspan="2">
               <%= f.submit 'Crear' %>

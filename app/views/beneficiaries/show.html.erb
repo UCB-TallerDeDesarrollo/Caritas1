@@ -17,6 +17,14 @@
             <td><%= @beneficiary.last_name %> </td>
           </tr>
           <tr>
+            <td><%= "Dirección:" %></td>
+            <td><%= @beneficiary.address %> </td>
+          </tr>
+          <tr>
+            <td><%= "Telefono de referencia:" %></td>
+            <td><%= @beneficiary.telephone %> </td>
+          </tr>
+          <tr>
             <td><%= "Rasgos personales:" %></td>
             <td><%= @beneficiary.personal_traits %> </td>
           </tr>
@@ -24,6 +32,14 @@
             <td>&nbsp;&nbsp;&nbsp;<%= "Observaciones"  %> </td>
             <td><%= @beneficiary.observations %> </td>
           </tr>
+          <tr>  
+      <td><b><%= "Fotografía del Beneficiario" %></b></td>
+      <% if !@beneficiary.beneficiary_photo_file_name.nil? %>
+      <td><%= image_tag @beneficiary.beneficiary_photo.url, :size=>"300x200" %></td>
+      <% else %>
+      <td>No está disponible la fotografía</td>
+      <% end   %>
+    </tr>
           <tr align="right">
             <td colspan="2">
               <%if current_user%>

@@ -1,3 +1,4 @@
+<%if current_user%>
 <h1>Registrar tipo de ayuda</h1>
 
 <% form_for(@help_type) do |f| %>
@@ -23,7 +24,5 @@
 			<td>* Estos campos son obligatorios</td>
 		</tr>
 	</table>
-  <p>
-    
-  </p>
 <% end %>
+<%end%>

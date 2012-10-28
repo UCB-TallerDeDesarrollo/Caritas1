@@ -18,9 +18,11 @@
     <th>CI</th>
     <th>Nombre</th>
     <th>Apellido</th>
+    <th>Dirección</th>
+    <th>Telefono de referencia</th>
     <th>Rasgos personales</th>
     <th>Observaciones</th>
-    <th>Acciones</th>
+    <th colspan="2">Acciones</th>
   </tr>
 
   <% @beneficiaries.each do |beneficiary| %>
@@ -28,6 +30,8 @@
         <td><%=link_to beneficiary.ci, beneficiary  %></td>
         <td><%=link_to beneficiary.name, beneficiary %></td>
         <td><%=link_to beneficiary.last_name, beneficiary %></td>
+        <td><%=h beneficiary.address %></td>
+        <td><%=h beneficiary.telephone %></td>
         <td><%=h beneficiary.personal_traits %></td>
         <td><%=h beneficiary.observations  %></td>
         
