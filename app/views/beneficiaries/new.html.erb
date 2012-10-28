@@ -24,6 +24,18 @@
             <td><%= f.label :telephone, "Telephone de referencia:" %></td>
             <td><%= f.text_field :telephone %> </td>
           </tr>
+            <tr>
+        <td>&nbsp;&nbsp;&nbsp;Parroquia a la que Pertenece</td>
+        <td><select name="beneficiary[parish_id]" style="width: 150px"> 
+            <% if @parish  
+              @parish.each do |parish| %>
+                <option value="<%=parish.id%>">
+                  <%=parish.parish_name%>
+                </option>
+              <%end%>
+            <%end%>
+          </select></td>
+      </tr>
           
           <tr>
             <td><%= f.label :personal_traits, "Rasgos personales:" %></td>
@@ -41,18 +53,7 @@
         <td><%= "&nbsp;&nbsp;&nbsp;Fotografia del Beneficiario"  %> </td>
         <td><%= file_field 'beneficiary', 'beneficiary_photo' %></td>
       </tr>
-      <tr>
-        <td>&nbsp;&nbsp;&nbsp;Parroquia a la que Pertenece</td>
-        <td><select name="beneficiary[parish_id]" style="width: 150px"> 
-            <% if @parish  
-              @parish.each do |parish| %>
-                <option value="<%=parish.id%>">
-                  <%=parish.parish_name%>
-                </option>
-              <%end%>
-            <%end%>
-          </select></td>
-      </tr>
+    
           <tr align="right">
             <td colspan="2">
               <%= f.submit 'Crear' %>
