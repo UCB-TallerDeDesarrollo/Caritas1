@@ -5,15 +5,15 @@
   <tr>
     <th>Usuario</th>
     <th>E-mail</th>
-    <th>Contraseña</th>
+    <th>Rol</th>
+    <th colspan="2">Acciones</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
     <td><%=h user.username %></td>
     <td><%=h user.email %></td>
-    <td><%=h user.password %></td>
-    <td><%= link_to 'Ver', user %></td>
+    <td><%=h user.role %></td>
     <td><%= link_to 'Editar', edit_user_path(user) %></td>
     <td><%= link_to 'Eliminar', user, :confirm => '¿Está seguro que desea eliminar el usuario?', :method => :delete %></td>
   </tr>
