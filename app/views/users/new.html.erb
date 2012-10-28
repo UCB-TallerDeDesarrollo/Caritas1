@@ -21,8 +21,12 @@
       <td>* Confirmacion de Contraseña</td>
       <td><%= f.password_field :password_confirmation %></td>
     </tr>
+    <tr>
+       <td>* Rol usurio</td>
+      <td><%= f.select :role, User::USERS_TYPES %></td>
+    </tr>
     <tr align="right">
-      <td colspan="2"><%= f.submit 'Registrar' %> <%= link_to 'Volver', root_url %></td>
+      <td colspan="2"><%= f.submit 'Registrar' %></td>
     </tr>
   </table>
 
