@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20121028163903) do
     t.string   "telephone"
     t.integer  "parish_id"
   end
-  
+
   create_table "beneficiary_helps", :force => true do |t|
     t.datetime "date"
     t.string   "helpType"

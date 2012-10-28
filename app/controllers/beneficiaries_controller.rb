@@ -34,10 +34,11 @@ class BeneficiariesController < ApplicationController
   def show
     @beneficiary = Beneficiary.find(params[:id])
     @parish = Parish.find(@beneficiary.parish_id)
-
+    @beneficiary_helps = @beneficiary.beneficiary_helps
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @beneficiary }
+      format.xml  { render :xml => @beneficiary_help }
     end
   end
   def edit
