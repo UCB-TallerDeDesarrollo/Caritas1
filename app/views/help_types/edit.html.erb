@@ -1,20 +1,29 @@
-<h1>Editing help_type</h1>
+<%if current_user%>
+<h1>Editar Tipo de Ayuda</h1>
 
 <% form_for(@help_type) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  
+  <table>
+		<tr>
+			<td>*Nombre del tipo de ayuda</td>
+			<td><%= f.text_field :name %></td>
+		</tr>
+		<tr>
+			<td>*Descripción</td>
+			<td><%= f.text_area :description %></td>
+		</tr>
+		<tr align="right">
+			<td colspan="2">
+				<%= f.submit 'Editar' %>
+				<button type="reset">Limpiar</button>
+				<%= link_to 'Ver', @help_type %>
+				<%= link_to 'Atrás', help_types_path %>
+			</td>
+		</tr>
+		<tr>
+			<td>* Estos campos son obligatorios</td>
+		</tr>
+	</table>  
 <% end %>
-
-<%= link_to 'Show', @help_type %> |
-<%= link_to 'Back', help_types_path %>
+<%end%>

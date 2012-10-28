@@ -1,22 +1,24 @@
-<h1>Listing help_types</h1>
+<%if current_user%>
+<h1>Administrar tipos de ayuda</h1>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
   </tr>
 
 <% @help_types.each do |help_type| %>
   <tr>
     <td><%=h help_type.name %></td>
     <td><%=h help_type.description %></td>
-    <td><%= link_to 'Show', help_type %></td>
-    <td><%= link_to 'Edit', edit_help_type_path(help_type) %></td>
-    <td><%= link_to 'Destroy', help_type, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Ver', help_type %></td>
+    <td><%= link_to 'Editar', edit_help_type_path(help_type) %></td>
+    <td><%= link_to 'Eliminar', help_type, :confirm => 'Está seguro que desea eliminar el tipo de ayuda?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New help_type', new_help_type_path %>
+<%= link_to 'Registrar tipo de ayuda', new_help_type_path %>
+<%end%>

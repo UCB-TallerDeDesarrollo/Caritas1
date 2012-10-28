@@ -1,13 +1,18 @@
-<p>
-  <b>Name:</b>
-  <%=h @help_type.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%=h @help_type.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_help_type_path(@help_type) %> |
-<%= link_to 'Back', help_types_path %>
+<%if current_user%>
+<table>
+		<tr>
+			<td>Nombre del tipo de ayuda</td>
+			<td><%= @help_type.name %></td>
+		</tr>
+		<tr>
+			<td>Descripción</td>
+			<td><%= @help_type.description %></td>
+		</tr>
+		<tr align="right">
+			<td colspan="2">
+				<%= link_to 'Editar', edit_help_type_path(@help_type) %> |
+				<%= link_to 'Atras', help_types_path %>
+			</td>
+		</tr>
+</table>
+<%end%>

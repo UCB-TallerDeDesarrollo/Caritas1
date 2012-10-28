@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121016022628) do
+ActiveRecord::Schema.define(:version => 20121028105232) do
 
   create_table "assistance_lists", :force => true do |t|
     t.datetime "created_at"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(:version => 20121016022628) do
     t.string   "beneficiary_photo_content_type"
     t.integer  "beneficiary_photo_file_size"
     t.datetime "beneficiary_photo_updated_at"
+    t.string   "telephone"
+  end
+
+  create_table "beneficiary_helps", :force => true do |t|
+    t.datetime "date"
+    t.string   "helpType"
+    t.integer  "amount"
+    t.text     "detail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "beneficiary_id"
   end
 
   create_table "beneficiary_types", :force => true do |t|
@@ -271,6 +282,7 @@ ActiveRecord::Schema.define(:version => 20121016022628) do
     t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
   end
 
   create_table "vicarious", :force => true do |t|
