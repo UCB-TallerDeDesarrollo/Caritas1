@@ -3,8 +3,24 @@
 
 <p>
   <% form_tag beneficiaries_path, :method => 'get' do %>
-      Parametro <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Buscar", :name => nil %>
+      <div>
+        <%= label_tag "param_search", "Parametros de Busqueda:" %>
+      </div>
+      <div>
+        <%= label_tag "search__name", "Nombre" %>
+        <%= text_field_tag :search_name, params[:First_name] %>
+        <%= label_tag "search_last_name", "Apellido" %>
+        <%= text_field_tag :search_last_name, params[:Last_name] %>
+      </div>
+      <div>
+        <%= label_tag "search_ci", "Ci" %>
+        <%= text_field_tag :search_ci, params[:ci] %>
+        <%= label_tag "search_traits", "Rasgos Personales" %>
+        <%= text_field_tag :search_traits, params[:traits] %>
+      </div>
+
+        <%= submit_tag "Buscar", :name => nil %>
+
   <% end %>
 </p>
 
@@ -18,6 +34,10 @@
     <th>CI</th>
     <th>Nombre</th>
     <th>Apellido</th>
+    <th>Dirección</th>
+    <th>Telefono de referencia</th>
+    <th>Parroquia a la que pertenece</th>
+    <th>Tipo de beneficiario</th>    
     <th>Rasgos personales</th>
     <th>Observaciones</th>
     <th>Tipo de Ayuda</th>
@@ -29,9 +49,21 @@
         <td><%=link_to beneficiary.ci, beneficiary  %></td>
         <td><%=link_to beneficiary.name, beneficiary %></td>
         <td><%=link_to beneficiary.last_name, beneficiary %></td>
-        <td><%=h beneficiary.personal_traits %></td>
+        <td><%=h beneficiary.address %></td>
+        <td><%=h beneficiary.telephone %></td>
+        <td>
+         <% @parishes.each do |p| %>
+                  <%= p.parish_name  if p.id == beneficiary.parish_id  %>
+                <%end%>
+        </td>
+        <td>
+         <% @beneficiary_types.each do |p| %>
+                  <%= p.name  if p.id == beneficiary.beneficiary_type_id  %>
+                <%end%>
+        </td>
+	<td><%=h beneficiary.personal_traits %></td>
         <td><%=h beneficiary.observations  %></td>
-        <td><%=h beneficiary.help_type  %></td>
+        <td><%=h beneficiary.help_type.name  %></td>
         
         <td><%= link_to "Editar",edit_beneficiary_path(beneficiary) %> </td>
         <td><%= link_to 'Eliminar', beneficiary, :confirm => '¿Está seguro que desea eliminar al Beneficiario?', :method => :delete%></td>

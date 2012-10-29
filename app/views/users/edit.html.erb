@@ -1,28 +1,39 @@
 <%if current_user%>
 <h1>Editar Usuario</h1>
 
-<% form_for(@user) do |f| %>
-  <%= f.error_messages %>
+    <% form_for(@user) do |f| %>
+        <%= f.error_messages %>
 
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
-  </p>
-  <p>
-    <%= f.submit 'Actualizar' %>
-  </p>
+        <table>
+          <tr>
+            <td>* Nombre de Usuario</td>
+            <td><%= f.text_field :username %></td>
+          </tr>
+          <tr>
+            <td>* E-mail</td>
+            <td><%= f.text_field :email %></td>
+          </tr>
+          <tr>
+            <td>* Contraseña</td>
+            <td><%= f.password_field :password %></td>
+          </tr>
+          <tr>
+            <td>* Confirmacion de Contraseña</td>
+            <td><%= f.password_field :password_confirmation %></td>
+          </tr>
+          <tr>
+            <td>* Rol usurio</td>
+            <td><%= f.select :role, User::USERS_TYPES %></td>
+          </tr>
+          <tr align="right">
+            <td colspan="2"><%= f.submit 'Actualizar' %></td>
+          </tr>
+        </table>
+
 <% end %>
 
 <%= link_to 'Ver', @user %> |
-<%= link_to 'Volver', root_url %>
+<%= link_to 'Volver', user_path %>
 <%else%>
 <h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
 <%end%>

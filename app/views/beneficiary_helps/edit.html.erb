@@ -1,0 +1,44 @@
+<%if current_user%>
+<h1>Editando ayuda a beneficiario: <%= @beneficiary_help.beneficiary.name %> <%= @beneficiary_help.beneficiary.last_name %></h1>
+
+<% form_for(@beneficiary_help) do |f| %>
+  <%= f.error_messages %>
+  <table>
+	<%= f.hidden_field :beneficiary_id %>
+	<tr>
+		<td><%= f.label :date, "Fecha" %></td>
+		<td><%= f.datetime_select :date %></td>
+	</tr>
+	<tr>
+		<td><%= f.label :helpType, "Tipo de ayuda" %></td>
+		<td><select name="beneficiary_help[helpType]" style="width: 150px"> 
+			<option></option>
+            <% if @help_types  
+              @help_types.each do |help| %>
+                <option value="<%=help.name%>" <%='selected' if help.name == @beneficiary_help.helpType %>>
+                  <%=help.name%>
+                </option>
+              <%end%>
+            <%end%>
+          </select></td>
+	</tr>
+	<tr>
+		<td><%= f.label :amount, "Cantidad" %></td>
+		<td><%= f.text_field :amount%></td>
+	</tr>
+	<tr>
+		<td><%= f.label :detail, "Detalles" %></td>
+		<td><%= f.text_area :detail %></td>
+	</tr>
+	<tr align="right">
+		<td colspan="2"> <%= f.submit 'Editar' %>
+		</button> <%= link_to 'Cancelar', :back %> </td>
+	</tr>
+</table>
+<% end %>
+
+<%= link_to 'Mostrar', @beneficiary_help %> |
+<%= link_to 'Atras', @beneficiary_help.beneficiary %>
+<%else%>
+<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
+<%end%>

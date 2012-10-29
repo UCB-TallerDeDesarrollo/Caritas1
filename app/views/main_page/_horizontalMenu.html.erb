@@ -1,6 +1,6 @@
 
 <ul id=nav>
-   <% if current_user %>
+   <% if current_user && current_user_role == 'Administrador' %>
       <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%>
         <ul>
           <li><%= link_to 'Quiénes somos?',:controller => "main_page", :action => "quienesSomos"%></li>
@@ -17,6 +17,12 @@
           <li><%= link_to 'Cursos de Formación',:controller => "courses_types", :action => "index"%></li>
         </ul></li>
       <li><a href="#"><%= link_to 'Beneficiarios',:controller=> "beneficiaries", :action => "index" %></a>
+      	<ul>
+      		<li><%= link_to 'Tipos de ayuda',:controller => "help_types", :action => "index"%></li>
+      		<li><%= link_to 'Reporte de ayudas',:controller => "beneficiary_helps", :action => "report"%></li>
+      	</ul>
+      </li>
+      <li><a href="#"><%= link_to 'Usuarios',:controller =>"users",:action => "index" %></a></li>
       <li><a href="#">Campañas y Proyectos</a>
         <ul>
           <li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
@@ -25,6 +31,14 @@
           <li><%= link_to 'Ficha Social',:controller => "social_cards", :action => "index"%></li>
           <li><%= link_to 'Tipos de Beneficiario',:controller => "beneficiary_types", :action => "index"%></li>
         </ul>
+        <% elsif current_user && current_user_role == 'Parroco' %>
+      <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%>
+        <ul>
+          <li><%= link_to 'Quiénes somos?',:controller => "main_page", :action => "quienesSomos"%></li>
+          <li><%= link_to 'Contáctanos',:controller => "emailer", :action => "contact_us"%></li>
+        </ul>
+      </li>
+      <li><%= link_to 'Parroquias', :controller=>"parishes", :action => "index_public", :id => " "%></li>
         <% else %>
             <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%>
               <ul>
@@ -36,13 +50,8 @@
           <li><%= link_to 'Campaña',:controller => "campaings", :action => "index_public", :id =>" " %></li>
           <li><%= link_to 'Noticias',:controller => "notices", :action => "index_public", :id =>" "  %></li>
           <li><%= link_to 'Obra Social',:controller => "social_works", :action => "index_public",:id =>" " %></li>
-
-
          </ul>
             </li>
-
         <% end %>
-
-
 </li>
 </ul>

@@ -17,6 +17,14 @@ class ParishesController < ApplicationController
       format.xls
     end
   end
+  def index_public
+    @parishes = Parish.search(params[:search])
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @parishes }
+    end
+  end
     def report
       respond_to do |format|
         format.html # show.html.erb

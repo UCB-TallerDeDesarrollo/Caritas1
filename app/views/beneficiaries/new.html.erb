@@ -17,32 +17,68 @@
             <td><%= f.text_field :last_name %> </td>
           </tr>
           <tr>
+            <td><%= f.label :address, "Dirección:" %></td>
+            <td><%= f.text_field :address %> </td>
+          </tr>
+          <tr>
+            <td><%= f.label :telephone, "Telephone de referencia:" %></td>
+            <td><%= f.text_field :telephone %> </td>
+          </tr>
+          <td><%= f.label :help_type , "Tipo De Ayuda(*):" %></td>
+          <td>
+            <% if !@help_type.empty? %>
+                <select name="beneficiary[help_type_id]" style="width: 195px">
+                  <%@help_type.each do |help_type| %>
+                      <option value="<%=help_type.id %>">
+                        <%=help_type.name%>
+                      </option>
+                  <% end %>
+                </select>
+            <%else%>
+                No se registraron tipos de ayuda.
+            <%end%>
+          </td>
+            <tr>
+        <td>&nbsp;&nbsp;&nbsp;Parroquia a la que Pertenece</td>
+        <td><select name="beneficiary[parish_id]" style="width: 150px"> 
+            <% if @parish  
+              @parish.each do |parish| %>
+                <option value="<%=parish.id%>">
+                  <%=parish.parish_name%>
+                </option>
+              <%end%>
+            <%end%>
+          </select></td>
+      </tr>
+         <tr>
+        <td>&nbsp;&nbsp;&nbsp;Tipo de beneficiario</td>
+        <td><select name="beneficiary[beneficiary_type_id]" style="width: 150px"> 
+            <% if @beneficiary_type  
+              @beneficiary_type.each do |beneficiary_t| %>
+                <option value="<%=beneficiary_t.id%>">
+                  <%=beneficiary_t.name%>
+                </option>
+              <%end%>
+            <%end%>
+          </select></td>
+      </tr>   
+      
+          <tr>
             <td><%= f.label :personal_traits, "Rasgos personales:" %></td>
             <td><%= f.text_field :personal_traits %> </td>
           </tr>
           <tr>
-            <td>&nbsp;&nbsp;&nbsp;<%= "Observaciones"  %> </td>
+            <td>&nbsp;&nbsp;&nbsp;<%= "Observaciones:"  %> </td>
             <td><%= f.text_area :observations, :size => "60x10", :style =>"resize:none"%></td>
           </tr>
+          
           <tr>
-            <td><%= f.label :help_type , "Tipo De Ayuda(*):" %></td>
-            <td>
-              <% if !@help_type.empty? %>
-              <select name="help_type" style="width: 195px">
-                <%@help_type.each do |help_type| %>
-                    <option value="<%=help_type.id %>">
-                      <%=help_type.name%>
-                    </option>
-                <% end %>
-              </select>
-               <%else%>
-                   No se registraron tipos de ayuda.
-              <%end%>
-            </td>
+
           </tr>
         <td><%= "&nbsp;&nbsp;&nbsp;Fotografia del Beneficiario"  %> </td>
         <td><%= file_field 'beneficiary', 'beneficiary_photo' %></td>
       </tr>
+    
           <tr align="right">
             <td colspan="2">
               <%= f.submit 'Crear' %>

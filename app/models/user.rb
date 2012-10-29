@@ -1,4 +1,8 @@
 # -*- encoding : utf-8 -*-
 class User < ActiveRecord::Base
-  acts_as_authentic 
+  USERS_TYPES=Array.[]("Administrador","Parroco","Voluntario")
+  acts_as_authentic
+  def self.get_all_users
+      find(:all)
+  end
 end

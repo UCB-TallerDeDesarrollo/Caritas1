@@ -9,9 +9,9 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
     
-  helper_method :current_user  
-  
-  private  
+  helper_method :current_user
+  helper_method :current_user_role
+  private
   def current_user_session  
     return @current_user_session if defined?(@current_user_session)  
     @current_user_session = UserSession.find  
@@ -20,5 +20,7 @@ class ApplicationController < ActionController::Base
   def current_user  
     @current_user = current_user_session && current_user_session.record  
   end 
-  
+  def current_user_role
+    @current_user_role = User.find(current_user).role
+  end
 end

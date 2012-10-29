@@ -1,52 +1,101 @@
-<%if current_user%>
-    <h1>Ver Beneficiario</h1>
+<%if current_user%> <h1>Ver Beneficiario</h1>
 
-    <% form_for(@beneficiary) do |f| %>
-        <%= f.error_messages %>
-        <table>
-          <tr>
-            <td><%= "CI:" %></td>
-            <td><%= @beneficiary.ci %> </td>
-          </tr>
-          <tr>
-            <td><%= "Nombre:" %></td>
-            <td><%= @beneficiary.name %> </td>
-          </tr>
-          <tr>
-            <td><%= "Apellido:" %></td>
-            <td><%= @beneficiary.last_name %> </td>
-          </tr>
-          <tr>
-            <td><%= "Rasgos personales:" %></td>
-            <td><%= @beneficiary.personal_traits %> </td>
-          </tr>
-          <tr>
-            <td>&nbsp;&nbsp;&nbsp;<%= "Observaciones"  %> </td>
-            <td><%= @beneficiary.observations %> </td>
-          </tr>
-          <tr>
-            <td>&nbsp;&nbsp;&nbsp;<%= "Tipo de Ayuda"  %> </td>
-            <td><%= @beneficiary.help_type %> </td>
-          </tr>
-          <tr>
-
-      <td><b><%= "Fotografía del Beneficiario" %></b></td>
-      <% if !@beneficiary.beneficiary_photo_file_name.nil? %>
-      <td><%= image_tag @beneficiary.beneficiary_photo.url, :size=>"300x200" %></td>
-      <% else %>
-      <td>No está disponible la fotografía</td>
-      <% end   %>
+<% form_for(@beneficiary) do |f| %>
+<%= f.error_messages %>
+<table>
+	<tr>
+		<td><%= "CI:" %></td>
+		<td><%= @beneficiary.ci %> </td>
+	</tr>
+	<tr>
+		<td><%= "Nombre:" %></td>
+		<td><%= @beneficiary.name %> </td>
+	</tr>
+	<tr>
+		<td><%= "Apellido:" %></td>
+		<td><%= @beneficiary.last_name %> </td>
+	</tr>
+	<tr>
+		<td><%= "Dirección:" %></td>
+		<td><%= @beneficiary.address %> </td>
+	</tr>
+	<tr>
+		<td><%= "Telefono de referencia:" %></td>
+		<td><%= @beneficiary.telephone %> </td>
+	</tr>
+    <tr>
+        <td>&nbsp;&nbsp;&nbsp;<%= "Tipo de Ayuda"  %> </td>
+        <td><%= @beneficiary.help_type.name %> </td>
     </tr>
-          <tr align="right">
-            <td colspan="2">
-              <%if current_user%>
+	 <tr>
+	      <td>
+		<b>Parroquia a la que Pertenece</b>
+	      </td>
+	      <td><%=h if @beneficiary.parish_id.nil?
+		 @parish.parish_name %></td>
+	    </tr>
+	    <tr>
+	      <td>
+		<b>Tipo de Beneficiario</b>
+	      </td>
+	      <td><%=h if @beneficiary.beneficiary_type_id.nil?
+		 @beneficiary_type.name %></td>
+	    </tr>
+	    
+	<tr>
+		<td><%= "Rasgos personales:" %></td>
+		<td><%= @beneficiary.personal_traits %> </td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;<%= "Observaciones"  %> </td>
+		<td><%= @beneficiary.observations %> </td>
+	</tr>
+	<tr>
+		<td><b><%= "Fotografía del Beneficiario" %></b></td>
+		<% if !@beneficiary.beneficiary_photo_file_name.nil? %>
+		<td><%= image_tag @beneficiary.beneficiary_photo.url, :size=>"300x200" %></td>
+		<% else %>
+		<td>No está disponible la fotografía</td>
+		<% end   %>
+	</tr>
+	<tr align="right">
+		<td colspan="2"> <%if current_user%>
+		<%end%>
+		<%= link_to 'Volver', beneficiaries_path %> </td>
+	</tr>
+</table>
+<h1>Ayudas recibidas</h1>
 
-              <%end%>
-              <%= link_to 'Volver', beneficiaries_path %>
-            </td>
-          </tr>
-        </table>
-    <% end %>
+<table>
+	<tr align="right">
+		<td> <%= link_to 'Nueva ayuda', new_beneficiary_help_path(:bid => @beneficiary.id) %></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<table border="3">
+			<tr>
+				<th>Fecha</th>
+				<th>Tipo de ayuda</th>
+				<th>Cantidad</th>
+				<th>Detalle</th>
+				<th colspan="3">Acciones</th>
+			</tr>
+
+			<% @beneficiary_helps.each do |beneficiary_help| %>
+			<tr>
+				<td><%= h beneficiary_help.date %></td>
+				<td><%= h beneficiary_help.helpType %></td>
+				<td><%= h beneficiary_help.amount %></td>
+				<td><%= h beneficiary_help.detail %></td>
+				<td><%= link_to 'Mostrar', beneficiary_help %></td>
+				<td><%= link_to 'Editar', edit_beneficiary_help_path(beneficiary_help) %></td>
+				<td><%= link_to 'Eliminar', beneficiary_help, :confirm => 'Estas seguro?', :method => :delete %></td>
+			</tr>
+			<% end %>
+		</table></td>
+	</tr>
+</table>
+<% end %>
 <%else%>
-    <h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
+<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
 <%end%>

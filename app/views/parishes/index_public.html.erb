@@ -1,0 +1,39 @@
+<%if current_user%>
+    <h1>Parroquias</h1>
+
+    <% form_tag parishes_path, :method => 'get' do %>
+        <p>
+          Parámetro <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Buscar", :name => nil %>
+        </p>
+    <% end %>
+
+    <table>
+        <td>
+
+          <table border="3">
+            <tr id ='head-table'>
+              <th>Nombre de Parroquia</th>
+              <th>Ubicación</th>
+              <th>Teléfono</th>
+            </tr>
+
+            <% @parishes.each do |parish| %>
+                <%if parish.state %>
+                    <tr>
+                      <td><%= link_to  parish.parish_name,parish %></td>
+                      <td><%=h parish.ubication %></td>
+                      <td><%=h parish.telephone %></td>
+                    </tr>
+                <%end%>
+            <% end %>
+          </table>
+        </td>
+
+      </tr>
+    </table>
+
+    <br />
+<%else%>
+    <h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
+<%end%>
