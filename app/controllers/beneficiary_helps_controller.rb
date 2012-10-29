@@ -84,4 +84,24 @@ class BeneficiaryHelpsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  # GET /beneficiary_helps/report
+  # GET /beneficiary_helps/report.xml
+  def report
+    if(params[:date_start])
+      @start = Time.utc(params[:date_start]["(1i)"],params[:date_start]["(2i)"], params[:date_start]["(3i)"], params[:date_start]["(4i)"], params[:date_start]["(5i)"])
+      params[:date_start] = nil
+      @end = Time.utc(params[:date_end]["(1i)"],params[:date_end]["(2i)"], params[:date_end]["(3i)"], params[:date_end]["(4i)"], params[:date_end]["(5i)"])
+      params[:date_end] = nil
+    else
+      @start= Time.new
+      @end= Time.new
+    end
+    @beneficiary_helps = BeneficiaryHelp.search(@start, @end)
+    
+    respond_to do |format|
+      format.html # report.html.erb
+      format.xml  { render :xml => @beneficiary_helps }
+    end
+  end
 end

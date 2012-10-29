@@ -1,4 +1,0 @@
-And after you approved the authorization confirm it here (y/n): y
-Access token: bk5ep4w3ezkzdcv
-Access token secret: vt5bel8vwie4vss
-User Id: 111613998
