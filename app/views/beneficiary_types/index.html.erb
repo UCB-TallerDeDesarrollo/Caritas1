@@ -1,4 +1,4 @@
-<%if current_user%> <h1>Tipos de beneficiarios</h1>
+<h1>Tipos de beneficiarios</h1>
 
 <p>
 	<% form_tag beneficiary_types_url, :method => 'get' do %>
@@ -32,7 +32,3 @@
 		</table></td>
 	</tr>
 </table>
-<%else%>
-<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
-<%end%>
-

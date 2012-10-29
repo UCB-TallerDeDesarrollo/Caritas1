@@ -1,4 +1,3 @@
-<%if current_user%>
 <h1>Editando ayuda a beneficiario: <%= @beneficiary_help.beneficiary.name %> <%= @beneficiary_help.beneficiary.last_name %></h1>
 
 <% form_for(@beneficiary_help) do |f| %>
@@ -39,6 +38,3 @@
 
 <%= link_to 'Mostrar', @beneficiary_help %> |
 <%= link_to 'Atras', @beneficiary_help.beneficiary %>
-<%else%>
-<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
-<%end%>

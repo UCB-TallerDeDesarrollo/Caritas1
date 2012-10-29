@@ -1,4 +1,4 @@
-<%if current_user%> <h1>Nuevo Tipo de Beneficiario</h1>
+<h1>Nuevo Tipo de Beneficiario</h1>
 
 <% form_for(@beneficiary_type) do |f| %>
 <%= f.error_messages %>
@@ -20,6 +20,3 @@
 	</tr>
 </table>
 <% end %>
-<%else%>
-<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
-<%end%>

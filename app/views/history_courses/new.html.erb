@@ -1,4 +1,3 @@
-<%if current_user%>
 <h1>Crear Historia del Curso</h1>
 
 <% form_for(@history_course, :html => {:multipart => true})do |f| %>
@@ -29,6 +28,3 @@
   <% end %>
 
 <%= link_to 'Atras', history_courses_path %>
-<%else%>
-<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
-<%end%>
