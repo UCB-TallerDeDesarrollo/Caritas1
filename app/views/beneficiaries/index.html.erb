@@ -3,8 +3,24 @@
 
 <p>
   <% form_tag beneficiaries_path, :method => 'get' do %>
-      Parametro <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Buscar", :name => nil %>
+      <div>
+        <%= label_tag "param_search", "Parametros de Busqueda:" %>
+      </div>
+      <div>
+        <%= label_tag "search__name", "Nombre" %>
+        <%= text_field_tag :search_name, params[:First_name] %>
+        <%= label_tag "search_last_name", "Apellido" %>
+        <%= text_field_tag :search_last_name, params[:Last_name] %>
+      </div>
+      <div>
+        <%= label_tag "search_ci", "Ci" %>
+        <%= text_field_tag :search_ci, params[:ci] %>
+        <%= label_tag "search_traits", "Rasgos Personales" %>
+        <%= text_field_tag :search_traits, params[:traits] %>
+      </div>
+
+        <%= submit_tag "Buscar", :name => nil %>
+
   <% end %>
 </p>
 
