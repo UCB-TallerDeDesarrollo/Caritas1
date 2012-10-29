@@ -18,6 +18,45 @@
         <%= label_tag "search_traits", "Rasgos Personales" %>
         <%= text_field_tag :search_traits, params[:traits] %>
       </div>
+      <div>
+      	&nbsp;
+      </div>
+      <div>
+      	Tipo de Beneficiario <select name="select_beneficiary_type" style="width: 150px">          
+          <option value="0" >Ninguno</option>         
+          <% if BeneficiaryType.all.length > 0
+            BeneficiaryType.all.each do |benef| 
+              if benef.id != 0%>
+                <option value="<%=benef.id%>" >
+                  <%=benef.name%>
+                </option>
+              <% end 
+            end 
+          end%>                 
+        </select>
+      </div>
+      <div>
+      	&nbsp;
+      </div>
+      
+      <div>
+      	Tipo de Ayuda <select name="select_help_type" style="width: 150px">          
+          <option value="0" >Ninguno</option>         
+          <% if HelpType.all.length > 0
+            HelpType.all.each do |help_type| 
+              if help_type.id != 0%>
+                <option value="<%=help_type.id%>" >
+                  <%=help_type.name%>
+                </option>
+              <% end 
+            end 
+          end%>                 
+        </select>
+      </div>
+      <div>
+      	&nbsp;
+      </div>
+      
 
         <%= submit_tag "Buscar", :name => nil %>
 
