@@ -1,4 +1,3 @@
-<%if current_user%>
 <h1>Editar Voluntario</h1>
 
 <% form_for(@volunteer, :html => {:multipart => true}) do |f| %>
@@ -88,6 +87,3 @@
   </table>
 
 <% end %>
-<%else%>
-  <h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
-<%end%>

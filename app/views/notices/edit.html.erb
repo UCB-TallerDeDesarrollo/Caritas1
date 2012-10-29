@@ -1,4 +1,4 @@
-<%if current_user%>
+
 <h1>Editar Noticia</h1>
 
 <% form_for(@notice, :html => {:multipart => true}) do |f| %>
@@ -53,6 +53,3 @@
     </tr>
   </table>
 <% end %>
-<%else%>
-  <h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
-<%end%>
