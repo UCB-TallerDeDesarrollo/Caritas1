@@ -17,7 +17,7 @@ class Beneficiary < ActiveRecord::Base
   validates_length_of :last_name, :within => 3..25
   validates_presence_of :personal_traits
 
-  validates_presence_of :help_type
+
   belongs_to :help_type
 
   def self.get_all_beneficiaries

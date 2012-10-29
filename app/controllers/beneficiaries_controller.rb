@@ -8,7 +8,7 @@ class BeneficiariesController < ApplicationController
   end
   def new
     @beneficiary = Beneficiary.new
-    @help_type =  HelpType.all
+    @help_type =  HelpType.all(:select => "id, name")
 
     respond_to do |format|
       format.html # new.html.erb
@@ -17,7 +17,7 @@ class BeneficiariesController < ApplicationController
   end
   def create
     @beneficiary = Beneficiary.new(params[:beneficiary])
-    @help_type = HelpType.find(:all)
+    @help_type =  HelpType.find(:all)
 
     respond_to do |format|
       if @beneficiary.save

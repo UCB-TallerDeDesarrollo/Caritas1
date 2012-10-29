@@ -5,7 +5,7 @@ class AddAttachmentsBeneficiaryPhotoToBeneficiary < ActiveRecord::Migration
     add_column :beneficiaries, :beneficiary_photo_content_type, :string
     add_column :beneficiaries, :beneficiary_photo_file_size, :integer
     add_column :beneficiaries, :beneficiary_photo_updated_at, :datetime
-    add_column :beneficiaries, :help_type, :string
+    add_column :beneficiaries, :help_type_id, :integer
 
   end
 
@@ -15,7 +15,7 @@ class AddAttachmentsBeneficiaryPhotoToBeneficiary < ActiveRecord::Migration
     remove_column :beneficiaries, :beneficiary_photo_content_type
     remove_column :beneficiaries, :beneficiary_photo_file_size
     remove_column :beneficiaries, :beneficiary_photo_updated_at
-    remove_column :beneficiaries, :help_type
+    remove_column :beneficiaries, :help_type_id
 
   end
 end

@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20121016022628) do
     t.string   "beneficiary_photo_content_type"
     t.integer  "beneficiary_photo_file_size"
     t.datetime "beneficiary_photo_updated_at"
+    t.integer  "help_type_id"
   end
 
   create_table "beneficiary_types", :force => true do |t|
@@ -271,7 +272,6 @@ ActiveRecord::Schema.define(:version => 20121016022628) do
     t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "role"
   end
 
   create_table "vicarious", :force => true do |t|

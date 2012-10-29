@@ -20,6 +20,7 @@
     <th>Apellido</th>
     <th>Rasgos personales</th>
     <th>Observaciones</th>
+    <th>Tipo de Ayuda</th>
     <th colspan="2">Acciones</th>
   </tr>
 
@@ -30,6 +31,7 @@
         <td><%=link_to beneficiary.last_name, beneficiary %></td>
         <td><%=h beneficiary.personal_traits %></td>
         <td><%=h beneficiary.observations  %></td>
+        <td><%=h beneficiary.help_type  %></td>
         
         <td><%= link_to "Editar",edit_beneficiary_path(beneficiary) %> </td>
         <td><%= link_to 'Eliminar', beneficiary, :confirm => '¿Está seguro que desea eliminar al Beneficiario?', :method => :delete%></td>
