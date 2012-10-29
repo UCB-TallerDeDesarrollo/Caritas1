@@ -33,11 +33,23 @@ class Beneficiary < ActiveRecord::Base
  end
   
   
-  def self.search(search)
-    if search
-      find(:all, :conditions => ['LOWER(name) LIKE ? OR LOWER(ci) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(personal_traits) LIKE ?',"%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%"])
+  def self.search(name, last, ci, traits)
+    if !name.blank?
+      find(:all, :conditions => ['LOWER(name) LIKE ?',"%#{name.downcase}%"])
     else
-      find(:all)
+      if !last.blank?
+        find(:all, :conditions => ['LOWER(last_name) LIKE ?',"%#{last.downcase}%"])
+      else
+        if !ci.blank?
+          find(:all, :conditions => ['LOWER(ci) LIKE ?',"%#{ci.downcase}%"])
+        else
+          if !traits.blank?
+            find(:all, :conditions => ['LOWER(personal_traits) LIKE ?',"%#{traits.downcase}%"])
+          else
+            find(:all)
+          end
+        end
+      end
     end
   end
 end

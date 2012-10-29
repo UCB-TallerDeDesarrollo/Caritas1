@@ -1,6 +1,6 @@
 class BeneficiariesController < ApplicationController
   def index
-    @beneficiaries = Beneficiary.search(params[:search])
+    @beneficiaries = Beneficiary.search(params[:search_name],params[:search_last_name], params[:search_ci],params[:search_traits])
     @parishes = Parish.find(:all)
     respond_to do |format|
       format.html # index.html.erb
