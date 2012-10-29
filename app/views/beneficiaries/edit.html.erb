@@ -23,6 +23,19 @@
       <td><%= f.label :telephone, "Telefono de referencia:" %></td>
       <td><%= f.text_field :telephone %> </td>
     </tr>
+     <tr>
+        <td>&nbsp;&nbsp;&nbsp;Parroquia a la que Pertenece</td>
+        <td><select name="beneficiary[parish_id]" style="width: 150px"> 
+            <% if @parish  
+              @parish.each do |parish| %>
+                <option value="<%=parish.id%>">
+                  <%=parish.parish_name%>
+                </option>
+              <%end%>
+            <%end%>
+          </select></td>
+      </tr>
+    
 	<tr>
 		<td><%= f.label :personal_traits, "Rasgos personales:" %></td>
 		<td><%= f.text_field :personal_traits %> </td>
@@ -31,10 +44,7 @@
 		<td>&nbsp;&nbsp;&nbsp;<%= "Observaciones"  %> </td>
 		<td><%= f.text_area :observations, :size => "60x10", :style =>"resize:none"%></td>
 	</tr>
-	<tr>
-          	<td>Tipo de ayuda</td>
-          	<td><%= link_to 'Administrar tipos de ayuda',:controller => "help_types", :action => "index"%></td>	
-    </tr>
+	
 	<tr>
 		<td><%= "&nbsp;&nbsp;&nbsp;Fotografía del Beneficiario" %></td>
 		<% if !@beneficiary.beneficiary_photo_file_name.nil?  %>

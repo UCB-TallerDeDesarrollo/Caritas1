@@ -1,4 +1,6 @@
 class Beneficiary < ActiveRecord::Base
+  
+  has_many :beneficiary_helps
     #put active record callbacks here
   has_attached_file :beneficiary_photo,
                     :url  => "/assets/products/:id/:style/:basename.:extension",
@@ -8,6 +10,7 @@ class Beneficiary < ActiveRecord::Base
                         :path => proc { |style| "Beneficiary/#{style}/#{id}_#{beneficiary_photo.original_filename}"},
                         :unique_filename => true
                     }
+  belongs_to :parish
   validates_attachment_size :beneficiary_photo, :less_than => 3.megabytes
   validates_attachment_content_type :beneficiary_photo, :content_type => ['image/jpeg', 'image/png', 'image/gif']
   validates_numericality_of :ci
@@ -17,11 +20,19 @@ class Beneficiary < ActiveRecord::Base
   validates_presence_of :last_name
   validates_length_of :last_name, :within => 3..25
   validates_presence_of :personal_traits
+  validates_presence_of :parish_id
 
   def self.get_all_beneficiaries
     find(:all)
   end
-
+  
+ def self.order(order)
+    if order == "name"
+      find(:all, :order => "name ASC")        
+    end
+ end
+  
+  
   def self.search(search)
     if search
       find(:all, :conditions => ['LOWER(name) LIKE ? OR LOWER(ci) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(personal_traits) LIKE ?',"%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%"])

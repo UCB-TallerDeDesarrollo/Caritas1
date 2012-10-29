@@ -1,0 +1,38 @@
+<%if current_user%>
+<h1> Reporte de Ayudas a beneficiarios</h1>
+<% form_tag (:controller => "beneficiary_helps", :action => "report", :method => "get") do %>
+  Desde: <%= datetime_select :date_start, params[:date_start] %> <br/>
+  Hasta:&nbsp; <%= datetime_select :date_end, params[:date_end] %><br/>
+<%= submit_tag "Filtrar", :id => nil %>
+ <% end %>
+ 
+ 
+<table>
+  <tr>
+    <th>Fecha</th>
+    <th>Parroquia</th>
+    <th>CI</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Tipo de ayuda</th>
+    <th>Cantidad</th>
+    <th>Detalle</th>
+  </tr>
+
+<% @beneficiary_helps.each do |beneficiary_help| %>
+  <tr>
+    <td><%=h beneficiary_help.date %></td>
+    <td><%=h beneficiary_help.beneficiary.parish.parish_name %></td>
+    <td><%=h beneficiary_help.beneficiary.ci %></td>
+    <td><%=h beneficiary_help.beneficiary.name %></td>
+    <td><%=h beneficiary_help.beneficiary.last_name %></td>
+    <td><%=h beneficiary_help.helpType %></td>
+    <td><%=h beneficiary_help.amount %></td>
+    <td><%=h beneficiary_help.detail %></td>
+  </tr>
+<% end %>
+</table>
+Total: <%= @beneficiary_helps.count%>
+<%else%>
+<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
+<%end%>
