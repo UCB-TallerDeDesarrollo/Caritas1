@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class UserSessionsController < ApplicationController
-  filter_resource_access
+  filter_access_to :all
   def new  
     @user_session = UserSession.new  
   end

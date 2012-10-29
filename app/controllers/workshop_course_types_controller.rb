@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class WorkshopCourseTypesController < ApplicationController
-  filter_resource_access
+  filter_access_to :all
   # GET /workshop_course_types
   # GET /workshop_course_types.xml
   def index

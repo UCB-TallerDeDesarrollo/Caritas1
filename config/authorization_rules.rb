@@ -25,6 +25,11 @@ authorization do
      has_permission_on [:notices], :to => [:index_public, :show_public]
      has_permission_on [:social_works], :to => [:index_public, :show_public]
      has_permission_on [:campaings], :to=>[:index_public, :show_public]
-     has_permission_on [:user_sessions], :to=>[:new, :create, :destroy]    
+     has_permission_on [:user_sessions], :to=>[:new, :create, :destroy] 
+  end
+  
+  role :parroco do
+    includes :guest
+    has_permission_on [:parishes], :to => [:index, :show]
   end
 end

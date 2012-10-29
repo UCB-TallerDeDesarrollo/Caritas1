@@ -1,5 +1,5 @@
 class HelpTypesController < ApplicationController
-  filter_resource_access
+  filter_access_to :all
   # GET /help_types
   # GET /help_types.xml
   def index

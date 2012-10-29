@@ -1,5 +1,5 @@
 class BeneficiariesController < ApplicationController
-  filter_resource_access
+  filter_access_to :all
   def index
     @beneficiaries = Beneficiary.search(params[:search])
     @parishes = Parish.find(:all)

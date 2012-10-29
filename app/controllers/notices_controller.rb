@@ -7,7 +7,7 @@ class NoticesController < ApplicationController
     :search_on => ['title'],
     :full_text_search => true
     
-    #filter_resource_access
+  filter_access_to :all
   def index
     @notices = Notice.search(params[:search])
 

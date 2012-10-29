@@ -62,6 +62,8 @@
   </table>
 
 
-<%= link_to 'Editar', edit_parish_path(@parish) %> |
+<%if permitted_to? :edit, :parishes %>
+	<%= link_to 'Editar', edit_parish_path(@parish) %> |
+<%end%>
 <%= link_to 'Volver', parishes_path %>
 

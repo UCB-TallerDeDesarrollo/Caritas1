@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class PastorsController < ApplicationController
-  filter_resource_access
+  filter_access_to :all
   # GET /pastors
   # GET /pastors.xml
   

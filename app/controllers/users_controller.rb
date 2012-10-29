@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class UsersController < ApplicationController
-  filter_resource_access
+  filter_access_to :all
   def index
     @users = User.get_all_users
     respond_to do |format|

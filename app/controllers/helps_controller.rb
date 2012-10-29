@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class HelpsController < ApplicationController
-  filter_resource_access
+  filter_access_to :all
   # GET /helps
   # GET /helps.xml
   def index

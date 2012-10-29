@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class BeneficiaryHelpsController < ApplicationController
-  filter_resource_access
+  filter_access_to :all
   # GET /beneficiary_helps
   # GET /beneficiary_helps.xml
   def index

@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class WorkshopsController < ApplicationController
-  filter_resource_access
+  filter_access_to :all
   # GET /workshops
   # GET /workshops.xml
     

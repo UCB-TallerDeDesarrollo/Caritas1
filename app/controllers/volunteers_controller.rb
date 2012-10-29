@@ -1,6 +1,6 @@
-# -*- encoding : utf-8 -*-
+filter_access_to :all# -*- encoding : utf-8 -*-
 class VolunteersController < ApplicationController
-  filter_resource_access
+  filter_access_to :all
   # GET /volunteers
   # GET /volunteers.xml
 def index

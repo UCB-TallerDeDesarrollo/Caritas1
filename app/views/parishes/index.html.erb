@@ -51,7 +51,9 @@
               <td><%=h parish.current_state %></td>
                             
               
-              <td><%= link_to 'Editar', edit_parish_path(parish) %></td>
+              <td><%if permitted_to? :edit, :parishes %>
+              	<%= link_to 'Editar', edit_parish_path(parish) %>
+              	<%end%></td>
               <% if parish.current_state != "En Contacto" && parish.current_state != "No Alcanzada" && parish.current_state != "No Aceptada"%>                                
                   <td><%= link_to "Taller", edit_workshop_path(Workshop.searchByParish(parish.id)) %></td>                   
                 <%else%>
