@@ -1,6 +1,6 @@
 <%if current_user%>
 <h1> Reporte de Ayudas a beneficiarios</h1>
-<% form_tag (:controller => "beneficiary_helps", :action => "report", :method => "get") do %>
+<% form_tag :controller => "beneficiary_helps", :action => "report" do %>
   Desde: <%= datetime_select :date_start, params[:date_start] %> <br/>
   Hasta:&nbsp; <%= datetime_select :date_end, params[:date_end] %><br/>
 <%= submit_tag "Filtrar", :id => nil %>
