@@ -37,6 +37,7 @@
     <th>Dirección</th>
     <th>Telefono de referencia</th>
     <th>Parroquia a la que pertenece</th>
+    <th>Tipo de beneficiario</th>    
     <th>Rasgos personales</th>
     <th>Observaciones</th>
     <th colspan="2">Acciones</th>
@@ -52,6 +53,11 @@
         <td>
          <% @parishes.each do |p| %>
                   <%= p.parish_name  if p.id == beneficiary.parish_id  %>
+                <%end%>
+        </td>
+        <td>
+         <% @beneficiary_types.each do |p| %>
+                  <%= p.name  if p.id == beneficiary.beneficiary_type_id  %>
                 <%end%>
         </td>
 	<td><%=h beneficiary.personal_traits %></td>

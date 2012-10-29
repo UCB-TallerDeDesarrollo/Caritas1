@@ -2,6 +2,7 @@ class BeneficiariesController < ApplicationController
   def index
     @beneficiaries = Beneficiary.search(params[:search_name],params[:search_last_name], params[:search_ci],params[:search_traits])
     @parishes = Parish.find(:all)
+    @beneficiary_types = BeneficiaryType.find(:all)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @beneficiaries }
@@ -10,6 +11,7 @@ class BeneficiariesController < ApplicationController
   def new
     @beneficiary = Beneficiary.new
     @parish = Parish.find(:all, :order => "parish_name")
+    @beneficiary_type = BeneficiaryType.find(:all, :order => "name")
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +37,7 @@ class BeneficiariesController < ApplicationController
     @beneficiary = Beneficiary.find(params[:id])
     @parish = Parish.find(@beneficiary.parish_id)
     @beneficiary_helps = @beneficiary.beneficiary_helps
+    @beneficiary_type = BeneficiaryType.find(@beneficiary.beneficiary_type_id)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @beneficiary }
@@ -44,6 +47,7 @@ class BeneficiariesController < ApplicationController
   def edit
     @beneficiary = Beneficiary.find(params[:id])
      @parish = Parish.find(:all, :order => "parish_name")
+     @beneficiary_type = BeneficiaryType.find(:all, :order => "name")
   end
    def destroy  
     
