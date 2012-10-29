@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class CoursesTypesController < ApplicationController
+  filter_resource_access
   # GET /courses_types
   # GET /courses_types.xml
   def index

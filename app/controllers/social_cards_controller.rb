@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class SocialCardsController < ApplicationController
+  filter_resource_access
   # GET /social_cards
   # GET /social_cards.xml
   def index

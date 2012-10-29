@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
       find(:all)
   end
   
-  def roles_symbols
-    [User::USERS_TYPES[role].underscore.to_sym] 
+  def role_symbols
+    [User::USERS_TYPES[roles].underscore.to_sym] 
   end
 end

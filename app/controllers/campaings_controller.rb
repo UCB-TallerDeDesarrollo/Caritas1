@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class CampaingsController < ApplicationController
+  filter_resource_access
   # GET /campaings
   # GET /campaings.xml 
   

@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class VolunteersController < ApplicationController
+  filter_resource_access
   # GET /volunteers
   # GET /volunteers.xml
 def index

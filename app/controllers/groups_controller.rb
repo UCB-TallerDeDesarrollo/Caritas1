@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class GroupsController < ApplicationController
+  filter_resource_access
   # GET /groups
   # GET /groups.xml
   def index

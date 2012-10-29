@@ -11,6 +11,16 @@ class ApplicationController < ActionController::Base
     
   helper_method :current_user  
   
+  #before_filter { |c| current_user = c.current_user }
+  before_filter :current_user
+
+  protected
+  
+  def permission_denied
+    flash[:error] = "No tienes permitido realizar esta accion, por favor contacta con tu administrador"
+    redirect_to root_url
+  end
+  
   private  
   def current_user_session  
     return @current_user_session if defined?(@current_user_session)  

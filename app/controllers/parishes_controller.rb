@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class ParishesController < ApplicationController
+  filter_resource_access
   # GET /parishes
   # GET /parishes.xml
   def index

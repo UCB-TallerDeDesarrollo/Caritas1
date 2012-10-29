@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class SocialWorksController < ApplicationController
+  filter_resource_access
   # GET /social_works
   # GET /social_works.xml
   def index

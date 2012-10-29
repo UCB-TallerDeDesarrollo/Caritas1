@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class MainPageController < ApplicationController
+  filter_resource_access
    def index
      @campaings = Campaing.find_last_six
     @socialWorks = SocialWork.find_last_six

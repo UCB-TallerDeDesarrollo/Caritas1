@@ -13,7 +13,7 @@
   <tr>
     <td><%=h user.username %></td>
     <td><%=h user.email %></td>
-    <td><%=h User::USERS_TYPES[user.role] %></td>
+    <td><%=h User::USERS_TYPES[user.roles] %></td>
     <td><%= link_to 'Editar', edit_user_path(user) %></td>
     <td><%= link_to 'Eliminar', user, :confirm => '¿Está seguro que desea eliminar el usuario?', :method => :delete %></td>
   </tr>

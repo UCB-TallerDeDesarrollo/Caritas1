@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class DonationsController < ApplicationController
+  filter_resource_access
   # GET /donations
   # GET /donations.xml
   def index
