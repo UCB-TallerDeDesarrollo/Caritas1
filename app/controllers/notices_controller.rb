@@ -1,12 +1,13 @@
 # -*- encoding : utf-8 -*-
 class NoticesController < ApplicationController
-  filter_resource_access
   # GET /notices
   # GET /notices.xml
 
   record_select :per_page => 5,
     :search_on => ['title'],
     :full_text_search => true
+    
+    #filter_resource_access
   def index
     @notices = Notice.search(params[:search])
 

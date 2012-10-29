@@ -22,9 +22,9 @@ authorization do
   role :guest do
      has_permission_on [:main_page], :to => [:index, :info]
      has_permission_on [:emailer], :to=>[:sendmail, :contact, :index, :contact_us, :sendmailContactUs]
-     has_permission_on [:notices], :to => [:index, :index_public, :show, :show_public]
-     has_permission_on [:social_works], :to => [:index, :index_public, :show, :show_public]
-     has_permission_on [:campaings], :to=>[:index, :index_public, :show, :show_public]
+     has_permission_on [:notices], :to => [:index_public, :show_public]
+     has_permission_on [:social_works], :to => [:index_public, :show_public]
+     has_permission_on [:campaings], :to=>[:index_public, :show_public]
      has_permission_on [:user_sessions], :to=>[:new, :create, :destroy]    
   end
 end
