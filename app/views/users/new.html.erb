@@ -22,8 +22,16 @@
       <td><%= f.password_field :password_confirmation %></td>
     </tr>
     <tr>
-       <td>* Rol usurio</td>
-      <td><%= f.select :role, User::USERS_TYPES %></td>
+       <td>* Rol usuario</td>
+       
+      <td><select id="user_role" name="user[role]">
+		    <% for i in  1..User::USERS_TYPES.length do %>
+			    <option value="<%= i - 1 %>">
+			         <%=User::USERS_TYPES[i - 1]%>
+			    </option>
+		    <%end%>
+		</select>
+	  </td>
     </tr>
     <tr align="right">
       <td colspan="2"><%= f.submit 'Registrar' %></td>

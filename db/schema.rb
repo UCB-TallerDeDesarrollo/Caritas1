@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121028163903) do
+ActiveRecord::Schema.define(:version => 20121029133446) do
 
   create_table "assistance_lists", :force => true do |t|
     t.datetime "created_at"
@@ -283,7 +283,7 @@ ActiveRecord::Schema.define(:version => 20121028163903) do
     t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "role"
+    t.integer  "role"
   end
 
   create_table "vicarious", :force => true do |t|
