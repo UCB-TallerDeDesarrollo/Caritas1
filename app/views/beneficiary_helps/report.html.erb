@@ -40,6 +40,23 @@
       <div>
       	&nbsp;
     </div>
+    <div>
+      	Tipo de beneficiario <select name="beneficiary_type_id" style="width: 150px">
+      		<option value="" >Ninguno</option>         
+          <% if @beneficiary_types.length > 0
+            @beneficiary_types.each do |beneficiary_type| 
+              if beneficiary_type.id != 0%>
+                <option value="<%beneficiary_type.id%>" >
+                  <%beneficiary_type.name%>
+                </option>
+              <% end 
+            end 
+          end%>              
+        </select>
+      </div>
+      <div>
+      	&nbsp;
+    </div>
 <%= submit_tag "Filtrar", :id => nil %>
  <% end %>
  

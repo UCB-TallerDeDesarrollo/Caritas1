@@ -108,8 +108,14 @@ class BeneficiaryHelpsController < ApplicationController
     else
       @parish_id_selected = params[:parish_id].to_i
     end
-    @beneficiary_helps = BeneficiaryHelp.search(@start, @end, @help_type_selected, @parish_id_selected)
+    if(params[:beneficiary_type_id] == '')
+      @beneficiary_type_selected = nil
+    else
+      @beneficiary_type_selected = params[:beneficiary_type_id]
+    end
+    @beneficiary_helps = BeneficiaryHelp.search(@start, @end, @help_type_selected, @parish_id_selected, @beneficiary_type_selected)
   @parishes = Parish.find(:all, :order => "parish_name")
+  @beneficiary_types = BeneficiaryType.find(:all, :order => "name")
     respond_to do |format|
       format.html # report.html.erb
       format.xml  { render :xml => @beneficiary_helps }
