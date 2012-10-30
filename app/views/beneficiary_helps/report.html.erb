@@ -1,7 +1,44 @@
 <h1> Reporte de Ayudas a beneficiarios</h1>
-<% form_tag (:controller => "beneficiary_helps", :action => "report", :method => "get") do %>
+<% form_tag :controller => "beneficiary_helps", :action => "report" do %>
   Desde: <%= datetime_select :date_start, params[:date_start] %> <br/>
   Hasta:&nbsp; <%= datetime_select :date_end, params[:date_end] %><br/>
+  <div>
+      	&nbsp;
+      </div>
+      <div>
+      	Parroquia <select name="parish_id" style="width: 150px">
+      		<option value="" >Ninguno</option>         
+          <% if Parish.all.length > 0
+            Parish.all.each do |parish| 
+              if parish.id != 0%>
+                <option value="<%=parish.id%>" >
+                  <%=parish.parish_name%>
+                </option>
+              <% end 
+            end 
+          end%>              
+        </select>
+      </div>
+      <div>
+      	&nbsp;
+    </div>
+    <div>
+      	Tipo de ayuda <select name="select_help_type" style="width: 150px">
+      		<option value="" >Ninguno</option>          
+          <% if HelpType.all.length > 0
+            HelpType.all.each do |help_type| 
+              if help_type.id != 0%>
+                <option value="<%=help_type.name%>" >
+                  <%=help_type.name%>
+                </option>
+              <% end 
+            end 
+          end%>              
+        </select>
+      </div>
+      <div>
+      	&nbsp;
+    </div>
 <%= submit_tag "Filtrar", :id => nil %>
  <% end %>
  
@@ -30,5 +67,6 @@
     <td><%=h beneficiary_help.detail %></td>
   </tr>
 <% end %>
+	
 </table>
 Total: <%= @beneficiary_helps.count%>

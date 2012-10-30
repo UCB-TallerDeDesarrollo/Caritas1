@@ -1,8 +1,11 @@
 # -*- encoding : utf-8 -*-
 class BeneficiaryType < ActiveRecord::Base
-   #put validates here
+  has_many :beneficiary
+	#put validates here
   validates_presence_of :name    
   validates_length_of :name, :maximum => 50
+  has_many :beneficiaries
+  
   
    #put class methods here
   def self.search(search)

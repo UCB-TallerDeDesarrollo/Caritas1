@@ -23,19 +23,46 @@
       <td><%= f.label :telephone, "Telefono de referencia:" %></td>
       <td><%= f.text_field :telephone %> </td>
     </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;Tipo de Ayuda: </td>
+  <td>
+    <% if !@help_type.empty? %>
+        <select name="beneficiary[help_type_id]" style="width: 195px">
+          <%@help_type.each do |help_type_edit| %>
+              <option value="<%=help_type_edit.id %>" <%='selected' if help_type_edit.id == @beneficiary.help_type_id %>>
+                <%=help_type_edit.name%>
+              </option>
+          <% end %>
+        </select>
+    <%else%>
+        No se registraron tipos de ayuda.
+    <%end%>
+  </td>
+  </tr>
      <tr>
         <td>&nbsp;&nbsp;&nbsp;Parroquia a la que Pertenece</td>
         <td><select name="beneficiary[parish_id]" style="width: 150px"> 
             <% if @parish  
               @parish.each do |parish| %>
-                <option value="<%=parish.id%>">
+                <option value="<%=parish.id%>" <%='selected' if parish.id ==  @beneficiary.parish_id %>>
                   <%=parish.parish_name%>
                 </option>
               <%end%>
             <%end%>
           </select></td>
       </tr>
-    
+      <tr>
+        <td>&nbsp;&nbsp;&nbsp;Tipo de beneficiario</td>
+        <td><select name="beneficiary[beneficiary_type_id]" style="width: 150px"> 
+            <% if @beneficiary_type  
+              @beneficiary_type.each do |beneficiary_t| %>
+                <option value="<%=beneficiary_t.id%>" <%='selected' if beneficiary_t.id ==  @beneficiary.beneficiary_type_id %>>
+                  <%=beneficiary_t.name%>
+                </option>
+              <%end%>
+            <%end%>
+          </select></td>
+      </tr> 
 	<tr>
 		<td><%= f.label :personal_traits, "Rasgos personales:" %></td>
 		<td><%= f.text_field :personal_traits %> </td>

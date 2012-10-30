@@ -23,6 +23,10 @@
 		<td><%= "Telefono de referencia:" %></td>
 		<td><%= @beneficiary.telephone %> </td>
 	</tr>
+    <tr>
+        <td>&nbsp;&nbsp;&nbsp;<%= "Tipo de Ayuda"  %> </td>
+        <td><%= @beneficiary.help_type.name %> </td>
+    </tr>
 	 <tr>
 	      <td>
 		<b>Parroquia a la que Pertenece</b>
@@ -30,6 +34,14 @@
 	      <td><%=h if @beneficiary.parish_id.nil?
 		 @parish.parish_name %></td>
 	    </tr>
+	    <tr>
+	      <td>
+		<b>Tipo de Beneficiario</b>
+	      </td>
+	      <td><%=h if @beneficiary.beneficiary_type_id.nil?
+		 @beneficiary_type.name %></td>
+	    </tr>
+	    
 	<tr>
 		<td><%= "Rasgos personales:" %></td>
 		<td><%= @beneficiary.personal_traits %> </td>
@@ -48,7 +60,6 @@
 	</tr>
 	<tr align="right">
 		<td colspan="2"> <%if current_user%>
-
 		<%end%>
 		<%= link_to 'Volver', beneficiaries_path %> </td>
 	</tr>

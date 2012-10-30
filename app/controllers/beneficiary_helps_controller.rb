@@ -29,7 +29,7 @@ class BeneficiaryHelpsController < ApplicationController
     @beneficiary_help = BeneficiaryHelp.new
     @beneficiary = Beneficiary.find(params[:bid])
     @help_types = HelpType.find(:all, :order => "name")
-     @beneficiary_help.beneficiary_id = params[:bid].to_i
+    @beneficiary_help.beneficiary_id = params[:bid].to_i
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @beneficiary_help }
@@ -62,7 +62,7 @@ class BeneficiaryHelpsController < ApplicationController
   # PUT /beneficiary_helps/1.xml
   def update
     @beneficiary_help = BeneficiaryHelp.find(params[:id])
-  @help_types = HelpType.find(:all, :order => "name")
+    @help_types = HelpType.find(:all, :order => "name")
     respond_to do |format|
       if @beneficiary_help.update_attributes(params[:beneficiary_help])
         format.html { redirect_to(@beneficiary_help, :notice => 'BeneficiaryHelp was successfully updated.') }
@@ -85,7 +85,7 @@ class BeneficiaryHelpsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
   # GET /beneficiary_helps/report
   # GET /beneficiary_helps/report.xml
   def report
@@ -98,8 +98,19 @@ class BeneficiaryHelpsController < ApplicationController
       @start= Time.new
       @end= Time.new
     end
-    @beneficiary_helps = BeneficiaryHelp.search(@start, @end)
-    
+    if(params[:select_help_type] == '')
+      @help_type_selected = nil
+    else
+      @help_type_selected = params[:select_help_type]
+    end
+
+    if(params[:parish_id] == '')
+      @parish_id_selected = nil
+    else
+      @parish_id_selected = params[:parish_id].to_i
+    end
+    @beneficiary_helps = BeneficiaryHelp.search(@start, @end, @help_type_selected, @parish_id_selected)
+
     respond_to do |format|
       format.html # report.html.erb
       format.xml  { render :xml => @beneficiary_helps }

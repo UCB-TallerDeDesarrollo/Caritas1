@@ -2,8 +2,63 @@
 
 <p>
   <% form_tag beneficiaries_path, :method => 'get' do %>
-      Parametro <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Buscar", :name => nil %>
+      <div>
+        <%= label_tag "param_search", "Parametros de Busqueda:" %>
+      </div>
+      <div>
+        <%= label_tag "search__name", "Nombre" %>
+        <%= text_field_tag :search_name, params[:First_name] %>
+        <%= label_tag "search_last_name", "Apellido" %>
+        <%= text_field_tag :search_last_name, params[:Last_name] %>
+      </div>
+      <div>
+        <%= label_tag "search_ci", "Ci" %>
+        <%= text_field_tag :search_ci, params[:ci] %>
+        <%= label_tag "search_traits", "Rasgos Personales" %>
+        <%= text_field_tag :search_traits, params[:traits] %>
+      </div>
+      <div>
+      	&nbsp;
+      </div>
+      <div>
+      	Tipo de Beneficiario <select name="select_beneficiary_type" style="width: 150px">          
+          <option value="0" >Ninguno</option>         
+          <% if BeneficiaryType.all.length > 0
+            BeneficiaryType.all.each do |benef| 
+              if benef.id != 0%>
+                <option value="<%=benef.id%>" >
+                  <%=benef.name%>
+                </option>
+              <% end 
+            end 
+          end%>                 
+        </select>
+      </div>
+      <div>
+      	&nbsp;
+      </div>
+      
+      <div>
+      	Tipo de Ayuda <select name="select_help_type" style="width: 150px">          
+          <option value="0" >Ninguno</option>         
+          <% if HelpType.all.length > 0
+            HelpType.all.each do |help_type| 
+              if help_type.id != 0%>
+                <option value="<%=help_type.id%>" >
+                  <%=help_type.name%>
+                </option>
+              <% end 
+            end 
+          end%>                 
+        </select>
+      </div>
+      <div>
+      	&nbsp;
+      </div>
+      
+
+        <%= submit_tag "Buscar", :name => nil %>
+
   <% end %>
 </p>
 
@@ -20,8 +75,10 @@
     <th>Dirección</th>
     <th>Telefono de referencia</th>
     <th>Parroquia a la que pertenece</th>
+    <th>Tipo de beneficiario</th>    
     <th>Rasgos personales</th>
     <th>Observaciones</th>
+    <th>Tipo de Ayuda</th>
     <th colspan="2">Acciones</th>
   </tr>
 
@@ -37,8 +94,14 @@
                   <%= p.parish_name  if p.id == beneficiary.parish_id  %>
                 <%end%>
         </td>
+        <td>
+         <% @beneficiary_types.each do |p| %>
+                  <%= p.name  if p.id == beneficiary.beneficiary_type_id  %>
+                <%end%>
+        </td>
 	<td><%=h beneficiary.personal_traits %></td>
         <td><%=h beneficiary.observations  %></td>
+        <td><%=h beneficiary.help_type.name  %></td>
         
         <td><%= link_to "Editar",edit_beneficiary_path(beneficiary) %> </td>
         <td><%= link_to 'Eliminar', beneficiary, :confirm => '¿Está seguro que desea eliminar al Beneficiario?', :method => :delete%></td>
