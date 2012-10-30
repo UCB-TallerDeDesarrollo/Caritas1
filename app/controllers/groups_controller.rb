@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class GroupsController < ApplicationController
-  filter_access_to :all
+  filter_access_to :all, :attribute_check => true
+  
   # GET /groups
   # GET /groups.xml
   def index
@@ -13,6 +14,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/1
   # GET /groups/1.xml
+  filter_access_to :show, :attribute_check => true
   def show
     @group = Group.find(params[:id])
     @parish = Parish.find(@group.parish_id)
@@ -91,4 +93,6 @@ class GroupsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  
 end

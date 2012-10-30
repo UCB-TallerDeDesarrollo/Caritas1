@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if params[:type]
       @volunteer_user = params[:type]
       @user.controller_type = params[:type].to_i
-      @user.role = User::USERS_TYPES[2]
+      @user.roles = 2
     end
   end
   def create

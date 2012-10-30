@@ -17,6 +17,7 @@ authorization do
     has_permission_on [:emailer], :to=>[:sendmail, :contact, :index, :contact_us, :sendmailContactUs]
     has_permission_on [:campaings], :to=>[:index, :index_public, :show, :show_public, :new, :edit, :create, :update, :destroy, :add_photos, :show_photos, :destroy_all_photos]
     has_permission_on [:user_sessions], :to=>[:new, :create, :destroy]
+    has_permission_on [:volunteers], :to => [:index_users]
   end
   
   role :guest do
@@ -35,6 +36,9 @@ authorization do
   
   role :voluntario do
     includes :guest
-    has_permission_on [:volunteers, :users],:to => [:index, :show, :new, :edit, :create, :update, :destroy]
+    has_permission_on [:groups], :to => [:index]
+    has_permission_on :groups, :to => :show do
+      if_attribute :volunteers => contains { Volunteer.find(user.controller_type) }
+    end
   end
 end
