@@ -29,10 +29,10 @@ ActiveRecord::Schema.define(:version => 20121030001917) do
     t.string   "beneficiary_photo_content_type"
     t.integer  "beneficiary_photo_file_size"
     t.datetime "beneficiary_photo_updated_at"
-    t.integer  "help_type_id"
     t.string   "telephone"
     t.integer  "parish_id"
     t.integer  "beneficiary_type_id"
+    t.integer  "help_type_id"
   end
 
   create_table "beneficiary_helps", :force => true do |t|

@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class GroupsController < ApplicationController
-  filter_access_to :all, :attribute_check => true
+  filter_access_to :all
+  filter_access_to :show, :attribute_check => true
   
   # GET /groups
   # GET /groups.xml

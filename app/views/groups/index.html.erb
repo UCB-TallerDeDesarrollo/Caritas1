@@ -33,13 +33,19 @@
 	              <!--<td><#%= link_to 'Voluntarios', volunteers_url %></td>-->
 	              <% if permitted_to? :group, :volunter %>
 	              <td><%= link_to "Ver Voluntarios", :controller => "volunteers", :group=> group.id %></td>
+	              <% else %>
+	              	<td></td>
 	              <% end %>
 	              <% if permitted_to? :edit, :group %>              
 	              <td><%= link_to 'Editar', edit_group_url(group) %></td>
+	              <<% else %>
+	              	<td></td>
 	              <% end %>
 	              <% if permitted_to? :destroy, :group %>
 	              <td><%= link_to 'Eliminar', group, :confirm => '¿Está seguro que desea eliminar el grupo?', :method => :delete %></td>
-	              <% end%>
+	              <% else %>
+	              	<td></td>
+	              <% end %>
 	            </tr>
 	          <% end
 	          end 
