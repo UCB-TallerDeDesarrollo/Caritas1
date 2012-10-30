@@ -8,10 +8,14 @@ class UsersController < ApplicationController
     end
   end
   def new  
-    @user = User.new  
-  end  
-  
-  def create  
+    @user = User.new
+    if params[:type]
+      @volunteer_user = params[:type]
+      @user.controller_type = params[:type].to_i
+      @user.role = User::USERS_TYPES[2]
+    end
+  end
+  def create
     @user = User.new(params[:user])
     respond_to do |format|
       if @user.save

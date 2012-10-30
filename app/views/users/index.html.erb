@@ -21,8 +21,8 @@
 </table>
 
 <br />
-
-<%= link_to 'Registrar Usuario', new_user_path %>
+<%= link_to 'Registrar Usuario', new_user_path %><br/>
+<%= link_to 'Registrar Usuario Voluntario',:controller=>"volunteers", :action=>"index_users",:id=>" " %>
 <%else%>
 <h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
 <%end%>

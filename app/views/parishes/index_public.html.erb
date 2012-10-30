@@ -1,13 +1,5 @@
 <%if current_user%>
     <h1>Parroquias</h1>
-
-    <% form_tag parishes_path, :method => 'get' do %>
-        <p>
-          Parámetro <%= text_field_tag :search, params[:search] %>
-          <%= submit_tag "Buscar", :name => nil %>
-        </p>
-    <% end %>
-
     <table>
         <td>
 

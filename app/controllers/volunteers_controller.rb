@@ -38,6 +38,15 @@ def index
   end
 end
 
+def index_users
+  @volunteers = Volunteer.find(:all)
+  @groups = Group.find(:all)
+  respond_to do |format|
+    format.html # index.html.erb
+    format.xml  { render :xml => @volunteers }
+    format.xls
+  end
+end
   # GET /volunteers/1
   # GET /volunteers/1.xml
   def show

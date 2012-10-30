@@ -31,7 +31,7 @@
           <li><%= link_to 'Ficha Social',:controller => "social_cards", :action => "index"%></li>
           <li><%= link_to 'Tipos de Beneficiario',:controller => "beneficiary_types", :action => "index"%></li>
         </ul>
-        <% elsif current_user && current_user_role == 'Parroco' %>
+      <% elsif current_user && current_user_role == 'Parroco' %>
       <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%>
         <ul>
           <li><%= link_to 'Quiénes somos?',:controller => "main_page", :action => "quienesSomos"%></li>
@@ -39,7 +39,16 @@
         </ul>
       </li>
       <li><%= link_to 'Parroquias', :controller=>"parishes", :action => "index_public", :id => " "%></li>
-        <% else %>
+
+      <% elsif current_user && current_user_role == 'Voluntario' %>
+      <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%>
+        <ul>
+          <li><%= link_to 'Quiénes somos?',:controller => "main_page", :action => "quienesSomos"%></li>
+          <li><%= link_to 'Contáctanos',:controller => "emailer", :action => "contact_us"%></li>
+        </ul>
+      </li>
+      <li><%= link_to 'Grupo', :controller=>"groups", :action => "show",:id=>Group.find(Volunteer.find(current_user_controller_type).group_id)%></li>
+      <% else %>
             <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%>
               <ul>
                 <li><%= link_to 'Quienes somos?',:controller => "main_page", :action => "quienesSomos"%></li>

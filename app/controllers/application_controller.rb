@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     
   helper_method :current_user
   helper_method :current_user_role
+  helper_method :current_user_controller_type
   private
   def current_user_session  
     return @current_user_session if defined?(@current_user_session)  
@@ -22,5 +23,8 @@ class ApplicationController < ActionController::Base
   end 
   def current_user_role
     @current_user_role = User.find(current_user).role
+  end
+  def current_user_controller_type
+    @current_user_controller_type = User.find(current_user).controller_type
   end
 end

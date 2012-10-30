@@ -1,5 +1,9 @@
 <%if current_user%>
-<h1>Nuevo Usuario</h1>
+    <% if @volunteer_user %>
+        <h1>Nuevo Usuario Voluntario</h1>
+    <% else %>
+    <h1>Nuevo Usuario</h1>
+    <% end %>
 
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
@@ -21,10 +25,15 @@
       <td>* Confirmacion de Contraseña</td>
       <td><%= f.password_field :password_confirmation %></td>
     </tr>
-    <tr>
-       <td>* Rol usurio</td>
-      <td><%= f.select :role, User::USERS_TYPES %></td>
-    </tr>
+    <% if @volunteer_user%>
+    <%= f.hidden_field :role %>
+    <%= f.hidden_field :controller_type %>
+    <% else %>
+        <tr>
+          <td>* Rol usurio</td>
+          <td><%= f.select :role, User::USERS_TYPES %></td>
+        </tr>
+    <% end %>
     <tr align="right">
       <td colspan="2"><%= f.submit 'Registrar' %></td>
     </tr>
