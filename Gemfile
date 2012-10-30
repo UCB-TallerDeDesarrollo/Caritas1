@@ -7,6 +7,7 @@ gem "authlogic", "2.1.6"
 gem "file-column", "0.3.2"
 gem "paperclip", "2.7.1"
 gem "dropbox-sdk"
+gem "declarative_authorization"
 
 # bundler requires these gems in all environments
 # gem "nokogiri", "1.4.2"

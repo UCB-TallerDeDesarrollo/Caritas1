@@ -1,4 +1,3 @@
-<%if current_user%>
 <h1> Reporte de Ayudas a beneficiarios</h1>
 <% form_tag :controller => "beneficiary_helps", :action => "report" do %>
   Desde: <%= datetime_select :date_start, params[:date_start] %> <br/>
@@ -88,6 +87,3 @@
 	
 </table>
 Total: <%= @beneficiary_helps.count%>
-<%else%>
-<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
-<%end%>

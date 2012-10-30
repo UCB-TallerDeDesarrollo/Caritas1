@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class EmailerController < ApplicationController
+  filter_access_to :all
  def sendmail
     email = params["email"]
 	  recipient = email["recipient"]

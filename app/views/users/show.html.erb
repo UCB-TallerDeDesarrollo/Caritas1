@@ -1,4 +1,4 @@
-<%if current_user%>
+
 <p>
   <b>Nombre de Usuario</b>
   <%=h @user.username %>
@@ -11,13 +11,10 @@
 
 <p>
   <b>Rol usuario</b>
-  <%=h @user.role %>
+  <%=h User::USERS_TYPES[@user.roles] %>
 </p>
 
 
 <%= link_to 'Editar', edit_user_path(@user) %> |
 <%= link_to 'Atrás', users_path %>
 
-<%else%>
-<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
-<%end%>

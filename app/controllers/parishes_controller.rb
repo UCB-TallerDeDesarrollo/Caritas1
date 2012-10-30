@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class ParishesController < ApplicationController
+  filter_access_to :all
   # GET /parishes
   # GET /parishes.xml
   def index
@@ -15,14 +16,6 @@ class ParishesController < ApplicationController
       format.html # index.html.erb
       format.xml  { render :xml => @parishes }
       format.xls
-    end
-  end
-  def index_public
-    @parishes = Parish.search(params[:search])
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @parishes }
     end
   end
     def report

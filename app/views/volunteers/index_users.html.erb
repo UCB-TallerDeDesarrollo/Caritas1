@@ -1,0 +1,28 @@
+<%if current_user%>
+<h1>Voluntarios</h1>
+<table id="idVolunteers">
+    <tr >
+        <td colspan=2>
+            <table border="3" >
+                <tr id="table_volunteers">
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                </tr>
+                <% @volunteers.each do |volunteer| %>
+                <% if volunteer.state %>
+                <tr>
+                    <td><%= link_to volunteer.name ,:controller=>"users",:action=>"new",:type=>volunteer.id %></td>
+                    <td><%=h volunteer.last_name %></td>
+                    <td><%=h volunteer.second_last_name %></td>
+                </tr>
+                <%end%>
+                <% end %>
+            </table>
+        </td>
+    </tr>
+</table>
+<br />
+<%else%>
+<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
+<%end%>

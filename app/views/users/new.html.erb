@@ -1,4 +1,4 @@
-<%if current_user%>
+
 <h1>Nuevo Usuario</h1>
 
 <% form_for(@user) do |f| %>
@@ -21,16 +21,26 @@
       <td>* Confirmacion de Contraseña</td>
       <td><%= f.password_field :password_confirmation %></td>
     </tr>
-    <tr>
-       <td>* Rol usurio</td>
-      <td><%= f.select :role, User::USERS_TYPES %></td>
+    <% if @volunteer_user%>
+    <%= f.hidden_field :roles %>
+    <%= f.hidden_field :controller_type %>
+    <% else %>
+	<tr>
+       <td>* Rol usuario</td>
+       
+      <td><select id="user_roles" name="user[roles]">
+		    <% for i in  1..User::USERS_TYPES.length do %>
+			    <option value="<%= i - 1 %>">
+			         <%=User::USERS_TYPES[i - 1]%>
+			    </option>
+		    <%end%>
+		</select>
+	  </td>
     </tr>
+	<% end %>
     <tr align="right">
       <td colspan="2"><%= f.submit 'Registrar' %></td>
     </tr>
   </table>
 
 <% end %>
-<%else%>
-<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
-<%end%>

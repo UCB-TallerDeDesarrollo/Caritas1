@@ -3,7 +3,7 @@
         document.getElementById('idVolunteers').scrollIntoView(true);
     })();
 </script>
-<%if current_user%>
+
 <h1>Voluntarios</h1>
 
 <% form_tag volunteers_path, :method => 'get' do %>
@@ -73,6 +73,3 @@
   </tr>
 </table>
 <br />
-<%else%>
-  <h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
-<%end%>

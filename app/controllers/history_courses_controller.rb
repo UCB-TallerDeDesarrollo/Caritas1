@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class HistoryCoursesController < ApplicationController
+  filter_access_to :all
   # GET /history_courses
   # GET /history_courses.xml
   

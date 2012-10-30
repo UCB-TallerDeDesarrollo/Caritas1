@@ -9,9 +9,21 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
     
-  helper_method :current_user
+  helper_method :current_user  
+  helper_method :current_user_controller_type
   helper_method :current_user_role
-  private
+  
+  #before_filter { |c| current_user = c.current_user }
+  before_filter :current_user
+
+  protected
+  
+  def permission_denied
+    flash[:error] = "No tienes permitido realizar esta accion, por favor contacta con tu administrador"
+    redirect_to root_url
+  end
+  
+  private  
   def current_user_session  
     return @current_user_session if defined?(@current_user_session)  
     @current_user_session = UserSession.find  
@@ -20,7 +32,12 @@ class ApplicationController < ActionController::Base
   def current_user  
     @current_user = current_user_session && current_user_session.record  
   end 
-  def current_user_role
-    @current_user_role = User.find(current_user).role
+  
+   def current_user_role
+    @current_user_role = User::USERS_TYPES[User.find(current_user).roles]
+  end
+  
+  def current_user_controller_type
+    @current_user_controller_type = User.find(current_user).controller_type
   end
 end

@@ -1,4 +1,4 @@
-<%if current_user%>
+
   <h1>Ver Vicaria</h1>
   <table>
     <tr><td><b>Nombre de Vicaria</b></td><td><%=h @vicariou.name_vicariou %></td></tr>
@@ -27,6 +27,3 @@
 
   <%= link_to 'Editar', edit_vicariou_path(@vicariou) %> |
   <%= link_to 'Volver', vicarious_path %>
-<%else%>
-  <h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
-<%end%>

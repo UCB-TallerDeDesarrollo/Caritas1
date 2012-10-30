@@ -5,7 +5,6 @@
 <%= javascript_include_tag "jquery-ui-1.8.13.custom.min"  %>
 <%= javascript_include_tag "ui.dropdownchecklist-1.4-min"  %>
 
-<%if current_user%>
 <CENTER><h1>Actualizar Curso</h1></center>
 
 <% form_for(@course) do |f| %>
@@ -59,9 +58,6 @@
     </tr>
    </TABLE>
 <% end %>
-<%else%>
-<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
-<%end%>
 
 <script type="text/javascript">
         $(document).ready(function() {            

@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class UsersController < ApplicationController
+  filter_access_to :all
   def index
     @users = User.get_all_users
     respond_to do |format|
@@ -8,10 +9,14 @@ class UsersController < ApplicationController
     end
   end
   def new  
-    @user = User.new  
-  end  
-  
-  def create  
+    @user = User.new
+    if params[:type]
+      @volunteer_user = params[:type]
+      @user.controller_type = params[:type].to_i
+      @user.roles = 2
+    end
+  end
+  def create
     @user = User.new(params[:user])
     respond_to do |format|
       if @user.save

@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class VicariousController < ApplicationController
+  filter_access_to :all
   # GET /vicarious
   # GET /vicarious.xml
   def index

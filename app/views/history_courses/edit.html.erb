@@ -1,4 +1,3 @@
-<%if current_user%>
 <h1>Actualizar Historia de Curso</h1>
 
 <% form_for(@history_course) do |f| %>
@@ -38,6 +37,3 @@
 
 <%= link_to 'Mostrar', @history_course %> |
 <%= link_to 'Atras', history_courses_path %>
-<%else%>
-<h2>No puede realizar esta acción, por favor contáctese con el administrador del sistema</h2>
-<%end%>

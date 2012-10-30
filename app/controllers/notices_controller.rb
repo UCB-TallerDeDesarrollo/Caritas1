@@ -2,11 +2,12 @@
 class NoticesController < ApplicationController
   # GET /notices
   # GET /notices.xml
-  
-    record_select :per_page => 5,
+
+  record_select :per_page => 5,
     :search_on => ['title'],
     :full_text_search => true
-  
+    
+  filter_access_to :all
   def index
     @notices = Notice.search(params[:search])
 
@@ -15,7 +16,8 @@ class NoticesController < ApplicationController
       format.xml  { render :xml => @notices }
     end
   end
-    def index_public
+
+  def index_public
     @notices = Notice.search(params[:search])
 
     respond_to do |format|
@@ -34,7 +36,7 @@ class NoticesController < ApplicationController
       format.xml  { render :xml => @notice }
     end
   end
-  
+
   # GET /notices/1
   # GET /notices/1.xml
   def show_public

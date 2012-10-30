@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class CampaingsController < ApplicationController
+  filter_access_to :all
   # GET /campaings
   # GET /campaings.xml 
   
