@@ -285,7 +285,8 @@ ActiveRecord::Schema.define(:version => 20121030001917) do
     t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "role"
+    t.integer  "roles"
+    t.integer  "controller_type"
   end
 
   create_table "vicarious", :force => true do |t|

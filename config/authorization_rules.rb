@@ -32,4 +32,9 @@ authorization do
     includes :guest
     has_permission_on [:parishes], :to => [:index, :show]
   end
+  
+  role :voluntario do
+    includes :guest
+    has_permission_on [:volunteers, :users],:to => [:index, :show, :new, :edit, :create, :update, :destroy]
+  end
 end

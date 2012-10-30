@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     
   helper_method :current_user  
   helper_method :current_user_controller_type
+  helper_method :current_user_role
   
   #before_filter { |c| current_user = c.current_user }
   before_filter :current_user
@@ -31,6 +32,10 @@ class ApplicationController < ActionController::Base
   def current_user  
     @current_user = current_user_session && current_user_session.record  
   end 
+  
+   def current_user_role
+    @current_user_role = User::USERS_TYPES[User.find(current_user).roles]
+  end
   
   def current_user_controller_type
     @current_user_controller_type = User.find(current_user).controller_type
