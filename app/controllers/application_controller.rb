@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
     
   helper_method :current_user  
+  helper_method :current_user_controller_type
   
   #before_filter { |c| current_user = c.current_user }
   before_filter :current_user
@@ -31,4 +32,7 @@ class ApplicationController < ActionController::Base
     @current_user = current_user_session && current_user_session.record  
   end 
   
+  def current_user_controller_type
+    @current_user_controller_type = User.find(current_user).controller_type
+  end
 end

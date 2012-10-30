@@ -21,7 +21,11 @@
       <td>* Confirmacion de Contraseña</td>
       <td><%= f.password_field :password_confirmation %></td>
     </tr>
-    <tr>
+    <% if @volunteer_user%>
+    <%= f.hidden_field :role %>
+    <%= f.hidden_field :controller_type %>
+    <% else %>
+	<tr>
        <td>* Rol usuario</td>
        
       <td><select id="user_roles" name="user[roles]">
@@ -33,6 +37,7 @@
 		</select>
 	  </td>
     </tr>
+	<% end %>
     <tr align="right">
       <td colspan="2"><%= f.submit 'Registrar' %></td>
     </tr>
