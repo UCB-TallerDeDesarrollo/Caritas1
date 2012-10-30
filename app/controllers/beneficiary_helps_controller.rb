@@ -8,6 +8,7 @@ class BeneficiaryHelpsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.xls
       format.xml  { render :xml => @beneficiary_helps }
     end
   end
@@ -119,6 +120,7 @@ class BeneficiaryHelpsController < ApplicationController
   @beneficiary_types = BeneficiaryType.find(:all, :order => "name")
     respond_to do |format|
       format.html # report.html.erb
+      format.xls
       format.xml  { render :xml => @beneficiary_helps }
     end
   end
