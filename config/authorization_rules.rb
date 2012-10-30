@@ -1,6 +1,6 @@
 authorization do
   role :administrador do
-    has_permission_on [:assistance_list, :beneficiary,
+    has_permission_on [:assistance_list, :beneficiaries,
                       :beneficiary_types, :courses,
                       :courses_types, :donations,
                       :groups, :help_types, :helps,

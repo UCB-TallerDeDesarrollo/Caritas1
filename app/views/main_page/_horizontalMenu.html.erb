@@ -38,7 +38,7 @@
         <% end%>
         </ul>
        </li>
-      <%if permitted_to? :index, :beneficiary%>
+      <%if permitted_to? :index, :beneficiaries%>
       <li><a href="#"><%= link_to 'Beneficiarios',:controller=> "beneficiaries", :action => "index" %></a>
       	<ul>
       		<li><%= link_to 'Tipos de ayuda',:controller => "help_types", :action => "index"%></li>
