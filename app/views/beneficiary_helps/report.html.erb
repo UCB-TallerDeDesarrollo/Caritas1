@@ -9,8 +9,8 @@
       <div>
       	Parroquia <select name="parish_id" style="width: 150px">
       		<option value="" >Ninguno</option>         
-          <% if Parish.all.length > 0
-            Parish.all.each do |parish| 
+          <% if @parishes.length > 0
+            @parishes.each do |parish| 
               if parish.id != 0%>
                 <option value="<%=parish.id%>" >
                   <%=parish.parish_name%>

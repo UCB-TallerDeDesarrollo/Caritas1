@@ -109,7 +109,7 @@ class BeneficiaryHelpsController < ApplicationController
       @parish_id_selected = params[:parish_id].to_i
     end
     @beneficiary_helps = BeneficiaryHelp.search(@start, @end, @help_type_selected, @parish_id_selected)
-
+  @parishes = Parish.find(:all, :order => "parish_name")
     respond_to do |format|
       format.html # report.html.erb
       format.xml  { render :xml => @beneficiary_helps }
