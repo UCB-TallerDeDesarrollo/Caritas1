@@ -1,6 +1,19 @@
 class BeneficiariesController < ApplicationController
   def index
-    @beneficiaries = Beneficiary.search(params[:search_name],params[:search_last_name], params[:search_ci],params[:search_traits])
+    
+    if(params[:select_beneficiary_type] == '')
+      @beneficiary_type_selected = nil
+    else
+      @beneficiary_type_selected = params[:select_beneficiary_type].to_i
+    end
+
+    if(params[:select_help_type] == '')
+      @help_type_selected = nil
+    else
+      @help_type_selected = params[:select_help_type].to_i
+    end
+    
+    @beneficiaries = Beneficiary.search(params[:search_name],params[:search_last_name], params[:search_ci],params[:search_traits],@beneficiary_type_selected,@help_type_selected)
     @parishes = Parish.find(:all)
     @beneficiary_types = BeneficiaryType.find(:all)
     respond_to do |format|

@@ -23,7 +23,7 @@
       </div>
       <div>
       	Tipo de Beneficiario <select name="select_beneficiary_type" style="width: 150px">          
-          <option value="0" >Ninguno</option>         
+          <option value="" >Ninguno</option>         
           <% if BeneficiaryType.all.length > 0
             BeneficiaryType.all.each do |benef| 
               if benef.id != 0%>
@@ -41,7 +41,7 @@
       
       <div>
       	Tipo de Ayuda <select name="select_help_type" style="width: 150px">          
-          <option value="0" >Ninguno</option>         
+          <option value="" >Ninguno</option>         
           <% if HelpType.all.length > 0
             HelpType.all.each do |help_type| 
               if help_type.id != 0%>
