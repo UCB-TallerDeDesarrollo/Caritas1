@@ -29,7 +29,7 @@
        <td>* Rol usuario</td>
        
       <td><select id="user_roles" name="user[roles]">
-		    <% for i in  1..User::USERS_TYPES.length do %>
+		    <% for i in  1..User::USERS_TYPES.length - 1 do %>
 			    <option value="<%= i - 1 %>">
 			         <%=User::USERS_TYPES[i - 1]%>
 			    </option>

@@ -40,7 +40,9 @@
     </tr>
   <tr align="right">
     <td colspan="2">
-      <%= link_to 'Editar', edit_group_path(@group) %> |
+      <% if permitted_to? :edit, :group %>
+      	<%= link_to 'Editar', edit_group_path(@group) %> |
+      <% end %>
       <%= link_to 'Volver', groups_path %>
     </td>
   </tr>
