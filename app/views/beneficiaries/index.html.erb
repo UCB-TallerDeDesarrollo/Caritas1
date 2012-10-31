@@ -90,22 +90,22 @@
         <td><%=h beneficiary.address %></td>
         <td><%=h beneficiary.telephone %></td>
         <td>
-         <% @parishes.each do |p| %>
+         		<% @parishes.each do |p| %>
                   <%= p.parish_name  if p.id == beneficiary.parish_id  %>
                 <%end%>
         </td>
         <td>
-         <% @beneficiary_types.each do |p| %>
+         		<% @beneficiary_types.each do |p| %>
                   <%= p.name  if p.id == beneficiary.beneficiary_type_id  %>
                 <%end%>
         </td>
-	<td><%=h beneficiary.personal_traits %></td>
+		<td><%=h beneficiary.personal_traits %></td>
         <td><%=h beneficiary.observations  %></td>
         <td><%=h beneficiary.help_type.name  %></td>
         
         <td><%= link_to "Editar",edit_beneficiary_path(beneficiary) %> </td>
         <td><%= link_to 'Eliminar', beneficiary, :confirm => '¿Está seguro que desea eliminar al Beneficiario?', :method => :delete%></td>
- </tr>
+ 	  </tr>
     <% end %>
       
     </table>
