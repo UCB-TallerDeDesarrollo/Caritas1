@@ -1,4 +1,3 @@
-
 == Aplicación para gestión de voluntarios de Caritas Parroquiales
 - La primera vez que bajas el código ejecuta: 
       - bundle install
