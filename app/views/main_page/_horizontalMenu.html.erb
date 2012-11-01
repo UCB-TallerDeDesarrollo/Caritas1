@@ -39,8 +39,9 @@
         </ul>
        </li>
       <%if permitted_to? :index, :beneficiaries%>
-      <li><a href="#"><%= link_to 'Beneficiarios',:controller=> "beneficiaries", :action => "index" %></a>
+      <li><a href="#">Gestion Beneficiarios</a>
       	<ul>
+            <li><%= link_to 'Beneficiarios',:controller=> "beneficiaries", :action => "index" %></li>
       		<li><%= link_to 'Tipos de ayuda',:controller => "help_types", :action => "index"%></li>
       		<li><%= link_to 'Reporte de ayudas',:controller => "beneficiary_helps", :action => "report"%></li>
       	</ul>
