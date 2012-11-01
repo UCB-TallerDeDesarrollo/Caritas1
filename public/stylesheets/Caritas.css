@@ -116,6 +116,12 @@ tr {
 	height: 34px;
 	background: #fff;
 }
+tr#sick
+{
+    height:  34px;
+    background: #f5f5f5;
+}
+
 td {
 	padding-left: 11px;
 	padding-right: 11px;
