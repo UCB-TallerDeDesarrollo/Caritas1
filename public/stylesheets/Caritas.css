@@ -119,13 +119,19 @@ tr {
 tr#sick
 {
     height:  34px;
-    background: #f5f5f5;
+    background: none;
 }
 
 td {
 	padding-left: 11px;
 	padding-right: 11px;
-	border: 1px solid #E7F0CC;
+	border: 1px solid #ebebeb;
+}
+caption
+{
+    height: 30px;
+    font-size: 13pt;
+    /*background: #810 30% url(/images/alert-overlay.png) repeat-x;*/
 }
 /* end - table */
 
