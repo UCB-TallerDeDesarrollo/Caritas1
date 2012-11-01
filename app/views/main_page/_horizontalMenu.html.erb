@@ -44,6 +44,7 @@
             <li><%= link_to 'Beneficiarios',:controller=> "beneficiaries", :action => "index" %></li>
       		<li><%= link_to 'Tipos de ayuda',:controller => "help_types", :action => "index"%></li>
       		<li><%= link_to 'Reporte de ayudas',:controller => "beneficiary_helps", :action => "report"%></li>
+            <li><%= link_to 'Tipos de Beneficiario',:controller => "beneficiary_types", :action => "index"%></li>
       	</ul>
       </li>
       <%end%>
@@ -70,9 +71,6 @@
 	        <%if permitted_to? :index, :social_cards%>
 	        	<li><%= link_to 'Ficha Social',:controller => "social_cards", :action => "index"%></li>
 	        <% end %>
-	        <%if permitted_to? :index, :beneficiary_types%>
-	        	<li><%= link_to 'Tipos de Beneficiario',:controller => "beneficiary_types", :action => "index"%></li>
-	        <% end%>
         </ul>
 </li>
 </ul>
