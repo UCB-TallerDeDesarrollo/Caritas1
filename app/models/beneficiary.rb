@@ -35,7 +35,7 @@ class Beneficiary < ActiveRecord::Base
     end
   end
 
-  def self.search(name, last, ci, traits, ben_type, hel_type)
+  def self.search(name, last, ci, telephone, ben_type, hel_type)
 
     if ben_type && hel_type
       if !name.blank?
@@ -51,8 +51,8 @@ class Beneficiary < ActiveRecord::Base
           if !ci.blank?
             find(:all, :conditions => ['LOWER(ci) LIKE ? AND beneficiary_type_id = ? AND help_type_id = ?',"%#{ci.downcase}%",ben_type,hel_type])
           else
-            if !traits.blank?
-              find(:all, :conditions => ['LOWER(personal_traits) LIKE ? AND beneficiary_type_id = ? AND help_type_id = ?',"%#{traits.downcase}%",ben_type,hel_type])
+            if !telephone.blank?
+              find(:all, :conditions => ['LOWER(telephone) LIKE ? AND beneficiary_type_id = ? AND help_type_id = ?',"%#{telephone.downcase}%",ben_type,hel_type])
             else
               find(:all, :conditions => ['beneficiary_type_id = ? AND help_type_id = ?',ben_type,hel_type])
             end
@@ -73,8 +73,8 @@ class Beneficiary < ActiveRecord::Base
           if !ci.blank?
             find(:all, :conditions => ['LOWER(ci) LIKE ? AND beneficiary_type_id = ? ',"%#{ci.downcase}%",ben_type])
           else
-            if !traits.blank?
-              find(:all, :conditions => ['LOWER(personal_traits) LIKE ? AND beneficiary_type_id = ? ',"%#{traits.downcase}%",ben_type,])
+            if !telephone.blank?
+              find(:all, :conditions => ['LOWER(telephone) LIKE ? AND beneficiary_type_id = ? ',"%#{telephone.downcase}%",ben_type,])
             else
               find(:all,:conditions => ['beneficiary_type_id = ?',ben_type])
             end
@@ -95,8 +95,8 @@ class Beneficiary < ActiveRecord::Base
           if !ci.blank?
             find(:all, :conditions => ['LOWER(ci) LIKE ? AND help_type_id = ?',"%#{ci.downcase}%",hel_type])
           else
-            if !traits.blank?
-              find(:all, :conditions => ['LOWER(personal_traits) LIKE ? AND help_type_id = ?',"%#{traits.downcase}%",hel_type])
+            if !telephone.blank?
+              find(:all, :conditions => ['LOWER(telephone) LIKE ? AND help_type_id = ?',"%#{telephone.downcase}%",hel_type])
             else
               find(:all,:conditions => ['help_type_id = ?',hel_type])
             end
@@ -117,8 +117,8 @@ class Beneficiary < ActiveRecord::Base
           if !ci.blank?
             find(:all, :conditions => ['LOWER(ci) LIKE ?',"%#{ci.downcase}%"])
           else
-            if !traits.blank?
-              find(:all, :conditions => ['LOWER(personal_traits) LIKE ?',"%#{traits.downcase}%"])
+            if !telephone.blank?
+              find(:all, :conditions => ['LOWER(telephone) LIKE ?',"%#{telephone.downcase}%"])
             else
               find(:all)
             end

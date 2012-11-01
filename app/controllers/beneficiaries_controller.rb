@@ -14,7 +14,7 @@ class BeneficiariesController < ApplicationController
       @help_type_selected = params[:select_help_type].to_i
     end
     
-    @beneficiaries = Beneficiary.search(params[:search_name],params[:search_last_name], params[:search_ci],params[:search_traits],@beneficiary_type_selected,@help_type_selected)
+    @beneficiaries = Beneficiary.search(params[:search_name],params[:search_last_name], params[:search_ci],params[:search_telephone],@beneficiary_type_selected,@help_type_selected)
     @parishes = Parish.find(:all)
     @beneficiary_types = BeneficiaryType.find(:all)
     respond_to do |format|

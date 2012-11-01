@@ -3,7 +3,13 @@
 <p>
   <% form_tag beneficiaries_path, :method => 'get' do %>
       <div>
-        <%= label_tag "param_search", "Parametros de Busqueda:" %>
+        <%= label_tag "param_search", "Parámetros de Busqueda" %>
+      </div>
+      <div>
+        <%= label_tag "search_ci", "CI" %>
+        <%= text_field_tag :search_ci, params[:ci] %>
+        <%= label_tag "search_telephone", "Telefono" %>
+        <%= text_field_tag :search_telephone, params[:telephone] %>
       </div>
       <div>
         <%= label_tag "search__name", "Nombre" %>
@@ -11,12 +17,7 @@
         <%= label_tag "search_last_name", "Apellido" %>
         <%= text_field_tag :search_last_name, params[:Last_name] %>
       </div>
-      <div>
-        <%= label_tag "search_ci", "Ci" %>
-        <%= text_field_tag :search_ci, params[:ci] %>
-        <%= label_tag "search_traits", "Rasgos Personales" %>
-        <%= text_field_tag :search_traits, params[:traits] %>
-      </div>
+
       <div>
       	&nbsp;
       </div>
