@@ -59,18 +59,18 @@
 <%= submit_tag "Filtrar", :id => nil %>
  <% end %>
  
- <%= link_to 'Exportar a excel', report_beneficiary_helps_path(:format => 'xls') %>
+ <%= link_to 'Exportar a excel', report_beneficiary_helps_path(:xls) %>
 <table>
   <tr>
-    <th>Fecha</th>
-    <th>Parroquia</th>
-    <th>CI</th>
-    <th>Nombre</th>
-    <th>Apellido</th>
-    <th>Tipo de beneficiario</th>
-    <th>Tipo de ayuda</th>
-    <th>Cantidad</th>
-    <th>Detalle</th>
+      <th>Fecha</th>
+      <th>Parroquia</th>
+      <th>CI</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Tipo de beneficiario</th>
+      <th>Tipo de ayuda</th>
+      <th>Cantidad</th>
+      <th>Detalle</th>
   </tr>
 
 <% @beneficiary_helps.each do |beneficiary_help| %>
