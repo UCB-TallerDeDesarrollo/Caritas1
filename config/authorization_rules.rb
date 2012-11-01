@@ -11,7 +11,7 @@ authorization do
                       :workshops_courses], 
                       :to => [:index, :show, :new, :edit, :create, :update, :destroy]
     has_permission_on [:beneficiary_helps], :to => [:index, :show, :new, :edit, :create, :update, :destroy, :report]
-    has_permission_on [:main_page], :to => [:index, :info]
+    has_permission_on [:main_page], :to => [:index, :info, :error]
     has_permission_on [:notices], :to => [:index, :index_public, :show, :show_public, :new, :edit, :create, :update, :destroy]
     has_permission_on [:social_works], :to => [:index, :index_public, :show, :show_public, :new, :edit, :create, :update, :destroy, :add_photos, :show_photos, :destroy_all_photos]
     has_permission_on [:emailer], :to=>[:sendmail, :contact, :index, :contact_us, :sendmailContactUs]
@@ -21,7 +21,7 @@ authorization do
   end
   
   role :guest do
-     has_permission_on [:main_page], :to => [:index, :info]
+     has_permission_on [:main_page], :to => [:index, :info, :error]
      has_permission_on [:emailer], :to=>[:sendmail, :contact, :index, :contact_us, :sendmailContactUs]
      has_permission_on [:notices], :to => [:index_public, :show_public]
      has_permission_on [:social_works], :to => [:index_public, :show_public]

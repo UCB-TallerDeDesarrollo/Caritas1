@@ -1,0 +1,6 @@
+<div id="main">
+	<% flash.each do |key, msg| %>
+  		<%= content_tag :p, msg, :id => key %>
+	<% end %>
+	<%= link_to 'Volver a Inicio', root_path %>
+</div>

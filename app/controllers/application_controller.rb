@@ -17,10 +17,10 @@ class ApplicationController < ActionController::Base
   before_filter :current_user
 
   protected
-  
+ 
   def permission_denied
     flash[:error] = "No tienes permitido realizar esta accion, por favor contacta con tu administrador"
-    redirect_to root_url
+    redirect_to :controller => 'main_page', :action => 'error' 
   end
   
   private  

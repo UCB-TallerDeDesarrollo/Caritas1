@@ -9,5 +9,9 @@ class MainPageController < ApplicationController
     
    def info
       render :action=>'quienesSomos'  # Render a template from the say_hello action method
-  end
+   end
+   
+   def error
+     render :action=>'error'
+   end
 end
