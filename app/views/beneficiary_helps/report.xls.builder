@@ -7,12 +7,12 @@ xml.Workbook({
   'xmlns:ss'   => "urn:schemas-microsoft-com:office:spreadsheet" 
   }) do
 
-  xml.Worksheet 'ss:Name' => 'Recent Helps' do
+  xml.Worksheet 'ss:Name' => 'Ayudas' do
     xml.Table do
       # Header
       
       xml.Row do
-        xml.Cell {xml.Data 'Reporte de Ayudas a beneficiarios', 'ss:Type' => 'String'}
+        xml.Cell {xml.Data 'Reporte de Ayudas a Beneficiarios', 'ss:Type' => 'String'}
       end
       
       xml.Row do
@@ -27,6 +27,7 @@ xml.Workbook({
         xml.Cell { xml.Data 'Detalle', 'ss:Type' => 'String' }
       
       end
+      @beneficiary_helps = BeneficiaryHelp.all
 
       # Rows
       for beneficiary_help in @beneficiary_helps
