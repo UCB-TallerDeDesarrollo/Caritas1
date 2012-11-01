@@ -29,6 +29,7 @@ class BeneficiaryHelpsController < ApplicationController
     @beneficiary_help = BeneficiaryHelp.new
     @beneficiary = Beneficiary.find(params[:bid])
     @help_types = HelpType.find(:all, :order => "name")
+    @beneficiary_types = BeneficiaryType.find(:all, :order => "name")
     @beneficiary_help.beneficiary_id = params[:bid].to_i
     respond_to do |format|
       format.html # new.html.erb
@@ -40,6 +41,7 @@ class BeneficiaryHelpsController < ApplicationController
   def edit
     @beneficiary_help = BeneficiaryHelp.find(params[:id])
     @help_types = HelpType.find(:all, :order => "name")
+    @beneficiary_types = BeneficiaryType.find(:all, :order => "name")
   end
 
   # POST /beneficiary_helps
@@ -47,6 +49,7 @@ class BeneficiaryHelpsController < ApplicationController
   def create
     @beneficiary_help = BeneficiaryHelp.new(params[:beneficiary_help])
     @help_types = HelpType.find(:all, :order => "name")
+    @beneficiary_types = BeneficiaryType.find(:all, :order => "name")
     respond_to do |format|
       if @beneficiary_help.save
         format.html { redirect_to(@beneficiary_help.beneficiary, :notice => 'BeneficiaryHelp was successfully created.') }
@@ -63,6 +66,7 @@ class BeneficiaryHelpsController < ApplicationController
   def update
     @beneficiary_help = BeneficiaryHelp.find(params[:id])
     @help_types = HelpType.find(:all, :order => "name")
+    @beneficiary_types = BeneficiaryType.find(:all, :order => "name")
     respond_to do |format|
       if @beneficiary_help.update_attributes(params[:beneficiary_help])
         format.html { redirect_to(@beneficiary_help, :notice => 'BeneficiaryHelp was successfully updated.') }
@@ -79,6 +83,7 @@ class BeneficiaryHelpsController < ApplicationController
   def destroy
     @beneficiary_help = BeneficiaryHelp.find(params[:id])
     @beneficiary_help.destroy
+    @beneficiary_types.destroy
 
     respond_to do |format|
       format.html { redirect_to(beneficiary_helps_url) }

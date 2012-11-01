@@ -42,11 +42,11 @@
     <div>
       	Tipo de beneficiario <select name="beneficiary_type_id" style="width: 150px">
       		<option value="" >Ninguno</option>         
-          <% if @beneficiary_types.length > 0
-            @beneficiary_types.each do |beneficiary_type| 
-              if beneficiary_type.id != 0%>
-                <option value="<%beneficiary_type.id%>" >
-                  <%beneficiary_type.name%>
+                <% if @beneficiary_types.length > 0
+            @beneficiary_types.each do |type| 
+              if type.id != 0%>
+                <option value="<%=type.id%>" >
+                  <%=type.name%>
                 </option>
               <% end 
             end 
@@ -67,6 +67,7 @@
     <th>CI</th>
     <th>Nombre</th>
     <th>Apellido</th>
+    <th>Tipo de beneficiario</th>
     <th>Tipo de ayuda</th>
     <th>Cantidad</th>
     <th>Detalle</th>
@@ -79,6 +80,7 @@
     <td><%=h beneficiary_help.beneficiary.ci %></td>
     <td><%=h beneficiary_help.beneficiary.name %></td>
     <td><%=h beneficiary_help.beneficiary.last_name %></td>
+    <td><%=h beneficiary_help.beneficiary.beneficiary_type.name %></td>
     <td><%=h beneficiary_help.helpType %></td>
     <td><%=h beneficiary_help.amount %></td>
     <td><%=h beneficiary_help.detail %></td>
