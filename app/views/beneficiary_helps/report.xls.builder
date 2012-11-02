@@ -18,11 +18,11 @@ xml.Workbook({
       xml.Row do
         xml.Cell { xml.Data 'Fecha', 'ss:Type' => 'String' }
         xml.Cell { xml.Data 'Parroquia', 'ss:Type' => 'String' }
+        xml.Cell { xml.Data 'Tipo de ayuda', 'ss:Type' => 'String' }
+        xml.Cell { xml.Data 'Tipo de beneficiario', 'ss:Type' => 'String' }
         xml.Cell { xml.Data 'CI', 'ss:Type' => 'String' }
         xml.Cell { xml.Data 'Nombre', 'ss:Type' => 'String' }
         xml.Cell { xml.Data 'Apellido', 'ss:Type' => 'String' }
-        xml.Cell { xml.Data 'Tipo de beneficiario', 'ss:Type' => 'String' }
-        xml.Cell { xml.Data 'Tipo de ayuda', 'ss:Type' => 'String' }
         xml.Cell { xml.Data 'Cantidad', 'ss:Type' => 'String' }
         xml.Cell { xml.Data 'Detalle', 'ss:Type' => 'String' }
       
@@ -34,11 +34,11 @@ xml.Workbook({
         xml.Row do
           xml.Cell { xml.Data beneficiary_help.date, 'ss:Type' => 'String' }
           xml.Cell { xml.Data beneficiary_help.beneficiary.parish.parish_name, 'ss:Type' => 'String' }
+          xml.Cell { xml.Data beneficiary_help.helpType, 'ss:Type' => 'String' }
+          xml.Cell { xml.Data beneficiary_help.beneficiary.beneficiary_type.name, 'ss:Type' => 'String' }
           xml.Cell { xml.Data beneficiary_help.beneficiary.ci, 'ss:Type' => 'String' }          
           xml.Cell { xml.Data beneficiary_help.beneficiary.name, 'ss:Type' => 'String' }
           xml.Cell { xml.Data beneficiary_help.beneficiary.last_name, 'ss:Type' => 'String' }
-          xml.Cell { xml.Data beneficiary_help.beneficiary.beneficiary_type.name, 'ss:Type' => 'String' }
-          xml.Cell { xml.Data beneficiary_help.helpType, 'ss:Type' => 'String' }
           xml.Cell { xml.Data beneficiary_help.amount, 'ss:Type' => 'String' }
           xml.Cell { xml.Data beneficiary_help.detail, 'ss:Type' => 'String' } 
          
