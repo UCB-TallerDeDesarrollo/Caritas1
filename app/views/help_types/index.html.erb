@@ -1,9 +1,15 @@
 <h1>Administrar tipos de ayuda</h1>
 
 <table>
+	<tr align="right">
+    <td colspan="5">
+      <%=button_to 'Registrar tipo de ayuda', new_help_type_path %>
+    </td>
+  </tr>
   <tr>
     <th>Nombre</th>
     <th>Descripción</th>
+    <th colspan="3">Acciones</th>
   </tr>
 
 <% @help_types.each do |help_type| %>
@@ -17,6 +23,3 @@
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'Registrar tipo de ayuda', new_help_type_path %>
