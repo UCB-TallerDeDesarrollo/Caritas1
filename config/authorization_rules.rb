@@ -32,13 +32,16 @@ authorization do
   role :parroco do
     includes :guest
     has_permission_on [:parishes], :to => [:index, :show]
+
   end
   
   role :voluntario do
     includes :guest
+    has_permission_on [:volunteers], :to => [:index]
     has_permission_on [:groups], :to => [:index]
     has_permission_on :groups, :to => :show do
       if_attribute :volunteers => contains { Volunteer.find(user.controller_type) }
     end
+
   end
 end
