@@ -4,15 +4,15 @@
         <%= f.error_messages %>
         <table>
           <tr>
-            <td><%= f.label :ci, "*CI:" %></td>
+            <td><%= f.label :ci, "CI:" %></td>
             <td><%= f.text_field :ci %> </td>
           </tr>
           <tr>
-            <td><%= f.label :name, "*Nombre:" %></td>
+            <td><%= f.label :name, "* Nombre:" %></td>
             <td><%= f.text_field :name %> </td>
           </tr>
           <tr>
-            <td><%= f.label :last_name, "*Apellido:" %></td>
+            <td><%= f.label :last_name, "* Apellido:" %></td>
             <td><%= f.text_field :last_name %> </td>
           </tr>
           <tr>
@@ -20,10 +20,10 @@
             <td><%= f.text_field :address %> </td>
           </tr>
           <tr>
-            <td><%= f.label :telephone, "*Telefono de referencia:" %></td>
+            <td><%= f.label :telephone, "Telefono de referencia:" %></td>
             <td><%= f.text_field :telephone %> </td>
           </tr>
-          <td><%= f.label :help_type , "*Tipo de ayuda:" %></td>
+          <td><%= f.label :help_type , "* Tipo de ayuda:" %></td>
           <td>
             <% if !@help_type.empty? %>
                 <select name="beneficiary[help_type_id]" style="width: 195px">
@@ -38,7 +38,7 @@
             <%end%>
           </td>
             <tr>
-        <td><%= "Parroquia a la que pertenece(*):"%></td>
+        <td><%= "* Parroquia a la que pertenece:"%></td>
         <td><select name="beneficiary[parish_id]" style="width: 150px"> 
         <option value="">
             <% if @parish  
@@ -55,7 +55,7 @@
           </td>
       </tr>
          <tr>
-        <td><%= "Tipo de beneficiario(*):"%></td>
+        <td><%= "* Tipo de beneficiario:"%></td>
         <td><select name="beneficiary[beneficiary_type_id]" style="width: 150px"> 
         <option value="">
             <% if @beneficiary_type  
