@@ -25,27 +25,28 @@
         </tr>
 
         <% @groups.each do |group|
-        	if permitted_to? :show, group 
+        if permitted_to? :show, :groups 
 	            if group.id != 0 && group.state%>
 	            <tr>
 	              <td><%= link_to group.name, group %></td>
 	              <td><%=h group.volunteer %></td>
 	              <!--<td><#%= link_to 'Voluntarios', volunteers_url %></td>-->
-	              <% if permitted_to? :group, :volunter %>
-	              <td><%= link_to "Ver Voluntarios", :controller => "volunteers", :group=> group.id %></td>
-	              <% else %>
-	              	<td></td>
+	              
+	              <td><% if permitted_to? :show, :volunteers %>
+	              <%= link_to "Ver Voluntarios", :controller => "volunteers", :group=> group.id %></td>
+	              <% end %>	              
+	              </td>              
+	        
+        	      <td><% if permitted_to? :edit, :groups %>
+	              <%= link_to 'Editar', edit_group_url(group) %></td>
+	              
+	              <% end %></td>
+	              
+	              <td><% if permitted_to? :destroy, :groups %>
+	              <%= link_to 'Eliminar', group, :confirm => '¿Está seguro que desea eliminar el grupo?', :method => :delete %></td>
+	              
 	              <% end %>
-	              <% if permitted_to? :edit, :group %>              
-	              <td><%= link_to 'Editar', edit_group_url(group) %></td>
-	              <<% else %>
-	              	<td></td>
-	              <% end %>
-	              <% if permitted_to? :destroy, :group %>
-	              <td><%= link_to 'Eliminar', group, :confirm => '¿Está seguro que desea eliminar el grupo?', :method => :delete %></td>
-	              <% else %>
-	              	<td></td>
-	              <% end %>
+	              </td>
 	            </tr>
 	          <% end
 	          end 
