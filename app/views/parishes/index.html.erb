@@ -59,7 +59,10 @@
                 <%else%>
                   <td></td>
                 <%end%>                                          
-<!--              <td><%= link_to 'Eliminar', parish, :confirm => '¿Está seguro que desea eliminar la parroquia?', :method => :delete %></td> -->
+              <td><%if permitted_to? :destroy, :parishes %>
+              <%= link_to 'Eliminar', parish, :confirm => '¿Está seguro que desea eliminar la parroquia?', :method => :delete %>
+              <%end%>
+              </td>
             </tr>
           <%end%>
         <% end %>
