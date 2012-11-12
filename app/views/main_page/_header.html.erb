@@ -15,11 +15,15 @@
       <h1 id="logo-text"><%= link_to "Caritas Parroquiales", :controller => "main_page", :action => "index"%></h1>
       <!-- login -->
       <div id="user_nav">
+      	<%if permitted_to? :index, :users%>
+      	<a href="#"><%= link_to 'Usuarios',:controller =>"users",:action => "index" %></a> |
+      <%end%>
         <%if current_user %>
           <%= link_to "Logout", logout_path %> <%= current_user_role %>
         <%else%>
           <%= link_to "Log in", login_path %>
         <%end%>
+        
       </div>
       <!-- login ends -->
     </div>

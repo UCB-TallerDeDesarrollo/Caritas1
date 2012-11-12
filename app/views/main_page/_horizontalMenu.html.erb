@@ -52,9 +52,6 @@
       	</ul>
       </li>
       <%end%>
-      <%if permitted_to? :index, :users%>
-      	<li><a href="#"><%= link_to 'Usuarios',:controller =>"users",:action => "index" %></a></li>
-      <%end%>
       <li><a href="#">Campañas y Proyectos</a>
         <ul>
 	    	<%if permitted_to? :index, :campaings %>

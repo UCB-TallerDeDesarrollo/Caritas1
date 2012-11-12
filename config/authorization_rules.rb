@@ -32,7 +32,8 @@ authorization do
   role :parroco do
     includes :guest
     has_permission_on [:parishes], :to => [:index, :show]
-
+    has_permission_on [:social_cards], 
+                      :to => [:index, :show, :new, :edit, :create, :update]
   end
   
   role :voluntario do

@@ -108,7 +108,7 @@
   </tr>
   <tr>  
       <td><%= "Fotografía de la Persona" %></td>
-      <% if @social_card.social_card_photo %>
+      <% if !@social_card.social_card_photo_file_name.nil? %>
       <td><%=  image_tag  @social_card.social_card_photo.url, :size=>"300x200" %></td>
       <% else %>
       <td>No está disponible la fotografía</td>
