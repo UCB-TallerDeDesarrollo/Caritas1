@@ -23,8 +23,10 @@
 <table>
   <tr>
     <td>
-      <DIV align="right">   
-        <%= button_to 'Crear Parroquia', new_parish_path %>
+      <DIV align="right">
+      	<%if permitted_to? :create, :parishes %>   
+        	<%= button_to 'Crear Parroquia', new_parish_path %>
+        <% end %>
       </div>
     </td>
       
