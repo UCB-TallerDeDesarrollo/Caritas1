@@ -1,12 +1,35 @@
-<h1> Reporte de Ayudas a beneficiarios</h1>
+<h1> Reporte de ayudas a beneficiarios</h1>
 <% form_tag :controller => "beneficiary_helps", :action => "report" do %>
-  Desde: <%= date_select :date_start, params[:date_start] %> <br/>
-  Hasta:&nbsp; <%= date_select :date_end, params[:date_end] %><br/>
-  <div>
-      	&nbsp;
-      </div>
-      <div>
-      	Parroquia <select name="parish_id" style="width: 150px">
+
+  <table>
+    <tr id="sick">
+      <td style="text-align: right">
+        Desde:
+      </td>
+      <td>
+        <%= date_select :date_start, params[:date_start] %>
+      </td>
+    </tr>
+    <tr id="sick">
+      <td style="text-align: right">
+        Hasta:
+      </td>
+      <td>
+        <%= date_select :date_end, params[:date_end] %>
+      </td>
+    </tr>
+    <tr id="sick">
+      <td colspan="2">
+        &nbsp;        
+      </td>      
+    </tr>
+    <tr id="sick">
+      <td style="text-align: right">
+        Parroquia:
+      </td>
+      <td>
+        <div>
+      	<select name="parish_id" style="width: 150px">
       		<option value="" >Ninguno</option>         
           <% if @parishes.length > 0
             @parishes.each do |parish| 
@@ -19,11 +42,15 @@
           end%>              
         </select>
       </div>
-      <div>
-      	&nbsp;
-    </div>
-    <div>
-      	Tipo de ayuda <select name="select_help_type" style="width: 150px">
+      </td>
+    </tr>
+    <tr id="sick">
+      <td style="text-align: right">
+        Tipo de ayuda:
+      </td>
+      <td>
+        <div>
+      	<select name="select_help_type" style="width: 150px">
       		<option value="" >Ninguno</option>          
           <% if HelpType.all.length > 0
             HelpType.all.each do |help_type| 
@@ -36,11 +63,15 @@
           end%>              
         </select>
       </div>
-      <div>
-      	&nbsp;
-    </div>
-    <div>
-      	Tipo de beneficiario <select name="beneficiary_type_id" style="width: 150px">
+      </td>
+    </tr>
+    <tr id="sick">
+      <td style="text-align: right">
+        Tipo de beneficiario:
+      </td>
+      <td>
+        <div>
+      	<select name="beneficiary_type_id" style="width: 150px">
       		<option value="" >Ninguno</option>         
                 <% if @beneficiary_types.length > 0
             @beneficiary_types.each do |type| 
@@ -53,10 +84,12 @@
           end%>              
         </select>
       </div>
-      <div>
-      	&nbsp;
-    </div>
-<%= submit_tag "Filtrar", :id => nil %>
+      </td>
+    </tr>
+  </table>
+ 
+    
+<%= submit_tag "Buscar", :id => nil %>
  <% end %>
  
  <%= link_to 'Exportar a excel', report_beneficiary_helps_path(:xls) %>
