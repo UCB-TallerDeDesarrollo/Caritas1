@@ -40,7 +40,7 @@
         	      <td><% if permitted_to? :edit, :groups %>
 	              <%= link_to 'Editar', edit_group_url(group) %></td>
 	              
-	              <% end %></td>
+	              <% end %>
 	              
 	              <td><% if permitted_to? :destroy, :groups %>
 	              <%= link_to 'Eliminar', group, :confirm => '¿Está seguro que desea eliminar el grupo?', :method => :delete %></td>

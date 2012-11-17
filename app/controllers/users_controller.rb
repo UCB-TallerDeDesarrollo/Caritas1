@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   end
   def new  
     @user = User.new
+    @volunteers = Volunteer.find(:all)
+    @pastors = Pastor.find(:all)
     if params[:type]
       @volunteer_user = params[:type]
       @user.controller_type = params[:type].to_i
