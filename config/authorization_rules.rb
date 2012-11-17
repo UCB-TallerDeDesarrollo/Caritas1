@@ -38,7 +38,7 @@ authorization do
   
   role :voluntario do
     includes :guest
-    has_permission_on [:volunteers], :to => [:show, :edit]
+    has_permission_on [:volunteers], :to => [:show, :edit, :update]
     has_permission_on [:groups], :to => [:index]
     has_permission_on :groups, :to => :show do
       if_attribute :volunteers => contains { Volunteer.find(user.controller_type) }
