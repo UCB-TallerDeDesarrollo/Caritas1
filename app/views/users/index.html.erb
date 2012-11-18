@@ -1,6 +1,16 @@
 
 <h1>Usuarios</h1>
+<table>
+  <tr align="right">
+    <td>
+      <% if current_user %>
+          <%= button_to 'Registrar Usuario', new_user_path %>
+      <%end%>
+    </td>
+  </tr>
 
+<tr>
+  <td>
 <table>
   <tr>
     <th>Usuario</th>
@@ -19,8 +29,6 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'Registrar Usuario', new_user_path %>
-+<%= link_to 'Registrar Usuario Voluntario',:controller=>"volunteers", :action=>"index_users",:id=>" " %>
+</td>
+</tr>
+</table>

@@ -12,11 +12,6 @@ class UsersController < ApplicationController
     @user = User.new
     @volunteers = Volunteer.find(:all)
     @pastors = Pastor.find(:all)
-    if params[:type]
-      @volunteer_user = params[:type]
-      @user.controller_type = params[:type].to_i
-      @user.roles = 2
-    end
   end
   def create
     @user = User.new(params[:user])
@@ -34,8 +29,12 @@ class UsersController < ApplicationController
   def edit
     if params[:id]
       @user = User.find(params[:id])
+      @volunteers = Volunteer.find(:all)
+      @pastors = Pastor.find(:all)
     else
       @user = current_user
+      @volunteers = Volunteer.find(:all)
+      @pastors = Pastor.find(:all)
     end
   end  
   

@@ -1,5 +1,3 @@
-<link href="/stylesheets/nyroModal.css?1352806350" media="screen" rel="stylesheet" type="text/css" />
-<script src="/javascripts/jquery.nyroModal.custom.js?1352806350" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('#controller_volunteer').css('visibility', 'hidden');
@@ -51,10 +49,6 @@
       <td>* Confirmacion de Contraseña</td>
       <td><%= f.password_field :password_confirmation %></td>
     </tr>
-    <% if @volunteer_user%>
-    <%= f.hidden_field :roles %>
-    <%= f.hidden_field :controller_type %>
-    <% else %>
 	<tr>
        <td>* Rol usuario</td>
        
@@ -68,7 +62,6 @@
 		</select>
 	  </td>
     </tr>
-	<% end %>
     <tr id="controller_volunteer">
       <td>Elija un voluntario para el usuario</td>
       <td>

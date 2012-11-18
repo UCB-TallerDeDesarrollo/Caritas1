@@ -1,9 +1,56 @@
-
+<script type="text/javascript">
+    var role_actual = <%= @user.roles%>;
+    $(document).ready(function() {
+        $('#controller_volunteer').css('visibility', 'hidden');
+        $('#controller_pastor').css('visibility', 'hidden');
+        $('#user_volunteer').removeAttr('name');
+        $('#user_pastor').removeAttr('name');
+        if(role_actual==1)
+        {
+            $('#user_roles option[value=<%= @user.roles%>]').attr('selected', true);
+            $('#user_pastor').attr('name','user[controller_type]');
+            $('#controller_volunteer').css('visibility', 'hidden');
+            $('#controller_pastor').css('visibility', 'visible');
+            $('#user_volunteer').removeAttr('name');
+            $('#user_pastor option[value=<%= @user.controller_type%>]').attr('selected', true);
+            role_actual = -1;
+        }
+        if(role_actual==2)
+        {
+            $('#user_roles option[value=<%= @user.roles%>]').attr('selected', true);
+            $('#user_volunteer').attr('name','user[controller_type]');
+            $('#controller_pastor').css('visibility', 'hidden');
+            $('#controller_volunteer').css('visibility', 'visible');
+            $('#user_pastor').removeAttr('name');
+            $('#user_volunteer option[value=<%= @user.controller_type%>]').attr('selected', true);
+            role_actual = -1;
+        }
+        $('select#user_roles').change(function(){
+            if ($(this).val() == 2) {
+                $('#user_volunteer').attr('name','user[controller_type]');
+                $('#controller_pastor').css('visibility', 'hidden');
+                $('#controller_volunteer').css('visibility', 'visible');
+                $('#user_pastor').removeAttr('name');
+            }
+            if ($(this).val() == 1) {
+                $('#user_pastor').attr('name','user[controller_type]');
+                $('#controller_volunteer').css('visibility', 'hidden');
+                $('#controller_pastor').css('visibility', 'visible');
+                $('#user_volunteer').removeAttr('name');
+            }
+            if($(this).val() == 0)
+            {
+                $('#controller_volunteer').css('visibility', 'hidden');
+                $('#controller_pastor').css('visibility', 'hidden');
+                $('#user_volunteer').removeAttr('name');
+                $('#user_pastor').removeAttr('name');
+            }
+        });
+    });
+</script>
 <h1>Editar Usuario</h1>
-
     <% form_for(@user) do |f| %>
         <%= f.error_messages %>
-
         <table>
           <tr>
             <td>* Nombre de Usuario</td>
@@ -23,15 +70,45 @@
           </tr>
           <tr>
             <td>* Rol usuario</td>
-            <td><select id="user_roles" name="user[roles]">
-		    <% for i in  1..User::USERS_TYPES.length do %>
-			    <option value="<%= i - 1 %>">
-			         <%=User::USERS_TYPES[i - 1]%>
-			    </option>
-		    <%end%>
-			</select>
-		  </td>
+
+            <td>
+              <select id="user_roles" name="user[roles]">
+                <% for i in  1..User::USERS_TYPES.length  do %>
+                    <option id="<%=User::USERS_TYPES[i - 1]%>" value="<%=i - 1%>">
+                      <%= User::USERS_TYPES[i - 1]%>
+                    </option>
+                <%end%>
+              </select>
+            </td>
           </tr>
+            <tr id="controller_volunteer">
+              <td>Elija un voluntario para el usuario</td>
+              <td>
+                <select id="user_volunteer" name="user[controller_type]">
+                  <% if @volunteers
+                       @volunteers.each do |volunteer| %>
+                          <option value="<%= volunteer.id %>">
+                            <%= volunteer.name %>
+                          </option>
+                      <%end%>
+                  <% end %>
+                </select>
+              </td>
+            </tr>
+            <tr id="controller_pastor">
+              <td>Elija un parroco para el usuario</td>
+              <td>
+                <select id="user_pastor" name="user[controller_type]">
+                  <% if @pastors
+                       @pastors.each do |pastor| %>
+                          <option value="<%= pastor.id %>">
+                            <%= pastor.name %>
+                          </option>
+                      <%end%>
+                  <% end %>
+                </select>
+              </td>
+            </tr>
           <tr align="right">
             <td colspan="2"><%= f.submit 'Actualizar' %></td>
           </tr>
