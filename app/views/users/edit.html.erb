@@ -1,26 +1,26 @@
 <script type="text/javascript">
     var role_actual = <%= @user.roles%>;
     $(document).ready(function() {
-        $('#controller_volunteer').css('visibility', 'hidden');
-        $('#controller_pastor').css('visibility', 'hidden');
+        $("#controller_volunteer").hide("slow");
+        $("#controller_pastor").hide("slow");
         $('#user_volunteer').removeAttr('name');
         $('#user_pastor').removeAttr('name');
-        if(role_actual==1)
+        if(role_actual == 1)
         {
             $('#user_roles option[value=<%= @user.roles%>]').attr('selected', true);
             $('#user_pastor').attr('name','user[controller_type]');
-            $('#controller_volunteer').css('visibility', 'hidden');
-            $('#controller_pastor').css('visibility', 'visible');
+            $('#controller_volunteer').hide("slow");
+            $('#controller_pastor').show('slow');
             $('#user_volunteer').removeAttr('name');
             $('#user_pastor option[value=<%= @user.controller_type%>]').attr('selected', true);
             role_actual = -1;
         }
-        if(role_actual==2)
+        if(role_actual == 2)
         {
             $('#user_roles option[value=<%= @user.roles%>]').attr('selected', true);
             $('#user_volunteer').attr('name','user[controller_type]');
-            $('#controller_pastor').css('visibility', 'hidden');
-            $('#controller_volunteer').css('visibility', 'visible');
+            $("#controller_pastor").hide("slow");
+            $('#controller_volunteer').show('slow');
             $('#user_pastor').removeAttr('name');
             $('#user_volunteer option[value=<%= @user.controller_type%>]').attr('selected', true);
             role_actual = -1;
@@ -28,22 +28,22 @@
         $('select#user_roles').change(function(){
             if ($(this).val() == 2) {
                 $('#user_volunteer').attr('name','user[controller_type]');
-                $('#controller_pastor').css('visibility', 'hidden');
-                $('#controller_volunteer').css('visibility', 'visible');
+                $("#controller_pastor").hide("slow");
+                $('#controller_volunteer').show('slow');
                 $('#user_pastor').removeAttr('name');
             }
             if ($(this).val() == 1) {
                 $('#user_pastor').attr('name','user[controller_type]');
-                $('#controller_volunteer').css('visibility', 'hidden');
-                $('#controller_pastor').css('visibility', 'visible');
+                $('#controller_volunteer').hide("slow");
+                $('#controller_pastor').show('slow');
                 $('#user_volunteer').removeAttr('name');
             }
             if($(this).val() == 0)
             {
-                $('#controller_volunteer').css('visibility', 'hidden');
-                $('#controller_pastor').css('visibility', 'hidden');
                 $('#user_volunteer').removeAttr('name');
                 $('#user_pastor').removeAttr('name');
+                $("#controller_volunteer").hide("slow");
+                $("#controller_pastor").hide("slow");
             }
         });
     });
