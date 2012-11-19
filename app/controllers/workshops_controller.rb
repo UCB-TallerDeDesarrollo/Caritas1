@@ -76,6 +76,11 @@ class WorkshopsController < ApplicationController
           courses_types_ids.each do |id|
             @coursesAsigned= WorkshopCourseType.new(:id_course_type => id, :id_workshop => @workshop.id)
             @coursesAsigned.save
+            
+          end
+          if(@workshop.parish.current_state=="Sensibilizada")
+            @workshop.parish.current_state="En Proceso"
+            @workshop.parish.save
           end
         end
         format.html { redirect_to(@workshop, :notice => 'Workshop was successfully updated.') }

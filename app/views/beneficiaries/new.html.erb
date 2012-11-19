@@ -1,7 +1,7 @@
     <h1>Registrar beneficiario</h1>
 
     <% form_for(@beneficiary, :html => {:multipart => true}) do |f| %>
-        <%= f.error_messages %>
+        <%=f.error_messages%>        	
         <table>
           <tr>
             <td><%= f.label :ci, "CI:" %></td>
