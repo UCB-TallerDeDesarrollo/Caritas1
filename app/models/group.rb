@@ -6,7 +6,7 @@ class Group < ActiveRecord::Base
   #put relations and references here
   belongs_to :volunteer # relacion para group_leader
   has_many :volunteers
-  has_one :parish
+  belongs_to :parish
   
   #put active record callbacks here
   has_attached_file :group_photo,
