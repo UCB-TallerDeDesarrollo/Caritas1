@@ -20,6 +20,10 @@
         <%if permitted_to? :index, :parishes%>  
           <li><%= link_to 'Parroquia',:controller => "parishes", :action => "index"%> </li>
         <% i = i + 1
+        
+        elsif permitted_to? :show, :parishes%>
+        	<li><%= link_to 'Parroquia', :controller => "parishes", :action => "show", :id => Volunteer.find(current_user.controller_type).group.parish.id %></li>
+        	<% i = i + 1
         end%>
         <%if permitted_to? :index, :groups%>  
           <li><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
