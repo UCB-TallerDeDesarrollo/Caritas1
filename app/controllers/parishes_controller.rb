@@ -1,6 +1,10 @@
 # -*- encoding : utf-8 -*-
 class ParishesController < ApplicationController
   filter_access_to :all
+  filter_access_to :edit, :attribute_check => true
+  filter_access_to :update, :attribute_check => true
+  filter_access_to :show, :attribute_check => true
+  filter_access_to :destroy, :attribute_check => true
   # GET /parishes
   # GET /parishes.xml
   def index
