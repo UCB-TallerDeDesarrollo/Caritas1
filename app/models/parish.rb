@@ -4,7 +4,7 @@ class Parish < ActiveRecord::Base
   
   belongs_to :pastor
   has_one :vicariou
-  belongs_to :group
+  has_one :group
   has_one :workshop
   has_many :social_cards
   has_many :beneficiaries
