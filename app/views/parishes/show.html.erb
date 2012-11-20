@@ -65,5 +65,9 @@
 <%if permitted_to? :edit, @parish %>
 	<%= link_to 'Editar', edit_parish_path(@parish) %> |
 <%end%>
-<%= link_to 'Volver', parishes_path %>
+<%if permitted_to? :index, :parishes%>
+	<%= link_to 'Volver', parishes_path %>
+<%else%> 
+	<%= link_to 'Volver', root_path %>
+<%end%>
 
