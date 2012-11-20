@@ -52,7 +52,7 @@ authorization do
     end
     has_permission_on [:parishes], :to => [:index] 
     has_permission_on :parishes, :to => :show do
-      if_attribute :volunteers => { :groups => is {user.volunteers.groups} }
+      if_attribute :parishes => contains { Volunteer.find(user.controller_type).group }
     end
 
   end
