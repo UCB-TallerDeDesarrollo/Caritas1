@@ -17,7 +17,13 @@ class Course < ActiveRecord::Base
       if(course)
         find(:all,:conditions => ['courses_types_id = ? AND workshop_id = ?', "#{course}", "#{work}"])
       end
-  end  
+  end 
+  def self.findf2(course,work)
+      if(course)
+        find(:conditions => ['courses_types_id = ? AND workshop_id = ?', "#{course}", "#{work}"])
+      end
+  end 
+   
   def self.finda(course_id)
   find(:all,:conditions => ['id=?', "#{course_id}"]) if (course_id)
     end

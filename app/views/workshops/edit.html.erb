@@ -69,7 +69,7 @@
         <tr id ='head-table'>
           <th align="CENTER">Curso de Formación</th>
           <th align="CENTER">Cantidad</th>
-          <th align="CENTER">Acciones</th>
+          <th  colspan="2" align="CENTER">Acciones</th>
         </tr>
 
      
@@ -91,8 +91,8 @@
             </td>
             
           <td align="CENTER">         
-              <%= link_to "Cursos", :controller => "courses/new", :workshop_code=>@workshop.id, :course_type_code=>r.id_course_type%>  
-          </td
+              <%= link_to "Cursos", :controller => "courses/new", :workshop_code=>@workshop.id, :course_type_code=>r.id_course_type%>               
+          </td>      
             
             
       </tr>

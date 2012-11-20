@@ -44,7 +44,11 @@ class CoursesController < ApplicationController
     
     @volunteers_checked = Volunteer.all(:select => "id,name,last_name",:conditions=> ["id in (select volunteer_id from assistance_lists where course_id= ?)","#{@course.id}"])
     @volunteers_not_checked = Volunteer.all(:select => "id,name,last_name",:conditions=> ["id not in (select volunteer_id from assistance_lists where course_id= ?)","#{@course.id}"])
-  end
+  respond_to do |format|
+      format.html # edit.html.erb
+      format.xml  { render :xml => @course }
+    end
+end
 
   # POST /courses
   # POST /courses.xml
