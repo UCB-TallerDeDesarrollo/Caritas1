@@ -2,7 +2,7 @@
 class Parish < ActiveRecord::Base
   PARISH_STATES = Array.[]("En Contacto","No Alcanzada", "Sensibilizada", "No Acepto", "En Proceso", "Seguimiento")
   
-  has_one :pastor
+  belongs_to :pastor
   has_one :vicariou
   belongs_to :group
   has_one :workshop

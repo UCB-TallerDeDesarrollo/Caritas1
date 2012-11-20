@@ -39,7 +39,7 @@
     
     <tr align="right">
       <td colspan="2">
-        <%if current_user%>
+        <%if permitted_to? :edit, @notice%>
           <%= link_to 'Editar', edit_notice_path(@notice) %> |
         <%end%>
         <%= link_to 'Volver', notices_path %>

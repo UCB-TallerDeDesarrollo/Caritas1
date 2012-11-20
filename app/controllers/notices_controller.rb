@@ -2,6 +2,9 @@
 class NoticesController < ApplicationController
   # GET /notices
   # GET /notices.xml
+  filter_access_to :all
+  filter_access_to :edit, :attribute_check => true
+  filter_access_to :update, :attribute_check => true
 
   record_select :per_page => 5,
     :search_on => ['title'],
@@ -68,6 +71,7 @@ class NoticesController < ApplicationController
   # POST /notices.xml
   def create
     @notice = Notice.new(params[:notice])
+    @notice.user_id = current_user.id
 
     respond_to do |format|
       if @notice.save

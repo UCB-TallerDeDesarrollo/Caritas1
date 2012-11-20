@@ -69,7 +69,7 @@
           <% if @volunteers
                @volunteers.each do |volunteer| %>
                   <option value="<%= volunteer.id %>">
-                    <%= volunteer.name %>
+                    <%= volunteer.name %> <%= volunteer.last_name%> <%= volunteer.second_last_name%>
                   </option>
               <%end%>
           <% end %>
@@ -83,7 +83,7 @@
           <% if @pastors
                @pastors.each do |pastor| %>
                   <option value="<%= pastor.id %>">
-                    <%= pastor.name %>
+                    <%= pastor.name %> <%= pastor.primary_last_name%> <%= pastor.second_last_name%>
                   </option>
               <%end%>
           <% end %>

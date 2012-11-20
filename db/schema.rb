@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121030001917) do
+ActiveRecord::Schema.define(:version => 20121120032736) do
 
   create_table "assistance_lists", :force => true do |t|
     t.datetime "created_at"
@@ -165,6 +165,7 @@ ActiveRecord::Schema.define(:version => 20121030001917) do
     t.string   "notice_photo_content_type"
     t.integer  "notice_photo_file_size"
     t.datetime "notice_photo_updated_at"
+    t.integer  "user_id"
   end
 
   create_table "parishes", :force => true do |t|

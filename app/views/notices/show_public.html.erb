@@ -14,7 +14,14 @@
       <p class="mostrarContent">
             <%= @notice.description %>
       </p>
-     <p class="word_wrap"><%=link_to "Volver", :controller => "notices", :action => "index_public",:id =>'find'%></p>
+     
+     <p class="word_wrap">
+     	<%if current_user%>
+     		<%=link_to "Volver", :controller => "notices", :action => "index",:id =>'find'%>
+     	<%else%>
+     		<%=link_to "Volver", :controller => "notices", :action => "index_public",:id =>'find'%>
+     	<%end%>
+     </p>
   </div>
  </div>
 

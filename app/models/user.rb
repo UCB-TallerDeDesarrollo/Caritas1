@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class User < ActiveRecord::Base
+  has_many :notices
   USERS_TYPES=["Administrador", "Parroco", "Voluntario"]
   acts_as_authentic
   def self.get_all_users

@@ -2,7 +2,7 @@
 class Pastor < ActiveRecord::Base
   
   belongs_to :vicariou
-  belongs_to :parish
+  has_one :parish
   
   validates_presence_of :name
   validates_presence_of :primary_last_name

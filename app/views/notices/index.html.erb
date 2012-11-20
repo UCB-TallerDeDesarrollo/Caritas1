@@ -10,7 +10,7 @@
 <table>
   <tr align="right">
     <td>  
-      <%if current_user%>
+      <%if permitted_to? :create, @notice%>
         <%=button_to  'Crear Noticia', new_notice_path %>
       <%end%>
     </td>
@@ -29,14 +29,26 @@
   
       <% @notices.each do |notice| %>
       <tr>
-        <td><p class="word_wrap"><%=link_to notice.title, :controller => "notices", :action => "show_public", :id =>notice %></p></td>
+        <td><p class="word_wrap">
+        	<%if permitted_to? :show, notice%>
+        		<%=link_to notice.title, :controller => "notices", :action => "show", :id =>notice %>
+        	<%else%>
+        		<%=link_to notice.title, :controller => "notices", :action => "show_public", :id =>notice %>
+        	<%end%>
+        </p></td>
         <td><%=h notice.notice_type %></td>
         <td><%=h notice.show_if(notice.is_published) %></td>
-        <td><%=h notice.last_date %></td>
-        <% if current_user %>
-              <td><%= link_to 'Editar', edit_notice_path(notice) %></td>
-              <td><%= link_to 'Eliminar', notice, :confirm => '¿Está seguro que desea eliminar la noticia?', :method => :delete %></td>
+        <td><%=h notice.last_date %></td>        
+    	<%if permitted_to? :edit, notice%>
+          <td><%= link_to 'Editar', edit_notice_path(notice) %></td>
+        <%else%>
+          <td></td>        
         <%end%>
+        <%if permitted_to? :destroy, notice%>
+          <td><%= link_to 'Eliminar', notice, :confirm => '¿Está seguro que desea eliminar la noticia?', :method => :delete %></td>
+	    <%else%>
+	      <td></td>
+        <%end%>        
       </tr>
       <% end %>
     </table>
