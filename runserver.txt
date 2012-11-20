@@ -1,7 +1,0 @@
-rake db:migrate
-set APP_KEY=wyawr8sws1rrwjz
-set APP_SECRET=17mg4cqn3bf7pn3
-set ACCESS_TOKEN=3q83a4sa4x32kjo
-set ACCESS_TOKEN_SECRET=catewxrmuh1whab
-set USER_ID=108737042
-ruby script\server
