@@ -34,7 +34,7 @@
          <% i = i + 1 %>
 
          <%elsif permitted_to? :show, :volunteers%>
-              <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "show", :id => current_user_id_data %></li>
+              <li><%= link_to 'Valuntario',:controller => "volunteers", :action => "show", :id => current_user_id_data %></li>
           <% i = i + 1
          end%>
         <%if permitted_to? :index, :courses_types%>
