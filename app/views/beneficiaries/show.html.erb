@@ -71,17 +71,26 @@
 				<th>Detalle</th>
 				<th colspan="2">Acciones</th>
 			</tr>
-
+			<%sumar = 0%>
 			<% @beneficiary_helps.each do |beneficiary_help| %>
 			<tr>
 				<td><%= h beneficiary_help.date %></td>
 				<td><%= h beneficiary_help.helpType %></td>
 				<td><%= h beneficiary_help.amount %></td>
 				<td><%= h beneficiary_help.detail %></td>
+				<%sumar = sumar+beneficiary_help.amount%>
 				<td><%= link_to 'Editar', edit_beneficiary_help_path(beneficiary_help) %></td>
 				<td><%= link_to 'Eliminar', beneficiary_help, :confirm => 'Estas seguro?', :method => :delete %></td>
 			</tr>
 			<% end %>
+			<tr>
+			<td>Total</td>
+			<td></td>
+			<td><%=sumar%></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			</tr>
 		</table></td>
 	</tr>
 </table>

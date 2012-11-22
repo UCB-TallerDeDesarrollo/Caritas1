@@ -91,13 +91,14 @@
     
 <%= submit_tag "Buscar", :id => nil %>
  <% end %>
- 
+ <%sumar=0%>
  <%= link_to 'Exportar a excel', report_beneficiary_helps_path(:xls) %>
 <table>
   <tr>
       <th>Fecha</th>
       <th>Parroquia</th>
       <th>Tipo de ayuda</th>
+      <th>Cantidad</th>
       <th>Tipo de beneficiario</th>
       <th>CI</th>
       <th>Nombre</th>
@@ -109,14 +110,18 @@
     <td><%=h beneficiary_help.date %></td>
     <td><%=h beneficiary_help.beneficiary.parish.parish_name %></td>    
     <td><%=h beneficiary_help.helpType %></td>
+    <td><%=h beneficiary_help.amount %></td>
     <td><%=h beneficiary_help.beneficiary.beneficiary_type.name %></td>
     <td><%=h beneficiary_help.beneficiary.ci %></td>
     <td><%=h beneficiary_help.beneficiary.name %></td>
     <td><%=h beneficiary_help.beneficiary.last_name %></td>
-    
+    <%sumar= sumar+beneficiary_help.amount%>
     
   </tr>
 <% end %>
-	
+<td>Total</td>
+<td></td>
+<td></td>
+<td><%=sumar%></td>
 </table>
 Total: <%= @beneficiary_helps.count%>
