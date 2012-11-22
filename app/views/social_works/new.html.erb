@@ -7,10 +7,21 @@
     <TABLE   ALIGN="CENTER">
 
       <TR>
-        <td><%= f.label :parish, "* Parroquia" %></td>
+        <td><%= f.label :parish_id, "* Parroquia" %></td>
 
         <TD >
-          <p class="word_wrap"><%= f.text_field :parish %></p>
+          <select name="social_work[parish_id]" style="width: 195px">
+            <option value="-1"></option>
+            <% if @parishes
+              @parishes.each do |parish| %>
+              	<%if permitted_to? :edit, parish %>
+                	<option value="<%=parish.id%>">
+                  		<%=parish.parish_name%>
+                	</option>
+                <%end%>
+              <%end%>
+            <%end%>
+          </select>
         </TD>
       </TR>
       <TR>

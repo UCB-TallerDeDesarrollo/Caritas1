@@ -4,18 +4,18 @@ class SocialWork < ActiveRecord::Base
 
   #put relations and references here
   has_many :social_work_photos
+  belongs_to :parish
   accepts_nested_attributes_for :social_work_photos, :allow_destroy => true
   #put active record callbacks here
 
   #put validates here
-  validates_presence_of :parish
+  validates_presence_of :parish_id
   validates_presence_of :name
   validates_presence_of :social_work
   validates_presence_of :responsible
   validates_presence_of :location  
-  validates_presence_of :responsible_filling
+  validates_presence_of :responsible_filling  
   
-  validates_length_of :parish, :maximum => 255
   validates_length_of :social_work, :maximum => 255
   validates_length_of :responsible, :maximum => 255
   validates_length_of :location, :maximum => 255

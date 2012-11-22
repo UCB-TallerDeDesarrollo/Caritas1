@@ -8,6 +8,7 @@ class Parish < ActiveRecord::Base
   has_one :workshop
   has_many :social_cards
   has_many :beneficiaries
+  has_many :social_works
   has_attached_file :parish_photo,
                     :url  => "/assets/products/:id/:style/:basename.:extension",                    
                     :storage => :dropbox,

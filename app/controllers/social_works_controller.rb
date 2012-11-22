@@ -1,6 +1,12 @@
 # -*- encoding : utf-8 -*-
 class SocialWorksController < ApplicationController
   filter_access_to :all
+  filter_access_to :edit, :attribute_check => true
+  filter_access_to :update, :attribute_check => true
+  filter_access_to :destroy, :attribute_check => true
+  filter_access_to :add_photos, :attribute_check => true
+  filter_access_to :destroy_all_photos, :attribute_check => true
+  
   # GET /social_works
   # GET /social_works.xml
   def index
@@ -56,6 +62,7 @@ class SocialWorksController < ApplicationController
   # GET /social_works/new.xml
   def new
     @social_work = SocialWork.new
+    @parishes = Parish.find(:all, :order => "parish_name")
 
     respond_to do |format|
       format.html # new.html.erb
@@ -65,6 +72,7 @@ class SocialWorksController < ApplicationController
 
   # GET /social_works/1/edit
   def edit
+    @parishes = Parish.find(:all, :order => "parish_name")
     @social_work = SocialWork.find(params[:id])
   end
 

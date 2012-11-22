@@ -11,7 +11,7 @@
 
 <TD WIDTH=100>
   <p>
-  <%=h @social_work.parish %>
+  <%=h @social_work.parish.parish_name %>
 </p>
 </TD>
 </TR>
@@ -162,13 +162,14 @@
 
   <tr align="right">
     <td colspan="2">
-      <% if current_user %>
+      <%if permitted_to? :edit, @social_work %>
             <%= link_to 'Editar', edit_social_work_path %>|
-
-      <%= link_to 'Volver', social_works_path %>
-          <% else %>
-      <%=link_to "Volver", :controller => "social_works", :action => "index_public",:id =>'find'%>
-          <% end %>
+      <% end %>
+      <%if permitted_to? :index, @social_work %>
+      	<%= link_to 'Volver', social_works_path %>
+      <% else %>
+      	<%=link_to "Volver", :controller => "social_works", :action => "index_public",:id =>'find'%>
+      <% end %>
     </td>
 
   </tr>
