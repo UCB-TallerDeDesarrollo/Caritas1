@@ -13,9 +13,11 @@
           <select name="social_work[parish_id]" style="width: 195px">            
             <% if @parishes
               @parishes.each do |parish| %>
+              <%if permitted_to? :edit, parish %>
                 <option value="<%=parish.id%>" <%='selected' if parish.id == @social_work.parish_id %>>
                   <%=parish.parish_name%>
                 </option>
+               <%end%>
               <%end%>
             <%end%>
           </select>
