@@ -45,7 +45,7 @@ authorization do
     end
     has_permission_on [:social_works], :to => [:edit, :update, :destroy, :add_photos, :destroy_all_photos] do
       if_attribute :parish => is {Pastor.find(user.controller_type).parish}
-    end
+    end    
   end
   
   role :voluntario do
@@ -58,6 +58,5 @@ authorization do
     has_permission_on :parishes, :to => :show do
       if_attribute :group => is { Volunteer.find(user.controller_type).group }
     end
-
   end
 end
