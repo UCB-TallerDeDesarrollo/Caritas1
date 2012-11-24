@@ -17,7 +17,7 @@
 	width: 12px;
 	height: 12px;
 	text-indent: -9999em;
-	background: url(../images/close.gif);
+	background: url(/images/close.gif);
 }
 .nyroModalTitle {
 	top: -26px;
@@ -69,7 +69,7 @@
 	position: absolute;
 	width: 100px;
 	height: 100px;
-	background: #fff url(../images/ajaxLoader.gif) no-repeat center;
+	background: #fff url(/images/ajaxLoader.gif) no-repeat center;
 	padding: 0;
 }
 .nyroModalPrev, .nyroModalNext {

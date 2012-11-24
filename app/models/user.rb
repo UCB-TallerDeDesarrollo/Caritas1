@@ -2,6 +2,7 @@
 class User < ActiveRecord::Base
   has_many :notices
   USERS_TYPES=["Administrador", "Parroco", "Voluntario"]
+  USERS_STATE=["Inactivo","Activo","Ausente"]
   acts_as_authentic
   def self.get_all_users
       find(:all)

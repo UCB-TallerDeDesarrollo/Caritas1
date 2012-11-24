@@ -18,6 +18,7 @@ authorization do
     has_permission_on [:campaings], :to=>[:index, :index_public, :show, :show_public, :new, :edit, :create, :update, :destroy, :add_photos, :show_photos, :destroy_all_photos]
     has_permission_on [:user_sessions], :to=>[:new, :create, :destroy]
     has_permission_on [:volunteers], :to => [:index_users]
+    has_permission_on [:users],:to=>[:set_state]
   end
   
   role :guest do

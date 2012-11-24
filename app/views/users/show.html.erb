@@ -1,4 +1,9 @@
-
+<% if session[:redirect_users]%>
+<% session[:redirect_users] = nil; %>
+    <script type="text/javascript">
+        window.location.href="/users";
+    </script>
+<% end %>
 <p>
   <b>Nombre de Usuario</b>
   <%=h @user.username %>

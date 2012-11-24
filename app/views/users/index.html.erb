@@ -1,4 +1,11 @@
-
+<%= javascript_include_tag "jquery-1.7.2"  %>
+<%= javascript_include_tag "jquery.nyroModal.custom.js"  %>
+<link href="/stylesheets/nyroModal.css?1352920299" media="screen" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.nyroModal').nyroModal();
+});
+</script>
 <h1>Usuarios</h1>
 <table>
   <tr align="right">
@@ -16,6 +23,7 @@
     <th>Usuario</th>
     <th>E-mail</th>
     <th>Rol</th>
+    <th>Estado Cuenta</th>
     <th colspan="2">Acciones</th>
   </tr>
 
@@ -24,8 +32,9 @@
     <td><%=h user.username %></td>
     <td><%=h user.email %></td>
     <td><%=h User::USERS_TYPES[user.roles] %></td>
+    <td><%= h User::USERS_STATE[user.state] %></td>
     <td><%= link_to 'Editar', edit_user_path(user) %></td>
-    <td><%= link_to 'Eliminar', user, :confirm => '¿Está seguro que desea eliminar el usuario?', :method => :delete %></td>
+    <td><%= link_to 'Actualizar Estado',{:controller=>"users",:action=>"set_state",:id=>user.id},:class=>"nyroModal" ,:rev=>"modal"%></td>
   </tr>
 <% end %>
 </table>

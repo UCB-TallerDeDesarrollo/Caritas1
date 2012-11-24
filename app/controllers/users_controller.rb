@@ -70,4 +70,9 @@ class UsersController < ApplicationController
       format.xml  { render :xml => @user }
     end
   end
+  def set_state
+    session[:set_state] = true;
+    @user = User.find(params[:id])
+    session[:redirect_users] = true;
+  end
 end
