@@ -25,15 +25,18 @@
         </tr>
 
         <% @groups.each do |group|
-        if permitted_to? :show, :groups 
+        if permitted_to? :show, :groups
 	            if group.id != 0 && group.state%>
 	            <tr>
 	              <td><%= link_to group.name, group %></td>
 	              <td><%=h group.volunteer %></td>
 	              <!--<td><#%= link_to 'Voluntarios', volunteers_url %></td>-->
-	              
-	              <td><% if permitted_to? :show, :volunteers %>
-	              <%= link_to "Ver Voluntarios", :controller => "volunteers", :group=> group.id %></td>
+
+	              <td>
+                  <% if permitted_to? :index, :volunteers %>
+                  <%= link_to "Ver Voluntarios", :controller => "volunteers",:action => "index",:group=> group.id %>
+                  <% elsif permitted_to? :index_show, :volunteers %>
+	              <%= link_to "Ver Voluntarios", :controller => "volunteers",:action => "index_show", :id=>current_user_id_data,:group=> group.id %></td>
 	              <% end %>	              
 	              </td>              
 	        

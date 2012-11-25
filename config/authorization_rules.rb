@@ -55,6 +55,9 @@ authorization do
     has_permission_on :groups, :to => :show do
       if_attribute :volunteers => contains { Volunteer.find(user.controller_type) }
     end
+    has_permission_on :volunteers, :to => :index_show do
+      if_attribute :volunteers => contains { Volunteer.find(user.controller_type) }
+    end
     has_permission_on :parishes, :to => :show do
       if_attribute :group => is { Volunteer.find(user.controller_type).group }
     end

@@ -39,6 +39,42 @@ def index
   end
 end
 
+  def index_show
+    if params[:order]
+      if session[:criterion]
+        @volunteers = Volunteer.order_by(params[:order],session[:criterion])
+        @groups = Group.find(:all)
+        respond_to do |format|
+          format.html # index.html.erb
+          format.xml  { render :xml => @volunteers }
+          format.xls
+        end
+        if session[:criterion] == 'asc'
+          session[:criterion] = 'desc'
+        else
+          session[:criterion] = 'asc'
+        end
+      else
+        session[:criterion] = 'asc'
+        @volunteers = Volunteer.order_by(params[:order],session[:criterion])
+        @groups = Group.find(:all)
+        respond_to do |format|
+          format.html # index.html.erb
+          format.xml  { render :xml => @volunteers }
+          format.xls
+        end
+      end
+    else
+      @volunteers = Volunteer.search(params[:search],params[:group])
+      @groups = Group.find(:all)
+      respond_to do |format|
+        format.html # index.html.erb
+        format.xml  { render :xml => @volunteers }
+        format.xls
+      end
+    end
+  end
+
 def index_users
   @volunteers = Volunteer.find(:all)
   @groups = Group.find(:all)
