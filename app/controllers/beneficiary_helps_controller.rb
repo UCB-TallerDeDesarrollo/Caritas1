@@ -94,34 +94,40 @@ class BeneficiaryHelpsController < ApplicationController
   # GET /beneficiary_helps/report
   # GET /beneficiary_helps/report.xml
   def report
-    if(params[:date_start])
-      @start = Time.utc(params[:date_start]["(1i)"],params[:date_start]["(2i)"], params[:date_start]["(3i)"], params[:date_start]["(4i)"], params[:date_start]["(5i)"])
-      params[:date_start] = nil
-      @end = Time.utc(params[:date_end]["(1i)"],params[:date_end]["(2i)"], params[:date_end]["(3i)"], params[:date_end]["(4i)"], params[:date_end]["(5i)"])
-      params[:date_end] = nil
+    if(params[:bid])
+      @beneficiary = Beneficiary.find(params[:bid])
+      @beneficiary_helps = @beneficiary.beneficiary_helps
     else
-      @start= Time.new
-      @end= Time.new
-    end
-    if(params[:select_help_type] == '')
-      @help_type_selected = nil
-    else
-      @help_type_selected = params[:select_help_type]
-    end
+      if(params[:date_start])
+        @start = Time.utc(params[:date_start]["(1i)"],params[:date_start]["(2i)"], params[:date_start]["(3i)"], params[:date_start]["(4i)"], params[:date_start]["(5i)"])
+        params[:date_start] = nil
+        @end = Time.utc(params[:date_end]["(1i)"],params[:date_end]["(2i)"], params[:date_end]["(3i)"], params[:date_end]["(4i)"], params[:date_end]["(5i)"])
+        params[:date_end] = nil
+      else
+        @start= Time.new
+        @end= Time.new
+      end
+      if(params[:select_help_type] == '')
+        @help_type_selected = nil
+      else
+        @help_type_selected = params[:select_help_type]
+      end
 
-    if(params[:parish_id] == '')
-      @parish_id_selected = nil
-    else
-      @parish_id_selected = params[:parish_id].to_i
+      if(params[:parish_id] == '')
+        @parish_id_selected = nil
+      else
+        @parish_id_selected = params[:parish_id].to_i
+      end
+      if(params[:beneficiary_type_id] == '')
+        @beneficiary_type_selected = nil
+      else
+        @beneficiary_type_selected = params[:beneficiary_type_id]
+      end
+      @beneficiary_helps = BeneficiaryHelp.search(@start, @end, @help_type_selected, @parish_id_selected, @beneficiary_type_selected)
     end
-    if(params[:beneficiary_type_id] == '')
-      @beneficiary_type_selected = nil
-    else
-      @beneficiary_type_selected = params[:beneficiary_type_id]
-    end
-    @beneficiary_helps = BeneficiaryHelp.search(@start, @end, @help_type_selected, @parish_id_selected, @beneficiary_type_selected)
-  @parishes = Parish.find(:all, :order => "parish_name")
-  @beneficiary_types = BeneficiaryType.find(:all, :order => "name")
+    @parishes = Parish.find(:all, :order => "parish_name")
+    @beneficiary_types = BeneficiaryType.find(:all, :order => "name")
+
     respond_to do |format|
       format.html # report.html.erb
       format.xls

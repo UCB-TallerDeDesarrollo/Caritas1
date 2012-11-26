@@ -113,8 +113,8 @@
     <td><%=h beneficiary_help.amount %></td>
     <td><%=h beneficiary_help.beneficiary.beneficiary_type.name %></td>
     <td><%=h beneficiary_help.beneficiary.ci %></td>
-    <td><%=h beneficiary_help.beneficiary.name %></td>
-    <td><%=h beneficiary_help.beneficiary.last_name %></td>
+    <td><%= link_to beneficiary_help.beneficiary.name, :controller => "beneficiary_helps", :action => "report", :bid => beneficiary_help.beneficiary.id%></td>
+    <td><%= link_to beneficiary_help.beneficiary.last_name, :controller => "beneficiary_helps", :action => "report", :bid => beneficiary_help.beneficiary.id%></td>
     <%sumar= sumar+beneficiary_help.amount%>
     
   </tr>
