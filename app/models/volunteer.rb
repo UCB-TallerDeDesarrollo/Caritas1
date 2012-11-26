@@ -32,19 +32,20 @@ class Volunteer < ActiveRecord::Base
   validates_attachment_size :volunteer_photo, :less_than => 3.megabytes
   validates_attachment_content_type :volunteer_photo, :content_type => ['image/jpeg', 'image/png', 'image/gif']
   #put class methods here
-  def self.search(search,group)
-    if search       
-          find(:all, :conditions => ['LOWER(name) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(second_last_name) LIKE ? OR LOWER(profession) LIKE ?', "%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%"], :order => "name")           
-    else     
-      if group
-          find(:all, :conditions => ['group_id = ?', "#{group}"],:order => "name")   
-        else 
-        find(:all,:order => "name")  
-      end
+  def self.search(search,group,group_selected)
+    if search && group_selected
+      find(:all, :conditions => ['(LOWER(name) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(second_last_name) LIKE ? OR LOWER(profession) LIKE ?) AND group_id=?', "%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%",group_selected], :order => "name")
+    elsif search
+      find(:all, :conditions => ['(LOWER(name) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(second_last_name) LIKE ? OR LOWER(profession) LIKE ?)', "%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%"], :order => "name")
+    elsif group_selected
+      find(:all, :conditions => ['group_id=?',group_selected], :order => "name")
+    else
+      find(:all,:order => "name")  
     end
-         
+    
   end
 
+  
   def self.order_by(param,criterion)
     find(:all,:order =>param + " " + criterion)
   end

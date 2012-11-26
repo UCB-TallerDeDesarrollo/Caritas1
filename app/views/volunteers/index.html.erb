@@ -8,11 +8,25 @@
 
 <% form_tag volunteers_path, :method => 'get' do %>
   <p>
-    Parámetro <%= text_field_tag :search, params[:search] %>
+    Parámetro <%= text_field_tag :search, params[:search] %><br/><br/>    
+    Grupo <select name="group_id" style="width: 150px">
+      		<option value="" >Ninguno</option>         
+          <% if @groups.length > 0
+            @groups.each do |group| 
+              if group.id != 0%>
+                <option value="<%=group.id%>" >
+                  <%=group.name%>
+                </option>
+              <% end 
+            end 
+          end%>              
+        </select><br/><br/>
   <%#  <%= check_box_tag :state, params[:state] %>
+  
     <%= submit_tag "Buscar", :name => nil %>
   </p>
 <% end %>
+	
 <table id="idVolunteers">
   <tr >
     <td align="right" >

@@ -4,10 +4,16 @@ class VolunteersController < ApplicationController
   # GET /volunteers
   # GET /volunteers.xml
 def index
+  if(params[:group_id] == '')
+        @group_id_selected = nil
+  else
+        @group_id_selected = params[:group_id].to_i
+  end
+  
   if params[:order]
     if session[:criterion]
       @volunteers = Volunteer.order_by(params[:order],session[:criterion])
-      @groups = Group.find(:all)
+      @groups = Group.find(:all,:order=>"name")
       respond_to do |format|
         format.html # index.html.erb
         format.xml  { render :xml => @volunteers }
@@ -21,7 +27,7 @@ def index
     else
       session[:criterion] = 'asc'
       @volunteers = Volunteer.order_by(params[:order],session[:criterion])
-      @groups = Group.find(:all)
+      @groups = Group.find(:all,:order=>"name")
       respond_to do |format|
         format.html # index.html.erb
         format.xml  { render :xml => @volunteers }
@@ -29,8 +35,8 @@ def index
         end
     end
   else
-      @volunteers = Volunteer.search(params[:search],params[:group])
-      @groups = Group.find(:all)
+      @volunteers = Volunteer.search(params[:search],params[:group],@group_id_selected)
+      @groups = Group.find(:all,:order=>"name")
       respond_to do |format|
         format.html # index.html.erb
         format.xml  { render :xml => @volunteers }
