@@ -80,7 +80,7 @@
   </tr>
 <tr>  
       <td><b><%= "Fotografía del Voluntario" %></b></td>
-      <% if @volunteer.volunteer_photo %>
+      <% if @volunteer.volunteer_photo.nil? %>
         <td><%=  image_tag @volunteer.volunteer_photo.url, :size=>"300x200" %></td>
       <% else %>
       <td>No está disponible la fotografía</td>

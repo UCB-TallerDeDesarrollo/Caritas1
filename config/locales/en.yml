@@ -333,6 +333,9 @@ en:
       courses:
         one: "Curso"
         other: "Cursos"
+      beneficiary:
+        one: "Beneficiario"
+        other: "Beneficiarios"
         
     attributes:
       history_course:
@@ -430,6 +433,13 @@ en:
         description: "Descripción"
         is_published: "Publicándose"
         last_date: "Última Fecha"
+        
+      beneficiary:
+        name: "Nombre"
+        last_name: "Apellido"
+        parish_id: "Parroquia a la que pertenece"
+        beneficiary_type_id: "Tipo de beneficiario"
+        
        
   active_scaffold:
     add: 'Añadir'
