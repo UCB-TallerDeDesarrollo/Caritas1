@@ -6,6 +6,7 @@
           <li><%= link_to 'Contáctanos',:controller => "emailer", :action => "contact_us"%></li>
         </ul>
       </li>
+    <%if permitted_to? :index, :groups%>
       <% i = 0 %>
       <li><a href="#">Grupos y Voluntarios</a>
         <ul>
@@ -46,6 +47,7 @@
         <% end%>
         </ul>
        </li>
+      <% end %>
       <%if permitted_to? :index, :beneficiaries%>
       <li><a href="#">Gestion Beneficiarios</a>
       	<ul>
