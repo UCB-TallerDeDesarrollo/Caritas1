@@ -33,7 +33,9 @@ class Volunteer < ActiveRecord::Base
   validates_attachment_content_type :volunteer_photo, :content_type => ['image/jpeg', 'image/png', 'image/gif']
   #put class methods here
   def self.search(search,group,group_selected)
-    if search && group_selected
+    if group
+        find(:all, :conditions => ['group_id = ?', "#{group}"],:order => "name")
+    elsif search && group_selected
       find(:all, :conditions => ['(LOWER(name) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(second_last_name) LIKE ? OR LOWER(profession) LIKE ?) AND group_id=?', "%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%",group_selected], :order => "name")
     elsif search
       find(:all, :conditions => ['(LOWER(name) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(second_last_name) LIKE ? OR LOWER(profession) LIKE ?)', "%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%","%#{search.downcase}%"], :order => "name")
