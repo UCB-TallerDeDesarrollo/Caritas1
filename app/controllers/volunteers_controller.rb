@@ -71,7 +71,7 @@ end
         end
       end
     else
-      @volunteers = Volunteer.search(params[:search],params[:group])
+      @volunteers = Volunteer.search(params[:search],params[:group],@group_id_selected)
       @groups = Group.find(:all)
       respond_to do |format|
         format.html # index.html.erb
