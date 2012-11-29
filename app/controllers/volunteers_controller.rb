@@ -146,10 +146,12 @@ end
     respond_to do |format|
       if session[:set_state_volunteer_redirect]
         session[:set_state_volunteer_redirect] = nil;
-        if @volunteer.update_attributes(params[:volunteer])
+        if  @volunteer.state
+          @volunteer.update_attributes(:state => false)
           format.html { redirect_to(volunteers_url) }
           format.xml  { head :ok }
         else
+          @volunteer.update_attributes(:state_inactive => 0)
           format.html { redirect_to(volunteers_url) }
           format.xml  { head :ok }
         end
