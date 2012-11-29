@@ -82,13 +82,11 @@ class PastorsController < ApplicationController
     @pastor = Pastor.find(params[:id])
     respond_to do |format|
       if session[:set_state_pastor_redirect]
-        session[:set_state_volunteer_redirect] = nil;
-        if  @pastor.state
-          @pastor.update_attributes(:state => false)
+        session[:set_state_pastor_redirect] = nil;
+        if  @pastor.update_attributes(params[:pastor])
           format.html { redirect_to(pastors_url) }
           format.xml  { head :ok }
         else
-          @pastor.update_attributes(:state_inactive => 0)
           format.html { redirect_to(pastors_url) }
           format.xml  { head :ok }
         end

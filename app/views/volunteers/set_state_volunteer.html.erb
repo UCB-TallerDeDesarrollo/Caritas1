@@ -23,7 +23,7 @@
 
 <% form_for(@volunteer) do |f| %>
 
-    <label><input type="radio" name="volunteer[state]" value="1">Eliminar permanentemente</label></br>
-    <label><input type="radio" name="volunteer[state]" value="0">Poner en Inactivo</label></br></br></br>
+    <label><input type="radio" name="volunteer[state]" value="false">Eliminar permanentemente</label></br>
+    <label><input type="radio" name="volunteer[state_inactive]" value="0">Poner en Inactivo</label></br></br></br>
     <input type="submit" class="button_state" value="Guardar"><input type="button"  class="button_state nyroModalClose" value="Cancelar" />
 <%end%>
