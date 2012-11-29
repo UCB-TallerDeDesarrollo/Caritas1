@@ -35,7 +35,8 @@ class VicariousController < ApplicationController
   # GET /vicarious/new.xml
   def new
     @vicariou = Vicariou.new
-    @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious)"])
+    @pastorA = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious)"])
+    @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:order => "name")
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @vicariou }
@@ -45,7 +46,8 @@ class VicariousController < ApplicationController
   # GET /vicarious/1/edit
   def edit
     @vicariou = Vicariou.find(params[:id])
-    @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious) or id= ?","#{@vicariou.pastor_id}"])
+    @pastorA = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious) or id= ?","#{@vicariou.pastor_id}"])
+    @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:order => "name")
   end
 
   # POST /vicarious
@@ -59,7 +61,8 @@ class VicariousController < ApplicationController
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @vicariou.errors, :status => :unprocessable_entity }
-        @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious)"])
+        @pastorA = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious)"])
+        @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:order => "name")
       end
     end
   end
@@ -76,7 +79,8 @@ class VicariousController < ApplicationController
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @vicariou.errors, :status => :unprocessable_entity }
-        @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious) or id= ?","#{@vicariou.pastor_id}"])
+        @pastorA = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious) or id= ?","#{@vicariou.pastor_id}"])
+        @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:order => "name")
       end
     end
   end

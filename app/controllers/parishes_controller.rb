@@ -48,8 +48,8 @@ class ParishesController < ApplicationController
   def new
     @parish = Parish.new
     @vicariou = Vicariou.all(:select => "id,name_vicariou",:conditions=>["state=TRUE"], :order => "name_vicariou")
-    @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious)"], :order => "name")
-    
+    @pastorA = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious)"], :order => "name")
+    @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:order => "name")
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @parish }
@@ -60,8 +60,9 @@ class ParishesController < ApplicationController
   def edit
     @parish = Parish.find(params[:id])
     @vicariou = Vicariou.find(:all, :order => "name_vicariou ASC",:conditions=>["state=TRUE"],:order => "name_vicariou")
-    ##@pastor = Pastor.all(:all, :order => "name")
-    @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious) or id= ?","#{@parish.pastor_id}"], :order => "name")
+    #@pastor = Pastor.all(:all, :order => "name")
+    @pastorA = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:conditions=> ["id not in (select pastor_id from parishes) and id not in (select pastor_id from vicarious) or id= ?","#{@parish.pastor_id}"], :order => "name")
+    @pastor = Pastor.all(:select => "id,name,primary_last_name,second_last_name",:order => "name")
   end
 
   # POST /parishes
