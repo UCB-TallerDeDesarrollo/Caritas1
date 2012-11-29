@@ -16,8 +16,8 @@
             <option></option>
             <%@pastor.each do |pastor| %>
               <% if !@pastorA.empty? %>
-                <%@pastorA.each do |pastor2| %>
-                  <% if pastor.id==pastor2.id %>
+                
+                  <% if @pastorA.include?(pastor)%>
                     <option style="color: green" value="<%=pastor.id%>">
                       <%=pastor.name+" "+pastor.primary_last_name+" "+pastor.second_last_name%>(asignado)
                     </option>
@@ -26,7 +26,7 @@
                       <%=pastor.name+" "+pastor.primary_last_name+" "+pastor.second_last_name%>(asignado)
                     </option>
                   <%end%>
-                <%end%>
+                
               <% else %>              
                 <option value="<%=pastor.id%>">
                   <%=pastor.name+" "+pastor.primary_last_name+" "+pastor.second_last_name%>(asignado)
