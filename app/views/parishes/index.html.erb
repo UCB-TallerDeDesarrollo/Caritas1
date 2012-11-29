@@ -45,12 +45,16 @@
 				<td><%if permitted_to? :edit, parish %>
 				<%= link_to 'Editar', edit_parish_path(parish) %>
 				<%end%></td>
-				<% if parish.current_state != "En Contacto" && parish.current_state != "No Alcanzada" && parish.current_state != "No Acepto"%>
-				<%if permitted_to? :edit, parish.workshop && parish.current_state != "No Acepto"%>
-				<td><%= link_to "Taller", edit_workshop_path(Workshop.searchByParish(parish.id)) %></td>
-				<%else%>
-				<td></td>
-				<%end%>
+				<% if parish.current_state != "En Contacto" && parish.current_state != "No Alcanzada" && parish.current_state != "No Acepto" && parish.current_state != "Sensibilizada"%>				
+					<%if permitted_to? :edit, parish.workshop %>
+						<%if parish.current_state == "Seguimiento"%>
+							<td><%= link_to "Taller de seguimiento", edit_workshop_path(Workshop.searchByParish(parish.id)) %></td>
+						<%else%>
+							<td><%= link_to "Taller", edit_workshop_path(Workshop.searchByParish(parish.id)) %></td>
+						<%end%>
+					<%else%>
+					<td></td>
+					<%end%>
 				<%else%>
 				<td></td>
 				<%end%>

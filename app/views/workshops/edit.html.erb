@@ -5,7 +5,8 @@
 <%= javascript_include_tag "jquery-ui-1.8.13.custom.min"  %>
 <%= javascript_include_tag "ui.dropdownchecklist-1.4-min"  %>
 
-<%if current_user%>
+<%parish = Parish.find(@workshop.parish_id)
+if parish.current_state != "En Contacto" && parish.current_state != "No Alcanzada" && parish.current_state != "No Acepto" && parish.current_state != "Sensibilizada"%>
 <h1>Editar Taller</h1>
 
 <% form_for(@workshop) do |f| %>
@@ -42,7 +43,7 @@
     </td> 
     <td><%=h Vicariou.find(Parish.find(@workshop.parish_id).vicariou_id).name_vicariou%></td>   
   </tr>
-  
+  <%if parish.current_state != "Seguimiento" %>
   <tr>
     <td>
       <b>Cursos</b>
@@ -53,6 +54,14 @@
         <br/>
       </td>
   </tr>
+  <%else%>
+	  <td>
+	      <b>Cursos</b>
+	    </td>
+	      <td>
+	        Taller de Seguimiento
+	      </td>
+  <%end%>
   <tr>
     <td><b>Observaciones</b></td>
     <td><%= f.text_area :observations , :rows=>6, :cols=>22, :style => "resize:none"%></td>
