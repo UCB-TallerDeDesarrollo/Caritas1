@@ -80,9 +80,19 @@ class PastorsController < ApplicationController
   # PUT /pastors/1.xml
   def update
     @pastor = Pastor.find(params[:id])
-
     respond_to do |format|
-      if @pastor.update_attributes(params[:pastor])
+      if session[:set_state_pastor_redirect]
+        session[:set_state_volunteer_redirect] = nil;
+        if  @pastor.state
+          @pastor.update_attributes(:state => false)
+          format.html { redirect_to(pastors_url) }
+          format.xml  { head :ok }
+        else
+          @pastor.update_attributes(:state_inactive => 0)
+          format.html { redirect_to(pastors_url) }
+          format.xml  { head :ok }
+        end
+      elsif @pastor.update_attributes(params[:pastor])
         format.html { redirect_to(@pastor, :notice => 'El párroco se modificó correctamente.') }
         format.xml  { head :ok }
       else
@@ -103,5 +113,10 @@ class PastorsController < ApplicationController
       format.html { redirect_to(pastors_url) }
       format.xml  { head :ok }
     end
+  end
+  def set_state_pastor
+    session[:set_state_pastor] = true;
+    @pastor = Pastor.find(params[:id])
+    session[:set_state_pastor_redirect] = true;
   end
 end

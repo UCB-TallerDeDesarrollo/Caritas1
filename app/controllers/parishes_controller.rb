@@ -110,12 +110,5 @@ class ParishesController < ApplicationController
         format.xml  { head :ok }
       end
     end
-    
-#    @parish.destroy
-#
-#    respond_to do |format|
-#      format.html { redirect_to(parishes_url) }
-#      format.xml  { head :ok }
-#    end
   end
 end

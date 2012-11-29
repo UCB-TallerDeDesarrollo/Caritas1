@@ -1,0 +1,29 @@
+<%= javascript_include_tag "jquery-1.7.2"  %>
+<style type="text/css">
+    .button_state
+    {
+        background: #810 30% url(/images/alert-overlay.png) repeat-x;
+        display: inline-block;
+        padding: 5px 10px 6px;
+        color: white;
+        height: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        line-height: 1;
+        -webkit-box-shadow: 0 1px 3px #999;
+        text-shadow: 0 -1px 1px #222;
+        border-bottom: 1px solid #222;
+        position: relative;
+        cursor: pointer;
+        font-size: 11px;
+        margin-right: 5px;
+    }
+</style>
+<h3>Eliminacion</h3>
+
+<% form_for(@volunteer) do |f| %>
+
+    <label><input type="radio" name="volunteer[state]" value="1">Eliminar permanentemente</label></br>
+    <label><input type="radio" name="volunteer[state]" value="0">Poner en Inactivo</label></br></br></br>
+    <input type="submit" class="button_state" value="Guardar"><input type="button"  class="button_state nyroModalClose" value="Cancelar" />
+<%end%>

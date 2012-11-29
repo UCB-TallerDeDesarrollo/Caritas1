@@ -143,9 +143,19 @@ end
   # PUT /volunteers/1.xml
   def update
     @volunteer = Volunteer.find(params[:id])
-
     respond_to do |format|
-      if @volunteer.update_attributes(params[:volunteer])
+      if session[:set_state_volunteer_redirect]
+        session[:set_state_volunteer_redirect] = nil;
+        if  @volunteer.state
+          @volunteer.update_attributes(:state => false)
+          format.html { redirect_to(volunteers_url) }
+          format.xml  { head :ok }
+        else
+          @volunteer.update_attributes(:state_inactive => 0)
+          format.html { redirect_to(volunteers_url) }
+          format.xml  { head :ok }
+        end
+      elsif @volunteer.update_attributes(params[:volunteer])
         format.html { redirect_to(@volunteer, :notice => 'El voluntario fue editado exitosamente.') }
         format.xml  { head :ok }
       else
@@ -166,5 +176,10 @@ end
       format.html { redirect_to(volunteers_url) }
       format.xml  { head :ok }
     end
+  end
+  def set_state_volunteer
+    session[:set_state_volunteer] = true;
+    @volunteer = Volunteer.find(params[:id])
+    session[:set_state_volunteer_redirect] = true;
   end
 end

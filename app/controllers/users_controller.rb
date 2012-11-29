@@ -44,7 +44,6 @@ class UsersController < ApplicationController
     else
       @user = current_user
     end
-
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to(@user, :user => 'Usuario actualizado correctamente') }

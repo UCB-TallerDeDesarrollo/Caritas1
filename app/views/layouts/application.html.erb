@@ -26,10 +26,16 @@
     <%= javascript_include_tag :defaults %>
   </head>
   <body>
-  <% if session[:set_state]  %>
-  <%session[:set_state]=nil;%>
+  <% if session[:set_state_pastor]  %>
+      <%session[:set_state_pastor]=nil;%>
       <%= yield %>
-      <% else %>
+  <% elsif session[:set_state_volunteer]  %>
+         <%session[:set_state_volunteer]=nil;%>
+          <%= yield %>
+  <%elsif session[:set_state]  %>
+     <%session[:set_state]=nil;%>
+      <%= yield %>
+  <% else %>
       <div id="wrap">
         <%= render :partial => 'main_page/header' %>
         <%= render :partial => 'main_page/horizontalMenu'%>
@@ -41,6 +47,6 @@
         </div>
         <%= render :partial => 'main_page/footer' %>
       </div>
-      <% end %>
+  <% end %>
   </body>
 </html>

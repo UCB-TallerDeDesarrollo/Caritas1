@@ -1,4 +1,11 @@
-
+<%= javascript_include_tag "jquery-1.7.2"  %>
+<%= javascript_include_tag "jquery.nyroModal.custom.js"  %>
+<link href="/stylesheets/nyroModal.css?1352920299" media="screen" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.nyroModal').nyroModal();
+    });
+ </script>
 <h1>Párrocos</h1>
 
 <p>
@@ -25,7 +32,7 @@
   <tr>
     <td colspan="2">
 
-    <table border="3", >
+    <table border="3">
       <tr id = 'head-table'>
          <th><u><%= link_to 'Nombre',{:order => "name"}, {:style=>'color:#FFFFFF;'}%></u></th>
         <th><u><%= link_to 'Apellido Paterno',{:order => "Apellido Paterno"}, {:style=>'color:#FFFFFF;'} %></u></th>
@@ -44,7 +51,7 @@
         <td><%= h pastor.phone_number %></td>
         <td><%= h pastor.cellphone_number %></td>
         <td><%= link_to 'Editar', edit_pastor_path(pastor) %></td>
-        <td><%= link_to 'Eliminar', pastor, :confirm => '¿Está seguro que desea eliminar al párroco?', :method => :delete %></td>
+        <td><%= link_to 'Eliminar',{:controller=>"pastors",:action=>"set_state_pastor",:id=>pastor.id},:class=>"nyroModal" ,:rev=>"modal"%></td>
         
       </tr>
     <% end %>

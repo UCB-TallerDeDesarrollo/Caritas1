@@ -1,7 +1,10 @@
+<%= javascript_include_tag "jquery-1.7.2"  %>
+<%= javascript_include_tag "jquery.nyroModal.custom.js"  %>
+<link href="/stylesheets/nyroModal.css?1352920299" media="screen" rel="stylesheet" type="text/css">
 <script type="text/javascript">
-    (function() {
-        document.getElementById('idVolunteers').scrollIntoView(true);
-    })();
+    $(document).ready(function() {
+        $('.nyroModal').nyroModal();
+    });
 </script>
 
 <h1>Voluntarios</h1>
@@ -70,14 +73,8 @@
                   <%= group.name.to_s  if group.id == volunteer.group_id  %>
                 <%end%>
               </td>
-    
-    
                   <td><%= link_to 'Editar', edit_volunteer_path(volunteer) %></td>
-                  <%if volunteer.state == false %>
-                    <td><%= link_to 'Habilitar', volunteer, :confirm => '¿Está seguro que desea eliminar el voluntario?', :method => :delete %></td>
-                  <%else%>
-                    <td><%= link_to 'Eliminar', volunteer, :confirm => '¿Está seguro que desea eliminar el voluntario?', :method => :delete %></td>
-                  <%end%>
+              <td><%= link_to 'Eliminar',{:controller=>"volunteers",:action=>"set_state_volunteer",:id=>volunteer.id},:class=>"nyroModal" ,:rev=>"modal"%></td>
             </tr>
           
           <%end%>
