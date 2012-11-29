@@ -13,7 +13,11 @@
   </tr>
   <tr>
     <td><b>Avatar</b></td>
-    <td><%= image_tag @courses_type.course_file.url, :size => "300x200" %></td>
+    <% if @courses_type.course_file.nil? %>
+      <td><%=  image_tag @parish.parish_photo.url, :size=>"300x200" %></td>
+      <% else %>
+      <td>No está disponible la fotografía</td>
+      <% end   %>
   </tr>
 
 
