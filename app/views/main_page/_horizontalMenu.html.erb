@@ -1,83 +1,135 @@
-
 <ul id=nav>
-      <li><%= link_to 'Inicio',:controller => "main_page", :action => "index"%>
-        <ul>
-          <li><%= link_to 'Quiénes somos?',:controller => "main_page", :action => "info"%></li>
-          <li><%= link_to 'Contáctanos',:controller => "emailer", :action => "contact_us"%></li>
-        </ul>
-      </li>
-    <%if permitted_to? :index, :groups%>
-      <% i = 0 %>
-      <li><a href="#">Grupos y Voluntarios</a>
-        <ul>
-        <%if permitted_to? :index, :pastors%>
-          <li><%= link_to 'Párroco',:controller => "pastors", :action => "index"%></li>
-        <% i = i + 1
-        end%>
-        <%if permitted_to? :index, :vicarious%>  
-          <li><%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %></li>
-        <% i = i + 1
-        end%>
-        <%if permitted_to? :index, :parishes%>  
-          <li><%= link_to 'Parroquia',:controller => "parishes", :action => "index"%> </li>
-        <% i = i + 1
-        
-        elsif permitted_to? :show, :parishes%>
-        	<li><%= link_to 'Parroquia', :controller => "parishes", :action => "show", :id => Volunteer.find(current_user.controller_type).group.parish.id %></li>
-        	<% i = i + 1
-        end%>
-        <%if permitted_to? :index, :groups%>  
-          <li><%= link_to 'Grupos',:controller => "groups", :action => "index"%></li>
-        <% i = i + 1
-        end%>
-        <%if permitted_to? :index, :volunteers%>  
-          <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%></li>
-         <% i = i + 1 %>
+	<li>
+		<%= link_to 'Inicio',:controller => "main_page", :action => "index"%>
+		<ul>
+			<li>
+				<%= link_to 'Quiénes somos?',:controller => "main_page", :action => "info"%>
+			</li>
+			<li>
+				<%= link_to 'Contáctanos',:controller => "emailer", :action => "contact_us"%>
+			</li>
+		</ul>
+	</li>
 
-         <%elsif permitted_to? :show, :volunteers%>
-              <li><%= link_to 'Voluntario',:controller => "volunteers", :action => "show", :id => current_user_id_data %></li>
-          <% i = i + 1
-         end%>
-        <%if permitted_to? :index, :courses_types%>
-          <li><%= link_to 'Cursos de Formación',:controller => "courses_types", :action => "index"%></li>
-        <% i = i + 1
-        end%>
-        <% if i == 0 %>
-        	<li>(Vacio)</li>
-        <% end%>
-        </ul>
-       </li>
-      <% end %>
-      <%if permitted_to? :index, :beneficiaries%>
-      <li><a href="#">Gestion Beneficiarios</a>
-      	<ul>
-            <li><%= link_to 'Beneficiarios',:controller=> "beneficiaries", :action => "index" %></li>
-      		<li><%= link_to 'Tipos de ayuda',:controller => "help_types", :action => "index"%></li>
-      		<li><%= link_to 'Reporte de ayudas',:controller => "beneficiary_helps", :action => "report"%></li>
-            <li><%= link_to 'Tipos de Beneficiario',:controller => "beneficiary_types", :action => "index"%></li>
-      	</ul>
-      </li>
-      <%end%>
-      <li><a href="#">Campañas y Proyectos</a>
-        <ul>
-	    	<%if permitted_to? :index, :campaings %>
-	      		<li><%= link_to 'Campaña',:controller => "campaings", :action => "index"%></li>
-	      	<%else %>
-	      		<li><%= link_to 'Campaña',:controller => "campaings", :action => "index_public", :id =>" " %></li>
-	      	<%end %>
-	      	<% if permitted_to? :index, :notices %>
-	        	<li><%= link_to 'Noticias',:controller => "notices", :action => "index"%></li>
-	        <% else %>
-	        	<li><%= link_to 'Noticias',:controller => "notices", :action => "index_public", :id =>" "  %></li>
-	        <% end %>
-	        <%if permitted_to? :index, :social_works %>
-	        	<li><%= link_to 'Obra Social',:controller => "social_works", :action => "index"%></li>
-	        <% else %>
-	        	<li><%= link_to 'Obra Social',:controller => "social_works", :action => "index_public",:id =>" " %></li>
-	        <% end %>
-	        <%if permitted_to? :index, :social_cards%>
-	        	<li><%= link_to 'Ficha Social',:controller => "social_cards", :action => "index"%></li>
-	        <% end %>
-        </ul>
-</li>
+	<% i = 0
+	  if permitted_to? :index, :pastors
+	  	i = i + 1
+	  end
+	  if permitted_to? :index, :vicarious
+	  	i = i + 1
+	  end
+	  if permitted_to? :index, :parishes
+	  	i = i + 1	
+	  end
+	  if permitted_to? :index, :groups
+	  	i = i + 1
+	  end
+	  if permitted_to? :index, :volunteers
+	  	i = i + 1
+	  end
+	  if permitted_to? :index, :courses_types
+	  	i = i + 1
+	  end%>
+	<% if i > 0 %>
+	<li>
+		<a href="#">Grupos y Voluntarios</a>
+		<ul>
+			<%if permitted_to? :index, :pastors%>
+			<li>
+				<%= link_to 'Párroco',:controller => "pastors", :action => "index"%>
+			</li>
+			<%end%>
+			<%if permitted_to? :index, :vicarious%>
+			<li>
+				<%= link_to 'Vicaria',:controller => "vicarious", :action => "index" %>
+			</li>
+			<%end%>
+			<%if permitted_to? :index, :parishes%>
+			<li>
+				<%= link_to 'Parroquia',:controller => "parishes", :action => "index"%>
+			</li>
+			<%elsif permitted_to? :show, :parishes%>
+			<li>
+				<%= link_to 'Parroquia', :controller => "parishes", :action => "show", :id => Volunteer.find(current_user.controller_type).group.parish.id %>
+			</li>
+			<%end%>
+			<%if permitted_to? :index, :groups%>
+			<li>
+				<%= link_to 'Grupos',:controller => "groups", :action => "index"%>
+			</li>
+			<%end%>
+			<%if permitted_to? :index, :volunteers%>
+			<li>
+				<%= link_to 'Voluntario',:controller => "volunteers", :action => "index"%>
+			</li>
+			<%elsif permitted_to? :show, :volunteers%>
+			<li>
+				<%= link_to 'Voluntario',:controller => "volunteers", :action => "show", :id => current_user_id_data %>
+			</li>
+			<%end%>
+			<%if permitted_to? :index, :courses_types%>
+			<li>
+				<%= link_to 'Cursos de Formación',:controller => "courses_types", :action => "index"%>
+			</li>
+			<%end%>			
+		</ul>
+	</li>
+	<%end%>
+
+	<%if permitted_to? :index, :beneficiaries%>
+	<li>
+		<a href="#">Gestion Beneficiarios</a>
+		<ul>
+			<li>
+				<%= link_to 'Beneficiarios',:controller=> "beneficiaries", :action => "index" %>
+			</li>
+			<li>
+				<%= link_to 'Tipos de ayuda',:controller => "help_types", :action => "index"%>
+			</li>
+			<li>
+				<%= link_to 'Reporte de ayudas',:controller => "beneficiary_helps", :action => "report"%>
+			</li>
+			<li>
+				<%= link_to 'Tipos de Beneficiario',:controller => "beneficiary_types", :action => "index"%>
+			</li>
+		</ul>
+	</li>
+	<%end%>
+	<li>
+		<a href="#">Campañas y Proyectos</a>
+		<ul>
+			<%if permitted_to? :index, :campaings %>
+			<li>
+				<%= link_to 'Campaña',:controller => "campaings", :action => "index"%>
+			</li>
+			<%else %>
+			<li>
+				<%= link_to 'Campaña',:controller => "campaings", :action => "index_public", :id =>" " %>
+			</li>
+			<%end %>
+			<% if permitted_to? :index, :notices %>
+			<li>
+				<%= link_to 'Noticias',:controller => "notices", :action => "index"%>
+			</li>
+			<% else %>
+			<li>
+				<%= link_to 'Noticias',:controller => "notices", :action => "index_public", :id =>" "  %>
+			</li>
+			<% end %>
+			<%if permitted_to? :index, :social_works %>
+			<li>
+				<%= link_to 'Obra Social',:controller => "social_works", :action => "index"%>
+			</li>
+			<% else %>
+			<li>
+				<%= link_to 'Obra Social',:controller => "social_works", :action => "index_public",:id =>" " %>
+			</li>
+			<% end %>
+			<%if permitted_to? :index, :social_cards%>
+			<li>
+				<%= link_to 'Ficha Social',:controller => "social_cards", :action => "index"%>
+			</li>
+			<% end %>
+		</ul>
+	</li>
 </ul>
