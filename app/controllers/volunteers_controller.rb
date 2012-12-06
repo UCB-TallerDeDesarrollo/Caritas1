@@ -46,31 +46,7 @@ def index
 end
 
   def index_show
-    if params[:order]
-      if session[:criterion]
-        @volunteers = Volunteer.order_by(params[:order],session[:criterion])
-        @groups = Group.find(:all)
-        respond_to do |format|
-          format.html # index.html.erb
-          format.xml  { render :xml => @volunteers }
-          format.xls
-        end
-        if session[:criterion] == 'asc'
-          session[:criterion] = 'desc'
-        else
-          session[:criterion] = 'asc'
-        end
-      else
-        session[:criterion] = 'asc'
-        @volunteers = Volunteer.order_by(params[:order],session[:criterion])
-        @groups = Group.find(:all)
-        respond_to do |format|
-          format.html # index.html.erb
-          format.xml  { render :xml => @volunteers }
-          format.xls
-        end
-      end
-    else
+
       @volunteers = Volunteer.search(params[:search],params[:group],@group_id_selected)
       @groups = Group.find(:all)
       respond_to do |format|
@@ -78,7 +54,6 @@ end
         format.xml  { render :xml => @volunteers }
         format.xls
       end
-    end
   end
 
   def index_group
@@ -88,31 +63,6 @@ end
       @group_id_selected = params[:group_id].to_i
     end
 
-    if params[:order]
-      if session[:criterion]
-        @volunteers = Volunteer.order_by(params[:order],session[:criterion])
-        @groups = Group.find(:all,:order=>"name")
-        respond_to do |format|
-          format.html # index.html.erb
-          format.xml  { render :xml => @volunteers }
-          format.xls
-        end
-        if session[:criterion] == 'asc'
-          session[:criterion] = 'desc'
-        else
-          session[:criterion] = 'asc'
-        end
-      else
-        session[:criterion] = 'asc'
-        @volunteers = Volunteer.order_by(params[:order],session[:criterion])
-        @groups = Group.find(:all,:order=>"name")
-        respond_to do |format|
-          format.html # index.html.erb
-          format.xml  { render :xml => @volunteers }
-          format.xls
-        end
-      end
-    else
       @volunteers = Volunteer.search(params[:search],params[:group],@group_id_selected)
       @groups = Group.find(:all,:order=>"name")
       respond_to do |format|
@@ -120,7 +70,7 @@ end
         format.xml  { render :xml => @volunteers }
         format.xls
       end
-    end
+
   end
 
 def index_users
