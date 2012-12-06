@@ -17,7 +17,7 @@ authorization do
     has_permission_on [:emailer], :to=>[:sendmail, :contact, :index, :contact_us, :sendmailContactUs]
     has_permission_on [:campaings], :to=>[:index, :index_public, :show, :show_public, :new, :edit, :create, :update, :destroy, :add_photos, :show_photos, :destroy_all_photos]
     has_permission_on [:user_sessions], :to=>[:new, :create, :destroy]
-    has_permission_on [:volunteers], :to => [:index_users,:set_state_volunteer]
+    has_permission_on [:volunteers], :to => [:index_users,:set_state_volunteer, :index_group]
     has_permission_on [:users],:to=>[:set_state]
     has_permission_on [:pastors],:to=>[:set_state_pastor]
   end

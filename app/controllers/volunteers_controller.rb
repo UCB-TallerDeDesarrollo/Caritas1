@@ -81,6 +81,48 @@ end
     end
   end
 
+  def index_group
+    if(params[:group_id] == '')
+      @group_id_selected = nil
+    else
+      @group_id_selected = params[:group_id].to_i
+    end
+
+    if params[:order]
+      if session[:criterion]
+        @volunteers = Volunteer.order_by(params[:order],session[:criterion])
+        @groups = Group.find(:all,:order=>"name")
+        respond_to do |format|
+          format.html # index.html.erb
+          format.xml  { render :xml => @volunteers }
+          format.xls
+        end
+        if session[:criterion] == 'asc'
+          session[:criterion] = 'desc'
+        else
+          session[:criterion] = 'asc'
+        end
+      else
+        session[:criterion] = 'asc'
+        @volunteers = Volunteer.order_by(params[:order],session[:criterion])
+        @groups = Group.find(:all,:order=>"name")
+        respond_to do |format|
+          format.html # index.html.erb
+          format.xml  { render :xml => @volunteers }
+          format.xls
+        end
+      end
+    else
+      @volunteers = Volunteer.search(params[:search],params[:group],@group_id_selected)
+      @groups = Group.find(:all,:order=>"name")
+      respond_to do |format|
+        format.html # index.html.erb
+        format.xml  { render :xml => @volunteers }
+        format.xls
+      end
+    end
+  end
+
 def index_users
   @volunteers = Volunteer.find(:all)
   @groups = Group.find(:all)
