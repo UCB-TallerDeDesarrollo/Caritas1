@@ -6,13 +6,7 @@
 
 <h1>Voluntarios</h1>
 
-<% form_tag volunteers_path, :method => 'get' do %>
-    <p>
-      Parámetro <%= text_field_tag :search, params[:search] %>
-      <%#  <%= check_box_tag :state, params[:state] %>
-      <%= submit_tag "Buscar", :name => nil %>
-    </p>
-<% end %>
+
 <table id="idVolunteers">
   <tr >
     <td colspan=2>
