@@ -19,11 +19,23 @@
       margin-right: 5px;
   }
 </style>
+<script type="text/javascript">
+  function select_state_inactive()
+  {
+     $('#state').removeAttr('name');
+     $('#state_inactive').attr('name','pastor[state_inactive]');
+  }
+  function select_state()
+  {
+      $('#state_inactive').removeAttr('name');
+      $('#state').attr('name','pastor[state]');
+  }
+</script>
 <h3>Eliminacion</h3>
 
 <% form_for(@pastor) do |f| %>
 
-<label><input type="radio" name="parish[state]" value="eliminar">Eliminar permanentemente</label></br>
-<label><input type="radio" name="parish[state]" value="inactivo">Poner en Inactivo</label></br></br></br>
+<label><input id="state" type="radio" name="pastor[state]" value="FALSE" onclick="select_state()">Eliminar permanentemente</label></br>
+<label><input id="state_inactive" type="radio" name="pastor[state_inactive]" value="0" onclick="select_state_inactive()">Poner en Inactivo</label></br></br></br>
   <input type="submit" class="button_state" value="Guardar"><input type="button"  class="button_state nyroModalClose" value="Cancelar" />
 <%end%>
