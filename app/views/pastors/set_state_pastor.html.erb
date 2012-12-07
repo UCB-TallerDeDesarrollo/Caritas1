@@ -19,11 +19,31 @@
       margin-right: 5px;
   }
 </style>
+<script type="text/javascript">
+  $(document).ready(function() {
+     if (<%= @pastor.state_inactive %>)
+        $('#state_inactive').attr('checked', true);
+     else
+        $('#state_inactive_off').attr('checked', true);
+
+  });
+  function select_state_inactive()
+  {
+     $('#state').removeAttr('name');
+     $('#state_inactive').attr('name','pastor[state_inactive]');
+  }
+  function select_state()
+  {
+      $('#state_inactive').removeAttr('name');
+      $('#state').attr('name','pastor[state]');
+  }
+</script>
 <h3>Eliminacion</h3>
 
 <% form_for(@pastor) do |f| %>
-
-<label><input type="radio" name="parish[state]" value="eliminar">Eliminar permanentemente</label></br>
-<label><input type="radio" name="parish[state]" value="inactivo">Poner en Inactivo</label></br></br></br>
-  <input type="submit" class="button_state" value="Guardar"><input type="button"  class="button_state nyroModalClose" value="Cancelar" />
+<input id="state" type="radio" name="pastor[state]" value="FALSE" onclick="select_state()"><label>Eliminar permanentemente</label></br>
+<h3>Cambiar estado del voluntario</h3><br/>
+<input id="state_inactive" type="radio" name="pastor[state_inactive]" value="1" onclick="select_state_inactive()"><label>Poner en Activo</label></br>
+<input id="state_inactive_off" type="radio" name="pastor[state_inactive]" value="0" onclick="select_state_inactive()"><label>Poner en Inactivo</label></br></br></br>
+<input type="submit" class="button_state" value="Guardar"><input type="button"  class="button_state nyroModalClose" value="Cancelar" />
 <%end%>

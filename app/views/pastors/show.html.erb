@@ -21,8 +21,14 @@
   <tr>
     <td>
 
-      <b>Fecha de Nacimiento (día/mes)</b></td><td>
-      <%=h @pastor.date_of_birth.strftime("%d/%m") %>
+      <b>Fecha de Nacimiento</b></td><td>
+      <%if !@pastor.date_of_birth.nil? %>	
+	      <%if @pastor.date_of_birth.year != 1 %>
+	      	<%=h @pastor.date_of_birth.strftime("%d/%m/%Y") %>
+	      <%else%>
+	      	<%=h @pastor.date_of_birth.strftime("%d/%m") %>
+	      <%end%>
+	  <%end%>
     </td>
   </tr>
   <tr>

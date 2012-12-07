@@ -46,31 +46,7 @@ def index
 end
 
   def index_show
-    if params[:order]
-      if session[:criterion]
-        @volunteers = Volunteer.order_by(params[:order],session[:criterion])
-        @groups = Group.find(:all)
-        respond_to do |format|
-          format.html # index.html.erb
-          format.xml  { render :xml => @volunteers }
-          format.xls
-        end
-        if session[:criterion] == 'asc'
-          session[:criterion] = 'desc'
-        else
-          session[:criterion] = 'asc'
-        end
-      else
-        session[:criterion] = 'asc'
-        @volunteers = Volunteer.order_by(params[:order],session[:criterion])
-        @groups = Group.find(:all)
-        respond_to do |format|
-          format.html # index.html.erb
-          format.xml  { render :xml => @volunteers }
-          format.xls
-        end
-      end
-    else
+
       @volunteers = Volunteer.search(params[:search],params[:group],@group_id_selected)
       @groups = Group.find(:all)
       respond_to do |format|
@@ -78,7 +54,23 @@ end
         format.xml  { render :xml => @volunteers }
         format.xls
       end
+  end
+
+  def index_group
+    if(params[:group_id] == '')
+      @group_id_selected = nil
+    else
+      @group_id_selected = params[:group_id].to_i
     end
+
+      @volunteers = Volunteer.search(params[:search],params[:group],@group_id_selected)
+      @groups = Group.find(:all,:order=>"name")
+      respond_to do |format|
+        format.html # index.html.erb
+        format.xml  { render :xml => @volunteers }
+        format.xls
+      end
+
   end
 
 def index_users
@@ -146,15 +138,9 @@ end
     respond_to do |format|
       if session[:set_state_volunteer_redirect]
         session[:set_state_volunteer_redirect] = nil;
-        if  @volunteer.state
-          @volunteer.update_attributes(:state => false)
+        @volunteer.update_attributes(params[:volunteer])
           format.html { redirect_to(volunteers_url) }
           format.xml  { head :ok }
-        else
-          @volunteer.update_attributes(:state_inactive => 0)
-          format.html { redirect_to(volunteers_url) }
-          format.xml  { head :ok }
-        end
       elsif @volunteer.update_attributes(params[:volunteer])
         format.html { redirect_to(@volunteer, :notice => 'El voluntario fue editado exitosamente.') }
         format.xml  { head :ok }
