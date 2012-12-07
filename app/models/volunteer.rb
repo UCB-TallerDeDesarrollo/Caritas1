@@ -49,7 +49,13 @@ class Volunteer < ActiveRecord::Base
 
   
   def self.order_by(param,criterion)
-    find(:all,:order =>param + " " + criterion)
+    if param
+      if param=='group'
+        find(:all,:include=>:group,:order =>'groups.name')
+      end
+    else
+      find(:all,:order =>param + " " + criterion)
+    end
   end
   #put object methods here
   def to_s

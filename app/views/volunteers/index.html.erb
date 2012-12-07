@@ -55,12 +55,12 @@
           <th><u><%=link_to 'Apellido Paterno',{:order => 'last_name'} , {:style=>'color:#FFFFFF;'}%></u></th>
           <th><u><%=link_to 'Apellido Materno',{:order => 'second_last_name'} , {:style=>'color:#FFFFFF;'}%></u></th>
           <th>Cargo</th>
-          <th><u><%=link_to 'Grupo'%></u></th>
+          <th><u><%=link_to 'Grupo',{:order => 'group'}%></u></th>
           <th colspan="3">Acciones</th>
         </tr>
 
-        <% @volunteers.each do |volunteer| %>
-  
+        <% if @volunteers         	
+        	@volunteers.each do |volunteer| %>  
           <% if volunteer.state %>              
         
             <tr>
@@ -76,7 +76,7 @@
                   <td><%= link_to 'Editar', edit_volunteer_path(volunteer) %></td>
               <td><%= link_to 'Eliminar',{:controller=>"volunteers",:action=>"set_state_volunteer",:id=>volunteer.id},:class=>"nyroModal" ,:rev=>"modal"%></td>
             </tr>
-          
+          	<%end%>
           <%end%>
         <% end %>
       </table>
