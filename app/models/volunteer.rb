@@ -52,6 +52,8 @@ class Volunteer < ActiveRecord::Base
     if param
       if param=='group'
         find(:all,:include=>:group,:order =>'groups.name')
+      else
+        find(:all,:order =>param + " " + criterion)
       end
     else
       find(:all,:order =>param + " " + criterion)
