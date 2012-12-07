@@ -23,7 +23,6 @@ $(document).ready(function() {
     <th>Usuario</th>
     <th>E-mail</th>
     <th>Rol</th>
-    <th>Estado Cuenta</th>
     <th colspan="2">Acciones</th>
   </tr>
 
@@ -32,9 +31,8 @@ $(document).ready(function() {
     <td><%=h user.username %></td>
     <td><%=h user.email %></td>
     <td><%=h User::USERS_TYPES[user.roles] %></td>
-    <td><%= h User::USERS_STATE[user.state] %></td>
     <td><%= link_to 'Editar', edit_user_path(user) %></td>
-    <td><%= link_to 'Actualizar Estado',{:controller=>"users",:action=>"set_state",:id=>user.id},:class=>"nyroModal" ,:rev=>"modal"%></td>
+    <td><%= link_to 'Eliminar', user , :confirm => '¿Está seguro que desea eliminar al usuario?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
