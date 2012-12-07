@@ -18,24 +18,38 @@
         font-size: 11px;
         margin-right: 5px;
     }
+    .chk-box{
+        vertical-align: middle;
+        margin-right:5px;
+    }
 </style>
 <script type="text/javascript">
+    $(document).ready(function() {
+        if (<%= @volunteer.state_inactive %>)
+            $('#state_inactive').attr('checked', true);
+        else
+            $('#state_inactive_off').attr('checked', true);
+
+    });
     function select_state_inactive()
     {
         $('#state').removeAttr('name');
         $('#state_inactive').attr('name','volunteer[state_inactive]');
+        $('#state_inactive_off').attr('name','volunteer[state_inactive]');
     }
     function select_state()
     {
         $('#state_inactive').removeAttr('name');
+        $('#state_inactive_off').removeAttr('name');
         $('#state').attr('name','volunteer[state]');
     }
 </script>
 <h3>Eliminacion</h3>
 
 <% form_for(@volunteer) do |f| %>
-
-    <label><input id="state" type="radio" name="volunteer[state]" value="FALSE" onclick="select_state()">Eliminar permanentemente</label></br>
-    <label><input id="state_inactive" type="radio" name="volunteer[state_inactive]" value="0" onclick="select_state_inactive()">Poner en Inactivo</label></br></br></br>
+    <input id="state" type="radio" name="volunteer[state]" value="FALSE" onclick="select_state()" class="chk-box"><label>Permanentemente</label>
+    <h3>Cambiar estado del voluntario</h3><br/>
+    <input id="state_inactive" type="radio" name="volunteer[state_inactive]" value="1" onclick="select_state_inactive()" class="chk-box"><label>Poner en Activo</label></br>
+    <input id="state_inactive_off" type="radio" name="volunteer[state_inactive]" value="0" onclick="select_state_inactive()" class="chk-box"><label>Poner en Inactivo</label></br></br></br>
     <input type="submit" class="button_state" value="Guardar"><input type="button"  class="button_state nyroModalClose" value="Cancelar" />
 <%end%>
