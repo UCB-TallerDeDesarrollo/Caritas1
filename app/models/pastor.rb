@@ -5,8 +5,7 @@ class Pastor < ActiveRecord::Base
   has_one :parish
   
   validates_presence_of :name
-  validates_presence_of :primary_last_name
-  validates_presence_of :date_of_birth
+  validates_presence_of :primary_last_name  
   
   validates_length_of :name, :maximum => 50 
   validates_length_of :primary_last_name, :maximum => 50
