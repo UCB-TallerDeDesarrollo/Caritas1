@@ -138,15 +138,9 @@ end
     respond_to do |format|
       if session[:set_state_volunteer_redirect]
         session[:set_state_volunteer_redirect] = nil;
-        if  @volunteer.state
-          @volunteer.update_attributes(:state => false)
+        @volunteer.update_attributes(params[:volunteer])
           format.html { redirect_to(volunteers_url) }
           format.xml  { head :ok }
-        else
-          @volunteer.update_attributes(:state_inactive => 0)
-          format.html { redirect_to(volunteers_url) }
-          format.xml  { head :ok }
-        end
       elsif @volunteer.update_attributes(params[:volunteer])
         format.html { redirect_to(@volunteer, :notice => 'El voluntario fue editado exitosamente.') }
         format.xml  { head :ok }

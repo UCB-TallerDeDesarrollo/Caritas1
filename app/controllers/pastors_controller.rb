@@ -8,9 +8,6 @@ class PastorsController < ApplicationController
     :search_on => ['name'],
     :full_text_search => true
 
-
-
-
   def index
     if !params[:order].nil?
       @pastors = Pastor.order(params[:order])
@@ -82,16 +79,10 @@ class PastorsController < ApplicationController
     @pastor = Pastor.find(params[:id])
     respond_to do |format|
       if session[:set_state_pastor_redirect]
-        session[:set_state_volunteer_redirect] = nil;
-        if  @pastor.state
-          @pastor.update_attributes(:state => false)
+        session[:set_state_pastor_redirect] = nil;
+        @pastor.update_attributes(params[:pastor])
           format.html { redirect_to(pastors_url) }
           format.xml  { head :ok }
-        else
-          @pastor.update_attributes(:state_inactive => 0)
-          format.html { redirect_to(pastors_url) }
-          format.xml  { head :ok }
-        end
       elsif @pastor.update_attributes(params[:pastor])
         format.html { redirect_to(@pastor, :notice => 'El párroco se modificó correctamente.') }
         format.xml  { head :ok }

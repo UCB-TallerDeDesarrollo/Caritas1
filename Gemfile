@@ -1,5 +1,6 @@
 source :gemcutter
 gem "rails", "2.3.11"
+gem "rake", "0.8.7"
 gem "pg", "0.14.0"
 gem "hoe", "2.5.0"
 gem "paginator"
