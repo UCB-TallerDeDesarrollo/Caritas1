@@ -20,6 +20,7 @@ authorization do
     has_permission_on [:volunteers], :to => [:index_users,:set_state_volunteer, :index_group]
     has_permission_on [:users],:to=>[:set_state]
     has_permission_on [:pastors],:to=>[:set_state_pastor]
+    has_permission_on [:parishes],:to=>[:authentification,:delete_after_authentification]
   end
   
   role :guest do

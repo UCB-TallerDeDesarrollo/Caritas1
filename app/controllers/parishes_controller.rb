@@ -9,25 +9,26 @@ class ParishesController < ApplicationController
   # GET /parishes.xml
   def index
     @parishes = Parish.search(params[:search]).sort { |a,b| a.parish_name.downcase <=> b.parish_name.downcase  }
-    
+
     @parishes.each do |singleparish|
       if singleparish.workshop.nil?
-        singleparish.create_workshop
+      singleparish.create_workshop
       end
     end
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @parishes }
       format.xls
     end
   end
-    def report
-      respond_to do |format|
-        format.html # show.html.erb
-        format.xls
-        format.html { redirect_to(parishes_url) }        
-      end  
+
+  def report
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xls
+      format.html { redirect_to(parishes_url) }
+    end
   end
 
   # GET /parishes/1
@@ -36,7 +37,7 @@ class ParishesController < ApplicationController
     @parish = Parish.find(params[:id])
     @vicariou = Vicariou.find(@parish.vicariou_id)
     @pastor = Pastor.find(@parish.pastor_id)
-    
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @parish }
@@ -68,11 +69,11 @@ class ParishesController < ApplicationController
   # POST /parishes
   # POST /parishes.xml
   def create
-    
+
     @parish = Parish.new(params[:parish])
     @pastor = Pastor.find(:all)
     @vicariou = Vicariou.find(:all)
-    
+
     respond_to do |format|
       if @parish.save
         format.html { redirect_to(@parish, :notice => 'Parish was successfully created.') }
@@ -103,7 +104,7 @@ class ParishesController < ApplicationController
   # DELETE /parishes/1
   # DELETE /parishes/1.xml
   def destroy
-    @parish = Parish.find(params[:id]) 
+    @parish = Parish.find(params[:id])
     if @parish.state == true
       @parish= Parish.update(params[:id], :state => false  )
       respond_to do |format|
@@ -111,5 +112,34 @@ class ParishesController < ApplicationController
         format.xml  { head :ok }
       end
     end
+  end
+
+  def authentification
+    session[:authentification] = true;
+    @parish = Parish.find(params[:id])
+    @user_session = UserSession.new
+  end
+
+  def delete_after_authentification
+    @user_session = UserSession.new
+    @user_session.username =params[:username]
+    @user_session.password =params[:password]
+    if @user_session.save
+      @parish = Parish.find(params[:parent_id])
+      if @parish.state == true
+        @parish= Parish.update(params[:parent_id], :state => false  )
+        respond_to do |format|
+          format.html { redirect_to(parishes_url) }
+          format.xml  { head :ok }
+        end
+      end
+    else
+      session[:failed_authentification] = "El nombre de usuario y/o contrasena incorrectos"
+      respond_to do |format|
+          format.html { redirect_to(parishes_url) }
+          format.xml  { head :ok }
+        end
+    end
+
   end
 end

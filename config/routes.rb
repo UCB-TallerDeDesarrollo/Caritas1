@@ -24,7 +24,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :helps
   map.resources :social_cards
-  map.resources :parishes, :collection => {:report=>:get}
+  map.resources :parishes, :collection => {:report=>:get, :delete_after_authentification => :post}
   map.resources :notices
   map.resources :vicarious
 

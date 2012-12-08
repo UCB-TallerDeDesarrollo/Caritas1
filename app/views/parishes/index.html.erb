@@ -1,4 +1,16 @@
+<%= javascript_include_tag "jquery-1.7.2"  %>
+<%= javascript_include_tag "jquery.nyroModal.custom.js"  %>
+<link href="/stylesheets/nyroModal.css?1352920299" media="screen" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.nyroModal').nyroModal();
+    });
+ </script>
 <h1>Parroquias</h1>
+<% if session[:failed_authentification]  %>
+<%= label_tag(:error, session[:failed_authentification])%>
+      <%session[:failed_authentification]=nil;%>      
+<%end%>
 
 <% form_tag parishes_path, :method => 'get' do %>
 <p>
@@ -59,7 +71,7 @@
 				<td></td>
 				<%end%>
 				<td><%if permitted_to? :destroy, parish %>
-				<%= link_to 'Eliminar', parish, :confirm => '¿Está seguro que desea eliminar la parroquia?', :method => :delete %>
+				<%= link_to 'Eliminar',{:controller=>"parishes",:action=>"authentification",:id=>parish.id},:class=>"nyroModal" ,:rev=>"modal"%>
 				<%end%> </td>
 			</tr>
 			<%end%>

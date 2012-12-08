@@ -32,6 +32,9 @@
   <% elsif session[:set_state_volunteer]  %>
          <%session[:set_state_volunteer]=nil;%>
           <%= yield %>
+ 	<% elsif session[:authentification]  %>
+         <%session[:authentification]=nil;%>
+          <%= yield %>
   <%elsif session[:set_state]  %>
      <%session[:set_state]=nil;%>
       <%= yield %>
