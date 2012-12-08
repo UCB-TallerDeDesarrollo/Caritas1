@@ -4,14 +4,12 @@ class CoursesType < ActiveRecord::Base
                     :storage => :dropbox,
                     :dropbox_credentials => "#{Rails.root}/config/dropbox.yml", 
                     :dropbox_options => {
-                        :path => proc { |style| "CoursesType/#{style}/#{id}_#{course_file.original_filename}"},
+                        :path => proc { |style| "CoursesType/#{id}_#{course_file.original_filename}"},
                         :unique_filename => true
                     }
                     #:path =>'rails_root/public/system/:attachment/:id/:style/:basename.:extension',
                     #:url =>'/:class/:id/:attachment'
-  validates_attachment_size :course_file, :in =>1..4000.kilobytes, :message => "no puede ser m'as grande de 10 MB"
-  validates_attachment_content_type :course_file, :content_type =>['image/jpeg', 'image/png', 'image/gif']
-
+    
   validates_presence_of :name
   validates_presence_of :description 
   

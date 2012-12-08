@@ -31,7 +31,9 @@
               <td width="250"><%= "#{truncate(courses_type.description, :length => 150)}" %></td>
               <td><%= link_to 'Editar', edit_courses_type_path(courses_type) %></td>
               <td align="center">
-              <%= link_to 'Descargar archivo', courses_type %>
+              	<% if !courses_type.course_file_file_name.nil? %>
+              		<%= link_to 'Descargar archivo', courses_type.course_file.url %>
+              	<%end%>
               </td>
               <td><%= link_to 'Eliminar', courses_type, :confirm => '¿Está seguro que desea eliminar el curso de formación?', :method => :delete %></td>
             </tr>

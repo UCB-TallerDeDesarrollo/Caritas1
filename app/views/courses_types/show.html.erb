@@ -12,11 +12,11 @@
     <td width="250"><%=h @courses_type.description %></td>
   </tr>
   <tr>
-    <td><b>Avatar</b></td>
-    <% if @courses_type.course_file.nil? %>
-      <td><%=  image_tag @parish.parish_photo.url, :size=>"300x200" %></td>
+    <td><b>Archivo adjunto</b></td>
+    <% if !@courses_type.course_file_file_name.nil? %>
+      <td><%= link_to 'Descargar archivo', @courses_type.course_file.url %></td>
       <% else %>
-      <td>No está disponible la fotografía</td>
+      <td>No exite archivo adjunto</td>
       <% end   %>
   </tr>
 
