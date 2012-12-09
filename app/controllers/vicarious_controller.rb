@@ -18,7 +18,6 @@ class VicariousController < ApplicationController
   
   def show
     @vicariou = Vicariou.find(params[:id])
-   
     @pastor = Pastor.find(@vicariou.pastor_id)
     @parish = Parish.all(:select => "id,parish_name,ubication,telephone",:conditions=> ["id in (select id from parishes where vicariou_id= ?)","#{@vicariou.id}"])
     respond_to do |format|

@@ -14,6 +14,7 @@ class Vicariou < ActiveRecord::Base
   validates_length_of :telephone, :maximum => 50
   
   validates_uniqueness_of :name_vicariou, :message => "La vicaria ya existe"
+  #validates_uniqueness_of :pastor_id,:message => 'El parroco ya esta asignado, ¿Desea continuar?'
   
   def self.search(search)
     if search

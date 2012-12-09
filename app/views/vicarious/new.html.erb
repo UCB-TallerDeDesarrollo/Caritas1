@@ -1,4 +1,17 @@
-
+<%= javascript_include_tag "jquery-1.7.2"  %>
+<script type="text/javascript">
+    
+    function isAsigned()
+    {
+      var s = document.getElementById('vicariou[pastor_id]').selectedIndex;
+      if(document.getElementById('vicariou[pastor_id]').options[s].title=="asig")
+        //return 'Are you really sure you want to use '+ document.getElementById('vicariou[pastor_id]').value + '?';
+          return 'El parroco ya esta asignado, ¿Desea continuar?';
+      else
+        return 'Se registrara nueva vicaria';
+        
+    }
+</script>
 <h1>Crear Vicaria</h1>
 
 <% form_for(@vicariou) do |f| %>
@@ -12,24 +25,24 @@
     <tr><td><%= f.label :telephone, "*&nbsp;TelÃ©fono" %></td><td><%= f.text_field :telephone %></td></tr>
     <tr><td>*&nbsp;Nombre del Vicario</td><td>
         <% if !@pastor.empty? %>
-          <select name="vicariou[pastor_id]" style="width: 195px">
+        <select name="vicariou[pastor_id]" id="vicariou[pastor_id]" style="width: 195px">
             <option></option>
             <%@pastor.each do |pastor| %>
-              <% if !@pastorA.empty? %>
+              <% if !@pastorA.empty? && !@pastorA.empty? %>
                 
                   <% if @pastorA.include?(pastor)%>
-                    <option style="color: green" value="<%=pastor.id%>">
-                      <%=pastor.name+" "+pastor.primary_last_name+" "+pastor.second_last_name%>(asignado)
+            <option style="color: green" value="<%=pastor.id%>">
+                      <%=pastor.name+" "+pastor.primary_last_name+" "+pastor.second_last_name%>
                     </option>
                   <% else %>              
-                    <option value="<%=pastor.id%>">
-                      <%=pastor.name+" "+pastor.primary_last_name+" "+pastor.second_last_name%>(asignado)
+                    <option title="asig" value="<%=pastor.id%>">
+                      <%=pastor.name+" "+pastor.primary_last_name+" "+pastor.second_last_name%>
                     </option>
                   <%end%>
                 
               <% else %>              
                 <option value="<%=pastor.id%>">
-                  <%=pastor.name+" "+pastor.primary_last_name+" "+pastor.second_last_name%>(asignado)
+                  <%=pastor.name+" "+pastor.primary_last_name+" "+pastor.second_last_name%>
                 </option>     
               <%end%>
             <%end%>
@@ -38,19 +51,15 @@
             No existen vicarios disponibles!
           <%end%>
         </select>
-        <% if @pastorA.nil? || @pastorA.empty? %>
-          <br/>Todos los vicarios estan asignados.
-        <%end%>
-
-
+      
       </td></tr>
     <tr>
       <td>*  Estos campos son obligatorios</td>
     </tr>
     <tr align="right">
-      <td colspan="2">
+      <td colspan="2">              
+        <%= f.submit "Registrar", :onclick => "return confirm(isAsigned())" %><button type="reset">Limpiar</button><%= link_to 'Cancelar', vicarious_path %>
 
-        <%= f.submit 'Registrar'%><button type="reset">Limpiar</button><%= link_to 'Cancelar', vicarious_path %>
       </td>
     </tr>
   </table>
