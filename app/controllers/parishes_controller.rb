@@ -125,20 +125,22 @@ class ParishesController < ApplicationController
     @user_session.username =params[:username]
     @user_session.password =params[:password]
     if @user_session.save
-      @parish = Parish.find(params[:parent_id])
-      if @parish.state == true
-        @parish= Parish.update(params[:parent_id], :state => false  )
-        respond_to do |format|
-          format.html { redirect_to(parishes_url) }
-          format.xml  { head :ok }
+      if permitted_to? :destroy, Parish.find(params[:parent_id])
+        @parish = Parish.find(params[:parent_id])
+        if @parish.state == true
+          @parish= Parish.update(params[:parent_id], :state => false  )
         end
+      end
+      respond_to do |format|
+        format.html { redirect_to(parishes_url) }
+        format.xml  { head :ok }
       end
     else
       session[:failed_authentification] = "El nombre de usuario y/o contrasena incorrectos"
       respond_to do |format|
-          format.html { redirect_to(parishes_url) }
-          format.xml  { head :ok }
-        end
+        format.html { redirect_to(parishes_url) }
+        format.xml  { head :ok }
+      end
     end
 
   end

@@ -1,7 +1,5 @@
 <h1>Ver Beneficiario</h1>
 
-<% form_for(@beneficiary) do |f| %>
-<%= f.error_messages %>
 <table>
 	<tr>
 		<td><%= "CI:" %></td>
@@ -59,7 +57,10 @@
 
 <table>
 	<tr align="right">
-		<td> <%= link_to 'Nueva ayuda', new_beneficiary_help_path(:bid => @beneficiary.id)%></td>
+		<% form_tag :controller => "beneficiary_helps", :action => "new" do %>
+			<%= hidden_field_tag(:bid, @beneficiary.id) %>
+			<td><%= submit_tag "Nueva ayuda"%></td>
+ 		<% end %>
 	</tr>
 	<tr>
 		<td colspan="2">
@@ -94,4 +95,4 @@
 		</table></td>
 	</tr>
 </table>
-<% end %>
+
