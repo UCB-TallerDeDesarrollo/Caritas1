@@ -1,7 +1,0 @@
-App key 	wyawr8sws1rrwjz
-App secret 	17mg4cqn3bf7pn3
-Access token: 3q83a4sa4x32kjo
-Access token secret: catewxrmuh1whab
-User Id: 108737042
-rake dropbox:authorize APP_KEY=wyawr8sws1rrwjz APP_SECRET=17mg4cqn3bf7pn3
-
