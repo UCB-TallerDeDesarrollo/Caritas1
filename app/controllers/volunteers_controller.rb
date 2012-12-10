@@ -115,6 +115,7 @@ end
   # POST /volunteers.xml
   def create
     @volunteer = Volunteer.new(params[:volunteer])
+    @volunteer.state_inactive = 1
 
     respond_to do |format|
       if @volunteer.save

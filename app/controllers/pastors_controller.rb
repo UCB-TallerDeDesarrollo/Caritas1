@@ -58,6 +58,7 @@ class PastorsController < ApplicationController
   # POST /pastors.xml
   def create
     @pastor = Pastor.new(params[:pastor])
+    @pastor.state_inactive = 1
 
     respond_to do |format|
       if @pastor.save
